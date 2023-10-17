@@ -1,13 +1,13 @@
 //
-//  RRO_APPUITests.swift
-//  RRO_APPUITests
+//  RRO_appUITests.swift
+//  RRO_appUITests
 //
-//  Created by Mauricio Garcia Villanueva on 16/10/23.
+//  Created by user326 on 17/10/23.
 //
 
 import XCTest
 
-final class RRO_APPUITests: XCTestCase {
+class RRO_appUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -27,11 +27,12 @@ final class RRO_APPUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
+        // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
     func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
+        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
             measure(metrics: [XCTApplicationLaunchMetric()]) {
                 XCUIApplication().launch()

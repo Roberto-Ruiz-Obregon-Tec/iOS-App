@@ -1,14 +1,14 @@
 //
-//  RRO_APPTests.swift
-//  RRO_APPTests
+//  RRO_appTests.swift
+//  RRO_appTests
 //
-//  Created by Mauricio Garcia Villanueva on 16/10/23.
+//  Created by user326 on 17/10/23.
 //
 
 import XCTest
-@testable import RRO_APP
+@testable import RRO_app
 
-final class RRO_APPTests: XCTestCase {
+class RRO_appTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,9 +21,6 @@ final class RRO_APPTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
 
     func testPerformanceExample() throws {
