@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DF8C4E12ADF5F4600D5A102 /* DummyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF8C4E02ADF5F4600D5A102 /* DummyViewModel.swift */; };
+		9DF8C4E32ADF5F6C00D5A102 /* DummyRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF8C4E22ADF5F6C00D5A102 /* DummyRequirement.swift */; };
+		9DF8C4E52ADF5F8E00D5A102 /* DummyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF8C4E42ADF5F8E00D5A102 /* DummyRepository.swift */; };
+		9DF8C4E82ADF5FB900D5A102 /* DummyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF8C4E72ADF5FB900D5A102 /* DummyModel.swift */; };
+		9DF8C4EB2ADF5FE000D5A102 /* DummyAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF8C4EA2ADF5FE000D5A102 /* DummyAPIService.swift */; };
+		9DF8C4EE2ADF600600D5A102 /* DummyLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF8C4ED2ADF600600D5A102 /* DummyLocalService.swift */; };
 		E1175D4F2ADEF7E100EDEC11 /* RRO_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1175D4E2ADEF7E100EDEC11 /* RRO_appApp.swift */; };
 		E1175D512ADEF7E100EDEC11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1175D502ADEF7E100EDEC11 /* ContentView.swift */; };
 		E1175D532ADEF7E200EDEC11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1175D522ADEF7E200EDEC11 /* Assets.xcassets */; };
@@ -33,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9DF8C4E02ADF5F4600D5A102 /* DummyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewModel.swift; sourceTree = "<group>"; };
+		9DF8C4E22ADF5F6C00D5A102 /* DummyRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRequirement.swift; sourceTree = "<group>"; };
+		9DF8C4E42ADF5F8E00D5A102 /* DummyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRepository.swift; sourceTree = "<group>"; };
+		9DF8C4E72ADF5FB900D5A102 /* DummyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyModel.swift; sourceTree = "<group>"; };
+		9DF8C4EA2ADF5FE000D5A102 /* DummyAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyAPIService.swift; sourceTree = "<group>"; };
+		9DF8C4ED2ADF600600D5A102 /* DummyLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyLocalService.swift; sourceTree = "<group>"; };
 		E1175D4B2ADEF7E100EDEC11 /* RRO_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRO_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1175D4E2ADEF7E100EDEC11 /* RRO_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RRO_appApp.swift; sourceTree = "<group>"; };
 		E1175D502ADEF7E100EDEC11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +84,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9DF8C4DB2ADF5ECC00D5A102 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9DF8C4E62ADF5F9E00D5A102 /* Models */,
+				9DF8C4E42ADF5F8E00D5A102 /* DummyRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9DF8C4DC2ADF5ED800D5A102 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9DF8C4E22ADF5F6C00D5A102 /* DummyRequirement.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9DF8C4DD2ADF5EE600D5A102 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				9DF8C4DF2ADF5F1F00D5A102 /* Views */,
+				9DF8C4DE2ADF5F0D00D5A102 /* ViewModels */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		9DF8C4DE2ADF5F0D00D5A102 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9DF8C4E02ADF5F4600D5A102 /* DummyViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9DF8C4DF2ADF5F1F00D5A102 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1175D502ADEF7E100EDEC11 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9DF8C4E62ADF5F9E00D5A102 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9DF8C4EC2ADF5FEF00D5A102 /* Local */,
+				9DF8C4E92ADF5FC000D5A102 /* Network */,
+				9DF8C4E72ADF5FB900D5A102 /* DummyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9DF8C4E92ADF5FC000D5A102 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9DF8C4EA2ADF5FE000D5A102 /* DummyAPIService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9DF8C4EC2ADF5FEF00D5A102 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				9DF8C4ED2ADF600600D5A102 /* DummyLocalService.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		E1175D422ADEF7E100EDEC11 = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +175,10 @@
 		E1175D4D2ADEF7E100EDEC11 /* RRO_app */ = {
 			isa = PBXGroup;
 			children = (
+				9DF8C4DD2ADF5EE600D5A102 /* Framework */,
+				9DF8C4DC2ADF5ED800D5A102 /* Domain */,
+				9DF8C4DB2ADF5ECC00D5A102 /* Data */,
 				E1175D4E2ADEF7E100EDEC11 /* RRO_appApp.swift */,
-				E1175D502ADEF7E100EDEC11 /* ContentView.swift */,
 				E1175D522ADEF7E200EDEC11 /* Assets.xcassets */,
 				E1175D572ADEF7E200EDEC11 /* Info.plist */,
 				E1175D542ADEF7E200EDEC11 /* Preview Content */,
@@ -259,8 +341,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DF8C4E82ADF5FB900D5A102 /* DummyModel.swift in Sources */,
 				E1175D512ADEF7E100EDEC11 /* ContentView.swift in Sources */,
+				9DF8C4EE2ADF600600D5A102 /* DummyLocalService.swift in Sources */,
+				9DF8C4E52ADF5F8E00D5A102 /* DummyRepository.swift in Sources */,
+				9DF8C4EB2ADF5FE000D5A102 /* DummyAPIService.swift in Sources */,
 				E1175D4F2ADEF7E100EDEC11 /* RRO_appApp.swift in Sources */,
+				9DF8C4E32ADF5F6C00D5A102 /* DummyRequirement.swift in Sources */,
+				9DF8C4E12ADF5F4600D5A102 /* DummyViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
