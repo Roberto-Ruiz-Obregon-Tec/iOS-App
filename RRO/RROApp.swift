@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct RROApp: App {
+struct RRO_appApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CoordinatorView()
         }
     }
 }

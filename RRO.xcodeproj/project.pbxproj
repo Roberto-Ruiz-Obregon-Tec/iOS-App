@@ -20,6 +20,23 @@
 		9D7F813F2AE2D4A9002FA1E0 /* DummyRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F813E2AE2D4A9002FA1E0 /* DummyRequirement.swift */; };
 		9D7F81432AE2D4E6002FA1E0 /* DummyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81422AE2D4E6002FA1E0 /* DummyViewModel.swift */; };
 		9D7F81452AE2D528002FA1E0 /* DummyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81442AE2D528002FA1E0 /* DummyModel.swift */; };
+		EEAA9D382AE2E26000282A82 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EEAA9D372AE2E26000282A82 /* Alamofire */; };
+		EEAA9D3B2AE2E26E00282A82 /* FlowStacks in Frameworks */ = {isa = PBXBuildFile; productRef = EEAA9D3A2AE2E26E00282A82 /* FlowStacks */; };
+		EEAA9D3E2AE2E27F00282A82 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = EEAA9D3D2AE2E27F00282A82 /* SDWebImageSwiftUI */; };
+		EEAA9D412AE2E2D900282A82 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D402AE2E2D900282A82 /* ImagePicker.swift */; };
+		EEAA9D452AE2E31A00282A82 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D442AE2E31A00282A82 /* CoordinatorView.swift */; };
+		EEAA9D472AE2E34300282A82 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D462AE2E34300282A82 /* LoginView.swift */; };
+		EEAA9D492AE2E35900282A82 /* RestoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D482AE2E35900282A82 /* RestoreView.swift */; };
+		EEAA9D4B2AE2E36300282A82 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D4A2AE2E36300282A82 /* SigninView.swift */; };
+		EEAA9D4E2AE2E3AD00282A82 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D4D2AE2E3AD00282A82 /* CourseView.swift */; };
+		EEAA9D502AE2E3CE00282A82 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D4F2AE2E3CE00282A82 /* CourseDetailView.swift */; };
+		EEAA9D522AE2E3EF00282A82 /* PaymentSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D512AE2E3EF00282A82 /* PaymentSheetView.swift */; };
+		EEAA9D542AE2E40000282A82 /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D532AE2E40000282A82 /* ProfileDetailView.swift */; };
+		EEAA9D562AE2E42E00282A82 /* VoucherSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D552AE2E42E00282A82 /* VoucherSheetView.swift */; };
+		EEAA9D582AE2E45B00282A82 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D572AE2E45B00282A82 /* FAQView.swift */; };
+		EEAA9D5A2AE2E48000282A82 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D592AE2E48000282A82 /* FeedView.swift */; };
+		EEAA9D5C2AE2E49600282A82 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D5B2AE2E49600282A82 /* MenuView.swift */; };
+		EEAA9D5E2AE2E4B800282A82 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D5D2AE2E4B700282A82 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +73,20 @@
 		9D7F813E2AE2D4A9002FA1E0 /* DummyRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRequirement.swift; sourceTree = "<group>"; };
 		9D7F81422AE2D4E6002FA1E0 /* DummyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewModel.swift; sourceTree = "<group>"; };
 		9D7F81442AE2D528002FA1E0 /* DummyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyModel.swift; sourceTree = "<group>"; };
+		EEAA9D402AE2E2D900282A82 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		EEAA9D442AE2E31A00282A82 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
+		EEAA9D462AE2E34300282A82 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EEAA9D482AE2E35900282A82 /* RestoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreView.swift; sourceTree = "<group>"; };
+		EEAA9D4A2AE2E36300282A82 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
+		EEAA9D4D2AE2E3AD00282A82 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		EEAA9D4F2AE2E3CE00282A82 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
+		EEAA9D512AE2E3EF00282A82 /* PaymentSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSheetView.swift; sourceTree = "<group>"; };
+		EEAA9D532AE2E40000282A82 /* ProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
+		EEAA9D552AE2E42E00282A82 /* VoucherSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherSheetView.swift; sourceTree = "<group>"; };
+		EEAA9D572AE2E45B00282A82 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		EEAA9D592AE2E48000282A82 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		EEAA9D5B2AE2E49600282A82 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		EEAA9D5D2AE2E4B700282A82 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEAA9D3E2AE2E27F00282A82 /* SDWebImageSwiftUI in Frameworks */,
+				EEAA9D382AE2E26000282A82 /* Alamofire in Frameworks */,
+				EEAA9D3B2AE2E26E00282A82 /* FlowStacks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +195,7 @@
 		9D7F81342AE2D377002FA1E0 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				EEAA9D3F2AE2E2AC00282A82 /* Utils */,
 				9D7F81412AE2D4C5002FA1E0 /* Views */,
 				9D7F81402AE2D4B5002FA1E0 /* ViewModels */,
 			);
@@ -204,9 +239,54 @@
 		9D7F81412AE2D4C5002FA1E0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EEAA9D432AE2E30200282A82 /* Menu */,
+				EEAA9D422AE2E2F500282A82 /* Login */,
 				9D7F810A2AE2D2D7002FA1E0 /* ContentView.swift */,
+				EEAA9D442AE2E31A00282A82 /* CoordinatorView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EEAA9D3F2AE2E2AC00282A82 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA9D402AE2E2D900282A82 /* ImagePicker.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EEAA9D422AE2E2F500282A82 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA9D462AE2E34300282A82 /* LoginView.swift */,
+				EEAA9D482AE2E35900282A82 /* RestoreView.swift */,
+				EEAA9D4A2AE2E36300282A82 /* SigninView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EEAA9D432AE2E30200282A82 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA9D4C2AE2E39A00282A82 /* Details */,
+				EEAA9D4D2AE2E3AD00282A82 /* CourseView.swift */,
+				EEAA9D572AE2E45B00282A82 /* FAQView.swift */,
+				EEAA9D592AE2E48000282A82 /* FeedView.swift */,
+				EEAA9D5B2AE2E49600282A82 /* MenuView.swift */,
+				EEAA9D5D2AE2E4B700282A82 /* ProfileView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		EEAA9D4C2AE2E39A00282A82 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA9D4F2AE2E3CE00282A82 /* CourseDetailView.swift */,
+				EEAA9D512AE2E3EF00282A82 /* PaymentSheetView.swift */,
+				EEAA9D532AE2E40000282A82 /* ProfileDetailView.swift */,
+				EEAA9D552AE2E42E00282A82 /* VoucherSheetView.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +305,11 @@
 			dependencies = (
 			);
 			name = RRO;
+			packageProductDependencies = (
+				EEAA9D372AE2E26000282A82 /* Alamofire */,
+				EEAA9D3A2AE2E26E00282A82 /* FlowStacks */,
+				EEAA9D3D2AE2E27F00282A82 /* SDWebImageSwiftUI */,
+			);
 			productName = RRO;
 			productReference = 9D7F81052AE2D2D7002FA1E0 /* RRO.app */;
 			productType = "com.apple.product-type.application";
@@ -273,7 +358,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					9D7F81042AE2D2D7002FA1E0 = {
 						CreatedOnToolsVersion = 13.2;
@@ -297,6 +382,11 @@
 				Base,
 			);
 			mainGroup = 9D7F80FC2AE2D2D7002FA1E0;
+			packageReferences = (
+				EEAA9D362AE2E26000282A82 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				EEAA9D392AE2E26E00282A82 /* XCRemoteSwiftPackageReference "FlowStacks" */,
+				EEAA9D3C2AE2E27F00282A82 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 9D7F81062AE2D2D7002FA1E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,13 +429,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEAA9D5A2AE2E48000282A82 /* FeedView.swift in Sources */,
 				9D7F81452AE2D528002FA1E0 /* DummyModel.swift in Sources */,
+				EEAA9D4E2AE2E3AD00282A82 /* CourseView.swift in Sources */,
+				EEAA9D452AE2E31A00282A82 /* CoordinatorView.swift in Sources */,
+				EEAA9D562AE2E42E00282A82 /* VoucherSheetView.swift in Sources */,
+				EEAA9D522AE2E3EF00282A82 /* PaymentSheetView.swift in Sources */,
+				EEAA9D4B2AE2E36300282A82 /* SigninView.swift in Sources */,
+				EEAA9D5C2AE2E49600282A82 /* MenuView.swift in Sources */,
 				9D7F81432AE2D4E6002FA1E0 /* DummyViewModel.swift in Sources */,
 				9D7F813D2AE2D46B002FA1E0 /* DummyLocalService.swift in Sources */,
+				EEAA9D412AE2E2D900282A82 /* ImagePicker.swift in Sources */,
 				9D7F810B2AE2D2D7002FA1E0 /* ContentView.swift in Sources */,
+				EEAA9D582AE2E45B00282A82 /* FAQView.swift in Sources */,
 				9D7F81362AE2D3A6002FA1E0 /* DummyRepository.swift in Sources */,
+				EEAA9D542AE2E40000282A82 /* ProfileDetailView.swift in Sources */,
+				EEAA9D492AE2E35900282A82 /* RestoreView.swift in Sources */,
+				EEAA9D502AE2E3CE00282A82 /* CourseDetailView.swift in Sources */,
 				9D7F81092AE2D2D7002FA1E0 /* RROApp.swift in Sources */,
+				EEAA9D472AE2E34300282A82 /* LoginView.swift in Sources */,
 				9D7F813F2AE2D4A9002FA1E0 /* DummyRequirement.swift in Sources */,
+				EEAA9D5E2AE2E4B800282A82 /* ProfileView.swift in Sources */,
 				9D7F813B2AE2D422002FA1E0 /* DummyAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +524,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -434,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -481,6 +586,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -489,7 +595,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -507,7 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RRO/Preview Content\"";
-				DEVELOPMENT_TEAM = 5S28ZC3C35;
+				DEVELOPMENT_TEAM = QPA9Z37FK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -515,12 +621,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-peblo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -536,7 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RRO/Preview Content\"";
-				DEVELOPMENT_TEAM = 5S28ZC3C35;
+				DEVELOPMENT_TEAM = QPA9Z37FK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -544,12 +651,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-peblo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -673,6 +781,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EEAA9D362AE2E26000282A82 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.0;
+			};
+		};
+		EEAA9D392AE2E26E00282A82 /* XCRemoteSwiftPackageReference "FlowStacks" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnpatrickmorgan/FlowStacks";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.4;
+			};
+		};
+		EEAA9D3C2AE2E27F00282A82 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EEAA9D372AE2E26000282A82 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAA9D362AE2E26000282A82 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		EEAA9D3A2AE2E26E00282A82 /* FlowStacks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAA9D392AE2E26E00282A82 /* XCRemoteSwiftPackageReference "FlowStacks" */;
+			productName = FlowStacks;
+		};
+		EEAA9D3D2AE2E27F00282A82 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAA9D3C2AE2E27F00282A82 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9D7F80FD2AE2D2D7002FA1E0 /* Project object */;
 }
