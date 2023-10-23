@@ -9,14 +9,14 @@ import SwiftUI
 
 struct CourseView: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             // TODO: This VStack should be a List in the future
             VStack {
                 Text("Cursos")
                 
                 NavigationLink {
                     // TODO: Add state or course info
-                    CourseDetailView()
+                    ScholarshipDetailView()
                 } label: {
                     Text("Curso1")
                 }.padding()
@@ -28,7 +28,6 @@ struct CourseView: View {
                     Text("Curso2")
                 }.padding()
             }
-            
         }
     }
 }
