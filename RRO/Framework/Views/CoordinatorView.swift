@@ -22,7 +22,7 @@ struct CoordinatorView: View {
         Router($routes) { screen, _ in
             switch screen {
             case .login:
-                LoginView(goMenu: {
+                LoginView(viewModel: LoginViewModel(model: LoginModel()), goMenu: {
                     routes.presentCover(.menu)
                 }, goRegister: {
                     routes.presentSheet(.register)
