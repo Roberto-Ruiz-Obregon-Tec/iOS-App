@@ -9,33 +9,32 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct ScholarshipDetailView: View {
-    // TODO: change state to use view model
-    @State var scolarshipName = "Alimentos"
-    @State var description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    @State var startDate = Date.now
-    @State var endDate = Date.now.addingTimeInterval(86400)
-    @State var sector = "Primaria"
-    @State var location = "Queretaro" // TODO: Hook up google maps
-    @State var organization = "FFK"
+    var scholarship: Scholarship
     @State var admin = false
     
     var body: some View {
         ScrollView {
             
             VStack(spacing: 8) {
-                WebImage(url: URL(string: "https://www.eclosio.ong/wp-content/uploads/2018/08/default.png"))
-                    .resizable()
-                    .cornerRadius(16)
-                    .scaledToFit()
-                
+                if scholarship.image != "" {
+                    WebImage(url: URL(string: scholarship.image))
+                        .resizable()
+                        .cornerRadius(16)
+                        .scaledToFit()
+                } else {
+                    Image("DefaultImage")
+                        .resizable()
+                        .cornerRadius(16)
+                        .scaledToFit()
+                }
                 HStack {
-                    Text(scolarshipName)
+                    Text(scholarship.name)
                         .font(.title)
                         .fontWeight(.bold)
                     
                     Spacer()
                     
-                    //if admin {
+                    if admin {
                         Button {
                             // TODO: Give the admin access to edit the field
                         } label: {
@@ -47,11 +46,15 @@ struct ScholarshipDetailView: View {
                         .background(Color.red)
                         .cornerRadius(.infinity)
                         .foregroundStyle(.white)
-                    //}
+                    }
                 }
                 
-                Text(description)
-                    .foregroundStyle(.secondary)
+                HStack {
+                    Text(scholarship.description)
+                        .foregroundStyle(.secondary)
+                        
+                    Spacer()
+                }
                 
                 VStack {
                     
@@ -61,10 +64,12 @@ struct ScholarshipDetailView: View {
                         
                         Spacer()
                         
+                        
                         HStack {
-                            Text(startDate, format: .dateTime.day().month())
+                            Text(scholarship.startDate, format: .dateTime.day().month())
                             Text("-")
-                            Text(endDate, format: .dateTime.day().month())
+                            Text(scholarship.endDate, format: .dateTime.day().month())
+                            
                         }.foregroundStyle(.secondary)
                     }
                     
@@ -72,10 +77,11 @@ struct ScholarshipDetailView: View {
                     
                     HStack {
                         Text("Sector")
+                            .fontWeight(.bold)
                         
                         Spacer()
                         
-                        Text(sector)
+                        Text(scholarship.sector)
                             .foregroundStyle(.secondary)
                     }
                     
@@ -83,12 +89,13 @@ struct ScholarshipDetailView: View {
                     
                     HStack {
                         Text("Lugar")
+                            .fontWeight(.bold)
                         
                         Spacer()
                         
                         HStack {
                             Image(systemName: "location")
-                            Text(location)
+                            Text(scholarship.location)
                         }.foregroundStyle(.secondary)
                         
                     }
@@ -97,10 +104,11 @@ struct ScholarshipDetailView: View {
                     
                     HStack {
                         Text("Organización")
+                            .fontWeight(.bold)
                         
                         Spacer()
                         
-                        Text(organization)
+                        Text(scholarship.organization)
                             .foregroundStyle(.secondary)
                     }
                 }.padding(.vertical)
@@ -110,7 +118,9 @@ struct ScholarshipDetailView: View {
                     Text("Fecha límite para enviar datos:")
                     HStack {
                         Image(systemName: "calendar")
-                        Text(endDate, format: .dateTime.day().month())
+                        
+                        Text(scholarship.endDate, format: .dateTime.day().month())
+                        
                         Image(systemName: "calendar")
                     }
                 }
@@ -141,11 +151,23 @@ struct ScholarshipDetailView: View {
             }
             .padding(.horizontal)
         }
-        .navigationTitle(scolarshipName)
+        .navigationTitle(scholarship.name)
         .navigationBarTitleDisplayMode(.inline)
     }
+        
 }
 
 #Preview {
-    ScholarshipDetailView()
+    ScholarshipDetailView(scholarship: Scholarship(
+        id: "",
+        name: "",
+        description: "",
+        organization: "",
+        location: "",
+        email: "",
+        phone: "",
+        image: "",
+        sector: "",
+        startDate: Date.now,
+        endDate: Date.now))
 }

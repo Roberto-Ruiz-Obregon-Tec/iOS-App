@@ -8,18 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		9D7F81092AE2D2D7002FA1E0 /* RROApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81082AE2D2D7002FA1E0 /* RROApp.swift */; };
-		9D7F810B2AE2D2D7002FA1E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F810A2AE2D2D7002FA1E0 /* ContentView.swift */; };
 		9D7F810D2AE2D2DB002FA1E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F810C2AE2D2DB002FA1E0 /* Assets.xcassets */; };
 		9D7F81102AE2D2DB002FA1E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F810F2AE2D2DB002FA1E0 /* Preview Assets.xcassets */; };
 		9D7F811A2AE2D2DC002FA1E0 /* RROTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81192AE2D2DC002FA1E0 /* RROTests.swift */; };
 		9D7F81242AE2D2DC002FA1E0 /* RROUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81232AE2D2DC002FA1E0 /* RROUITests.swift */; };
 		9D7F81262AE2D2DC002FA1E0 /* RROUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81252AE2D2DC002FA1E0 /* RROUITestsLaunchTests.swift */; };
-		9D7F81362AE2D3A6002FA1E0 /* DummyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81352AE2D3A5002FA1E0 /* DummyRepository.swift */; };
-		9D7F813B2AE2D422002FA1E0 /* DummyAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F813A2AE2D422002FA1E0 /* DummyAPIService.swift */; };
+		9D7F813B2AE2D422002FA1E0 /* NetworkAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F813A2AE2D422002FA1E0 /* NetworkAPIService.swift */; };
 		9D7F813D2AE2D46B002FA1E0 /* DummyLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F813C2AE2D46B002FA1E0 /* DummyLocalService.swift */; };
-		9D7F813F2AE2D4A9002FA1E0 /* DummyRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F813E2AE2D4A9002FA1E0 /* DummyRequirement.swift */; };
-		9D7F81432AE2D4E6002FA1E0 /* DummyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81422AE2D4E6002FA1E0 /* DummyViewModel.swift */; };
-		9D7F81452AE2D528002FA1E0 /* DummyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81442AE2D528002FA1E0 /* DummyModel.swift */; };
+		EE0BF5532AE80C8200844E68 /* ScholarshipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0BF5522AE80C8200844E68 /* ScholarshipViewModel.swift */; };
+		EE0BF5552AE80CF000844E68 /* ScholarshipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0BF5542AE80CF000844E68 /* ScholarshipModel.swift */; };
 		EE5E70B82AE702B600EA2160 /* ScholarshipDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E70B72AE702B500EA2160 /* ScholarshipDetailView.swift */; };
 		EEAA9D382AE2E26000282A82 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EEAA9D372AE2E26000282A82 /* Alamofire */; };
 		EEAA9D3B2AE2E26E00282A82 /* FlowStacks in Frameworks */ = {isa = PBXBuildFile; productRef = EEAA9D3A2AE2E26E00282A82 /* FlowStacks */; };
@@ -29,7 +26,7 @@
 		EEAA9D472AE2E34300282A82 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D462AE2E34300282A82 /* LoginView.swift */; };
 		EEAA9D492AE2E35900282A82 /* RestoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D482AE2E35900282A82 /* RestoreView.swift */; };
 		EEAA9D4B2AE2E36300282A82 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D4A2AE2E36300282A82 /* SigninView.swift */; };
-		EEAA9D4E2AE2E3AD00282A82 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D4D2AE2E3AD00282A82 /* CourseView.swift */; };
+		EEAA9D4E2AE2E3AD00282A82 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D4D2AE2E3AD00282A82 /* CoursesView.swift */; };
 		EEAA9D502AE2E3CE00282A82 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D4F2AE2E3CE00282A82 /* CourseDetailView.swift */; };
 		EEAA9D522AE2E3EF00282A82 /* PaymentSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D512AE2E3EF00282A82 /* PaymentSheetView.swift */; };
 		EEAA9D542AE2E40000282A82 /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D532AE2E40000282A82 /* ProfileDetailView.swift */; };
@@ -38,6 +35,11 @@
 		EEAA9D5A2AE2E48000282A82 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D592AE2E48000282A82 /* FeedView.swift */; };
 		EEAA9D5C2AE2E49600282A82 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D5B2AE2E49600282A82 /* MenuView.swift */; };
 		EEAA9D5E2AE2E4B800282A82 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D5D2AE2E4B700282A82 /* ProfileView.swift */; };
+		EEDD93F42AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93F32AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift */; };
+		EEDD93F62AE8E8BC0066AD71 /* ScholarshipRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93F52AE8E8BC0066AD71 /* ScholarshipRepository.swift */; };
+		EEDD93F82AE8E9450066AD71 /* RROAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93F72AE8E9450066AD71 /* RROAPI.swift */; };
+		EEDD93FC2AE966330066AD71 /* ScholarshipListRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93FB2AE966320066AD71 /* ScholarshipListRequirement.swift */; };
+		EEDD93FE2AE974A20066AD71 /* ScholarshipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93FD2AE974A20066AD71 /* ScholarshipsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +62,6 @@
 /* Begin PBXFileReference section */
 		9D7F81052AE2D2D7002FA1E0 /* RRO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7F81082AE2D2D7002FA1E0 /* RROApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RROApp.swift; sourceTree = "<group>"; };
-		9D7F810A2AE2D2D7002FA1E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D7F810C2AE2D2DB002FA1E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D7F810F2AE2D2DB002FA1E0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D7F81152AE2D2DC002FA1E0 /* RROTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RROTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,19 +69,17 @@
 		9D7F811F2AE2D2DC002FA1E0 /* RROUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RROUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7F81232AE2D2DC002FA1E0 /* RROUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RROUITests.swift; sourceTree = "<group>"; };
 		9D7F81252AE2D2DC002FA1E0 /* RROUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RROUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9D7F81352AE2D3A5002FA1E0 /* DummyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRepository.swift; sourceTree = "<group>"; };
-		9D7F813A2AE2D422002FA1E0 /* DummyAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyAPIService.swift; sourceTree = "<group>"; };
+		9D7F813A2AE2D422002FA1E0 /* NetworkAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIService.swift; sourceTree = "<group>"; };
 		9D7F813C2AE2D46B002FA1E0 /* DummyLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyLocalService.swift; sourceTree = "<group>"; };
-		9D7F813E2AE2D4A9002FA1E0 /* DummyRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRequirement.swift; sourceTree = "<group>"; };
-		9D7F81422AE2D4E6002FA1E0 /* DummyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewModel.swift; sourceTree = "<group>"; };
-		9D7F81442AE2D528002FA1E0 /* DummyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyModel.swift; sourceTree = "<group>"; };
+		EE0BF5522AE80C8200844E68 /* ScholarshipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipViewModel.swift; sourceTree = "<group>"; };
+		EE0BF5542AE80CF000844E68 /* ScholarshipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipModel.swift; sourceTree = "<group>"; };
 		EE5E70B72AE702B500EA2160 /* ScholarshipDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipDetailView.swift; sourceTree = "<group>"; };
 		EEAA9D402AE2E2D900282A82 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		EEAA9D442AE2E31A00282A82 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		EEAA9D462AE2E34300282A82 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EEAA9D482AE2E35900282A82 /* RestoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreView.swift; sourceTree = "<group>"; };
 		EEAA9D4A2AE2E36300282A82 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
-		EEAA9D4D2AE2E3AD00282A82 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		EEAA9D4D2AE2E3AD00282A82 /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
 		EEAA9D4F2AE2E3CE00282A82 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
 		EEAA9D512AE2E3EF00282A82 /* PaymentSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSheetView.swift; sourceTree = "<group>"; };
 		EEAA9D532AE2E40000282A82 /* ProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
@@ -89,6 +88,11 @@
 		EEAA9D592AE2E48000282A82 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		EEAA9D5B2AE2E49600282A82 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		EEAA9D5D2AE2E4B700282A82 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		EEDD93F32AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipInfoRequirement.swift; sourceTree = "<group>"; };
+		EEDD93F52AE8E8BC0066AD71 /* ScholarshipRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipRepository.swift; sourceTree = "<group>"; };
+		EEDD93F72AE8E9450066AD71 /* RROAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RROAPI.swift; sourceTree = "<group>"; };
+		EEDD93FB2AE966320066AD71 /* ScholarshipListRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipListRequirement.swift; sourceTree = "<group>"; };
+		EEDD93FD2AE974A20066AD71 /* ScholarshipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +184,9 @@
 		9D7F81322AE2D363002FA1E0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				EEDD93FA2AE962F50066AD71 /* Services */,
+				EEDD93F92AE962A00066AD71 /* Repositories */,
 				9D7F81372AE2D3B1002FA1E0 /* Models */,
-				9D7F81352AE2D3A5002FA1E0 /* DummyRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -189,7 +194,8 @@
 		9D7F81332AE2D36E002FA1E0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				9D7F813E2AE2D4A9002FA1E0 /* DummyRequirement.swift */,
+				EEDD93F32AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift */,
+				EEDD93FB2AE966320066AD71 /* ScholarshipListRequirement.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -207,9 +213,7 @@
 		9D7F81372AE2D3B1002FA1E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9D7F81392AE2D3D1002FA1E0 /* Local */,
-				9D7F81382AE2D3C4002FA1E0 /* Network */,
-				9D7F81442AE2D528002FA1E0 /* DummyModel.swift */,
+				EE0BF5542AE80CF000844E68 /* ScholarshipModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,7 +221,7 @@
 		9D7F81382AE2D3C4002FA1E0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				9D7F813A2AE2D422002FA1E0 /* DummyAPIService.swift */,
+				9D7F813A2AE2D422002FA1E0 /* NetworkAPIService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -233,7 +237,7 @@
 		9D7F81402AE2D4B5002FA1E0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				9D7F81422AE2D4E6002FA1E0 /* DummyViewModel.swift */,
+				EE0BF5522AE80C8200844E68 /* ScholarshipViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -243,7 +247,6 @@
 			children = (
 				EEAA9D432AE2E30200282A82 /* Menu */,
 				EEAA9D422AE2E2F500282A82 /* Login */,
-				9D7F810A2AE2D2D7002FA1E0 /* ContentView.swift */,
 				EEAA9D442AE2E31A00282A82 /* CoordinatorView.swift */,
 			);
 			path = Views;
@@ -271,10 +274,11 @@
 			isa = PBXGroup;
 			children = (
 				EEAA9D4C2AE2E39A00282A82 /* Details */,
-				EEAA9D4D2AE2E3AD00282A82 /* CourseView.swift */,
+				EEAA9D4D2AE2E3AD00282A82 /* CoursesView.swift */,
 				EEAA9D572AE2E45B00282A82 /* FAQView.swift */,
 				EEAA9D592AE2E48000282A82 /* FeedView.swift */,
 				EEAA9D5B2AE2E49600282A82 /* MenuView.swift */,
+				EEDD93FD2AE974A20066AD71 /* ScholarshipsView.swift */,
 				EEAA9D5D2AE2E4B700282A82 /* ProfileView.swift */,
 			);
 			path = Menu;
@@ -290,6 +294,24 @@
 				EE5E70B72AE702B500EA2160 /* ScholarshipDetailView.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		EEDD93F92AE962A00066AD71 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				EEDD93F72AE8E9450066AD71 /* RROAPI.swift */,
+				EEDD93F52AE8E8BC0066AD71 /* ScholarshipRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		EEDD93FA2AE962F50066AD71 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9D7F81382AE2D3C4002FA1E0 /* Network */,
+				9D7F81392AE2D3D1002FA1E0 /* Local */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,29 +454,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEDD93FC2AE966330066AD71 /* ScholarshipListRequirement.swift in Sources */,
 				EEAA9D5A2AE2E48000282A82 /* FeedView.swift in Sources */,
-				9D7F81452AE2D528002FA1E0 /* DummyModel.swift in Sources */,
-				EEAA9D4E2AE2E3AD00282A82 /* CourseView.swift in Sources */,
+				EEAA9D4E2AE2E3AD00282A82 /* CoursesView.swift in Sources */,
 				EEAA9D452AE2E31A00282A82 /* CoordinatorView.swift in Sources */,
 				EEAA9D562AE2E42E00282A82 /* VoucherSheetView.swift in Sources */,
 				EEAA9D522AE2E3EF00282A82 /* PaymentSheetView.swift in Sources */,
 				EEAA9D4B2AE2E36300282A82 /* SigninView.swift in Sources */,
 				EEAA9D5C2AE2E49600282A82 /* MenuView.swift in Sources */,
-				9D7F81432AE2D4E6002FA1E0 /* DummyViewModel.swift in Sources */,
 				9D7F813D2AE2D46B002FA1E0 /* DummyLocalService.swift in Sources */,
+				EEDD93F62AE8E8BC0066AD71 /* ScholarshipRepository.swift in Sources */,
 				EEAA9D412AE2E2D900282A82 /* ImagePicker.swift in Sources */,
-				9D7F810B2AE2D2D7002FA1E0 /* ContentView.swift in Sources */,
+				EEDD93F42AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift in Sources */,
 				EEAA9D582AE2E45B00282A82 /* FAQView.swift in Sources */,
 				EE5E70B82AE702B600EA2160 /* ScholarshipDetailView.swift in Sources */,
-				9D7F81362AE2D3A6002FA1E0 /* DummyRepository.swift in Sources */,
+				EE0BF5552AE80CF000844E68 /* ScholarshipModel.swift in Sources */,
 				EEAA9D542AE2E40000282A82 /* ProfileDetailView.swift in Sources */,
 				EEAA9D492AE2E35900282A82 /* RestoreView.swift in Sources */,
+				EE0BF5532AE80C8200844E68 /* ScholarshipViewModel.swift in Sources */,
 				EEAA9D502AE2E3CE00282A82 /* CourseDetailView.swift in Sources */,
 				9D7F81092AE2D2D7002FA1E0 /* RROApp.swift in Sources */,
+				EEDD93FE2AE974A20066AD71 /* ScholarshipsView.swift in Sources */,
 				EEAA9D472AE2E34300282A82 /* LoginView.swift in Sources */,
-				9D7F813F2AE2D4A9002FA1E0 /* DummyRequirement.swift in Sources */,
 				EEAA9D5E2AE2E4B800282A82 /* ProfileView.swift in Sources */,
-				9D7F813B2AE2D422002FA1E0 /* DummyAPIService.swift in Sources */,
+				EEDD93F82AE8E9450066AD71 /* RROAPI.swift in Sources */,
+				9D7F813B2AE2D422002FA1E0 /* NetworkAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

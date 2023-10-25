@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CourseView: View {
+struct CoursesView: View {
     var body: some View {
         NavigationStack {
             // TODO: This VStack should be a List in the future
@@ -16,7 +16,7 @@ struct CourseView: View {
                 
                 NavigationLink {
                     // TODO: Add state or course info
-                    ScholarshipDetailView()
+                    CourseDetailView()
                 } label: {
                     Text("Curso1")
                 }.padding()
@@ -33,5 +33,5 @@ struct CourseView: View {
 }
 
 #Preview {
-    CourseView()
+    CoursesView()
 }
