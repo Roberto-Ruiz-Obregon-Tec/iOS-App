@@ -8,21 +8,18 @@
 import SwiftUI
 
 struct CourseDetailView: View {
-    @State var showingPaymentSheet = false
     var body: some View {
-        VStack {
-            Text("Detalle del curso info y eso")
-            
-            Button {
-                showingPaymentSheet.toggle()
-            } label: {
-                Text("Inscribirme")
+        NavigationStack {
+            VStack {
+                Text("Detalle del curso info y eso")
+                
+                NavigationLink {
+                    PaymentSheetView()
+                } label: {
+                    Text("Inscribirme")
+                }.padding()
+                
             }
-            .sheet(isPresented: $showingPaymentSheet, content: {
-                PaymentSheetView()
-            })
-            .padding()
-            
         }
         
     }

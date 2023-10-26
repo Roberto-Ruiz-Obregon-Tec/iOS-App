@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct CourseView: View {
+struct CoursesView: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             // TODO: This VStack should be a List in the future
             VStack {
                 Text("Cursos")
@@ -28,11 +28,10 @@ struct CourseView: View {
                     Text("Curso2")
                 }.padding()
             }
-            
         }
     }
 }
 
 #Preview {
-    CourseView()
+    CoursesView()
 }
