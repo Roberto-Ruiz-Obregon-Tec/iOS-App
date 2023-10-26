@@ -11,7 +11,8 @@ struct MenuView: View {
     let goLogin: () -> Void
     var body: some View {
         TabView {
-            CourseView().tabItem {
+            // TODO: wrap courses, scholarships, and programs on a single view
+            ScholarshipsView().tabItem {
                 Image(systemName: "house")
                 Text("Inicio")
             }
