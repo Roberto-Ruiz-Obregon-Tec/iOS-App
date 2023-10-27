@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PaymentSheetView: View {
-    //@Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationView {
             VStack {
