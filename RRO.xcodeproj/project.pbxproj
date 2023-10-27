@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		4730B8792AE9D03800337D05 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730B8782AE9D03800337D05 /* LoginModel.swift */; };
 		4777A67B2AEA348C00FB4388 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777A67A2AEA348C00FB4388 /* LoginRepository.swift */; };
+		478C1F802AEB5550001AD286 /* logoFundacion.png in Resources */ = {isa = PBXBuildFile; fileRef = 478C1F7F2AEB5550001AD286 /* logoFundacion.png */; };
 		47A333462AE890EB008D2448 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A333452AE890EB008D2448 /* LoginViewModel.swift */; };
-		47A9E2852AE7367B00F864B0 /* logoFundacion.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A9E2842AE7367B00F864B0 /* logoFundacion.png */; };
 		9D7F81092AE2D2D7002FA1E0 /* RROApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81082AE2D2D7002FA1E0 /* RROApp.swift */; };
 		9D7F810D2AE2D2DB002FA1E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F810C2AE2D2DB002FA1E0 /* Assets.xcassets */; };
 		9D7F81102AE2D2DB002FA1E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F810F2AE2D2DB002FA1E0 /* Preview Assets.xcassets */; };
@@ -66,8 +66,8 @@
 /* Begin PBXFileReference section */
 		4730B8782AE9D03800337D05 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		4777A67A2AEA348C00FB4388 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		478C1F7F2AEB5550001AD286 /* logoFundacion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoFundacion.png; sourceTree = "<group>"; };
 		47A333452AE890EB008D2448 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		47A9E2842AE7367B00F864B0 /* logoFundacion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoFundacion.png; path = ../../../../../../Downloads/logoFundacion.png; sourceTree = "<group>"; };
 		9D7F81052AE2D2D7002FA1E0 /* RRO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7F81082AE2D2D7002FA1E0 /* RROApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RROApp.swift; sourceTree = "<group>"; };
 		9D7F810C2AE2D2DB002FA1E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		47A9E2832AE7366000F864B0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				47A9E2842AE7367B00F864B0 /* logoFundacion.png */,
+				478C1F7F2AEB5550001AD286 /* logoFundacion.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -448,9 +448,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				478C1F802AEB5550001AD286 /* logoFundacion.png in Resources */,
 				9D7F81102AE2D2DB002FA1E0 /* Preview Assets.xcassets in Resources */,
 				9D7F810D2AE2D2DB002FA1E0 /* Assets.xcassets in Resources */,
-				47A9E2852AE7367B00F864B0 /* logoFundacion.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

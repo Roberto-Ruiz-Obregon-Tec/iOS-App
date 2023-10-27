@@ -31,8 +31,8 @@ class LoginRepository: LoginAPIProtocol {
                 
                 // Verifica la respuesta HTTP
                 if let httpResponse = response as? HTTPURLResponse {
-                    // Comprueba si la respuesta es un HTTP 201 (éxito)
-                    if httpResponse.statusCode == 201 {
+                    // Comprueba si la respuesta es un HTTP 200 a 299 (éxito)
+                    if (200...299).contains(httpResponse.statusCode) {
                         // Intenta analizar la respuesta del servidor como JSON
                         if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                             // Verifica el estado en la respuesta JSON

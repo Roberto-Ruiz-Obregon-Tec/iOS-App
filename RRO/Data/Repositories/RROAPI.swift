@@ -10,7 +10,7 @@ import Foundation
 struct API {
     // TODO: Change the url with the deployed domain, private ip used for testing
         //IP DEL PAXI
-    static let base = "http://192.168.1.82:3000/v1"
+    static let base = "http://169.254.56.31:3000/v1"
     
     struct routes {
         // TODO: Map all the routes
