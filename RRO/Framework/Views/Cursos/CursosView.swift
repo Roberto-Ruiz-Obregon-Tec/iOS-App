@@ -9,7 +9,16 @@ import Foundation
 import SwiftUI
 
 struct CursosView: View {
-    var body: some View{
-        Text("Aqui van los CURSOS")
+    @State private var searchTerm = ""
+    
+    var body: some View {
+        Text("Cursos")
+        NavigationStack{
+            List{ //Aqui se agregaran las Cursos
+                
+            }
+            .navigationTitle("Cursos")
+            .searchable(text: $searchTerm, prompt: "Search")
+        }
     }
 }

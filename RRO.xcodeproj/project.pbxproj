@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4871A8AB2AEA1331009280D4 /* CertificationAvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871A8AA2AEA1331009280D4 /* CertificationAvView.swift */; };
-		4871A8AD2AEA172C009280D4 /* CertificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871A8AC2AEA172C009280D4 /* CertificationView.swift */; };
+		4871A8AB2AEA1331009280D4 /* CertificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871A8AA2AEA1331009280D4 /* CertificationView.swift */; };
 		4896D4A92AEB2BB80036692C /* ProgramsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896D4A82AEB2BB80036692C /* ProgramsView.swift */; };
 		4896D4AB2AEB2BC50036692C /* BecasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896D4AA2AEB2BC50036692C /* BecasView.swift */; };
 		4896D4AD2AEB2BD50036692C /* CursosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896D4AC2AEB2BD50036692C /* CursosView.swift */; };
@@ -62,8 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4871A8AA2AEA1331009280D4 /* CertificationAvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationAvView.swift; sourceTree = "<group>"; };
-		4871A8AC2AEA172C009280D4 /* CertificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationView.swift; sourceTree = "<group>"; };
+		4871A8AA2AEA1331009280D4 /* CertificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationView.swift; sourceTree = "<group>"; };
 		4896D4A82AEB2BB80036692C /* ProgramsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsView.swift; sourceTree = "<group>"; };
 		4896D4AA2AEB2BC50036692C /* BecasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BecasView.swift; sourceTree = "<group>"; };
 		4896D4AC2AEB2BD50036692C /* CursosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursosView.swift; sourceTree = "<group>"; };
@@ -130,8 +128,7 @@
 		4871A8A92AEA12E2009280D4 /* Certifications */ = {
 			isa = PBXGroup;
 			children = (
-				4871A8AA2AEA1331009280D4 /* CertificationAvView.swift */,
-				4871A8AC2AEA172C009280D4 /* CertificationView.swift */,
+				4871A8AA2AEA1331009280D4 /* CertificationView.swift */,
 			);
 			path = Certifications;
 			sourceTree = "<group>";
@@ -488,14 +485,13 @@
 				9D7F81432AE2D4E6002FA1E0 /* DummyViewModel.swift in Sources */,
 				9D7F813D2AE2D46B002FA1E0 /* DummyLocalService.swift in Sources */,
 				4896D4AB2AEB2BC50036692C /* BecasView.swift in Sources */,
-				4871A8AB2AEA1331009280D4 /* CertificationAvView.swift in Sources */,
+				4871A8AB2AEA1331009280D4 /* CertificationView.swift in Sources */,
 				EEAA9D412AE2E2D900282A82 /* ImagePicker.swift in Sources */,
 				9D7F810B2AE2D2D7002FA1E0 /* ContentView.swift in Sources */,
 				EEAA9D582AE2E45B00282A82 /* FAQView.swift in Sources */,
 				9D7F81362AE2D3A6002FA1E0 /* DummyRepository.swift in Sources */,
 				EEAA9D542AE2E40000282A82 /* ProfileDetailView.swift in Sources */,
 				EEAA9D492AE2E35900282A82 /* RestoreView.swift in Sources */,
-				4871A8AD2AEA172C009280D4 /* CertificationView.swift in Sources */,
 				EEAA9D502AE2E3CE00282A82 /* CourseDetailView.swift in Sources */,
 				9D7F81092AE2D2D7002FA1E0 /* RROApp.swift in Sources */,
 				EEAA9D472AE2E34300282A82 /* LoginView.swift in Sources */,

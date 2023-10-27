@@ -5,20 +5,20 @@
 //  Created by sebastian Jimenez Bauer on 26/10/23.
 //
 
-import Foundation
 import SwiftUI
 
-struct ProgramsView: View {
+struct CertificationView: View {
     @State private var searchTerm = ""
     
     var body: some View {
-        Text("Programas")
+        Text("Certifications")
         NavigationStack{
-            List{ //Aqui se agregaran las Programas
+            List{ //Aqui se agregaran las certificaciones
                 
             }
-            .navigationTitle("Programas")
+            .navigationTitle("Certifications")
             .searchable(text: $searchTerm, prompt: "Search")
         }
     }
 }
+

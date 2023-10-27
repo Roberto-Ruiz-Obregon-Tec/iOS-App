@@ -2,6 +2,7 @@ import SwiftUI
 
 struct InicioView: View {
     @State var currentTab: Int = 0
+    @State private var searchText = ""
     
     var body: some View {
         ZStack(alignment: .top){
@@ -19,13 +20,15 @@ struct InicioView: View {
     }
 }
 
+
+
 struct TabBarView: View {
     var tabVarList:[String] = ["Cursos", "Becas","Programas" ,"Certificaciónes"]
     @Binding var currentTab : Int
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){
-            HStack(spacing: 8){
+            HStack(spacing: 10){
                 ForEach(Array(zip(self.tabVarList.indices, self.tabVarList)),id: \.0) { index, name in
                     TabBarItem(tabBarItemName: name, currentTab: self.$currentTab, Tab: index)
                 }
@@ -51,13 +54,12 @@ struct TabBarItem: View {
             Text(tabBarItemName)
                 .lineLimit(1)
                 .bold(true)
-                .padding(.horizontal, 20)
-                .padding(.vertical, 8)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
                 .foregroundColor(self.currentTab == Tab ? .white : .black.opacity(0.7))
-                .background(Capsule().fill(self.currentTab == Tab ? Color.red : Color.white).overlay(Capsule().stroke(Color.gray.opacity(0.2), lineWidth: 2)))
-                .buttonStyle(PlainButtonStyle())
-        }
-    }
+                .background(RoundedRectangle(cornerRadius: 8).fill(self.currentTab == Tab ? Color.red : Color.white).overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray.opacity(0.2), lineWidth: 1.5)))
+                .buttonStyle(.borderedProminent)
+        }}
 }
 
 
