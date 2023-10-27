@@ -40,26 +40,28 @@ struct ProgramInfoCardView: View {
             HStack {
                 Text(description)
                     .foregroundStyle(.secondary)
+                    .fontWeight(.medium)
+                
                 Spacer()
-            }.padding(.bottom, 8)
+            }.padding(.bottom, 12)
             
             HStack {
-                Text("Fecha limite")
-                    .font(.title3)
+                Text("Fecha límite")
+                    .foregroundStyle(.secondary)
                 
                 Spacer()
                 
                 Text(limitDate, format: .dateTime.day().month())
-            }.padding(.bottom, 8)
+            }.padding(.bottom, 2)
             
             Divider()
             
             HStack {
                 Text("Categoría")
-                    .font(.title3)
+                    .foregroundStyle(.secondary)
                 Spacer()
                 Text(category)
-            }.padding(.bottom, 8)
+            }.padding(.bottom, 12)
             
             Button {
                 goDetail()
@@ -67,18 +69,22 @@ struct ProgramInfoCardView: View {
                 Text("Ver más")
                     .font(.headline)
                     .frame(maxWidth: .infinity)
+                    .padding(4)
             }
             .buttonStyle(.borderedProminent)
             .tint(.red)
             .foregroundStyle(Color.white)
         }
         .padding()
-        
-        
-        
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color(UIColor.systemGray4), lineWidth: 1.5)
+            )
+        .padding(10)
     }
 }
 
 #Preview {
-    ProgramInfoCardView(name: "Titulo", image: "", description: "Karla", limitDate: Date.now, category: "Creativa", goDetail: {})
+    ProgramInfoCardView(name: "Programa", image: "", description: "Este programa es muy bueno, deberías de inscribirte y probarlo.", limitDate: 
+Date.now, category: "Creativa", goDetail: {})
 }
