@@ -41,12 +41,14 @@ struct LoginView: View {
     }
 }
 
-#Preview {
-    LoginView{
-        ()
-    } goRegister: {
-        ()
-    } goRestore: {
-        ()
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView {
+            ()
+        } goRegister: {
+            ()
+        } goRestore: {
+            ()
+        }
     }
 }

@@ -19,7 +19,8 @@ struct RestoreView: View {
     }
 }
 
-#Preview {
-    RestoreView{()}
+struct RestoreView_Previews: PreviewProvider {
+    static var previews: some View {
+        RestoreView{()}
+    }
 }
-

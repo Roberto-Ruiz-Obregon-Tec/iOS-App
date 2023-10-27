@@ -26,7 +26,8 @@ struct ProfileDetailView: View {
     }
 }
 
-#Preview {
-    ProfileDetailView()
+struct ProfileDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileDetailView()
+    }
 }
-

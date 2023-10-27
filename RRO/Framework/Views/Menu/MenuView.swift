@@ -11,7 +11,7 @@ struct MenuView: View {
     let goLogin: () -> Void
     var body: some View {
         TabView {
-            CourseView().tabItem {
+            InicioView().tabItem {
                 Image(systemName: "house")
                 Text("Inicio")
             }
@@ -31,7 +31,8 @@ struct MenuView: View {
     }
 }
 
-#Preview {
-    MenuView{()}
+struct MenuView_Previews: PreviewProvider {
+    static var previews: some View {
+        MenuView{()}
+    }
 }
-

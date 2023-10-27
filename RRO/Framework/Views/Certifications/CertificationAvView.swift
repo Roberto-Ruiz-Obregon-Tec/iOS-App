@@ -1,13 +1,12 @@
 //
-//  CourseView.swift
+//  CertificationAvView.swift
 //  RRO
 //
-//  Created by peblo on 20/10/23.
+//  Created by sebastian Jimenez Bauer on 25/10/23.
 //
-
 import SwiftUI
 
-struct CourseView: View {
+struct CertificationAvView: View {
     var body: some View {
         NavigationView {
             // TODO: This VStack should be a List in the future
@@ -33,6 +32,9 @@ struct CourseView: View {
     }
 }
 
-#Preview {
-    CourseView()
+struct CertificationAvView_Previews: PreviewProvider {
+    static var previews: some View {
+        CertificationAvView()
+    }
 }
+
