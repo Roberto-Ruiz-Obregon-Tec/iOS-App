@@ -11,15 +11,18 @@ struct SigninView: View {
     let goMenu: () -> Void
     
     var body: some View {
-        Text("Regístrate")
-            .font(.title)
-        Button {
-            goMenu()
-        } label: {
-            Text("Crear usuario")
+        
+        VStack {
+            
+            Text("Regístrate")
+                .font(.title)
+            Button {
+                goMenu()
+            } label: {
+                Text("Crear usuario")
+            }
+            
         }
-        
-        
         
     }
 }
