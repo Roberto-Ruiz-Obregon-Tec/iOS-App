@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88A8804B2AF002F9009BC8EF /* ProgramDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8804A2AF002F9009BC8EF /* ProgramDetailView.swift */; };
 		88BDDD952AEAEF8500978F31 /* ProgramInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */; };
 		88BDDD972AEAF23C00978F31 /* ProgramListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD962AEAF23C00978F31 /* ProgramListView.swift */; };
 		88BDDD992AEAF72400978F31 /* ProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88A8804A2AF002F9009BC8EF /* ProgramDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailView.swift; sourceTree = "<group>"; };
 		88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramInfoCardView.swift; sourceTree = "<group>"; };
 		88BDDD962AEAF23C00978F31 /* ProgramListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramListView.swift; sourceTree = "<group>"; };
 		88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewModel.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				EEAA9D532AE2E40000282A82 /* ProfileDetailView.swift */,
 				EEAA9D552AE2E42E00282A82 /* VoucherSheetView.swift */,
 				EE5E70B72AE702B500EA2160 /* ScholarshipDetailView.swift */,
+				88A8804A2AF002F9009BC8EF /* ProgramDetailView.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				88BDDD9D2AEAF9C100978F31 /* ServerResponseModel.swift in Sources */,
 				EEAA9D502AE2E3CE00282A82 /* CourseDetailView.swift in Sources */,
 				9D7F81092AE2D2D7002FA1E0 /* RROApp.swift in Sources */,
+				88A8804B2AF002F9009BC8EF /* ProgramDetailView.swift in Sources */,
 				88BDDD9B2AEAF7A900978F31 /* ProgramModel.swift in Sources */,
 				88BDDD992AEAF72400978F31 /* ProgramViewModel.swift in Sources */,
 				EEDD93FE2AE974A20066AD71 /* ScholarshipsView.swift in Sources */,

@@ -9,82 +9,77 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct ProgramInfoCardView: View {
-    let name: String
-    let image: String
-    let description: String
-    let limitDate: Date
-    let category: String
-    let goDetail: () -> Void
-    
+    let program: Program
     var body: some View {
-        VStack {
-            if image != "" {
-                WebImage(url: URL(string: image))
-                    .resizable()
-                    .cornerRadius(16)
-                    .scaledToFit()
-            } else {
-                Image("DefaultImage")
-                    .resizable()
-                    .cornerRadius(16)
-                    .scaledToFit()
+        NavigationStack {
+            VStack {
+                if program.programImage != "" {
+                    WebImage(url: URL(string: program.programImage))
+                        .resizable()
+                        .cornerRadius(16)
+                        .scaledToFit()
+                } else {
+                    Image("DefaultImage")
+                        .resizable()
+                        .cornerRadius(16)
+                        .scaledToFit()
+                }
+                
+                HStack {
+                    Text(program.name)
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Spacer()
+                }.padding(.bottom, 8)
+                
+                HStack {
+                    Text(program.description)
+                        .foregroundStyle(.secondary)
+                        .fontWeight(.medium)
+                    
+                    Spacer()
+                }.padding(.bottom, 12)
+                
+                HStack {
+                    Text("Fecha límite")
+                        .foregroundStyle(.secondary)
+                    
+                    Spacer()
+                    
+                    Text(program.deadlineDate, format: .dateTime.day().month())
+                }.padding(.bottom, 2)
+                
+                Divider()
+                
+                HStack {
+                    Text("Categoría")
+                        .foregroundStyle(.secondary)
+                    Spacer()
+                    Text(program.category)
+                }.padding(.bottom, 12)
+                
+                NavigationLink {
+                    ProgramDetailView(program: program)
+                } label: {
+                    Text("Ver más")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding(4)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.red)
+                .foregroundStyle(Color.white)
             }
-            
-            HStack {
-                Text(name)
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
-            }.padding(.bottom, 8)
-            
-            HStack {
-                Text(description)
-                    .foregroundStyle(.secondary)
-                    .fontWeight(.medium)
-                
-                Spacer()
-            }.padding(.bottom, 12)
-            
-            HStack {
-                Text("Fecha límite")
-                    .foregroundStyle(.secondary)
-                
-                Spacer()
-                
-                Text(limitDate, format: .dateTime.day().month())
-            }.padding(.bottom, 2)
-            
-            Divider()
-            
-            HStack {
-                Text("Categoría")
-                    .foregroundStyle(.secondary)
-                Spacer()
-                Text(category)
-            }.padding(.bottom, 12)
-            
-            Button {
-                goDetail()
-            } label: {
-                Text("Ver más")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding(4)
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(.red)
-            .foregroundStyle(Color.white)
-        }
-        .padding()
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(Color(UIColor.systemGray4), lineWidth: 1.5)
+            .padding()
+            .overlay(
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(Color(UIColor.systemGray4), lineWidth: 1.5)
             )
-        .padding(10)
+            .padding(10)
+        }
     }
 }
 
 #Preview {
-    ProgramInfoCardView(name: "Programa", image: "", description: "Este programa es muy bueno, deberías de inscribirte y probarlo.", limitDate: 
-Date.now, category: "Creativa", goDetail: {})
+    ProgramInfoCardView(program: Program(id: UUID().uuidString, name: "Karla", startDate: Date.now, category: "Studio F", endDate: Date.now, deadlineDate: Date.now, programImage: "", postalCode: 123, description: "Karla la maravilla"))
 }

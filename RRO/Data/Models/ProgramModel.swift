@@ -11,6 +11,7 @@ struct Program: Codable, Identifiable {
     var id: String
     var name: String
     var startDate: Date
+    var category: String
     var endDate: Date
     var deadlineDate: Date
     var programImage: String

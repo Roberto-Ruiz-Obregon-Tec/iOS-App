@@ -11,11 +11,12 @@ struct ProgramListView: View {
     @StateObject var programViewModel = ProgramViewModel()
     
     var body: some View {
-        ScrollView {
-            ForEach(programViewModel.programList) {program in
-                ProgramInfoCardView(name: program.name, image: program.programImage, description: program.description, limitDate: program.deadlineDate, category: "", goDetail: {})
+        NavigationStack {
+            ScrollView {
+                ForEach(programViewModel.programList) {program in
+                    ProgramInfoCardView(program: program)
+                }
             }
-        
         }
         .padding(.horizontal)
         .onAppear {
@@ -26,6 +27,23 @@ struct ProgramListView: View {
     }
 }
 
-#Preview {
-    ProgramListView()
+struct ProgramListViewPreviews: PreviewProvider {
+    static var previews: some View {
+        ProgramListView (programViewModel: getViewModel())
+    }
+    
+    /// If there is no backend the preview will generate this ammount of card elements
+    static var elems = 10
+    static func getViewModel() -> ProgramViewModel {
+        let vm = ProgramViewModel()
+        for _ in 1...elems {
+            vm.programList.append(
+                Program(id: UUID().uuidString, name: "", startDate: Date.now, category: "", endDate: Date.now, deadlineDate: Date.now, programImage: "", postalCode: 123, description: "")
+            )
+        }
+        
+        return vm
+    }
 }
+
+
