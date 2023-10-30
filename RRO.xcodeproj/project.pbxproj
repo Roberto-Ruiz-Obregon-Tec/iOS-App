@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4730B8792AE9D03800337D05 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730B8782AE9D03800337D05 /* LoginModel.swift */; };
+		4777A67B2AEA348C00FB4388 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777A67A2AEA348C00FB4388 /* LoginRepository.swift */; };
+		47A333462AE890EB008D2448 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A333452AE890EB008D2448 /* LoginViewModel.swift */; };
 		88BDDD952AEAEF8500978F31 /* ProgramInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */; };
 		88BDDD972AEAF23C00978F31 /* ProgramListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD962AEAF23C00978F31 /* ProgramListView.swift */; };
 		88BDDD992AEAF72400978F31 /* ProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */; };
@@ -14,9 +17,6 @@
 		88BDDD9D2AEAF9C100978F31 /* ServerResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD9C2AEAF9C100978F31 /* ServerResponseModel.swift */; };
 		88BDDD9F2AEB075100978F31 /* ProgramRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD9E2AEB075100978F31 /* ProgramRepository.swift */; };
 		88BDDDA12AEB0E8C00978F31 /* ProgramListRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDDA02AEB0E8C00978F31 /* ProgramListRequirement.swift */; };
-		4730B8792AE9D03800337D05 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730B8782AE9D03800337D05 /* LoginModel.swift */; };
-		4777A67B2AEA348C00FB4388 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777A67A2AEA348C00FB4388 /* LoginRepository.swift */; };
-		47A333462AE890EB008D2448 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A333452AE890EB008D2448 /* LoginViewModel.swift */; };
 		9D7F81092AE2D2D7002FA1E0 /* RROApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81082AE2D2D7002FA1E0 /* RROApp.swift */; };
 		9D7F810D2AE2D2DB002FA1E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F810C2AE2D2DB002FA1E0 /* Assets.xcassets */; };
 		9D7F81102AE2D2DB002FA1E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F810F2AE2D2DB002FA1E0 /* Preview Assets.xcassets */; };
@@ -50,6 +50,13 @@
 		EEDD93F82AE8E9450066AD71 /* RROAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93F72AE8E9450066AD71 /* RROAPI.swift */; };
 		EEDD93FC2AE966330066AD71 /* ScholarshipListRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93FB2AE966320066AD71 /* ScholarshipListRequirement.swift */; };
 		EEDD93FE2AE974A20066AD71 /* ScholarshipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93FD2AE974A20066AD71 /* ScholarshipsView.swift */; };
+		F64162BC2AF005B100B25E0E /* EventInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64162BB2AF005B100B25E0E /* EventInfoCardView.swift */; };
+		F64162BE2AF00A8000B25E0E /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64162BD2AF00A7F00B25E0E /* EventViewModel.swift */; };
+		F64162C12AF00B0400B25E0E /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64162C02AF00B0400B25E0E /* EventRepository.swift */; };
+		F64162C32AF00B6600B25E0E /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64162C22AF00B6600B25E0E /* EventModel.swift */; };
+		F64162C52AF00BCD00B25E0E /* EventRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64162C42AF00BCD00B25E0E /* EventRequirement.swift */; };
+		F64162C72AF00CB000B25E0E /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64162C62AF00CB000B25E0E /* EventListView.swift */; };
+		F64162C92AF0121200B25E0E /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64162C82AF0121200B25E0E /* EventDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +77,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4730B8782AE9D03800337D05 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		4777A67A2AEA348C00FB4388 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		47A333452AE890EB008D2448 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramInfoCardView.swift; sourceTree = "<group>"; };
 		88BDDD962AEAF23C00978F31 /* ProgramListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramListView.swift; sourceTree = "<group>"; };
 		88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewModel.swift; sourceTree = "<group>"; };
@@ -77,9 +87,6 @@
 		88BDDD9C2AEAF9C100978F31 /* ServerResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseModel.swift; sourceTree = "<group>"; };
 		88BDDD9E2AEB075100978F31 /* ProgramRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramRepository.swift; sourceTree = "<group>"; };
 		88BDDDA02AEB0E8C00978F31 /* ProgramListRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramListRequirement.swift; sourceTree = "<group>"; };
-		4730B8782AE9D03800337D05 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		4777A67A2AEA348C00FB4388 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
-		47A333452AE890EB008D2448 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9D7F81052AE2D2D7002FA1E0 /* RRO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7F81082AE2D2D7002FA1E0 /* RROApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RROApp.swift; sourceTree = "<group>"; };
 		9D7F810C2AE2D2DB002FA1E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +120,13 @@
 		EEDD93F72AE8E9450066AD71 /* RROAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RROAPI.swift; sourceTree = "<group>"; };
 		EEDD93FB2AE966320066AD71 /* ScholarshipListRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipListRequirement.swift; sourceTree = "<group>"; };
 		EEDD93FD2AE974A20066AD71 /* ScholarshipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipsView.swift; sourceTree = "<group>"; };
+		F64162BB2AF005B100B25E0E /* EventInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoCardView.swift; sourceTree = "<group>"; };
+		F64162BD2AF00A7F00B25E0E /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		F64162C02AF00B0400B25E0E /* EventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepository.swift; sourceTree = "<group>"; };
+		F64162C22AF00B6600B25E0E /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		F64162C42AF00BCD00B25E0E /* EventRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRequirement.swift; sourceTree = "<group>"; };
+		F64162C62AF00CB000B25E0E /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
+		F64162C82AF0121200B25E0E /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */,
+				F64162BB2AF005B100B25E0E /* EventInfoCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -225,6 +240,7 @@
 				EEDD93F32AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift */,
 				88BDDDA02AEB0E8C00978F31 /* ProgramListRequirement.swift */,
 				EEDD93FB2AE966320066AD71 /* ScholarshipListRequirement.swift */,
+				F64162C42AF00BCD00B25E0E /* EventRequirement.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -246,6 +262,7 @@
 				88BDDD9A2AEAF7A900978F31 /* ProgramModel.swift */,
 				88BDDD9C2AEAF9C100978F31 /* ServerResponseModel.swift */,
 				4730B8782AE9D03800337D05 /* LoginModel.swift */,
+				F64162C22AF00B6600B25E0E /* EventModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +288,7 @@
 			children = (
 				EE0BF5522AE80C8200844E68 /* ScholarshipViewModel.swift */,
 				88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */,
+				F64162BD2AF00A7F00B25E0E /* EventViewModel.swift */,
 				47A333452AE890EB008D2448 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
@@ -316,6 +334,7 @@
 				EEDD93FD2AE974A20066AD71 /* ScholarshipsView.swift */,
 				EEAA9D5D2AE2E4B700282A82 /* ProfileView.swift */,
 				88BDDD962AEAF23C00978F31 /* ProgramListView.swift */,
+				F64162C62AF00CB000B25E0E /* EventListView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -328,6 +347,7 @@
 				EEAA9D532AE2E40000282A82 /* ProfileDetailView.swift */,
 				EEAA9D552AE2E42E00282A82 /* VoucherSheetView.swift */,
 				EE5E70B72AE702B500EA2160 /* ScholarshipDetailView.swift */,
+				F64162C82AF0121200B25E0E /* EventDetailView.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -339,6 +359,7 @@
 				EEDD93F52AE8E8BC0066AD71 /* ScholarshipRepository.swift */,
 				88BDDD9E2AEB075100978F31 /* ProgramRepository.swift */,
 				4777A67A2AEA348C00FB4388 /* LoginRepository.swift */,
+				F64162C02AF00B0400B25E0E /* EventRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -501,17 +522,23 @@
 				EEAA9D562AE2E42E00282A82 /* VoucherSheetView.swift in Sources */,
 				EEAA9D522AE2E3EF00282A82 /* PaymentSheetView.swift in Sources */,
 				EEAA9D4B2AE2E36300282A82 /* SigninView.swift in Sources */,
+				F64162C72AF00CB000B25E0E /* EventListView.swift in Sources */,
 				EEAA9D5C2AE2E49600282A82 /* MenuView.swift in Sources */,
 				9D7F813D2AE2D46B002FA1E0 /* DummyLocalService.swift in Sources */,
+				F64162BE2AF00A8000B25E0E /* EventViewModel.swift in Sources */,
 				EEDD93F62AE8E8BC0066AD71 /* ScholarshipRepository.swift in Sources */,
 				EEAA9D412AE2E2D900282A82 /* ImagePicker.swift in Sources */,
 				EEDD93F42AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift in Sources */,
 				EEAA9D582AE2E45B00282A82 /* FAQView.swift in Sources */,
 				EE5E70B82AE702B600EA2160 /* ScholarshipDetailView.swift in Sources */,
 				EE0BF5552AE80CF000844E68 /* ScholarshipModel.swift in Sources */,
+				F64162BC2AF005B100B25E0E /* EventInfoCardView.swift in Sources */,
+				F64162C92AF0121200B25E0E /* EventDetailView.swift in Sources */,
 				EEAA9D542AE2E40000282A82 /* ProfileDetailView.swift in Sources */,
+				F64162C52AF00BCD00B25E0E /* EventRequirement.swift in Sources */,
 				88BDDD9F2AEB075100978F31 /* ProgramRepository.swift in Sources */,
 				4777A67B2AEA348C00FB4388 /* LoginRepository.swift in Sources */,
+				F64162C12AF00B0400B25E0E /* EventRepository.swift in Sources */,
 				EEAA9D492AE2E35900282A82 /* RestoreView.swift in Sources */,
 				EE0BF5532AE80C8200844E68 /* ScholarshipViewModel.swift in Sources */,
 				88BDDD9D2AEAF9C100978F31 /* ServerResponseModel.swift in Sources */,
@@ -523,6 +550,7 @@
 				4730B8792AE9D03800337D05 /* LoginModel.swift in Sources */,
 				EEAA9D472AE2E34300282A82 /* LoginView.swift in Sources */,
 				EEAA9D5E2AE2E4B800282A82 /* ProfileView.swift in Sources */,
+				F64162C32AF00B6600B25E0E /* EventModel.swift in Sources */,
 				88BDDDA12AEB0E8C00978F31 /* ProgramListRequirement.swift in Sources */,
 				EEDD93F82AE8E9450066AD71 /* RROAPI.swift in Sources */,
 				9D7F813B2AE2D422002FA1E0 /* NetworkAPIService.swift in Sources */,
