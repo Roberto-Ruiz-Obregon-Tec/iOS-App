@@ -38,3 +38,10 @@ protocol ProgramAPIProtocol {
     func getProgram(id: String) async -> Program?
 }
 
+protocol CourseAPIProtocol {
+    // https://{API_DOMAIN}/v1/program?limit={Int}&offset={Int}
+    func getCourseList(limit: Int, offset: Int) async -> ServerResponse<[Course]>?
+    // https://{API_DOMAIN}/v1/program/{id}
+    func getCourse(id: String) async -> Course?
+}
+

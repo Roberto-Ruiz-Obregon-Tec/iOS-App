@@ -22,6 +22,11 @@
 		9D7F81262AE2D2DC002FA1E0 /* RROUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81252AE2D2DC002FA1E0 /* RROUITestsLaunchTests.swift */; };
 		9D7F813B2AE2D422002FA1E0 /* NetworkAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F813A2AE2D422002FA1E0 /* NetworkAPIService.swift */; };
 		9D7F813D2AE2D46B002FA1E0 /* DummyLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F813C2AE2D46B002FA1E0 /* DummyLocalService.swift */; };
+		AA16DD972AEEFD6C00688D0B /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16DD962AEEFD6C00688D0B /* CourseModel.swift */; };
+		AA16DD9B2AEF02D600688D0B /* CourseInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16DD9A2AEF02D600688D0B /* CourseInfoCardView.swift */; };
+		AA16DD9D2AEF09B600688D0B /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16DD9C2AEF09B600688D0B /* CourseViewModel.swift */; };
+		AA16DD9F2AEF09F700688D0B /* CourseListRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16DD9E2AEF09F700688D0B /* CourseListRequirement.swift */; };
+		AA16DDA12AEF0A1E00688D0B /* CourseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16DDA02AEF0A1E00688D0B /* CourseRepository.swift */; };
 		EE0BF5532AE80C8200844E68 /* ScholarshipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0BF5522AE80C8200844E68 /* ScholarshipViewModel.swift */; };
 		EE0BF5552AE80CF000844E68 /* ScholarshipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0BF5542AE80CF000844E68 /* ScholarshipModel.swift */; };
 		EE5E70B82AE702B600EA2160 /* ScholarshipDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E70B72AE702B500EA2160 /* ScholarshipDetailView.swift */; };
@@ -85,6 +90,11 @@
 		9D7F81252AE2D2DC002FA1E0 /* RROUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RROUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9D7F813A2AE2D422002FA1E0 /* NetworkAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIService.swift; sourceTree = "<group>"; };
 		9D7F813C2AE2D46B002FA1E0 /* DummyLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyLocalService.swift; sourceTree = "<group>"; };
+		AA16DD962AEEFD6C00688D0B /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
+		AA16DD9A2AEF02D600688D0B /* CourseInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoCardView.swift; sourceTree = "<group>"; };
+		AA16DD9C2AEF09B600688D0B /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
+		AA16DD9E2AEF09F700688D0B /* CourseListRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListRequirement.swift; sourceTree = "<group>"; };
+		AA16DDA02AEF0A1E00688D0B /* CourseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRepository.swift; sourceTree = "<group>"; };
 		EE0BF5522AE80C8200844E68 /* ScholarshipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipViewModel.swift; sourceTree = "<group>"; };
 		EE0BF5542AE80CF000844E68 /* ScholarshipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipModel.swift; sourceTree = "<group>"; };
 		EE5E70B72AE702B500EA2160 /* ScholarshipDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipDetailView.swift; sourceTree = "<group>"; };
@@ -141,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */,
+				AA16DD9A2AEF02D600688D0B /* CourseInfoCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -219,6 +230,7 @@
 				EEDD93F32AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift */,
 				88BDDDA02AEB0E8C00978F31 /* ProgramListRequirement.swift */,
 				EEDD93FB2AE966320066AD71 /* ScholarshipListRequirement.swift */,
+				AA16DD9E2AEF09F700688D0B /* CourseListRequirement.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -237,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				EE0BF5542AE80CF000844E68 /* ScholarshipModel.swift */,
+				AA16DD962AEEFD6C00688D0B /* CourseModel.swift */,
 				88BDDD9A2AEAF7A900978F31 /* ProgramModel.swift */,
 				88BDDD9C2AEAF9C100978F31 /* ServerResponseModel.swift */,
 			);
@@ -264,6 +277,7 @@
 			children = (
 				EE0BF5522AE80C8200844E68 /* ScholarshipViewModel.swift */,
 				88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */,
+				AA16DD9C2AEF09B600688D0B /* CourseViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -330,6 +344,7 @@
 				EEDD93F72AE8E9450066AD71 /* RROAPI.swift */,
 				EEDD93F52AE8E8BC0066AD71 /* ScholarshipRepository.swift */,
 				88BDDD9E2AEB075100978F31 /* ProgramRepository.swift */,
+				AA16DDA02AEF0A1E00688D0B /* CourseRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -483,6 +498,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA16DD9B2AEF02D600688D0B /* CourseInfoCardView.swift in Sources */,
+				AA16DD972AEEFD6C00688D0B /* CourseModel.swift in Sources */,
 				EEDD93FC2AE966330066AD71 /* ScholarshipListRequirement.swift in Sources */,
 				EEAA9D5A2AE2E48000282A82 /* FeedView.swift in Sources */,
 				EEAA9D4E2AE2E3AD00282A82 /* CoursesView.swift in Sources */,
@@ -510,9 +527,12 @@
 				88BDDD992AEAF72400978F31 /* ProgramViewModel.swift in Sources */,
 				EEDD93FE2AE974A20066AD71 /* ScholarshipsView.swift in Sources */,
 				EEAA9D472AE2E34300282A82 /* LoginView.swift in Sources */,
+				AA16DD9F2AEF09F700688D0B /* CourseListRequirement.swift in Sources */,
 				EEAA9D5E2AE2E4B800282A82 /* ProfileView.swift in Sources */,
+				AA16DDA12AEF0A1E00688D0B /* CourseRepository.swift in Sources */,
 				88BDDDA12AEB0E8C00978F31 /* ProgramListRequirement.swift in Sources */,
 				EEDD93F82AE8E9450066AD71 /* RROAPI.swift in Sources */,
+				AA16DD9D2AEF09B600688D0B /* CourseViewModel.swift in Sources */,
 				9D7F813B2AE2D422002FA1E0 /* NetworkAPIService.swift in Sources */,
 				88BDDD972AEAF23C00978F31 /* ProgramListView.swift in Sources */,
 			);
@@ -677,7 +697,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RRO/Preview Content\"";
-				DEVELOPMENT_TEAM = QPA9Z37FK4;
+				DEVELOPMENT_TEAM = YKRP485BCC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -707,7 +727,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RRO/Preview Content\"";
-				DEVELOPMENT_TEAM = QPA9Z37FK4;
+				DEVELOPMENT_TEAM = YKRP485BCC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

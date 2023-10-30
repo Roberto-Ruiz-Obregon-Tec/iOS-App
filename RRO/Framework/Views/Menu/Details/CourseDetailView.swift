@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CourseDetailView: View {
+    var course: Course
     var body: some View {
         NavigationStack {
             VStack {
@@ -25,6 +26,3 @@ struct CourseDetailView: View {
     }
 }
 
-#Preview {
-    CourseDetailView()
-}
