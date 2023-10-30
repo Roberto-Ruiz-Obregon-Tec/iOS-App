@@ -64,6 +64,8 @@ struct VoucherSheetView: View {
     }
 }
 
-#Preview {
-    VoucherSheetView()
+struct VoucherSheetView_Previews: PreviewProvider {
+    static var previews: some View {
+        VoucherSheetView()
+    }
 }

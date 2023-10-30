@@ -26,6 +26,8 @@ struct PaymentSheetView: View {
     }
 }
 
-#Preview {
-    PaymentSheetView()
+struct PaymentSheetView_Previews: PreviewProvider {
+    static var previews: some View {
+        PaymentSheetView()
+    }
 }

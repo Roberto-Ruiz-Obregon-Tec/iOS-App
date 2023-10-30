@@ -13,6 +13,8 @@ struct FAQView: View {
     }
 }
 
-#Preview {
-    FAQView()
+struct FAQView_Previews: PreviewProvider {
+    static var previews: some View {
+        FAQView()
+    }
 }
