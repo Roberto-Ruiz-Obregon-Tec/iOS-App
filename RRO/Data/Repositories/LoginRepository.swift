@@ -42,7 +42,7 @@ class LoginRepository: LoginAPIProtocol {
                                     // Intenta obtener el ID del usuario desde la respuesta
                                     if let data = json["data"] as? [String: Any],
                                        let user = data["user"] as? [String: Any],
-                                       let id = user["_id"] as? String {
+                                       let id = user["id"] as? String {
                                         print("El ID del usuario es:", id)
                                         // Maneja el ID según tus necesidades
                                         return .success(id)
