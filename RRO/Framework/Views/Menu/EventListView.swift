@@ -38,7 +38,7 @@ struct EventListViewPreviews: PreviewProvider {
         let vm = EventViewModel()
         for _ in 1...elems {
             vm.eventList.append(
-                Event(id: UUID().uuidString, name: "Evento", startDate: Date.now, endDate: Date.now, eventImage: "", location: "RRO", description: "Evento")
+                Event(id: UUID().uuidString, eventName: "Evento", description: "Descripción del evento", location: "Centro de Congresos", startDate: Date.now, endDate: Date.now, imageUrl: "")
             )
         }
         return vm

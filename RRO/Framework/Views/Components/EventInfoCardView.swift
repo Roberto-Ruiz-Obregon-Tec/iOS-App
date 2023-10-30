@@ -13,8 +13,8 @@ struct EventInfoCardView: View {
     var body: some View {
         NavigationStack{
             VStack {
-                if event.eventImage != "" {
-                    WebImage(url: URL(string: event.eventImage))
+                if event.imageUrl != "" {
+                    WebImage(url: URL(string: event.imageUrl))
                         .resizable()
                         .cornerRadius(16)
                         .scaledToFit()
@@ -26,7 +26,7 @@ struct EventInfoCardView: View {
                 }
                 
                 HStack {
-                    Text(event.name)
+                    Text(event.eventName)
                         .font(.title)
                         .fontWeight(.bold)
                     Spacer()
@@ -81,5 +81,5 @@ struct EventInfoCardView: View {
 }
 
 #Preview {
-    EventInfoCardView(event: Event(id: UUID().uuidString, name: "Evento", startDate: Date.now, endDate: Date.now, eventImage: "", location: "RRO", description: "Evento"))
+    EventInfoCardView(event: Event(id:UUID().uuidString, eventName: "Evento", description: "Descripción del evento", location: "Centro de Congresos", startDate: Date.now, endDate: Date.now, imageUrl: ""))
 }

@@ -16,6 +16,6 @@ struct EventDetailView: View {
 
 struct EventDetailViewPreviews: PreviewProvider {
     static var previews: some View {
-        EventDetailView(event: Event(id: UUID().uuidString, name: "Evento", startDate: Date.now, endDate: Date.now, eventImage: "", location: "RRO", description: "Evento"))
+        EventDetailView(event: Event(id: UUID().uuidString, eventName: "Evento", description: "Descripción del evento", location: "Centro de Congresos", startDate: Date.now, endDate: Date.now, imageUrl: ""))
     }
 }

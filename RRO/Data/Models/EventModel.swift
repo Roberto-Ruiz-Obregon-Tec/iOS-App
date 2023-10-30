@@ -9,10 +9,16 @@ import Foundation
 
 struct Event: Codable, Identifiable {
     var id: String
-    var name: String
+    var eventName: String
+    var description: String
+    var location: String
     var startDate: Date
     var endDate: Date
-    var eventImage: String
-    var location: String
-    var description: String
+    var imageUrl: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "_id" // Mapea la propiedad 'id' a '_id' en el JSON
+        case eventName, description, location, startDate, endDate, imageUrl
+    }
+
 }
