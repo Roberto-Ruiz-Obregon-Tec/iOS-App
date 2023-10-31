@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		471ED0882AF1AB3F00AD61F7 /* CourseInfoRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471ED0872AF1AB3F00AD61F7 /* CourseInfoRequirement.swift */; };
 		88BDDD952AEAEF8500978F31 /* ProgramInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */; };
 		88BDDD972AEAF23C00978F31 /* ProgramListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD962AEAF23C00978F31 /* ProgramListView.swift */; };
 		88BDDD992AEAF72400978F31 /* ProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		471ED0872AF1AB3F00AD61F7 /* CourseInfoRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoRequirement.swift; sourceTree = "<group>"; };
 		88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramInfoCardView.swift; sourceTree = "<group>"; };
 		88BDDD962AEAF23C00978F31 /* ProgramListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramListView.swift; sourceTree = "<group>"; };
 		88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewModel.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				88BDDDA02AEB0E8C00978F31 /* ProgramListRequirement.swift */,
 				EEDD93FB2AE966320066AD71 /* ScholarshipListRequirement.swift */,
 				AA16DD9E2AEF09F700688D0B /* CourseListRequirement.swift */,
+				471ED0872AF1AB3F00AD61F7 /* CourseInfoRequirement.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				EEDD93FE2AE974A20066AD71 /* ScholarshipsView.swift in Sources */,
 				EEAA9D472AE2E34300282A82 /* LoginView.swift in Sources */,
 				AA16DD9F2AEF09F700688D0B /* CourseListRequirement.swift in Sources */,
+				471ED0882AF1AB3F00AD61F7 /* CourseInfoRequirement.swift in Sources */,
 				EEAA9D5E2AE2E4B800282A82 /* ProfileView.swift in Sources */,
 				AA16DDA12AEF0A1E00688D0B /* CourseRepository.swift in Sources */,
 				88BDDDA12AEB0E8C00978F31 /* ProgramListRequirement.swift in Sources */,

@@ -63,7 +63,3 @@ struct VoucherSheetView: View {
         image = Image(uiImage: inputImage)
     }
 }
-
-#Preview {
-    VoucherSheetView()
-}

@@ -32,13 +32,3 @@ struct Course: Codable, Identifiable { // Encoding y decoding | Para identificar
         case name, description, speaker, startDate, endDate, schedule, modality, postalCode, location, status,  cost, courseImage, capacity, rating, meetingCode, accessCode, focus
     }
 }
-
-//struct getCourseResponse: Codable {
-//    var status: String
-//    var results: Int?
-//    var data: Data
-//    
-//    struct Data: Codable {
-//        var documents: [Course]
-//    }
-//}

@@ -18,8 +18,3 @@ struct RestoreView: View {
         }
     }
 }
-
-#Preview {
-    RestoreView{()}
-}
-

@@ -40,13 +40,3 @@ struct LoginView: View {
         }
     }
 }
-
-#Preview {
-    LoginView{
-        ()
-    } goRegister: {
-        ()
-    } goRestore: {
-        ()
-    }
-}

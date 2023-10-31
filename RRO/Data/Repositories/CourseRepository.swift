@@ -8,26 +8,22 @@
 import Foundation
 
 class CourseRepository: CourseAPIProtocol {
-    
     let netService: NetworkAPIService
     static let shared = CourseRepository()
     
-    init(netService: NetworkAPIService = NetworkAPIService.shared) {
-        self.netService = netService
+    init(netService: NetworkAPIService = NetworkAPIService.shared) { // Singleton
+        self.netService = netService // Inicializamos la instancia shared
     }
     
-    func getCourseList(limit: Int, offset: Int) async -> ServerResponse<[Course]>?{
-        let params = [
-            "limit": limit,
-            "offset": offset
+    func getCourseList() async -> ServerResponse<[Course]>?{
+        let params = [ // Parametros a agregar en el request
+            "cost[gte]": 0
         ]
         
         return await netService.self.get(url: URL(string: "\(API.base)\(API.routes.course)")!, params: params)
-        
     }
     
     func getCourse(id: String) async -> ServerResponse<[Course]>? {
-        return await netService.self.get(url: URL(string: "\(API.base)/\(API.routes.course)/\(id)")!)
-        
+        return await netService.self.get(url: URL(string: "\(API.base)\(API.routes.course)/\(id)")!)
     }
 }

@@ -25,7 +25,3 @@ struct ProgramListView: View {
         }
     }
 }
-
-#Preview {
-    ProgramListView()
-}

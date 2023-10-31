@@ -25,7 +25,3 @@ struct PaymentSheetView: View {
         
     }
 }
-
-#Preview {
-    PaymentSheetView()
-}

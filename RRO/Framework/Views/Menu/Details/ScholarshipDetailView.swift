@@ -156,18 +156,3 @@ struct ScholarshipDetailView: View {
     }
         
 }
-
-#Preview {
-    ScholarshipDetailView(scholarship: Scholarship(
-        id: "",
-        name: "",
-        description: "",
-        organization: "",
-        location: "",
-        email: "",
-        phone: "",
-        image: "",
-        sector: "",
-        startDate: Date.now,
-        endDate: Date.now))
-}

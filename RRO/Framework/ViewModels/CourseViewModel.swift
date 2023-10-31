@@ -18,10 +18,11 @@ class CourseViewModel: ObservableObject {
     
     @MainActor
     func getCourseList() async {
-        let result = await courseListRequirement.getCourseList(limit: 32, offset: 0)
+        let result = await courseListRequirement.getCourseList()
+        
         if let res = result {
             self.courseList = res.data ?? []
-            print("Received course data: \(self.courseList)")
+            print("ModelView: Received course data: \(self.courseList)")
         } else {
             print("Failed to fetch course data")
         }

@@ -12,8 +12,3 @@ struct FeedView: View {
         Text("Feed")
     }
 }
-
-#Preview {
-    FeedView()
-}
-

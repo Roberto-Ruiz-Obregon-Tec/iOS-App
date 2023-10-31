@@ -92,7 +92,3 @@ struct CourseInfoCardView: View {
         }
     }
 }
-#Preview {
-    CourseInfoCardView(course: Course(id:UUID().uuidString, name: "Curso de Escritura", description: "Lleva tus habilidades para crear artesanias al siguiente nivel, aprende a pintar con acuarelas y tecnicas de dibujo.",speaker: "", startDate: Date.now, endDate: Date.now, schedule: "", modality: "Presencial", postalCode: 0, location: "", status: "", cost: 1200, courseImage: "", capacity: 1, rating: 0, meetingCode: "", accessCode: "", focus: [])) // No se especifica el argumento goDetail aquí
-}
-

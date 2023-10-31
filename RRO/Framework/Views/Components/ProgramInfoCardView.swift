@@ -83,8 +83,3 @@ struct ProgramInfoCardView: View {
         .padding(10)
     }
 }
-
-#Preview {
-    ProgramInfoCardView(name: "Programa", image: "", description: "Este programa es muy bueno, deberías de inscribirte y probarlo.", limitDate: 
-Date.now, category: "Creativa", goDetail: {})
-}

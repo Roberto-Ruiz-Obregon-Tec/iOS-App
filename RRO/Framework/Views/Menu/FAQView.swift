@@ -12,7 +12,3 @@ struct FAQView: View {
         Text("Info de RRO supongo")
     }
 }
-
-#Preview {
-    FAQView()
-}

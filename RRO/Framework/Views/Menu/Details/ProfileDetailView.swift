@@ -25,8 +25,3 @@ struct ProfileDetailView: View {
         }
     }
 }
-
-#Preview {
-    ProfileDetailView()
-}
-
