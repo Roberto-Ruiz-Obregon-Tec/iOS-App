@@ -32,10 +32,8 @@ class NetworkAPIService {
                         response in switch response.result {
                         case .success(let data):
                             continuation.resume(returning: data)
-                            
                         case .failure(_):
                             continuation.resume(throwing: NSError())
-                            
                         }
                     }
             }
@@ -60,17 +58,14 @@ class NetworkAPIService {
                         response in switch response.result {
                         case .success(let data):
                             continuation.resume(returning: data)
-                            
                         case .failure(_):
                             continuation.resume(throwing: NSError())
-                            
                         }
                     }
             }
             
         } catch {
             debugPrint("NetworkAPIService Error")
-            
         }
         
         return nil
