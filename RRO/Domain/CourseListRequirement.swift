@@ -9,11 +9,13 @@ import Foundation
 
 protocol CourseListRequirementProtocol {
     func getCourseList(limit: Int, offset: Int) async -> ServerResponse<[Course]>?
+    func getCourse(id:String) async -> ServerResponse<[Course]>?
 }
 
+
 class CourseListRequirement: CourseListRequirementProtocol {
-    let dataRepository: CourseRepository
     static let shared = CourseListRequirement()
+    let dataRepository: CourseRepository
 
     init(dataRepository: CourseRepository = CourseRepository.shared) {
         self.dataRepository = dataRepository
@@ -21,5 +23,9 @@ class CourseListRequirement: CourseListRequirementProtocol {
 
     func getCourseList(limit: Int, offset: Int) async -> ServerResponse<[Course]>? {
         return await dataRepository.getCourseList(limit: limit, offset: offset)
+    }
+    
+    func getCourse(id:String) async -> ServerResponse<[Course]>? {
+        return await dataRepository.getCourse(id: id)
     }
 }

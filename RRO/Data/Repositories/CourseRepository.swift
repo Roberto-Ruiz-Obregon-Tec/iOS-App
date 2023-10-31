@@ -26,7 +26,7 @@ class CourseRepository: CourseAPIProtocol {
         
     }
     
-    func getCourse(id: String) async -> Course? {
+    func getCourse(id: String) async -> ServerResponse<[Course]>? {
         return await netService.self.get(url: URL(string: "\(API.base)/\(API.routes.course)/\(id)")!)
         
     }

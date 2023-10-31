@@ -27,6 +27,6 @@ struct CourseDetailView: View {
 
 struct CourseDetailViewPreviews: PreviewProvider{
     static var previews: some View{
-        CourseDetailView(course: Course(id:UUID().uuidString, name: "Curso de Escritura", description: "Lleva tus habilidades para crear artesanias al siguiente nivel, aprende a pintar con acuarelas y tecnicas de dibujo.",speaker: "", startDate: Date.now, endDate: Date.now, schedule: "", modality: "Presencial", postalCode: 0, location: "", status: "", cost: 1200, courseImage: "", capacity: 1, rating: 0, meetingCode: "", accessCode: ""))
+        CourseDetailView(course: Course(id:UUID().uuidString, name: "Curso de Escritura", description: "Lleva tus habilidades para crear artesanias al siguiente nivel, aprende a pintar con acuarelas y tecnicas de dibujo.",speaker: "", startDate: Date.now, endDate: Date.now, schedule: "", modality: "Presencial", postalCode: 0, location: "", status: "", cost: 1200, courseImage: "", capacity: 1, rating: 0, meetingCode: "", accessCode: "", focus: []))
     }
 }

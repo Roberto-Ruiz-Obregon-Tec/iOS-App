@@ -25,19 +25,20 @@ struct Course: Codable, Identifiable { // Encoding y decoding | Para identificar
     var rating: Int
     var meetingCode: String
     var accessCode: String
+    var focus: [String]
     
     enum CodingKeys: String, CodingKey {
         case id = "_id" // Mapea la propiedad 'id' a '_id' en el JSON
-        case name, description, speaker, startDate, endDate, schedule, modality, postalCode, location, status,  cost, courseImage, capacity, rating, meetingCode, accessCode
+        case name, description, speaker, startDate, endDate, schedule, modality, postalCode, location, status,  cost, courseImage, capacity, rating, meetingCode, accessCode, focus
     }
 }
 
-struct getCourseResponse: Codable {
-    var status: String
-    var results: Int?
-    var data: Data
-    
-    struct Data: Codable {
-        var documents: [Course]
-    }
-}
+//struct getCourseResponse: Codable {
+//    var status: String
+//    var results: Int?
+//    var data: Data
+//    
+//    struct Data: Codable {
+//        var documents: [Course]
+//    }
+//}

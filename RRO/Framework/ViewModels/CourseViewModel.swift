@@ -21,7 +21,11 @@ class CourseViewModel: ObservableObject {
         let result = await courseListRequirement.getCourseList(limit: 32, offset: 0)
         if let res = result {
             self.courseList = res.data ?? []
+            print("Received course data: \(self.courseList)")
+        } else {
+            print("Failed to fetch course data")
         }
-        
     }
+
 }
+
