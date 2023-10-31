@@ -11,7 +11,7 @@ struct API {
     // TODO: Change the url with the deployed domain, private ip used for testing
                 //                 |
                 //PONER TU IP AQUÍ v
-    static let base = "http://10.25.81.61:3001/v1"
+    static let base = "http://10.25.108.179:3000/v1"
     
     struct routes {
         // TODO: Map all the routes
@@ -28,7 +28,11 @@ struct API {
 
 protocol LoginAPIProtocol {
     // En mi login, solo quiero que me regrese mi ID
-    func postLogin(model: User) async -> Result<String,Error>
+    func postLogin(model: Login) async -> Result<String,Error>
+}
+
+protocol SignUpAPIProtocol {
+    func postSignup(model: Signup) async -> ServerResponse<User>?
 }
 
 protocol ScholarshipAPIProtocol {

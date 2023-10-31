@@ -14,7 +14,7 @@ class LoginRepository: LoginAPIProtocol {
         self.netService = netService
     }
     
-    func postLogin(model: User) async -> Result<String, Error> {
+    func postLogin(model: Login) async -> Result<String, Error> {
         // Crea una URL para la solicitud
         if let url = URL(string: "\(API.base)\(API.routes.userLogin)"),
            let httpBody = try? JSONEncoder().encode(model) {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4730B8792AE9D03800337D05 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730B8782AE9D03800337D05 /* LoginModel.swift */; };
+		4777A67B2AEA348C00FB4388 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777A67A2AEA348C00FB4388 /* LoginRepository.swift */; };
+		47A333462AE890EB008D2448 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A333452AE890EB008D2448 /* LoginViewModel.swift */; };
 		88BDDD952AEAEF8500978F31 /* ProgramInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */; };
 		88BDDD972AEAF23C00978F31 /* ProgramListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD962AEAF23C00978F31 /* ProgramListView.swift */; };
 		88BDDD992AEAF72400978F31 /* ProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */; };
@@ -14,9 +17,6 @@
 		88BDDD9D2AEAF9C100978F31 /* ServerResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD9C2AEAF9C100978F31 /* ServerResponseModel.swift */; };
 		88BDDD9F2AEB075100978F31 /* ProgramRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD9E2AEB075100978F31 /* ProgramRepository.swift */; };
 		88BDDDA12AEB0E8C00978F31 /* ProgramListRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDDA02AEB0E8C00978F31 /* ProgramListRequirement.swift */; };
-		4730B8792AE9D03800337D05 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730B8782AE9D03800337D05 /* LoginModel.swift */; };
-		4777A67B2AEA348C00FB4388 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777A67A2AEA348C00FB4388 /* LoginRepository.swift */; };
-		47A333462AE890EB008D2448 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A333452AE890EB008D2448 /* LoginViewModel.swift */; };
 		9D7F81092AE2D2D7002FA1E0 /* RROApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F81082AE2D2D7002FA1E0 /* RROApp.swift */; };
 		9D7F810D2AE2D2DB002FA1E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F810C2AE2D2DB002FA1E0 /* Assets.xcassets */; };
 		9D7F81102AE2D2DB002FA1E0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F810F2AE2D2DB002FA1E0 /* Preview Assets.xcassets */; };
@@ -35,7 +35,7 @@
 		EEAA9D452AE2E31A00282A82 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D442AE2E31A00282A82 /* CoordinatorView.swift */; };
 		EEAA9D472AE2E34300282A82 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D462AE2E34300282A82 /* LoginView.swift */; };
 		EEAA9D492AE2E35900282A82 /* RestoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D482AE2E35900282A82 /* RestoreView.swift */; };
-		EEAA9D4B2AE2E36300282A82 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D4A2AE2E36300282A82 /* SigninView.swift */; };
+		EEAA9D4B2AE2E36300282A82 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D4A2AE2E36300282A82 /* SignupView.swift */; };
 		EEAA9D4E2AE2E3AD00282A82 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D4D2AE2E3AD00282A82 /* CoursesView.swift */; };
 		EEAA9D502AE2E3CE00282A82 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D4F2AE2E3CE00282A82 /* CourseDetailView.swift */; };
 		EEAA9D522AE2E3EF00282A82 /* PaymentSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D512AE2E3EF00282A82 /* PaymentSheetView.swift */; };
@@ -45,6 +45,10 @@
 		EEAA9D5A2AE2E48000282A82 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D592AE2E48000282A82 /* FeedView.swift */; };
 		EEAA9D5C2AE2E49600282A82 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D5B2AE2E49600282A82 /* MenuView.swift */; };
 		EEAA9D5E2AE2E4B800282A82 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D5D2AE2E4B700282A82 /* ProfileView.swift */; };
+		EEB604D92AF06F9B0088A355 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB604D82AF06F9B0088A355 /* SignupModel.swift */; };
+		EEB604DB2AF07C1C0088A355 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB604DA2AF07C1C0088A355 /* SignupViewModel.swift */; };
+		EEB604DD2AF080730088A355 /* SignupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB604DC2AF080730088A355 /* SignupRepository.swift */; };
+		EEB604DF2AF085250088A355 /* SignupRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB604DE2AF085250088A355 /* SignupRequirement.swift */; };
 		EEDD93F42AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93F32AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift */; };
 		EEDD93F62AE8E8BC0066AD71 /* ScholarshipRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93F52AE8E8BC0066AD71 /* ScholarshipRepository.swift */; };
 		EEDD93F82AE8E9450066AD71 /* RROAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93F72AE8E9450066AD71 /* RROAPI.swift */; };
@@ -70,6 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4730B8782AE9D03800337D05 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		4777A67A2AEA348C00FB4388 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		47A333452AE890EB008D2448 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramInfoCardView.swift; sourceTree = "<group>"; };
 		88BDDD962AEAF23C00978F31 /* ProgramListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramListView.swift; sourceTree = "<group>"; };
 		88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewModel.swift; sourceTree = "<group>"; };
@@ -77,9 +84,6 @@
 		88BDDD9C2AEAF9C100978F31 /* ServerResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponseModel.swift; sourceTree = "<group>"; };
 		88BDDD9E2AEB075100978F31 /* ProgramRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramRepository.swift; sourceTree = "<group>"; };
 		88BDDDA02AEB0E8C00978F31 /* ProgramListRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramListRequirement.swift; sourceTree = "<group>"; };
-		4730B8782AE9D03800337D05 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		4777A67A2AEA348C00FB4388 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
-		47A333452AE890EB008D2448 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9D7F81052AE2D2D7002FA1E0 /* RRO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7F81082AE2D2D7002FA1E0 /* RROApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RROApp.swift; sourceTree = "<group>"; };
 		9D7F810C2AE2D2DB002FA1E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,7 +102,7 @@
 		EEAA9D442AE2E31A00282A82 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
 		EEAA9D462AE2E34300282A82 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EEAA9D482AE2E35900282A82 /* RestoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreView.swift; sourceTree = "<group>"; };
-		EEAA9D4A2AE2E36300282A82 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
+		EEAA9D4A2AE2E36300282A82 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		EEAA9D4D2AE2E3AD00282A82 /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
 		EEAA9D4F2AE2E3CE00282A82 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
 		EEAA9D512AE2E3EF00282A82 /* PaymentSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSheetView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,10 @@
 		EEAA9D592AE2E48000282A82 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		EEAA9D5B2AE2E49600282A82 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		EEAA9D5D2AE2E4B700282A82 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		EEB604D82AF06F9B0088A355 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
+		EEB604DA2AF07C1C0088A355 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		EEB604DC2AF080730088A355 /* SignupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRepository.swift; sourceTree = "<group>"; };
+		EEB604DE2AF085250088A355 /* SignupRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequirement.swift; sourceTree = "<group>"; };
 		EEDD93F32AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipInfoRequirement.swift; sourceTree = "<group>"; };
 		EEDD93F52AE8E8BC0066AD71 /* ScholarshipRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipRepository.swift; sourceTree = "<group>"; };
 		EEDD93F72AE8E9450066AD71 /* RROAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RROAPI.swift; sourceTree = "<group>"; };
@@ -225,6 +233,7 @@
 				EEDD93F32AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift */,
 				88BDDDA02AEB0E8C00978F31 /* ProgramListRequirement.swift */,
 				EEDD93FB2AE966320066AD71 /* ScholarshipListRequirement.swift */,
+				EEB604DE2AF085250088A355 /* SignupRequirement.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -246,6 +255,7 @@
 				88BDDD9A2AEAF7A900978F31 /* ProgramModel.swift */,
 				88BDDD9C2AEAF9C100978F31 /* ServerResponseModel.swift */,
 				4730B8782AE9D03800337D05 /* LoginModel.swift */,
+				EEB604D82AF06F9B0088A355 /* SignupModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +282,7 @@
 				EE0BF5522AE80C8200844E68 /* ScholarshipViewModel.swift */,
 				88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */,
 				47A333452AE890EB008D2448 /* LoginViewModel.swift */,
+				EEB604DA2AF07C1C0088A355 /* SignupViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -300,7 +311,7 @@
 			children = (
 				EEAA9D462AE2E34300282A82 /* LoginView.swift */,
 				EEAA9D482AE2E35900282A82 /* RestoreView.swift */,
-				EEAA9D4A2AE2E36300282A82 /* SigninView.swift */,
+				EEAA9D4A2AE2E36300282A82 /* SignupView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -339,6 +350,7 @@
 				EEDD93F52AE8E8BC0066AD71 /* ScholarshipRepository.swift */,
 				88BDDD9E2AEB075100978F31 /* ProgramRepository.swift */,
 				4777A67A2AEA348C00FB4388 /* LoginRepository.swift */,
+				EEB604DC2AF080730088A355 /* SignupRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -500,7 +512,7 @@
 				88BDDD952AEAEF8500978F31 /* ProgramInfoCardView.swift in Sources */,
 				EEAA9D562AE2E42E00282A82 /* VoucherSheetView.swift in Sources */,
 				EEAA9D522AE2E3EF00282A82 /* PaymentSheetView.swift in Sources */,
-				EEAA9D4B2AE2E36300282A82 /* SigninView.swift in Sources */,
+				EEAA9D4B2AE2E36300282A82 /* SignupView.swift in Sources */,
 				EEAA9D5C2AE2E49600282A82 /* MenuView.swift in Sources */,
 				9D7F813D2AE2D46B002FA1E0 /* DummyLocalService.swift in Sources */,
 				EEDD93F62AE8E8BC0066AD71 /* ScholarshipRepository.swift in Sources */,
@@ -515,11 +527,15 @@
 				EEAA9D492AE2E35900282A82 /* RestoreView.swift in Sources */,
 				EE0BF5532AE80C8200844E68 /* ScholarshipViewModel.swift in Sources */,
 				88BDDD9D2AEAF9C100978F31 /* ServerResponseModel.swift in Sources */,
+				EEB604D92AF06F9B0088A355 /* SignupModel.swift in Sources */,
 				EEAA9D502AE2E3CE00282A82 /* CourseDetailView.swift in Sources */,
+				EEB604DD2AF080730088A355 /* SignupRepository.swift in Sources */,
 				9D7F81092AE2D2D7002FA1E0 /* RROApp.swift in Sources */,
 				88BDDD9B2AEAF7A900978F31 /* ProgramModel.swift in Sources */,
 				88BDDD992AEAF72400978F31 /* ProgramViewModel.swift in Sources */,
+				EEB604DF2AF085250088A355 /* SignupRequirement.swift in Sources */,
 				EEDD93FE2AE974A20066AD71 /* ScholarshipsView.swift in Sources */,
+				EEB604DB2AF07C1C0088A355 /* SignupViewModel.swift in Sources */,
 				4730B8792AE9D03800337D05 /* LoginModel.swift in Sources */,
 				EEAA9D472AE2E34300282A82 /* LoginView.swift in Sources */,
 				EEAA9D5E2AE2E4B800282A82 /* ProfileView.swift in Sources */,
@@ -689,7 +705,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RRO/Preview Content\"";
-				DEVELOPMENT_TEAM = FU4DWD2JJ5;
+				DEVELOPMENT_TEAM = QPA9Z37FK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -703,7 +719,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-XxGonanxX";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-peblo1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -719,7 +735,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RRO/Preview Content\"";
-				DEVELOPMENT_TEAM = FU4DWD2JJ5;
+				DEVELOPMENT_TEAM = QPA9Z37FK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -733,7 +749,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-XxGonanxX";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-peblo1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

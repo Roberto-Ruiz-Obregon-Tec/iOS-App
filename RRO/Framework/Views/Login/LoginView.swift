@@ -84,6 +84,14 @@ struct LoginView: View {
                     .padding()
             }
             
+            Button {
+                Task {
+                    let a: String? = await NetworkAPIService.shared.get(url: URL(string: "http://10.25.108.179:3000")!)
+                    
+                }
+            } label: {
+                Text("loles")
+            }
             
             VStack {
                 
