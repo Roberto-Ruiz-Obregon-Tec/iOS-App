@@ -25,6 +25,11 @@ struct API {
     }
 }
 
+protocol LoginAPIProtocol {
+    // En mi login, solo quiero que me regrese mi ID
+    func postLogin(model: User) async -> Result<String,Error>
+}
+
 protocol ScholarshipAPIProtocol {
     // https://{API_DOMAIN}/v1/scholarship?limit={Int}&offset={Int}
     func getScholarshipList(limit: Int, offset: Int) async -> [Scholarship]?
