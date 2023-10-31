@@ -12,7 +12,7 @@ struct API {
                 //                 |
                 //PONER TU IP AQUÍ v
     static let base = "http://192.168.1.68:3001/v1"
-   
+  
     struct routes {
         // TODO: Map all the routes
         static let userSignup = "/user/auth/signup"
