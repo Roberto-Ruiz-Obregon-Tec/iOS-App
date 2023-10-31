@@ -9,61 +9,55 @@ import SwiftUI
 
 struct CoursesView: View {
     @StateObject var courseViewModel = CourseViewModel()
-    
+    @State private var filterText: String = ""
+
     var body: some View {
-        VStack {
-            NavigationStack {
-                if courseViewModel.courseList.isEmpty {
-                    // TODO: Notify network error
-                    // TODO: Loading view
-                    Text("No hay talleres en este momento")
-                        .padding()
-                } else {
-                    List(courseViewModel.courseList) { course in
-                        NavigationLink {
-                            CourseDetailView(course: course)
-                        } label: {
-                            Text(course.name)
-                        }.padding()
-                    }
-                }
+        
+    NavigationStack {
+        
+        TextField("Buscar talleres", text: $filterText)
+            .textFieldStyle(.roundedBorder)
+            .padding(.horizontal)
+        ScrollView{
+            ForEach(courseViewModel.courseList.filter {
+                filterText.isEmpty || $0.name.lowercased().contains(filterText.lowercased())
+            }) { course in
+                CourseInfoCardView(course: course)
             }
-            .onAppear {
-                Task {
-                    await courseViewModel.getCourseList() // Call the method
-                }
+        }
+    }
+
+        .padding(.horizontal)
+        .onAppear {
+            Task {
+                await courseViewModel.getCourseList() // Call the method
             }
         }
     }
 }
-
-
-//struct CoursesView: View {
-//    @StateObject var courseViewModel = CourseViewModel()
-//    var body: some View {
-//        NavigationStack {
-//            // TODO: This VStack should be a List in the future
-//            VStack {
-//                Text("Cursos")
-//                
-//                NavigationLink {
-//                    // TODO: Add state or course info
-//                    CourseDetailView()
-//                } label: {
-//                    Text("Curso1")
-//                }.padding()
-//                
-//                NavigationLink {
-//                    // TODO: Add state or course info
-//                    CourseDetailView()
-//                } label: {
-//                    Text("Curso2")
-//                }.padding()
-//            }
-//        }
-//    }
+    
+//#Preview {
+//    CoursesView()
 //}
 
-#Preview {
-    CoursesView()
+struct CourseListViewPreviews: PreviewProvider {
+    static var previews: some View {
+        CoursesView (courseViewModel: getViewModel())
+    }
+    
+    /// If there is no backend the preview will generate this ammount of card elements
+    static var elems = 10
+    static func getViewModel() -> CourseViewModel {
+        let vm = CourseViewModel()
+        for _ in 1...elems {
+            vm.courseList.append(
+                Course(id:UUID().uuidString, name: "Curso de Escritura", description: "Lleva tus habilidades para crear artesanias al siguiente nivel, aprende a pintar con acuarelas y tecnicas de dibujo.",speaker: "", startDate: Date.now, endDate: Date.now, schedule: "", modality: "Presencial", postalCode: 0, location: "", status: "", cost: 1200, courseImage: "", capacity: 1, rating: 0, meetingCode: "", accessCode: ""))
+                
+            
+        }
+        
+        return vm
+    }
 }
+
+

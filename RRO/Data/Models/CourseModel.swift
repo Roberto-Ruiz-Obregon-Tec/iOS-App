@@ -7,24 +7,37 @@
 
 import Foundation
 
-struct Course: Codable, Identifiable {
-    var id: Int
+struct Course: Codable, Identifiable { // Encoding y decoding | Para identificar celdas
+    var id: String
     var name: String
     var description: String
-    var topics: String
-    var teacher: String
+    var speaker: String
     var startDate: Date
     var endDate: Date
     var schedule: String
-    var acessLink: String
     var modality: String
-    var postalCode: String
-    var adress: String
+    var postalCode: Int?
+    var location: String?
     var status: String
-    var bankAccount: String
     var cost: Int
-    var imageUrl: String
+    var courseImage: String
     var capacity: Int
-    var bank: String
+    var rating: Int
+    var meetingCode: String
+    var accessCode: String
     
+    enum CodingKeys: String, CodingKey {
+        case id = "_id" // Mapea la propiedad 'id' a '_id' en el JSON
+        case name, description, speaker, startDate, endDate, schedule, modality, postalCode, location, status,  cost, courseImage, capacity, rating, meetingCode, accessCode
+    }
+}
+
+struct getCourseResponse: Codable {
+    var status: String
+    var results: Int?
+    var data: Data
+    
+    struct Data: Codable {
+        var documents: [Course]
+    }
 }
