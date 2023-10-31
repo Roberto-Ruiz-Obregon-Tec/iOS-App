@@ -19,7 +19,7 @@ class LoginViewModel: ObservableObject {
     // Función para realizar la solicitud de inicio de sesión
     func postLogin(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
         // Crea un modelo de usuario con campos email y password (se inicializa con un _id vacío)
-        let user = User(_id: "", email: email, password: password)
+        let user = User(id: "", email: email, password: password)
 
         Task {
             do {
