@@ -25,6 +25,8 @@ struct CourseDetailView: View {
     }
 }
 
-#Preview {
-    CourseDetailView()
+struct CourseDetailViewPreview: PreviewProvider {
+    static var previews: some View {
+        CourseDetailView()
+    }
 }

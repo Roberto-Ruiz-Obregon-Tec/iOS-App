@@ -13,7 +13,8 @@ struct FeedView: View {
     }
 }
 
-#Preview {
-    FeedView()
+struct FeedViewPreview: PreviewProvider {
+    static var previews: some View {
+        FeedView()
+    }
 }
-

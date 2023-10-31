@@ -51,7 +51,9 @@ struct CoordinatorView: View {
     }
 }
 
-#Preview {
-    CoordinatorView()
+struct CoordinatorViewPreview: PreviewProvider {
+    static var previews: some View {
+        CoordinatorView()
+    }
 }
 

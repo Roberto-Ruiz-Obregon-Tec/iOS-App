@@ -84,7 +84,15 @@ struct ProgramInfoCardView: View {
     }
 }
 
-#Preview {
-    ProgramInfoCardView(name: "Programa", image: "", description: "Este programa es muy bueno, deberías de inscribirte y probarlo.", limitDate: 
-Date.now, category: "Creativa", goDetail: {})
+struct ProgramInfoCardView_Preview: PreviewProvider {
+    static var previews: some View {
+        ProgramInfoCardView(
+            name: "Programa",
+            image: "",
+            description: "Este programa es muy bueno, deberías de inscribirte y probarlo.",
+            limitDate: Date(),
+            category: "Creativa",
+            goDetail: {}
+        )
+    }
 }

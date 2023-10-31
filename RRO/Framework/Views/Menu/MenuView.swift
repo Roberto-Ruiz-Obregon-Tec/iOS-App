@@ -32,7 +32,8 @@ struct MenuView: View {
     }
 }
 
-#Preview {
-    MenuView{()}
+struct MenuViewPreview: PreviewProvider {
+    static var previews: some View {
+        MenuView{()}
+    }
 }
-
