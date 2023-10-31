@@ -20,6 +20,7 @@ struct API {
         static let adminSignup = "/admin/auth/signup"
         static let adminLogin = "/admin/auth/login"
         
+        static let certification = "/certifications"
         static let course = "/course"
         static let scholarship = "/scholarship"
         static let program = "/program"
@@ -45,3 +46,7 @@ protocol ProgramAPIProtocol {
     func getProgram(id: String) async -> Program?
 }
 
+protocol CertificationAPIProtocol {
+    // https://{API_DOMAIN}/v1/certification?limit={Int}&offset={Int}
+    func getCertificationList(limit: Int, offset: Int) async -> ServerResponse<[Certification]>?
+}

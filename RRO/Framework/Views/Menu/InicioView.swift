@@ -18,7 +18,7 @@ struct InicioView: View {
                 CoursesView().tag(0)
                 ScholarshipsView().tag(1)
                 ProgramListView().tag(2)
-                CertificationView().tag(3)
+                CertificationListView().tag(3)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .edgesIgnoringSafeArea(.all)
