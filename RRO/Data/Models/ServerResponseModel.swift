@@ -9,6 +9,11 @@ import Foundation
 
 struct ServerResponse<T: Codable>: Codable {
     var status: String
-    var data: T?
+    var results: Int?
+    var data: Data
+    
+    struct Data: Codable {
+        var document: T?
+        var documents: [T]?
+    }
 }
-

@@ -24,6 +24,10 @@ struct API {
         static let course = "/course"
         static let scholarship = "/scholarship"
         static let program = "/program"
+        
+        
+        //FAQ VIEW
+        static let infoFundation = "/informacion-fundacion"
     }
 }
 
@@ -41,10 +45,15 @@ protocol ScholarshipAPIProtocol {
 
 protocol ProgramAPIProtocol {
     // https://{API_DOMAIN}/v1/program?limit={Int}&offset={Int}
-    func getProgramList(limit: Int, offset: Int) async -> ServerResponse<[Program]>?
+    func getProgramList(limit: Int, offset: Int) async -> ServerResponse<Program>?
     // https://{API_DOMAIN}/v1/program/{id}
     func getProgram(id: String) async -> Program?
 }
+
+//FAQ VIEW PROTOCOL
+protocol FundationInformationAPIProtocol{
+    // https://{API_DOMAIN}/v1/informacion-fundacion
+    func getInfoFundation(limit : Int) async -> FoundationResponse<InfoFundation>?
 
 protocol CertificationAPIProtocol {
     // https://{API_DOMAIN}/v1/certification?limit={Int}&offset={Int}

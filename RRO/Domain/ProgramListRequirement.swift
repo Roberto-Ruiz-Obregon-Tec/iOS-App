@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ProgramListRequirementProtocol {
-    func getProgramList(limit: Int, offset: Int) async -> ServerResponse<[Program]>?
+    func getProgramList(limit: Int, offset: Int) async -> ServerResponse<Program>?
 }
 
 class ProgramListRequirement: ProgramListRequirementProtocol {
@@ -19,7 +19,7 @@ init(dataRepository: ProgramRepository = ProgramRepository.shared) {
     self.dataRepository = dataRepository
 }
 
-func getProgramList(limit: Int, offset: Int) async -> ServerResponse<[Program]>? {
+func getProgramList(limit: Int, offset: Int) async -> ServerResponse<Program>? {
     return await dataRepository.getProgramList(limit: limit, offset: offset)
 }
 }
