@@ -11,10 +11,8 @@ struct API {
     // TODO: Change the url with the deployed domain, private ip used for testing
                 //                 |
                 //PONER TU IP AQUÍ v
-
-    static let base = "http://10.25.95.187:3000/v1"
-
-    
+    static let base = "http://192.168.1.68:3001/v1"
+  
     struct routes {
         // TODO: Map all the routes
         static let userSignup = "/user/auth/signup"
@@ -26,6 +24,7 @@ struct API {
         static let scholarship = "/scholarship"
         static let program = "/program"
         static let event = "/event"
+        static let infoFundation = "/informacion-fundacion"
     }
 }
 
@@ -43,7 +42,7 @@ protocol ScholarshipAPIProtocol {
 
 protocol ProgramAPIProtocol {
     // https://{API_DOMAIN}/v1/program?limit={Int}&offset={Int}
-    func getProgramList(limit: Int, offset: Int) async -> ServerResponse<[Program]>?
+    func getProgramList(limit: Int, offset: Int) async -> ServerResponse<Program>?
     // https://{API_DOMAIN}/v1/program/{id}
     func getProgram(id: String) async -> Program?
 }
@@ -54,3 +53,10 @@ protocol EventAPIProtocol {
     // https://{API_DOMAIN}/v1/event/{id}
     func getEvent(id: String) async -> Event?
 }
+
+//FAQ VIEW PROTOCOL
+protocol FundationInformationAPIProtocol{
+    // https://{API_DOMAIN}/v1/informacion-fundacion
+    func getInfoFundation(limit : Int) async -> FoundationResponse<InfoFundation>?
+}
+
