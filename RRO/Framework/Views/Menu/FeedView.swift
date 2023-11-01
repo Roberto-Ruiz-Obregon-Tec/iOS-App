@@ -19,7 +19,7 @@ struct FeedView: View {
                 PublicacionesView().tag(0)
                 EventListView().tag(1)
             }
-            .padding(.top, 180)
+            .padding(.top, 210)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .edgesIgnoringSafeArea(.all)
             TabBarViewPublicaciones(currentTab: self.$currentTab)
@@ -42,7 +42,7 @@ struct TabBarViewPublicaciones: View {
                     }
                 }
         }
-        .frame(height: 180)
+        .frame(height: 210)
         .background(Color.white)
         .ignoresSafeArea(.all)
     }

@@ -21,7 +21,7 @@ struct InicioView: View {
                 ProgramListView().tag(2)
                 CertificationListView().tag(3)
             }
-            .padding(.top, 180)
+            .padding(.top, 210)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .edgesIgnoringSafeArea(.all)
             TabBarView(currentTab: self.$currentTab)
@@ -46,7 +46,7 @@ struct TabBarView: View {
                 }
             }
         }
-        .frame(height: 180)
+        .frame(height: 210)
         .background(Color.white)
         .ignoresSafeArea(.all)
     }
