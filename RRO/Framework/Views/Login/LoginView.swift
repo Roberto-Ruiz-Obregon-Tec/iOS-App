@@ -145,12 +145,14 @@ struct LoginView: View {
     }
 }
 
-#Preview {
-    LoginView(viewModel: LoginViewModel(loginRepository: LoginRepository())){
-        ()
-    } goRegister: {
-        ()
-    } goRestore: {
-        ()
+struct LoginViewPreview: PreviewProvider {
+    static var previews: some View {
+        LoginView(viewModel: LoginViewModel(loginRepository: LoginRepository())){
+            ()
+        } goRegister: {
+            ()
+        } goRestore: {
+            ()
+        }
     }
 }

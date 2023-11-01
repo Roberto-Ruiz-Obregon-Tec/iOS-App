@@ -123,14 +123,12 @@ struct FAQView: View {
                         .stroke(RROred, lineWidth: 2))
                     .frame(minWidth: 0, maxWidth: .infinity)
                 
-        
+                Text("📍")
+                Text(info?.ubicacion ?? "#")
+                    .font(.footnote)
             }
             .padding(15)
             .padding(.bottom)
-        
-            Text("📍")
-            Text(info?.ubicacion ?? "#")
-                .font(.footnote)
          
             
         }
@@ -149,6 +147,8 @@ struct FAQView: View {
     }
 }
 
-#Preview {
-    FAQView()
+struct FAQViewPreview: PreviewProvider {
+    static var previews: some View {
+        FAQView()
+    }
 }

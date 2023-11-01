@@ -10,6 +10,15 @@
 		4730B8792AE9D03800337D05 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730B8782AE9D03800337D05 /* LoginModel.swift */; };
 		4777A67B2AEA348C00FB4388 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777A67A2AEA348C00FB4388 /* LoginRepository.swift */; };
 		47A333462AE890EB008D2448 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A333452AE890EB008D2448 /* LoginViewModel.swift */; };
+		48DF029D2AF1BFEE005DE385 /* CertificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF029C2AF1BFEE005DE385 /* CertificationModel.swift */; };
+		48DF029F2AF1BFFE005DE385 /* CertificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF029E2AF1BFFE005DE385 /* CertificationRepository.swift */; };
+		48DF02A12AF1C020005DE385 /* CertificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF02A02AF1C020005DE385 /* CertificationViewModel.swift */; };
+		48DF02A52AF1C045005DE385 /* CertificationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF02A42AF1C045005DE385 /* CertificationDetailView.swift */; };
+		48DF02A72AF1C066005DE385 /* CertificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF02A62AF1C066005DE385 /* CertificationListView.swift */; };
+		48DF02A92AF1C0BE005DE385 /* CertificationRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF02A82AF1C0BE005DE385 /* CertificationRequirement.swift */; };
+		48DF02AB2AF1C147005DE385 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF02AA2AF1C147005DE385 /* MenuView.swift */; };
+		48DF02AD2AF1C159005DE385 /* InicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF02AC2AF1C159005DE385 /* InicioView.swift */; };
+		48DF02AF2AF1C31A005DE385 /* CertificationInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF02AE2AF1C31A005DE385 /* CertificationInfoCardView.swift */; };
 		88BDDD952AEAEF8500978F31 /* ProgramInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */; };
 		88BDDD972AEAF23C00978F31 /* ProgramListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD962AEAF23C00978F31 /* ProgramListView.swift */; };
 		88BDDD992AEAF72400978F31 /* ProgramViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */; };
@@ -47,7 +56,6 @@
 		EEAA9D562AE2E42E00282A82 /* VoucherSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D552AE2E42E00282A82 /* VoucherSheetView.swift */; };
 		EEAA9D582AE2E45B00282A82 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D572AE2E45B00282A82 /* FAQView.swift */; };
 		EEAA9D5A2AE2E48000282A82 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D592AE2E48000282A82 /* FeedView.swift */; };
-		EEAA9D5C2AE2E49600282A82 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D5B2AE2E49600282A82 /* MenuView.swift */; };
 		EEAA9D5E2AE2E4B800282A82 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA9D5D2AE2E4B700282A82 /* ProfileView.swift */; };
 		EEDD93F42AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93F32AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift */; };
 		EEDD93F62AE8E8BC0066AD71 /* ScholarshipRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93F52AE8E8BC0066AD71 /* ScholarshipRepository.swift */; };
@@ -84,6 +92,15 @@
 		4730B8782AE9D03800337D05 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		4777A67A2AEA348C00FB4388 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		47A333452AE890EB008D2448 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		48DF029C2AF1BFEE005DE385 /* CertificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationModel.swift; sourceTree = "<group>"; };
+		48DF029E2AF1BFFE005DE385 /* CertificationRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationRepository.swift; sourceTree = "<group>"; };
+		48DF02A02AF1C020005DE385 /* CertificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationViewModel.swift; sourceTree = "<group>"; };
+		48DF02A42AF1C045005DE385 /* CertificationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationDetailView.swift; sourceTree = "<group>"; };
+		48DF02A62AF1C066005DE385 /* CertificationListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationListView.swift; sourceTree = "<group>"; };
+		48DF02A82AF1C0BE005DE385 /* CertificationRequirement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationRequirement.swift; sourceTree = "<group>"; };
+		48DF02AA2AF1C147005DE385 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuView.swift; path = ../../../../../../.Trash/MenuView.swift; sourceTree = "<group>"; };
+		48DF02AC2AF1C159005DE385 /* InicioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InicioView.swift; sourceTree = "<group>"; };
+		48DF02AE2AF1C31A005DE385 /* CertificationInfoCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationInfoCardView.swift; sourceTree = "<group>"; };
 		88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramInfoCardView.swift; sourceTree = "<group>"; };
 		88BDDD962AEAF23C00978F31 /* ProgramListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramListView.swift; sourceTree = "<group>"; };
 		88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramViewModel.swift; sourceTree = "<group>"; };
@@ -121,7 +138,6 @@
 		EEAA9D552AE2E42E00282A82 /* VoucherSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherSheetView.swift; sourceTree = "<group>"; };
 		EEAA9D572AE2E45B00282A82 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		EEAA9D592AE2E48000282A82 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
-		EEAA9D5B2AE2E49600282A82 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		EEAA9D5D2AE2E4B700282A82 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EEDD93F32AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipInfoRequirement.swift; sourceTree = "<group>"; };
 		EEDD93F52AE8E8BC0066AD71 /* ScholarshipRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipRepository.swift; sourceTree = "<group>"; };
@@ -168,6 +184,7 @@
 		88BDDD932AEAEF6F00978F31 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				48DF02AE2AF1C31A005DE385 /* CertificationInfoCardView.swift */,
 				88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */,
 				F64162BB2AF005B100B25E0E /* EventInfoCardView.swift */,
 			);
@@ -247,6 +264,7 @@
 			children = (
 				EEDD93F32AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift */,
 				88BDDDA02AEB0E8C00978F31 /* ProgramListRequirement.swift */,
+				48DF02A82AF1C0BE005DE385 /* CertificationRequirement.swift */,
 				EEDD93FB2AE966320066AD71 /* ScholarshipListRequirement.swift */,
 				F64162C42AF00BCD00B25E0E /* EventRequirement.swift */,
 				BD5C22092AEF3F5D0002D85E /* FundationInformationRequirement.swift */,
@@ -269,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				EE0BF5542AE80CF000844E68 /* ScholarshipModel.swift */,
+				48DF029C2AF1BFEE005DE385 /* CertificationModel.swift */,
 				88BDDD9A2AEAF7A900978F31 /* ProgramModel.swift */,
 				88BDDD9C2AEAF9C100978F31 /* ServerResponseModel.swift */,
 				4730B8782AE9D03800337D05 /* LoginModel.swift */,
@@ -299,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				EE0BF5522AE80C8200844E68 /* ScholarshipViewModel.swift */,
+				48DF02A02AF1C020005DE385 /* CertificationViewModel.swift */,
 				88BDDD982AEAF72400978F31 /* ProgramViewModel.swift */,
 				F64162BD2AF00A7F00B25E0E /* EventViewModel.swift */,
 				47A333452AE890EB008D2448 /* LoginViewModel.swift */,
@@ -343,7 +363,9 @@
 				EEAA9D4D2AE2E3AD00282A82 /* CoursesView.swift */,
 				EEAA9D572AE2E45B00282A82 /* FAQView.swift */,
 				EEAA9D592AE2E48000282A82 /* FeedView.swift */,
-				EEAA9D5B2AE2E49600282A82 /* MenuView.swift */,
+				48DF02AC2AF1C159005DE385 /* InicioView.swift */,
+				48DF02AA2AF1C147005DE385 /* MenuView.swift */,
+				48DF02A62AF1C066005DE385 /* CertificationListView.swift */,
 				EEDD93FD2AE974A20066AD71 /* ScholarshipsView.swift */,
 				EEAA9D5D2AE2E4B700282A82 /* ProfileView.swift */,
 				88BDDD962AEAF23C00978F31 /* ProgramListView.swift */,
@@ -358,6 +380,7 @@
 				EEAA9D4F2AE2E3CE00282A82 /* CourseDetailView.swift */,
 				EEAA9D512AE2E3EF00282A82 /* PaymentSheetView.swift */,
 				EEAA9D532AE2E40000282A82 /* ProfileDetailView.swift */,
+				48DF02A42AF1C045005DE385 /* CertificationDetailView.swift */,
 				EEAA9D552AE2E42E00282A82 /* VoucherSheetView.swift */,
 				EE5E70B72AE702B500EA2160 /* ScholarshipDetailView.swift */,
 				F64162C82AF0121200B25E0E /* EventDetailView.swift */,
@@ -371,6 +394,7 @@
 				EEDD93F72AE8E9450066AD71 /* RROAPI.swift */,
 				EEDD93F52AE8E8BC0066AD71 /* ScholarshipRepository.swift */,
 				88BDDD9E2AEB075100978F31 /* ProgramRepository.swift */,
+				48DF029E2AF1BFFE005DE385 /* CertificationRepository.swift */,
 				4777A67A2AEA348C00FB4388 /* LoginRepository.swift */,
 				F64162C02AF00B0400B25E0E /* EventRepository.swift */,
 				BD5C22072AEF3D7B0002D85E /* FundationInformationRepository.swift */,
@@ -527,7 +551,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48DF029D2AF1BFEE005DE385 /* CertificationModel.swift in Sources */,
 				EEDD93FC2AE966330066AD71 /* ScholarshipListRequirement.swift in Sources */,
+				48DF02A92AF1C0BE005DE385 /* CertificationRequirement.swift in Sources */,
+				48DF02A72AF1C066005DE385 /* CertificationListView.swift in Sources */,
 				BD5C220C2AEF424D0002D85E /* FundationInformationViewModel.swift in Sources */,
 				47A333462AE890EB008D2448 /* LoginViewModel.swift in Sources */,
 				EEAA9D5A2AE2E48000282A82 /* FeedView.swift in Sources */,
@@ -536,12 +563,14 @@
 				88BDDD952AEAEF8500978F31 /* ProgramInfoCardView.swift in Sources */,
 				EEAA9D562AE2E42E00282A82 /* VoucherSheetView.swift in Sources */,
 				EEAA9D522AE2E3EF00282A82 /* PaymentSheetView.swift in Sources */,
+				48DF02AF2AF1C31A005DE385 /* CertificationInfoCardView.swift in Sources */,
 				EEAA9D4B2AE2E36300282A82 /* SigninView.swift in Sources */,
 				F64162C72AF00CB000B25E0E /* EventListView.swift in Sources */,
 				EEAA9D5C2AE2E49600282A82 /* MenuView.swift in Sources */,
 				9D7F813D2AE2D46B002FA1E0 /* DummyLocalService.swift in Sources */,
 				F64162BE2AF00A8000B25E0E /* EventViewModel.swift in Sources */,
 				EEDD93F62AE8E8BC0066AD71 /* ScholarshipRepository.swift in Sources */,
+				48DF029F2AF1BFFE005DE385 /* CertificationRepository.swift in Sources */,
 				EEAA9D412AE2E2D900282A82 /* ImagePicker.swift in Sources */,
 				EEDD93F42AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift in Sources */,
 				EEAA9D582AE2E45B00282A82 /* FAQView.swift in Sources */,
@@ -550,12 +579,15 @@
 				F64162BC2AF005B100B25E0E /* EventInfoCardView.swift in Sources */,
 				F64162C92AF0121200B25E0E /* EventDetailView.swift in Sources */,
 				EEAA9D542AE2E40000282A82 /* ProfileDetailView.swift in Sources */,
+				48DF02AB2AF1C147005DE385 /* MenuView.swift in Sources */,
 				F64162C52AF00BCD00B25E0E /* EventRequirement.swift in Sources */,
 				88BDDD9F2AEB075100978F31 /* ProgramRepository.swift in Sources */,
 				4777A67B2AEA348C00FB4388 /* LoginRepository.swift in Sources */,
 				F64162C12AF00B0400B25E0E /* EventRepository.swift in Sources */,
 				EEAA9D492AE2E35900282A82 /* RestoreView.swift in Sources */,
 				EE0BF5532AE80C8200844E68 /* ScholarshipViewModel.swift in Sources */,
+				48DF02A12AF1C020005DE385 /* CertificationViewModel.swift in Sources */,
+				48DF02A52AF1C045005DE385 /* CertificationDetailView.swift in Sources */,
 				88BDDD9D2AEAF9C100978F31 /* ServerResponseModel.swift in Sources */,
 				EEAA9D502AE2E3CE00282A82 /* CourseDetailView.swift in Sources */,
 				BD5C22082AEF3D7B0002D85E /* FundationInformationRepository.swift in Sources */,
@@ -567,6 +599,7 @@
 				EEAA9D472AE2E34300282A82 /* LoginView.swift in Sources */,
 				BD5C220A2AEF3F5D0002D85E /* FundationInformationRequirement.swift in Sources */,
 				EEAA9D5E2AE2E4B800282A82 /* ProfileView.swift in Sources */,
+				48DF02AD2AF1C159005DE385 /* InicioView.swift in Sources */,
 				F64162C32AF00B6600B25E0E /* EventModel.swift in Sources */,
 				88BDDDA12AEB0E8C00978F31 /* ProgramListRequirement.swift in Sources */,
 				EEDD93F82AE8E9450066AD71 /* RROAPI.swift in Sources */,
@@ -735,7 +768,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RRO/Preview Content\"";
-				DEVELOPMENT_TEAM = DYHS6ANDJD;
+				DEVELOPMENT_TEAM = 53NSX9UFN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -749,7 +782,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-mau";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-Sebastian";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -765,7 +798,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RRO/Preview Content\"";
-				DEVELOPMENT_TEAM = DYHS6ANDJD;
+				DEVELOPMENT_TEAM = 53NSX9UFN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -779,7 +812,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-mau";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-Sebastian";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

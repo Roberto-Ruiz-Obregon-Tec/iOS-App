@@ -15,7 +15,7 @@ class EventRepository: EventAPIProtocol {
         self.netService = netService
     }
     
-    func getEventList(limit: Int, offset: Int) async -> ServerResponse<[Event]>?{
+    func getEventList(limit: Int, offset: Int) async -> EventResponse<[Event]>?{
         let params = [
             "limit": limit,
             "offset": offset
@@ -24,9 +24,10 @@ class EventRepository: EventAPIProtocol {
         return await netService.self.get(url: URL(string: "\(API.base)\(API.routes.event)")!, params: params)
         
     }
-    
-    func getEvent(id: String) async -> Event? {
+    /*
+    func getEvent(id: String) async -> ServerResponse<[Event]>? {
         return await netService.self.get(url: URL(string: "\(API.base)/\(API.routes.event)/\(id)")!)
         
     }
+     */
 }

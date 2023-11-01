@@ -32,6 +32,8 @@ struct CoursesView: View {
     }
 }
 
-#Preview {
-    CoursesView()
+struct CoursesViewPreview: PreviewProvider {
+    static var previews: some View {
+        CoursesView()
+    }
 }

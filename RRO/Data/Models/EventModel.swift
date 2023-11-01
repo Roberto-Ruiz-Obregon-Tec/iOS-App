@@ -22,3 +22,13 @@ struct Event: Codable, Identifiable {
     }
 
 }
+
+struct EventResponse<T: Codable>: Codable {
+    var status: String
+    var results: Int?
+    var data: Data
+    
+    struct Data: Codable {
+        var documents: [Event]
+    }
+}
