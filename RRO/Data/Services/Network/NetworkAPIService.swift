@@ -14,6 +14,7 @@ class NetworkAPIService {
     private let _decoder = JSONDecoder()
     private let _encoder = JSONEncoder()
     private var _headers: HTTPHeaders
+    private let _session: Session
     
     /// The constructor sets the date formater to allow dates with fractional seconds
     init() {
@@ -22,6 +23,8 @@ class NetworkAPIService {
         _decoder.dateDecodingStrategy = .formatted(formatter)
         _encoder.dateEncodingStrategy = .iso8601
         _headers = HTTPHeaders(dictionaryLiteral: ("user-platform", "ios"))
+        _session = Session(interceptor: RequestInterceptor())
+        
     }
     
     /// Get request on a specified url and serialize the response into a given codable struct
@@ -31,7 +34,7 @@ class NetworkAPIService {
     func get<T: Codable>(url: URL, params: Parameters = [:]) async -> T? {
         do {
             return try await withCheckedThrowingContinuation {
-                continuation in AF.request(url, method: .get, parameters: params, headers: _headers)
+                continuation in _session.request(url, method: .get, parameters: params, headers: _headers)
                     .responseDecodable(of: T.self, decoder: self._decoder) {
                         response in switch response.result {
                         case .success(let data):
@@ -62,7 +65,7 @@ class NetworkAPIService {
             let json = try JSONSerialization.jsonObject(with: encodedBody, options: []) as? Parameters
             
             return try await withCheckedThrowingContinuation {
-                continuation in AF.request(url, method: .post, parameters: json, encoding: JSONEncoding.default, headers: _headers)
+                continuation in _session.request(url, method: .post, parameters: json, encoding: JSONEncoding.default, headers: _headers)
                     .responseDecodable(of: T.self, decoder: self._decoder) {
                         response in switch response.result {
                         case .success(let data):

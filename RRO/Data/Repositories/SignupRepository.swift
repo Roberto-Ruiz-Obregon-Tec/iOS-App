@@ -16,6 +16,13 @@ class SignupRepository: SignUpAPIProtocol {
     }
     
     func postSignup(model: Signup) async -> ServerResponse<User>? {
-        return await netService.post(url: URL(string: "\(API.base)\(API.routes.userSignup)")!, body: model)
+        // Set the authorization token
+        let response: ServerResponse<User>? = await netService
+            .post(url: URL(string: "\(API.base)\(API.routes.userSignup)")!, body: model)
+        
+        if let response = response {
+            LocalService.shared.setCurrentSession(token: response.token!)
+        }
+        return response
     }
 }

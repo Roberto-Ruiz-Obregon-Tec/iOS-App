@@ -18,7 +18,7 @@ class SignupViewModel: ObservableObject {
     
     @MainActor
     func postSignup() async {
-        
+        let _ = await signupRequirement.postSignup(model: signupData)
     }
     
 }

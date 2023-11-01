@@ -35,11 +35,11 @@ struct SignupView: View {
                 TextField("Apellido(s)", text: $viewModel.signupData.lastName)
                     .textFieldStyle(.roundedBorder)
                 
-                TextField("Correo electrónico", text: $viewModel.signupData.firstName)
+                TextField("Correo electrónico", text: $viewModel.signupData.email)
                     .textFieldStyle(.roundedBorder)
                     .keyboardType(.emailAddress)
                 
-                TextField("Edad", text: $viewModel.signupData.firstName)
+                TextField("Género", text: $viewModel.signupData.gender)
                     .textFieldStyle(.roundedBorder)
                 
                 HStack {
@@ -69,7 +69,7 @@ struct SignupView: View {
                 TextField("Código postal", value: $viewModel.signupData.postalCode, format: .number)
                     .textFieldStyle(.roundedBorder)
                 
-                TextField("Foto de perfil", text: $viewModel.signupData.firstName)
+                //TextField("Foto de perfil", text: $viewModel.signupData.firstName)
                 
                 SecureField("Contraseña", text: $viewModel.signupData.password)
                     .textFieldStyle(.roundedBorder)
@@ -78,7 +78,10 @@ struct SignupView: View {
                     .textFieldStyle(.roundedBorder)
                 
                 Button {
-                    goMenu()
+                    Task {
+                        await viewModel.postSignup()
+                    }
+                    //goMenu()
                 } label: {
                     Text("Registrarse")
                         .padding()
@@ -94,7 +97,7 @@ struct SignupView: View {
                             message: Text("Por favor, completa todos los campos."),
                             dismissButton: .default(Text("OK"))
                         )
-                    } else {    
+                    } else {
                         return Alert(
                             title: Text("Correo o contraseña Incorrecta"),
                             message: Text("El correo o contraseña es incorrecto, por favor, vuelve a intentarlo."),
