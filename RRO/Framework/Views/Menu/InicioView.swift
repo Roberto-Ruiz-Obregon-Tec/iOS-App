@@ -46,7 +46,7 @@ struct TabBarView: View {
                 }
             }
         }
-        .frame(height: 150)
+        .frame(height: 180)
         .background(Color.white)
         .ignoresSafeArea(.all)
     }
