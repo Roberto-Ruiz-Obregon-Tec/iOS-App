@@ -43,6 +43,7 @@ struct CoursesView: View {
 //    CoursesView()
 //}
 
+<<<<<<< HEAD
 struct CourseListViewPreviews: PreviewProvider {
     static var previews: some View {
         CoursesView(courseViewModel: getViewModel())
@@ -60,6 +61,11 @@ struct CourseListViewPreviews: PreviewProvider {
         }
         
         return vm
+=======
+struct CoursesViewPreview: PreviewProvider {
+    static var previews: some View {
+        CoursesView()
+>>>>>>> dev
     }
 }
 

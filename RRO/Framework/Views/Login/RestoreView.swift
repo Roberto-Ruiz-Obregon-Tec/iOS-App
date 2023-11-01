@@ -20,3 +20,13 @@ struct RestoreView: View {
         }
     }
 }
+<<<<<<< HEAD
+=======
+
+struct RestoreViewPreview: PreviewProvider {
+    static var previews: some View {
+        RestoreView{()}
+    }
+}
+
+>>>>>>> dev

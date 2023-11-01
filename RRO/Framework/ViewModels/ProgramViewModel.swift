@@ -20,7 +20,7 @@ class ProgramViewModel: ObservableObject {
     func getPrograms() async {
         let result = await programListRequirement.getProgramList(limit: 32, offset: 0)
         if let res = result {
-            self.programList = res.data ?? []
+            self.programList = res.data.documents ?? []
         }
         
     }

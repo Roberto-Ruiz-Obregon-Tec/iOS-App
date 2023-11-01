@@ -15,7 +15,7 @@ class ProgramRepository: ProgramAPIProtocol {
         self.netService = netService
     }
     
-    func getProgramList(limit: Int, offset: Int) async -> ServerResponse<[Program]>?{
+    func getProgramList(limit: Int, offset: Int) async -> ServerResponse<Program>?{
         let params = [
             "limit": limit,
             "offset": offset

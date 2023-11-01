@@ -43,3 +43,12 @@ struct ProfileView: View {
         }
     }
 }
+<<<<<<< HEAD
+=======
+
+struct ProfileViewPreview: PreviewProvider {
+    static var previews: some View {
+        ProfileView{()}
+    }
+}
+>>>>>>> dev

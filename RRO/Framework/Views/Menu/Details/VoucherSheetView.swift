@@ -63,3 +63,12 @@ struct VoucherSheetView: View {
         image = Image(uiImage: inputImage)
     }
 }
+<<<<<<< HEAD
+=======
+
+struct VoucherSheetViewPreview: PreviewProvider {
+    static var previews: some View {
+        VoucherSheetView()
+    }
+}
+>>>>>>> dev
