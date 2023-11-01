@@ -144,16 +144,3 @@ struct LoginView: View {
         }
     }
 }
-<<<<<<< HEAD
-=======
-
-#Preview {
-    LoginView(viewModel: LoginViewModel(loginRepository: LoginRepository())){
-        ()
-    } goRegister: {
-        ()
-    } goRestore: {
-        ()
-    }
-}
->>>>>>> dev
