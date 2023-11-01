@@ -20,7 +20,7 @@ struct CoursesView: View {
             .padding(.horizontal)
         
         ScrollView{
-            List(courseViewModel.courseList.filter {
+            ForEach(courseViewModel.courseList.filter {
                 filterText.isEmpty || $0.name.lowercased().contains(filterText.lowercased())
             }) { course in
                 CourseInfoCardView(course: course)
@@ -43,7 +43,7 @@ struct CoursesView: View {
 //    CoursesView()
 //}
 
-struct CourseViewPreviews: PreviewProvider {
+struct CourseListViewPreviews: PreviewProvider {
     static var previews: some View {
         CoursesView(courseViewModel: getViewModel())
     }
