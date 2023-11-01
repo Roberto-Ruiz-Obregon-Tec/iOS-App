@@ -62,10 +62,10 @@ protocol EventAPIProtocol {
 //FAQ VIEW PROTOCOL
 protocol FundationInformationAPIProtocol{
     // https://{API_DOMAIN}/v1/informacion-fundacion
-    func getInfoFundation(limit : Int) async -> FoundationResponse<InfoFundation>?
+    func getInfoFundation(limit : Int) async -> ServerResponse<[InfoFundation]>?
 }
     
 protocol CertificationAPIProtocol {
     // https://{API_DOMAIN}/v1/certification?limit={Int}&offset={Int}
-    func getCertificationList(limit: Int) async -> CertificationResponse<[Certification]>?
+    func getCertificationList(limit: Int) async -> ServerResponse<[Certification]>?
 }

@@ -19,7 +19,7 @@ class FundationInformationViewModel: ObservableObject{
     @MainActor
     func getInfoFundation() async{
         if let result = await infoFundacionRequirement.getInfoFundation(limit: 1){
-            self.infoFundation = result.data.documents 
+            self.infoFundation = result.data ?? self.infoFundation
         }
     }
     

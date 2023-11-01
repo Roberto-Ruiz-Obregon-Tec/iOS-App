@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CertificationListRequirementProtocol {
-    func getCertificationList(limit: Int) async -> CertificationResponse<[Certification]>?
+    func getCertificationList(limit: Int) async -> ServerResponse<[Certification]>?
 }
 
 class CertificationListRequirement: CertificationListRequirementProtocol {
@@ -19,7 +19,7 @@ class CertificationListRequirement: CertificationListRequirementProtocol {
         self.dataRepository = dataRepository
     }
     
-    func getCertificationList(limit: Int) async -> CertificationResponse<[Certification]>? {
+    func getCertificationList(limit: Int) async -> ServerResponse<[Certification]>? {
         return await dataRepository.getCertificationList(limit: limit)
     }
 }

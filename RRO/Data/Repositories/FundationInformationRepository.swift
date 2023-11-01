@@ -16,7 +16,7 @@ class FundationInformationRepository: FundationInformationAPIProtocol {
         self.netService = netService
     }
     
-    func getInfoFundation(limit: Int) async -> FoundationResponse<InfoFundation>? {
+    func getInfoFundation(limit: Int) async -> ServerResponse<[InfoFundation]>? {
         let params = [
             "limit": limit
         ]

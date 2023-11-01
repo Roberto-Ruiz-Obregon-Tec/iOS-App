@@ -41,22 +41,25 @@ struct SignupView: View {
                 
                 TextField("Género", text: $viewModel.signupData.gender)
                     .textFieldStyle(.roundedBorder)
+            }.padding(.horizontal, 32)
+            
+            HStack {
+                Text("Edad")
+                Spacer()
                 
-                HStack {
-                    Text("Edad")
-                    Spacer()
-                    
-                    Picker("Edad", selection: $viewModel.signupData.age) {
-                        ForEach(10..<100) {
-                            Text("\($0) años")
-                        }
+                Picker("Edad", selection: $viewModel.signupData.age) {
+                    ForEach(10..<100) {
+                        Text("\($0) años")
                     }
-                    .pickerStyle(.menu)
-                    
-                }.padding(.horizontal)
-                .overlay(RoundedRectangle(cornerRadius: 4)
-                    .stroke(Color(UIColor.systemGray4), lineWidth: 1))
-                
+                }
+                .pickerStyle(.menu)
+            }
+            .padding(.horizontal)
+            .overlay(RoundedRectangle(cornerRadius: 4)
+            .stroke(Color(UIColor.systemGray4), lineWidth: 1))
+            .padding(.horizontal, 32)
+            
+            VStack {
                 TextField("Ocupación", text: $viewModel.signupData.occupation)
                     .textFieldStyle(.roundedBorder)
                 
@@ -136,7 +139,9 @@ struct SignupView: View {
     }
 }
 
-#Preview {
-    SignupView(goMenu: {})
-
+struct SignupViewPreviews: PreviewProvider {
+    static var previews: some View {
+        SignupView(goMenu: {})
+    }
 }
+
