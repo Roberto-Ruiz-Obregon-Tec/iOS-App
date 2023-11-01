@@ -98,7 +98,7 @@
 		48DF02A42AF1C045005DE385 /* CertificationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationDetailView.swift; sourceTree = "<group>"; };
 		48DF02A62AF1C066005DE385 /* CertificationListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationListView.swift; sourceTree = "<group>"; };
 		48DF02A82AF1C0BE005DE385 /* CertificationRequirement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationRequirement.swift; sourceTree = "<group>"; };
-		48DF02AA2AF1C147005DE385 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuView.swift; path = ../../../../../../.Trash/MenuView.swift; sourceTree = "<group>"; };
+		48DF02AA2AF1C147005DE385 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		48DF02AC2AF1C159005DE385 /* InicioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InicioView.swift; sourceTree = "<group>"; };
 		48DF02AE2AF1C31A005DE385 /* CertificationInfoCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationInfoCardView.swift; sourceTree = "<group>"; };
 		88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramInfoCardView.swift; sourceTree = "<group>"; };
@@ -566,7 +566,6 @@
 				48DF02AF2AF1C31A005DE385 /* CertificationInfoCardView.swift in Sources */,
 				EEAA9D4B2AE2E36300282A82 /* SigninView.swift in Sources */,
 				F64162C72AF00CB000B25E0E /* EventListView.swift in Sources */,
-				EEAA9D5C2AE2E49600282A82 /* MenuView.swift in Sources */,
 				9D7F813D2AE2D46B002FA1E0 /* DummyLocalService.swift in Sources */,
 				F64162BE2AF00A8000B25E0E /* EventViewModel.swift in Sources */,
 				EEDD93F62AE8E8BC0066AD71 /* ScholarshipRepository.swift in Sources */,
