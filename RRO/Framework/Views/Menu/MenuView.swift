@@ -12,6 +12,10 @@ struct MenuView: View {
     var body: some View {
         TabView {
             // TODO: wrap courses, scholarships, and programs on a single view
+            CoursesView().tabItem {
+                Image(systemName: "book")
+                Text("Cursos")
+            }
             ScholarshipsView().tabItem {
                 Image(systemName: "house")
                 Text("Inicio")

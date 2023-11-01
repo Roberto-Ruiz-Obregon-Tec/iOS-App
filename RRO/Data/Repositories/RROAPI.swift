@@ -9,7 +9,7 @@ import Foundation
 
 struct API {
     // TODO: Change the url with the deployed domain, private ip used for testing
-    static let base = "http://localhost:3000/v1"
+    static let base = "http://localhost:3001/v1"
    
     
     struct routes {
