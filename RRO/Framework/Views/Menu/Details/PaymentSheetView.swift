@@ -25,12 +25,11 @@ struct PaymentSheetView: View {
         
     }
 }
-<<<<<<< HEAD
-=======
+
 
 struct PaymentSheetViewPreview: PreviewProvider {
     static var previews: some View {
         PaymentSheetView()
     }
 }
->>>>>>> dev
+

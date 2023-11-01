@@ -15,7 +15,7 @@ class CourseRepository: CourseAPIProtocol {
         self.netService = netService // Inicializamos la instancia shared
     }
     
-    func getCourseList() async -> ServerResponse<[Course]>?{
+    func getCourseList() async -> CourseResponse<[Course]>?{
         let params = [ // Parametros a agregar en el request
             "cost[gte]": 0
         ]
@@ -23,7 +23,7 @@ class CourseRepository: CourseAPIProtocol {
         return await netService.self.get(url: URL(string: "\(API.base)\(API.routes.course)")!, params: params)
     }
     
-    func getCourse(id: String) async -> ServerResponse<[Course]>? {
+    func getCourse(id: String) async -> CourseResponse<[Course]>? {
         return await netService.self.get(url: URL(string: "\(API.base)\(API.routes.course)/\(id)")!)
     }
 }
