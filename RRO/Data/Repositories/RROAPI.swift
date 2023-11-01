@@ -50,9 +50,9 @@ protocol ProgramAPIProtocol {
 
 protocol EventAPIProtocol {
     // https://{API_DOMAIN}/v1/event?limit={Int}&offset={Int}
-    func getEventList(limit: Int, offset: Int) async -> ServerResponse<[Event]>?
+    func getEventList(limit: Int, offset: Int) async -> EventResponse<[Event]>?
     // https://{API_DOMAIN}/v1/event/{id}
-    func getEvent(id: String) async -> Event?
+   // func getEvent(id: String) async -> Event?
 }
 
 //FAQ VIEW PROTOCOL
