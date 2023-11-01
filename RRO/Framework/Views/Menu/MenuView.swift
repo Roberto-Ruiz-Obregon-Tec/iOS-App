@@ -12,7 +12,6 @@ struct MenuView: View {
     var body: some View {
         TabView {
             InicioView().tabItem {
-
                 Image(systemName: "house")
                 Text("Inicio")
             }
