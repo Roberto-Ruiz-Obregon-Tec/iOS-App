@@ -1,34 +1,20 @@
 //
-//  InfoCardView.swift
+//  CertificationInfoCardView.swift
 //  RRO
 //
-//  Created by KARLA PADILLA on 26/10/23.
+//  Created by sebastian Jimenez Bauer on 30/10/23.
 //
 
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct ProgramInfoCardView: View {
+struct CertificationInfoCardView: View {
     let name: String
-    let image: String
     let description: String
-    let limitDate: Date
-    let category: String
     let goDetail: () -> Void
     
     var body: some View {
         VStack {
-            if image != "" {
-                WebImage(url: URL(string: image))
-                    .resizable()
-                    .cornerRadius(16)
-                    .scaledToFit()
-            } else {
-                Image("DefaultImage")
-                    .resizable()
-                    .cornerRadius(16)
-                    .scaledToFit()
-            }
             
             HStack {
                 Text(name)
@@ -45,27 +31,9 @@ struct ProgramInfoCardView: View {
                 Spacer()
             }.padding(.bottom, 12)
             
-            HStack {
-                Text("Fecha límite")
-                    .foregroundStyle(.secondary)
-                
-                Spacer()
-                
-                Text(limitDate, format: .dateTime.day().month())
-            }.padding(.bottom, 2)
-            
-            Divider()
-            
-            HStack {
-                Text("Categoría")
-                    .foregroundStyle(.secondary)
-                Spacer()
-                Text(category)
-            }.padding(.bottom, 12)
-            
-            Button {
+            Button(action: {
                 goDetail()
-            } label: {
+            }) {
                 Text("Ver más")
                     .font(.headline)
                     .frame(maxWidth: .infinity)
@@ -79,20 +47,18 @@ struct ProgramInfoCardView: View {
         .overlay(
             RoundedRectangle(cornerRadius: 16)
                 .stroke(Color(UIColor.systemGray4), lineWidth: 1.5)
-            )
+        )
         .padding(10)
     }
 }
 
-struct ProgramInfoCardView_Preview: PreviewProvider {
+struct CertificationInfoCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgramInfoCardView(
+        CertificationInfoCardView(
             name: "Programa",
-            image: "",
             description: "Este programa es muy bueno, deberías de inscribirte y probarlo.",
-            limitDate: Date(),
-            category: "Creativa",
             goDetail: {}
         )
     }
 }
+

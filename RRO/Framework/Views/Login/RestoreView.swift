@@ -21,7 +21,9 @@ struct RestoreView: View {
     }
 }
 
-#Preview {
-    RestoreView{()}
+struct RestoreViewPreview: PreviewProvider {
+    static var previews: some View {
+        RestoreView{()}
+    }
 }
 

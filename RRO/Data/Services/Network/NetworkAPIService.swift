@@ -38,22 +38,23 @@ class NetworkAPIService {
                     .responseDecodable(of: T.self, decoder: self._decoder) {
                         response in switch response.result {
                         case .success(let data):
+                            // Print the response data
+                            debugPrint("Response Data: \(data)")
                             continuation.resume(returning: data)
-                            
-                        case .failure(_):
-                            continuation.resume(throwing: NSError())
-                            
+                        case .failure(let error):
+                            // Print the error
+                            debugPrint("Request Error: \(error)")
+                            continuation.resume(throwing: error)
                         }
                     }
             }
-            
         } catch {
-            debugPrint("NetworkAPIService Error")
-            
+            debugPrint("NetworkAPIService Error: \(error)")
         }
         
         return nil
     }
+
     
     /// Post request on a specified url and serialize the response into a given codable struct
     /// - Parameter url: Url where the request will be sent to
@@ -70,17 +71,14 @@ class NetworkAPIService {
                         response in switch response.result {
                         case .success(let data):
                             continuation.resume(returning: data)
-                            
                         case .failure(_):
                             continuation.resume(throwing: NSError())
-                            
                         }
                     }
             }
             
         } catch {
             debugPrint("NetworkAPIService Error")
-            
         }
         
         return nil

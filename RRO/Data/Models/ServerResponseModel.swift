@@ -14,4 +14,3 @@ struct ServerResponse<T: Codable>: Codable {
     var results: Int?
     var data: T?
 }
-

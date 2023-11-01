@@ -35,4 +35,3 @@ struct MenuView: View {
 #Preview {
     MenuView{()}
 }
-

@@ -157,17 +157,19 @@ struct ScholarshipDetailView: View {
         
 }
 
-#Preview {
-    ScholarshipDetailView(scholarship: Scholarship(
-        id: "",
-        name: "",
-        description: "",
-        organization: "",
-        location: "",
-        email: "",
-        phone: "",
-        image: "",
-        sector: "",
-        startDate: Date.now,
-        endDate: Date.now))
+struct ScholarshipDetailViewPreview: PreviewProvider {
+    static var previews: some View {
+        ScholarshipDetailView(scholarship: Scholarship(
+            id: "",
+            name: "",
+            description: "",
+            organization: "",
+            location: "",
+            email: "",
+            phone: "",
+            image: "",
+            sector: "",
+            startDate: Date.now,
+            endDate: Date.now))
+    }
 }
