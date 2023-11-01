@@ -12,12 +12,11 @@ struct FeedView: View {
         Text("Feed")
     }
 }
-<<<<<<< HEAD
-=======
+
 
 struct FeedViewPreview: PreviewProvider {
     static var previews: some View {
         FeedView()
     }
 }
->>>>>>> dev
+

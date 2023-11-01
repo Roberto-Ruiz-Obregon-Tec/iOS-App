@@ -43,7 +43,7 @@ struct CoursesView: View {
 //    CoursesView()
 //}
 
-<<<<<<< HEAD
+
 struct CourseListViewPreviews: PreviewProvider {
     static var previews: some View {
         CoursesView(courseViewModel: getViewModel())
@@ -56,20 +56,14 @@ struct CourseListViewPreviews: PreviewProvider {
         for _ in 1...elems {
             vm.courseList.append(
                 Course(id:UUID().uuidString, name: "Curso de Escritura", description: "Lleva tus habilidades para crear artesanias al siguiente nivel, aprende a pintar con acuarelas y tecnicas de dibujo.",speaker: "", startDate: Date.now, endDate: Date.now, schedule: "", modality: "Presencial", postalCode: 0, location: "", status: "", cost: 1200, courseImage: "", capacity: 1, rating: 0, meetingCode: "", accessCode: "", focus: []))
-                
+            
             
         }
         
         return vm
-=======
-struct CoursesViewPreview: PreviewProvider {
-    static var previews: some View {
-        CoursesView()
->>>>>>> dev
     }
+    
 }
-
-
 //struct CoursesView: View {
 //    @State var coursesList: ServerResponse<[Course]>?
 //    @State var course: ServerResponse<[Course]>?
@@ -136,4 +130,5 @@ struct CoursesViewPreview: PreviewProvider {
 //        course = result
 //    }
 //}
+
 

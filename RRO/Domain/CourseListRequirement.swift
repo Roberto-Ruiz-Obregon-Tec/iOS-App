@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CourseListRequirementProtocol {
-    func getCourseList() async -> ServerResponse<[Course]>?
+    func getCourseList() async -> CourseResponse<[Course]>?
 }
 
 
@@ -20,7 +20,7 @@ class CourseListRequirement: CourseListRequirementProtocol {
         self.dataRepository = dataRepository
     }
 
-    func getCourseList() async -> ServerResponse<[Course]>? {
+    func getCourseList() async -> CourseResponse<[Course]>? {
         return await dataRepository.getCourseList()
     }
 }

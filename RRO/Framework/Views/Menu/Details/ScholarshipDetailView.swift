@@ -156,8 +156,7 @@ struct ScholarshipDetailView: View {
     }
         
 }
-<<<<<<< HEAD
-=======
+
 
 struct ScholarshipDetailViewPreview: PreviewProvider {
     static var previews: some View {
@@ -175,4 +174,4 @@ struct ScholarshipDetailViewPreview: PreviewProvider {
             endDate: Date.now))
     }
 }
->>>>>>> dev
+

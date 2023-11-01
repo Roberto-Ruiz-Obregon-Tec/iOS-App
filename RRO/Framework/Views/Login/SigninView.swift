@@ -26,12 +26,11 @@ struct SigninView: View {
         
     }
 }
-<<<<<<< HEAD
-=======
+
 
 struct SigninViewPreview: PreviewProvider {
     static var previews: some View {
         SigninView{()}
     }
 }
->>>>>>> dev
+
