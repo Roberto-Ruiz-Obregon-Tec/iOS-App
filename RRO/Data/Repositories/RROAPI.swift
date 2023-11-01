@@ -11,7 +11,7 @@ struct API {
     // TODO: Change the url with the deployed domain, private ip used for testing
                 //                 |
                 //PONER TU IP AQUÍ v
-    static let base = "http://192.168.68.114:3001/v1"
+    static let base = "http://10.25.98.38:3001/v1"
     
     struct routes {
         // TODO: Map all the routes
@@ -54,8 +54,9 @@ protocol ProgramAPIProtocol {
 protocol FundationInformationAPIProtocol{
     // https://{API_DOMAIN}/v1/informacion-fundacion
     func getInfoFundation(limit : Int) async -> FoundationResponse<InfoFundation>?
-
+}
+    
 protocol CertificationAPIProtocol {
     // https://{API_DOMAIN}/v1/certification?limit={Int}&offset={Int}
-    func getCertificationList(limit: Int, offset: Int) async -> ServerResponse<[Certification]>?
+    func getCertificationList(limit: Int) async -> CertificationResponse<[Certification]>?
 }

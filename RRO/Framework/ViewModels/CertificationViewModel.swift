@@ -17,10 +17,9 @@ class CertificationViewModel: ObservableObject {
     }
     
     @MainActor
-    func getCertificationList() async {
-        let result = await certificationListRequirement.getCertificationList(limit: 32, offset: 0)
-        if let res = result {
-            self.certificationList = res.data ?? []
+    func getCertificationList() async{
+        if let result = await certificationListRequirement.getCertificationList(limit: 32){
+            self.certificationList = result.data.documents
         }
     }
 }

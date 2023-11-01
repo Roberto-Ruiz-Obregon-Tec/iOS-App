@@ -15,9 +15,9 @@ class CertificationRepository: CertificationAPIProtocol {
         self.netService = netService
     }
     
-    func getCertificationList(limit: Int, offset: Int) async -> ServerResponse<[Certification]>?{
+    func getCertificationList(limit: Int) async -> CertificationResponse<[Certification]>?{
         let params = [
-            "limit": limit,
+            "limit": limit
         ]
         
         return await netService.self.get(url: URL(string: "\(API.base)\(API.routes.certification)")!, params: params)

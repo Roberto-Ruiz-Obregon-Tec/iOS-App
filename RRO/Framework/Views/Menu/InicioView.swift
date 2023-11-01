@@ -13,6 +13,7 @@ struct InicioView: View {
     @State private var searchText = ""
     
     var body: some View {
+        
         ZStack(alignment: .top){
             TabView(selection: self.$currentTab){
                 CoursesView().tag(0)
@@ -20,9 +21,9 @@ struct InicioView: View {
                 ProgramListView().tag(2)
                 CertificationListView().tag(3)
             }
+            .padding(.top, 150)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .edgesIgnoringSafeArea(.all)
-            
             TabBarView(currentTab: self.$currentTab)
         }
     }
@@ -35,26 +36,30 @@ struct TabBarView: View {
     @Binding var currentTab : Int
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false){
-            HStack(spacing: 10){
-                ForEach(Array(zip(self.tabVarList.indices, self.tabVarList)),id: \.0) { index, name in
-                    TabBarItem(tabBarItemName: name, currentTab: self.$currentTab, Tab: index)
+        VStack{
+            Text("Inicio").padding(.horizontal).foregroundColor(Color.black).font(.title).bold()
+            ScrollView(.horizontal, showsIndicators: false){
+                HStack(spacing: 10){
+                    ForEach(Array(zip(self.tabVarList.indices, self.tabVarList)),id: \.0) { index, name in
+                        TabBarItem(tabBarItemName: name, currentTab: self.$currentTab, Tab: index)
+                    }
                 }
             }
-            .padding(.horizontal)
-            .padding(.vertical)
         }
-        .frame(height: 200)
+        .frame(height: 150)
+        .background(Color.white)
+        .ignoresSafeArea(.all)
     }
 }
 
+
 struct TabBarItem: View {
     var tabBarItemName: String
-    
+
     @Binding var currentTab: Int
-    var Tab : Int
-    
-    var body: some View{
+    var Tab: Int
+
+    var body: some View {
         Button(action: {
             self.currentTab = Tab
         }) {
@@ -63,10 +68,19 @@ struct TabBarItem: View {
                 .bold(true)
                 .padding(.horizontal, 16)
                 .padding(.vertical, 10)
-                .foregroundColor(self.currentTab == Tab ? .white : Color(UIColor.label))
-                .background(RoundedRectangle(cornerRadius: 8).fill(self.currentTab == Tab ? Color.red : Color.clear).overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray.opacity(0.2), lineWidth: 1.5)))
+                .foregroundColor(self.currentTab == Tab ? .white : .primary)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(self.currentTab == Tab ? Color.red : Color.clear)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.gray.opacity(0.2), lineWidth: 1.5)
+                        )
+                )
                 .buttonStyle(.borderedProminent)
-        }}
+        }
+        .colorScheme(self.currentTab == Tab ? .dark : .light)
+    }
 }
 
 
