@@ -146,9 +146,12 @@ struct FAQView: View {
         
     }
 }
+<<<<<<< HEAD
+=======
 
 struct FAQViewPreview: PreviewProvider {
     static var previews: some View {
         FAQView()
     }
 }
+>>>>>>> dev

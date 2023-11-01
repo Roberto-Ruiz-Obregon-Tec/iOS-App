@@ -83,6 +83,8 @@ struct ProgramInfoCardView: View {
         .padding(10)
     }
 }
+<<<<<<< HEAD
+=======
 
 struct ProgramInfoCardView_Preview: PreviewProvider {
     static var previews: some View {
@@ -96,3 +98,4 @@ struct ProgramInfoCardView_Preview: PreviewProvider {
         )
     }
 }
+>>>>>>> dev

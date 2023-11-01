@@ -52,6 +52,8 @@ struct CoordinatorView: View {
         }
     }
 }
+<<<<<<< HEAD
+=======
 
 struct CoordinatorViewPreview: PreviewProvider {
     static var previews: some View {
@@ -59,3 +61,4 @@ struct CoordinatorViewPreview: PreviewProvider {
     }
 }
 
+>>>>>>> dev

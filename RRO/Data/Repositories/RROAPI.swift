@@ -9,9 +9,14 @@ import Foundation
 
 struct API {
     // TODO: Change the url with the deployed domain, private ip used for testing
+<<<<<<< HEAD
+    static let base = "http://localhost:3001/v1"
+   
+=======
                 //                 |
                 //PONER TU IP AQUÍ v
     static let base = "http://10.25.98.38:3001/v1"
+>>>>>>> dev
     
     struct routes {
         // TODO: Map all the routes
@@ -48,6 +53,15 @@ protocol ProgramAPIProtocol {
     func getProgram(id: String) async -> Program?
 }
 
+<<<<<<< HEAD
+protocol CourseAPIProtocol {
+    // https://{API_DOMAIN}/v1/course?params=val
+    func getCourseList() async -> ServerResponse<[Course]>?
+    // https://{API_DOMAIN}/v1/course/{id}
+    func getCourse(id: String) async -> ServerResponse<[Course]>?
+}
+
+=======
 protocol EventAPIProtocol {
     // https://{API_DOMAIN}/v1/event?limit={Int}&offset={Int}
     func getEventList(limit: Int, offset: Int) async -> EventResponse<[Event]>?
@@ -65,3 +79,4 @@ protocol CertificationAPIProtocol {
     // https://{API_DOMAIN}/v1/certification?limit={Int}&offset={Int}
     func getCertificationList(limit: Int) async -> CertificationResponse<[Certification]>?
 }
+>>>>>>> dev

@@ -25,9 +25,12 @@ struct ProgramListView: View {
         }
     }
 }
+<<<<<<< HEAD
+=======
 
 struct ProgramListPreview: PreviewProvider {
     static var previews: some View {
         ProgramListView()
     }
 }
+>>>>>>> dev
