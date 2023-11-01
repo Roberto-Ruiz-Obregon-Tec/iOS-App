@@ -13,7 +13,7 @@ struct CertificationListView: View {
     var body: some View {
         ScrollView {
             ForEach(certificationViewModel.certificationList) { certification in
-                CertificationInfoCardView(name: certification.name, description: certification.description, goDetail: {})
+                CertificationInfoCardView(name: certification.name, description: certification.description)
             }
         }
         .padding(.horizontal)

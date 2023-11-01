@@ -21,7 +21,7 @@ struct InicioView: View {
                 ProgramListView().tag(2)
                 CertificationListView().tag(3)
             }
-            .padding(.top, 150)
+            .padding(.top, 210)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .edgesIgnoringSafeArea(.all)
             TabBarView(currentTab: self.$currentTab)
@@ -46,7 +46,7 @@ struct TabBarView: View {
                 }
             }
         }
-        .frame(height: 150)
+        .frame(height: 210)
         .background(Color.white)
         .ignoresSafeArea(.all)
     }
@@ -74,7 +74,7 @@ struct TabBarItem: View {
                         .fill(self.currentTab == Tab ? Color.red : Color.clear)
                         .overlay(
                             RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.gray.opacity(0.2), lineWidth: 1.5)
+                                .stroke(Color(UIColor.systemGray4), lineWidth: 1.5)
                         )
                 )
                 .buttonStyle(.borderedProminent)
