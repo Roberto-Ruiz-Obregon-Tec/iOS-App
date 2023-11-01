@@ -27,8 +27,6 @@ struct FeedView: View {
     }
 }
 
-
-
 struct TabBarViewPublicaciones: View {
     var tabVarList:[String] = ["Publicaciones", "Eventos"]
     @Binding var currentTab : Int
@@ -86,3 +84,4 @@ struct FeedView_Previews: PreviewProvider {
         FeedView()
     }
 }
+

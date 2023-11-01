@@ -27,8 +27,10 @@ struct SigninView: View {
     }
 }
 
+
 struct SigninViewPreview: PreviewProvider {
     static var previews: some View {
         SigninView{()}
     }
 }
+

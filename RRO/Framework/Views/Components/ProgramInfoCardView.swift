@@ -84,6 +84,7 @@ struct ProgramInfoCardView: View {
     }
 }
 
+
 struct ProgramInfoCardView_Preview: PreviewProvider {
     static var previews: some View {
         ProgramInfoCardView(

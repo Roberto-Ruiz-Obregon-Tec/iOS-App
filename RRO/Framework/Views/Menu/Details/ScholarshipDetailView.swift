@@ -157,6 +157,7 @@ struct ScholarshipDetailView: View {
         
 }
 
+
 struct ScholarshipDetailViewPreview: PreviewProvider {
     static var previews: some View {
         ScholarshipDetailView(scholarship: Scholarship(
@@ -173,3 +174,4 @@ struct ScholarshipDetailViewPreview: PreviewProvider {
             endDate: Date.now))
     }
 }
+

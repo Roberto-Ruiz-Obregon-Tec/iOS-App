@@ -147,8 +147,10 @@ struct FAQView: View {
     }
 }
 
+
 struct FAQViewPreview: PreviewProvider {
     static var previews: some View {
         FAQView()
     }
 }
+

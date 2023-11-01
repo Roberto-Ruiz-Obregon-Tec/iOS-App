@@ -64,8 +64,10 @@ struct VoucherSheetView: View {
     }
 }
 
+
 struct VoucherSheetViewPreview: PreviewProvider {
     static var previews: some View {
         VoucherSheetView()
     }
 }
+

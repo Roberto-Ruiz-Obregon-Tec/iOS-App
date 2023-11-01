@@ -9,7 +9,7 @@ import Foundation
 
 struct API {
     // TODO: Change the url with the deployed domain, private ip used for testing
-                //                 |
+            //                 |
                 //PONER TU IP AQUÍ v
     static let base = "http://192.168.68.106:3001/v1"
     
@@ -48,6 +48,14 @@ protocol ProgramAPIProtocol {
     func getProgram(id: String) async -> Program?
 }
 
+
+protocol CourseAPIProtocol {
+    // https://{API_DOMAIN}/v1/course?params=val
+    func getCourseList() async -> CourseResponse<[Course]>?
+    // https://{API_DOMAIN}/v1/course/{id}
+    func getCourse(id: String) async -> CourseResponse<[Course]>?
+}
+
 protocol EventAPIProtocol {
     // https://{API_DOMAIN}/v1/event?limit={Int}&offset={Int}
     func getEventList(limit: Int, offset: Int) async -> EventResponse<[Event]>?
@@ -65,3 +73,4 @@ protocol CertificationAPIProtocol {
     // https://{API_DOMAIN}/v1/certification?limit={Int}&offset={Int}
     func getCertificationList(limit: Int) async -> CertificationResponse<[Certification]>?
 }
+

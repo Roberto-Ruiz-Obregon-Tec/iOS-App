@@ -44,8 +44,10 @@ struct ProfileView: View {
     }
 }
 
+
 struct ProfileViewPreview: PreviewProvider {
     static var previews: some View {
         ProfileView{()}
     }
 }
+
