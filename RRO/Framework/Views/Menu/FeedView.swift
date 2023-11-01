@@ -19,7 +19,7 @@ struct FeedView: View {
                 PublicacionesView().tag(0)
                 EventListView().tag(1)
             }
-            .padding(.top, 150)
+            .padding(.top, 180)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .edgesIgnoringSafeArea(.all)
             TabBarViewPublicaciones(currentTab: self.$currentTab)
@@ -71,7 +71,7 @@ struct TabBarItemPublicaciones: View {
                             .fill(self.currentTab == Tab ? Color.red : Color.clear)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color.gray.opacity(0.2), lineWidth: 1.5)
+                                    .stroke(Color(UIColor.systemGray4), lineWidth: 1.5)
                             )
                     )
                     .buttonStyle(.borderedProminent)

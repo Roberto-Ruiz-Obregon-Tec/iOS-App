@@ -11,7 +11,6 @@ import SDWebImageSwiftUI
 struct CertificationInfoCardView: View {
     let name: String
     let description: String
-    let goDetail: () -> Void
     
     var body: some View {
         VStack {
@@ -30,18 +29,6 @@ struct CertificationInfoCardView: View {
                 
                 Spacer()
             }.padding(.bottom, 12)
-            
-            Button(action: {
-                goDetail()
-            }) {
-                Text("Ver más")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding(4)
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(.red)
-            .foregroundStyle(Color.white)
         }
         .padding()
         .overlay(
@@ -56,8 +43,7 @@ struct CertificationInfoCardView_Previews: PreviewProvider {
     static var previews: some View {
         CertificationInfoCardView(
             name: "Programa",
-            description: "Este programa es muy bueno, deberías de inscribirte y probarlo.",
-            goDetail: {}
+            description: "Este programa es muy bueno, deberías de inscribirte y probarlo."
         )
     }
 }
