@@ -12,8 +12,8 @@ struct Course: Codable, Identifiable { // Encoding y decoding | Para identificar
     var name: String
     var description: String
     var speaker: String
-    var startDate: Date
-    var endDate: Date
+    var startDate: String?
+    var endDate: String?
     var schedule: String
     var modality: String
     var postalCode: Int?

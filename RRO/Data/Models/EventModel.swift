@@ -12,8 +12,8 @@ struct Event: Codable, Identifiable {
     var eventName: String
     var description: String
     var location: String
-    var startDate: Date
-    var endDate: Date
+    var startDate: String?
+    var endDate: String?
     var imageUrl: String
     
     enum CodingKeys: String, CodingKey {

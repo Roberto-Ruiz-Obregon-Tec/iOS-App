@@ -47,9 +47,9 @@ struct CourseInfoCardView: View {
                     
                     Spacer()
                     
-                    Text(course.startDate, format: .dateTime.day().month().year())
+                    Text(course.startDate!.toISODate(), format: .dateTime.day().month().year())
                     Text("-")
-                    Text(course.endDate, format: .dateTime.day().month().year())
+                    Text(course.endDate!.toISODate(), format: .dateTime.day().month().year())
                 }.padding(.bottom, 2)
                 
                 Divider()

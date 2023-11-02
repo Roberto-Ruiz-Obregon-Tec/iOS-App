@@ -11,20 +11,21 @@ import SwiftUI
 struct InicioView: View {
     @State var currentTab: Int = 0
     @State private var searchText = ""
+   
+
     
     var body: some View {
-        
         ZStack(alignment: .top){
-            TabView(selection: self.$currentTab){
-                CoursesView().tag(0)
-                ScholarshipsView().tag(1)
-                ProgramListView().tag(2)
-                CertificationListView().tag(3)
-            }
-            .padding(.top, 210)
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            .edgesIgnoringSafeArea(.all)
-            TabBarView(currentTab: self.$currentTab)
+                TabView(selection: self.$currentTab){
+                    CoursesView().tag(0)
+                    ScholarshipsView().tag(1)
+                    ProgramListView().tag(2)
+                    CertificationListView().tag(3)
+                }
+                .padding(.top, 210)
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .edgesIgnoringSafeArea(.all)
+                TabBarView(currentTab: self.$currentTab)
         }
     }
 }
@@ -34,6 +35,8 @@ struct InicioView: View {
 struct TabBarView: View {
     var tabVarList:[String] = ["Cursos", "Becas","Programas" ,"Certificaciónes"]
     @Binding var currentTab : Int
+    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) var textColor
     
     var body: some View {
         VStack{
@@ -43,12 +46,10 @@ struct TabBarView: View {
                     ForEach(Array(zip(self.tabVarList.indices, self.tabVarList)),id: \.0) { index, name in
                         TabBarItem(tabBarItemName: name, currentTab: self.$currentTab, Tab: index)
                     }
-                }
+                }.padding(.horizontal, 20)
             }
         }
-        .frame(height: 210)
-        .background(Color.white)
-        .ignoresSafeArea(.all)
+        .background(colorScheme == .dark ? Color.black : Color.white)
     }
 }
 
@@ -69,8 +70,7 @@ struct TabBarItem: View {
                 .bold(true)
                 .padding(.horizontal, 16)
                 .padding(.vertical, 10)
-                .foregroundColor(self.currentTab == Tab ? .white :
-                                    (colorScheme == .light ? .primary : .white))
+                .foregroundColor(self.currentTab == Tab ? .white :(colorScheme == .light ? .primary : .white))
                 .background(
                     RoundedRectangle(cornerRadius: 8)
                         .fill(self.currentTab == Tab ? Color.red : Color.clear)
@@ -88,6 +88,8 @@ struct TabBarItem: View {
 
 struct InicioView_Previews: PreviewProvider {
     static var previews: some View {
-        InicioView()
+        ScrollView(.vertical){
+            InicioView()
+        }
     }
 }

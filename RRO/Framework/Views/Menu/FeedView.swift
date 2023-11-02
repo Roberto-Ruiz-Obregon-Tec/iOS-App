@@ -30,10 +30,12 @@ struct FeedView: View {
 struct TabBarViewPublicaciones: View {
     var tabVarList:[String] = ["Publicaciones", "Eventos"]
     @Binding var currentTab : Int
+    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) var textColor
     
     var body: some View {
         VStack{
-            Text("Publicaciones").padding(.horizontal).foregroundColor(Color.black).font(.title).bold()
+            Text("Publicaciones").padding(.horizontal).foregroundColor(textColor == .dark ? Color.white : Color.black).font(.title).bold()
                 HStack(alignment: .center ,spacing: 10){
                     ForEach(Array(zip(self.tabVarList.indices, self.tabVarList)),id: \.0) { index, name in
                         TabBarItemPublicaciones(tabBarItemName: name, currentTab: self.$currentTab, Tab: index)
@@ -41,7 +43,7 @@ struct TabBarViewPublicaciones: View {
                 }
         }
         .frame(height: 210)
-        .background(Color.white)
+        .background(colorScheme == .dark ? Color.black : Color.white)
         .ignoresSafeArea(.all)
     }
 }
@@ -49,6 +51,7 @@ struct TabBarViewPublicaciones: View {
 
 struct TabBarItemPublicaciones: View {
     var tabBarItemName: String
+    @Environment(\.colorScheme) var colorScheme
 
     @Binding var currentTab: Int
     var Tab: Int
@@ -63,7 +66,7 @@ struct TabBarItemPublicaciones: View {
                     .padding(.horizontal, 16)
                     .padding(.vertical, 10)
                     .frame(width: 160)
-                    .foregroundColor(self.currentTab == Tab ? .white : .primary)
+                    .foregroundColor(self.currentTab == Tab ? .white : (colorScheme == .light ? .primary : .white))
                     .background(
                         RoundedRectangle(cornerRadius: 8)
                             .fill(self.currentTab == Tab ? Color.red : Color.clear)

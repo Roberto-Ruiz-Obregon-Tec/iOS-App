@@ -46,7 +46,7 @@ struct EventInfoCardView: View {
                     
                     Spacer()
                     
-                    Text(event.startDate, format: .dateTime.day().month())
+                    Text(event.startDate!.toISODate(), format: .dateTime.day().month())
                 }.padding(.bottom, 2)
                 
                 Divider()
@@ -83,6 +83,6 @@ struct EventInfoCardView: View {
 
 struct EventInfoCardPreview: PreviewProvider {
     static var previews: some View {
-        EventInfoCardView(event: Event(id:UUID().uuidString, eventName: "Evento", description: "Descripción del evento", location: "Centro de Congresos", startDate: Date.now, endDate: Date.now, imageUrl: ""))
+        EventInfoCardView(event: Event(id:UUID().uuidString, eventName: "Evento", description: "Descripción del evento", location: "Centro de Congresos", startDate: Date.now.toString(), endDate: Date.now.toString(), imageUrl: ""))
     }
 }

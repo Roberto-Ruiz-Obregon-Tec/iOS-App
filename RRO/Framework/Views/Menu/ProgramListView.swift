@@ -13,7 +13,7 @@ struct ProgramListView: View {
     var body: some View {
         ScrollView {
             ForEach(programViewModel.programList) {program in
-                ProgramInfoCardView(name: program.name, image: program.programImage, description: program.description, limitDate: program.deadlineDate, category: "", goDetail: {})
+                ProgramInfoCardView(name: program.name, image: program.programImage, description: program.description, limitDate: program.deadlineDate.toISODate(), category: "", goDetail: {})
             }
         
         }
