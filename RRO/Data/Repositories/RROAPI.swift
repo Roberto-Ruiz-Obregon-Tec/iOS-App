@@ -11,7 +11,7 @@ struct API {
     // TODO: Change the url with the deployed domain, private ip used for testing
             //                 |
                 //PONER TU IP AQUÍ v
-    static let base = "http://10.25.107.225:3001/v1"
+    static let base = "http://169.254.179.227:3001/v1"
     
     struct routes {
         // TODO: Map all the routes
