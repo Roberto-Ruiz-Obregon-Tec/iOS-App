@@ -20,8 +20,9 @@ class LogoutRepository: LogoutAPIProtocol {
         let response: ServerResponse<User>? = await netService
             .get(url: URL(string: "\(API.base)\(API.routes.userLogout)")!)
         
-        if let response = response {
+        if response != nil {
             LocalService.shared.removeCurrentSession()
+            print("Sesión cerrada con éxito")
         }
         return response
     }

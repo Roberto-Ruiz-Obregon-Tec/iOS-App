@@ -12,6 +12,7 @@
       "size" : "20x20"
     },
     {
+      "filename" : "appicon58x58.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
@@ -61,6 +62,7 @@
       "size" : "29x29"
     },
     {
+      "filename" : "appicon58x58 1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
@@ -76,6 +78,7 @@
       "size" : "40x40"
     },
     {
+      "filename" : "appicon76x76.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
