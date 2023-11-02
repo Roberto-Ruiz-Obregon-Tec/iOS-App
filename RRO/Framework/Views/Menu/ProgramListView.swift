@@ -11,7 +11,7 @@ struct ProgramListView: View {
     @StateObject var programViewModel = ProgramViewModel()
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 ForEach(programViewModel.programList) {program in
                     ProgramInfoCardView(program: program)

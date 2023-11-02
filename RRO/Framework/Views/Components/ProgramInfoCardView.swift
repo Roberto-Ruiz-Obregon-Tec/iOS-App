@@ -11,7 +11,7 @@ import SDWebImageSwiftUI
 struct ProgramInfoCardView: View {
     let program: Program
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 if program.programImage != "" {
                     WebImage(url: URL(string: program.programImage))
@@ -35,7 +35,7 @@ struct ProgramInfoCardView: View {
                 HStack {
                     Text(program.description)
                         .foregroundStyle(.secondary)
-                        .fontWeight(.medium)
+                        //.fontWeight(.medium)
                     
                     Spacer()
                 }.padding(.bottom, 12)

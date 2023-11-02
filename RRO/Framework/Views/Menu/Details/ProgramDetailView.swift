@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProgramDetailView: View {
     var program: Program
+    @State var admin = false
+    
     var body: some View {
         Text("Henlo guord")
     }

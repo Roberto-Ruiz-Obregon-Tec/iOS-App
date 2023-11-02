@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CourseDetailView: View {
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 Text("Detalle del curso info y eso")
                 
