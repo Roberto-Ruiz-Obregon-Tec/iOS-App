@@ -17,6 +17,7 @@ struct API {
         // TODO: Map all the routes
         static let userSignup = "/user/auth/signup"
         static let userLogin = "/user/auth/login"
+        static let userLogout = "/user/auth/logout"
         static let adminSignup = "/admin/auth/signup"
         static let adminLogin = "/admin/auth/login"
         
@@ -30,8 +31,13 @@ struct API {
 }
 
 protocol LoginAPIProtocol {
-    // En mi login, solo quiero que me regrese mi ID
+    // En mi login, solo quiero que me regrese mi token
     func postLogin(model: Login) async -> ServerResponse<User>?
+}
+
+protocol LogoutAPIProtocol{
+    // https://{API_DOMAIN}/v1/user/auth/logout
+    func getLogout() async -> ServerResponse<User>?
 }
 
 protocol SignUpAPIProtocol {
