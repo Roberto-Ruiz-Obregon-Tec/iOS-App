@@ -22,7 +22,7 @@ class CourseViewModel: ObservableObject {
         
         if let res = result {
             self.courseList = res.data
-            print("ModelView: Received course data: \(self.courseList)")
+            print("ModelView: Received course data")
         } else {
             print("Failed to fetch course data")
         }
