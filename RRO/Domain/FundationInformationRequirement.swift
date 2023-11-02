@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FundationInformationRequirementProtocol{
-    func getInfoFundation(limit: Int) async -> FoundationResponse<InfoFundation>?
+    func getInfoFundation(limit: Int) async -> ServerResponse<[InfoFundation]>?
 }
 
 class FundationInformationRequirement:FundationInformationRequirementProtocol{
@@ -20,7 +20,7 @@ class FundationInformationRequirement:FundationInformationRequirementProtocol{
         self.dataRepository = dataRepository
     }
     
-    func getInfoFundation(limit: Int) async -> FoundationResponse<InfoFundation>?{
+    func getInfoFundation(limit: Int) async -> ServerResponse<[InfoFundation]>?{
         return await dataRepository.getInfoFundation(limit: limit)
     }
 }

@@ -11,7 +11,7 @@ struct API {
     // TODO: Change the url with the deployed domain, private ip used for testing
             //                 |
                 //PONER TU IP AQUÍ v
-    static let base = "http://localhost:3001/v1"
+    static let base = "http://192.168.1.69:3000/v1"
     
     struct routes {
         // TODO: Map all the routes
@@ -31,7 +31,11 @@ struct API {
 
 protocol LoginAPIProtocol {
     // En mi login, solo quiero que me regrese mi ID
-    func postLogin(model: User) async -> Result<String,Error>
+    func postLogin(model: Login) async -> ServerResponse<User>?
+}
+
+protocol SignUpAPIProtocol {
+    func postSignup(model: Signup) async -> ServerResponse<User>?
 }
 
 protocol ScholarshipAPIProtocol {
@@ -43,7 +47,7 @@ protocol ScholarshipAPIProtocol {
 
 protocol ProgramAPIProtocol {
     // https://{API_DOMAIN}/v1/program?limit={Int}&offset={Int}
-    func getProgramList(limit: Int, offset: Int) async -> ServerResponse<Program>?
+    func getProgramList(limit: Int, offset: Int) async -> ServerResponse<[Program]>?
     // https://{API_DOMAIN}/v1/program/{id}
     func getProgram(id: String) async -> Program?
 }
@@ -51,14 +55,14 @@ protocol ProgramAPIProtocol {
 
 protocol CourseAPIProtocol {
     // https://{API_DOMAIN}/v1/course?params=val
-    func getCourseList() async -> CourseResponse<[Course]>?
+    func getCourseList() async -> ServerResponse<[Course]>?
     // https://{API_DOMAIN}/v1/course/{id}
-    func getCourse(id: String) async -> CourseResponse<[Course]>?
+    func getCourse(id: String) async -> ServerResponse<[Course]>?
 }
 
 protocol EventAPIProtocol {
     // https://{API_DOMAIN}/v1/event?limit={Int}&offset={Int}
-    func getEventList(limit: Int, offset: Int) async -> EventResponse<[Event]>?
+    func getEventList(limit: Int, offset: Int) async -> ServerResponse<[Event]>?
     // https://{API_DOMAIN}/v1/event/{id}
    // func getEvent(id: String) async -> Event?
 }
@@ -66,11 +70,11 @@ protocol EventAPIProtocol {
 //FAQ VIEW PROTOCOL
 protocol FundationInformationAPIProtocol{
     // https://{API_DOMAIN}/v1/informacion-fundacion
-    func getInfoFundation(limit : Int) async -> FoundationResponse<InfoFundation>?
+    func getInfoFundation(limit : Int) async -> ServerResponse<[InfoFundation]>?
 }
     
 protocol CertificationAPIProtocol {
     // https://{API_DOMAIN}/v1/certification?limit={Int}&offset={Int}
-    func getCertificationList(limit: Int) async -> CertificationResponse<[Certification]>?
+    func getCertificationList(limit: Int) async -> ServerResponse<[Certification]>?
 }
 

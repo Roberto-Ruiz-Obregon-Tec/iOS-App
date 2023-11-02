@@ -9,11 +9,8 @@ import Foundation
 
 struct ServerResponse<T: Codable>: Codable {
     var status: String
+    var token: String?
+    var message: String?
     var results: Int?
-    var data: Data
-    
-    struct Data: Codable {
-        var document: T?
-        var documents: [T]?
-    }
+    var data: T?
 }

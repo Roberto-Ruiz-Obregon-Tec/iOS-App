@@ -13,7 +13,6 @@ struct SigninView: View {
     var body: some View {
         
         VStack {
-            
             Text("Regístrate")
                 .font(.title)
             Button {

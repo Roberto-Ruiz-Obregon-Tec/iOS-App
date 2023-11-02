@@ -21,7 +21,7 @@ class CourseInfoViewModel: ObservableObject {
         let result = await courseInfoRequirement.getCourse(id: "653dd50ab18d421bfcef6a93")
         
         if let res = result {
-            self.course = res.data
+            self.course = res.data ?? self.course
             print("ModelView: Received course data")
         } else {
             print("Failed to fetch course data")

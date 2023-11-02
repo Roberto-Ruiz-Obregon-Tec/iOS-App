@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CourseInfoRequirementProtocol {
-    func getCourse(id:String) async -> CourseResponse<[Course]>?
+    func getCourse(id:String) async -> ServerResponse<[Course]>?
 }
 
 
@@ -20,7 +20,7 @@ class CourseInfoRequirement: CourseInfoRequirementProtocol {
         self.dataRepository = dataRepository
     }
     
-    func getCourse(id:String) async -> CourseResponse<[Course]>? {
+    func getCourse(id:String) async -> ServerResponse<[Course]>? {
         return await dataRepository.getCourse(id: id)
     }
 }

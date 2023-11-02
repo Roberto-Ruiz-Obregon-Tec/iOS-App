@@ -15,7 +15,7 @@ class EventRepository: EventAPIProtocol {
         self.netService = netService
     }
     
-    func getEventList(limit: Int, offset: Int) async -> EventResponse<[Event]>?{
+    func getEventList(limit: Int, offset: Int) async -> ServerResponse<[Event]>?{
         let params = [
             "limit": limit,
             "offset": offset

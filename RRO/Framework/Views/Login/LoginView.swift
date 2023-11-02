@@ -73,9 +73,6 @@ struct LoginView: View {
                         .disableAutocorrection(true)
                 }
                 
-                
-                
-                
             }
             
             VStack{
@@ -84,24 +81,23 @@ struct LoginView: View {
                     .padding()
             }
             
-            
             VStack {
                 
-                Button("Iniciar sesión") {
+                Button {
                     if email.isEmpty || password.isEmpty {
                         showAlert = true
                     } else {
-                        viewModel.postLogin(email: email, password: password) { result in
-                        switch result {
-                            case .success:
-                                // Inicio de sesión exitoso, puedes realizar acciones adicionales aquí
-                                goMenu()
-                            case .failure:
-                                // Inicio de sesión fallido, muestra la alerta o maneja el error
-                                showAlert = true
-                            }
+                        Task {
+                            await viewModel.postLogin(email: email, password: password)
+                            // TODO: Handle correctly the error message
+                            // if authenticated go to menu
+                            // right now it goes anyway
+                            goMenu()
+                            
                         }
                     }
+                } label: {
+                    Text("Iniciar sesión")
                 }
 
                 .padding()
@@ -148,13 +144,14 @@ struct LoginView: View {
 
 struct LoginViewPreview: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: LoginViewModel(loginRepository: LoginRepository())){
+        LoginView(viewModel: LoginViewModel(loginRepository: LoginRepository.shared), goMenu: {}, goRegister: {}, goRestore: {})
+        /*LoginView(viewModel: LoginViewModel(loginRepository: LoginRepository())) goMenu:{
             ()
         } goRegister: {
             ()
         } goRestore: {
             ()
-        }
+        }*/
     }
 }
 

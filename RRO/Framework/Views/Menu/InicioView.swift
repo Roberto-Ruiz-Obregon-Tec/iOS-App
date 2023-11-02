@@ -37,7 +37,7 @@ struct TabBarView: View {
     
     var body: some View {
         VStack{
-            Text("Inicio").padding(.horizontal).foregroundColor(Color.black).font(.title).bold()
+            Text("Inicio").padding(.horizontal).foregroundColor(.primary).font(.title).bold()
             ScrollView(.horizontal, showsIndicators: false){
                 HStack(spacing: 10){
                     ForEach(Array(zip(self.tabVarList.indices, self.tabVarList)),id: \.0) { index, name in
@@ -55,6 +55,7 @@ struct TabBarView: View {
 
 struct TabBarItem: View {
     var tabBarItemName: String
+    @Environment(\.colorScheme) var colorScheme
 
     @Binding var currentTab: Int
     var Tab: Int
@@ -68,7 +69,8 @@ struct TabBarItem: View {
                 .bold(true)
                 .padding(.horizontal, 16)
                 .padding(.vertical, 10)
-                .foregroundColor(self.currentTab == Tab ? .white : .primary)
+                .foregroundColor(self.currentTab == Tab ? .white :
+                                    (colorScheme == .light ? .primary : .white))
                 .background(
                     RoundedRectangle(cornerRadius: 8)
                         .fill(self.currentTab == Tab ? Color.red : Color.clear)
