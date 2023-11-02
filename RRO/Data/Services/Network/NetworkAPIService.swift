@@ -39,11 +39,11 @@ class NetworkAPIService {
                         response in switch response.result {
                         case .success(let data):
                             // Print the response data
-                            debugPrint("Response Data: \(data)")
+                            // debugPrint("Response Data: \(data)")
                             continuation.resume(returning: data)
                         case .failure(let error):
                             // Print the error
-                            debugPrint("Request Error: \(error)")
+                            // debugPrint("Request Error: \(error)")
                             continuation.resume(throwing: error)
                         }
                     }

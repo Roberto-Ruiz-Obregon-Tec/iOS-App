@@ -26,8 +26,10 @@ struct ProfileDetailView: View {
     }
 }
 
+
 struct ProfileDetailViewPreview: PreviewProvider {
     static var previews: some View {
         ProfileDetailView()
     }
 }
+

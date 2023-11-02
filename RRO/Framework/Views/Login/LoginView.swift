@@ -141,7 +141,8 @@ struct LoginView: View {
     }
 }
 
-struct LoginViewPreviews: PreviewProvider {
+
+struct LoginViewPreview: PreviewProvider {
     static var previews: some View {
         LoginView(viewModel: LoginViewModel(loginRepository: LoginRepository.shared), goMenu: {}, goRegister: {}, goRestore: {})
         /*LoginView(viewModel: LoginViewModel(loginRepository: LoginRepository())) goMenu:{
@@ -153,3 +154,4 @@ struct LoginViewPreviews: PreviewProvider {
         }*/
     }
 }
+

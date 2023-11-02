@@ -8,7 +8,7 @@
 import Foundation
 
 protocol EventListRequirementProtocol {
-    func getEventList(limit: Int, offset: Int) async -> EventResponse<[Event]>?
+    func getEventList(limit: Int, offset: Int) async -> ServerResponse<[Event]>?
 }
 
 class EventListRequirement: EventListRequirementProtocol {
@@ -19,7 +19,7 @@ init(dataRepository: EventRepository = EventRepository.shared) {
     self.dataRepository = dataRepository
 }
 
-func getEventList(limit: Int, offset: Int) async -> EventResponse<[Event]>? {
+func getEventList(limit: Int, offset: Int) async -> ServerResponse<[Event]>? {
     return await dataRepository.getEventList(limit: limit, offset: offset)
 }
 }
