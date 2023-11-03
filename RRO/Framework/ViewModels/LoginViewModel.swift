@@ -7,29 +7,58 @@
 
 import Foundation
 
+enum LoginState {
+    case success
+    case error
+}
+
 class LoginViewModel: ObservableObject {
-    @Published var loggedIn: Bool
+    @Published var loginInfo: Login
+    
+    @Published var errorTitle: String
+    @Published var errorMessage: String
+    @Published var showAlert: Bool
+    
     let loginRepository: LoginRepository
     
 
     // Inicializa el ViewModel con un repositorio de inicio de sesión
     init(loginRepository: LoginRepository = LoginRepository()) {
-        self.loggedIn = false
+        self.loginInfo = Login(email: "", password: "")
+        self.errorTitle = "Error"
+        self.errorMessage = "Error"
         self.loginRepository = loginRepository
+        self.showAlert = false
+        
     }
 
     // Función para realizar la solicitud de inicio de sesión
-    func postLogin(email: String, password: String) async {
-        // Crea un modelo de usuario con campos email y password (se inicializa con un _id vacío)
-        let user = Login(email: email, password: password)
+    @MainActor
+    func postLogin() async -> LoginState {
         
-        let response = await loginRepository.postLogin(model: user)
-        if let response = response {
-            if response.token != nil {
-                self.loggedIn = true
-            } else {
-                debugPrint(response)
-            }
+        if loginInfo.email.isEmpty || loginInfo.password.isEmpty {
+            self.errorTitle = "Campos vacíos"
+            self.errorMessage = "Por favor, completa todos los campos."
+            self.showAlert = true
+            return .error
         }
+        
+        guard let response = await loginRepository.postLogin(model: self.loginInfo) else {
+            self.errorTitle = "Error con el servidor"
+            self.errorMessage = "Vuelve a intentar ingresar o inténtalo más tarde."
+            self.showAlert = true
+            return .error
+        }
+        
+        guard let token = response.token else {
+            self.errorTitle = "Error"
+            self.errorMessage = response.message ?? "..."
+            self.showAlert = true
+            return .error
+        }
+        
+        LocalService.shared.setCurrentSession(token: token)
+        return .success
+        
     }
 }
