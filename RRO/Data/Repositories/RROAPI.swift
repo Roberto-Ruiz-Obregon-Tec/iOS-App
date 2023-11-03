@@ -11,12 +11,13 @@ struct API {
     // TODO: Change the url with the deployed domain, private ip used for testing
             //                 |
                 //PONER TU IP AQUÍ v
-    static let base = "http://192.168.1.76:3001/v1"
+    static let base = "http://169.254.109.178:3001/v1"
     
     struct routes {
         // TODO: Map all the routes
         static let userSignup = "/user/auth/signup"
         static let userLogin = "/user/auth/login"
+        static let userLogout = "/user/auth/logout"
         static let adminSignup = "/admin/auth/signup"
         static let adminLogin = "/admin/auth/login"
         
@@ -30,13 +31,19 @@ struct API {
 }
 
 protocol LoginAPIProtocol {
-    // En mi login, solo quiero que me regrese mi ID
+    // En mi login, solo quiero que me regrese mi token
     func postLogin(model: Login) async -> ServerResponse<User>?
 }
 
 protocol SigninAPIProtocol {
     func postSignin(model: Signin) async -> ServerResponse<User>?
 }
+
+protocol LogoutAPIProtocol{
+    // https://{API_DOMAIN}/v1/user/auth/logout
+    func getLogout() async -> ServerResponse<User>?
+}
+
 
 protocol ScholarshipAPIProtocol {
     // https://{API_DOMAIN}/v1/scholarship?limit={Int}&offset={Int}
