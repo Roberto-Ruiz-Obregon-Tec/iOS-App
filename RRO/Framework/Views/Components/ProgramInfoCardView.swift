@@ -46,7 +46,7 @@ struct ProgramInfoCardView: View {
                     
                     Spacer()
                     
-                    Text(program.deadlineDate, format: .dateTime.day().month())
+                    Text(program.deadlineDate.toISODate(), format: .dateTime.day().month())
                 }.padding(.bottom, 2)
                 
                 Divider()
@@ -55,7 +55,7 @@ struct ProgramInfoCardView: View {
                     Text("Categoría")
                         .foregroundStyle(.secondary)
                     Spacer()
-                    Text(program.category)
+                    //Text(program.category)
                 }.padding(.bottom, 12)
                 
                 NavigationLink {
@@ -80,6 +80,9 @@ struct ProgramInfoCardView: View {
     }
 }
 
-#Preview {
-    ProgramInfoCardView(program: Program(id: UUID().uuidString, name: "Karla", startDate: Date.now, category: "Studio F", endDate: Date.now, deadlineDate: Date.now, programImage: "", postalCode: 123, description: "Karla la maravilla"))
+
+struct ProgramInfoCardView_Preview: PreviewProvider {
+    static var previews: some View {
+        ProgramInfoCardView(program: Program(id: UUID().uuidString, name: "Programa", startDate: Date.now.toString(), endDate: Date.now.toString(), deadlineDate: Date.now.toString(), programImage: "", postalCode: 123, description: "Este programa es muy bueno, deberías de inscribirte y probarlo."))
+    }
 }

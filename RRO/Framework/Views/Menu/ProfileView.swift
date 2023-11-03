@@ -29,8 +29,10 @@ struct ProfileView: View {
                 }
                 
                 Button {
-                    // TODO: Log out user
+                    // TODO: Log out user on a viewmodel or requirement
                     goLogin()
+                    
+                    LocalService.shared.removeCurrentSession()
                     
                 } label: {
                     Text("Cerrar sesión")
@@ -44,6 +46,10 @@ struct ProfileView: View {
     }
 }
 
-#Preview {
-    ProfileView{()}
+
+struct ProfileViewPreview: PreviewProvider {
+    static var previews: some View {
+        ProfileView{()}
+    }
 }
+

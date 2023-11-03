@@ -15,14 +15,13 @@ struct ProgramListView: View {
             if programViewModel.programList.isEmpty{
                 Text("No hay programas disponibles en este momento")
                     .padding()
-            } else{
+            } else {
                 ScrollView{
                     ForEach(programViewModel.programList){program in
                         ProgramInfoCardView(program: program)
                     }
                     
                 }
-                .padding(.horizontal)
             }
         }.onAppear(){
             Task {
@@ -43,7 +42,7 @@ struct ProgramListViewPreviews: PreviewProvider {
         let vm = ProgramViewModel()
         for _ in 1...elems {
             vm.programList.append(
-                Program(id: UUID().uuidString, name: "", startDate: Date.now, category: "", endDate: Date.now, deadlineDate: Date.now, programImage: "", postalCode: 123, description: "")
+                Program(id: UUID().uuidString, name: "", startDate: Date.now.toString(), endDate: Date.now.toString(), deadlineDate: Date.now.toString(), programImage: "", postalCode: 123, description: "")
             )
         }
         
@@ -51,4 +50,8 @@ struct ProgramListViewPreviews: PreviewProvider {
     }
 }
 
-
+// struct ProgramListPreview: PreviewProvider {
+//     static var previews: some View {
+//         ProgramListView()
+//     }
+// }

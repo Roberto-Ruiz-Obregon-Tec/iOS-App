@@ -19,25 +19,27 @@ struct CoordinatorView: View {
     }
     
     var body: some View {
-        Router($routes) { screen, _ in
-            switch screen {
-            case .login:
-                LoginView(goMenu: {
-                    routes.presentCover(.menu)
-                }, goRegister: {
-                    routes.presentSheet(.register)
-                }, goRestore: {
-                    routes.presentSheet(.restore)
-                })
-                
-            case .register:
-                SigninView(goMenu: { routes.presentCover(.menu) })
-                
-            case .restore:
-                RestoreView(goLogin: { routes.goBack() })
-                
-            case .menu:
-                MenuView(goLogin: { routes.presentCover(.login) })
+        NavigationView{
+            Router($routes) { screen, _ in
+                switch screen {
+                case .login:
+                    LoginView(viewModel: LoginViewModel(), goMenu: {
+                        routes.presentCover(.menu)
+                    }, goRegister: {
+                        routes.presentSheet(.register)
+                    }, goRestore: {
+                        routes.presentSheet(.restore)
+                    })
+                    
+                case .register:
+                    SignupView(goMenu: { routes.presentCover(.menu) })
+                    
+                case .restore:
+                    RestoreView(goLogin: { routes.goBack() })
+                    
+                case .menu:
+                    MenuView(goLogin: { routes.presentCover(.login) })
+                }
             }
         }
     }
@@ -51,7 +53,10 @@ struct CoordinatorView: View {
     }
 }
 
-#Preview {
-    CoordinatorView()
+
+struct CoordinatorViewPreview: PreviewProvider {
+    static var previews: some View {
+        CoordinatorView()
+    }
 }
 

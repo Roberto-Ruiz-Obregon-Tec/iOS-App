@@ -18,7 +18,7 @@ struct ProgramDetailView: View {
 
 struct ProgramDetailViewPreviews: PreviewProvider {
     static var previews: some View {
-        ProgramDetailView(program: Program(id: UUID().uuidString, name: "", startDate: Date.now, category: "", endDate: Date.now, deadlineDate: Date.now, programImage: "", postalCode: 1234, description: ""))
+        ProgramDetailView(program: Program(id: UUID().uuidString, name: "", startDate: Date.now.toString(), endDate: Date.now.toString(), deadlineDate: Date.now.toString(), programImage: "", postalCode: 1234, description: ""))
     }
     
     

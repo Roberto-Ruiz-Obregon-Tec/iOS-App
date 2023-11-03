@@ -10,16 +10,20 @@ import SwiftUI
 struct RestoreView: View {
     let goLogin: () -> Void
     var body: some View {
-        Text("Restore")
-        Button {
-            goLogin()
-        } label: {
-            Text("Crear nueva contraseña")
+        VStack {
+            Text("Restore")
+            Button {
+                goLogin()
+            } label: {
+                Text("Crear nueva contraseña")
+            }
         }
     }
 }
 
-#Preview {
-    RestoreView{()}
+struct RestoreViewPreview: PreviewProvider {
+    static var previews: some View {
+        RestoreView{()}
+    }
 }
 
