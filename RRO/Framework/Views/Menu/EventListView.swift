@@ -12,17 +12,21 @@ struct EventListView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                ForEach(eventViewModel.eventList) {event in
-                    EventInfoCardView(event: event)
+            if eventViewModel.eventList.isEmpty {
+                Text("No hay eventos disponibles en este momento")
+                    .padding()
+            } else {
+                ScrollView {
+                    ForEach(eventViewModel.eventList) {event in
+                        EventInfoCardView(event: event)
+                    }
+                    
                 }
-                
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
-            .onAppear {
-                Task {
-                    await eventViewModel.getEvents()
-                }
+        }.onAppear {
+            Task {
+                await eventViewModel.getEvents()
             }
         }
     }
