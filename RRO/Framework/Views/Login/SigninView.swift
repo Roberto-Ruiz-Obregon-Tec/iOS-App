@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct SigninView: View {
     @ObservedObject var viewModel: SigninViewModel
@@ -90,10 +91,16 @@ struct SigninView: View {
                     VStack(alignment: .leading, spacing: 0) {
                         Text("     Edad")
                             .bold()
-                        TextField("Obligatorio",value: $viewModel.signinData.age, formatter: NumberFormatter())
+                        TextField("Obligatorio", text: $viewModel.age)
+                            .keyboardType(.numberPad)
+                            .onReceive(Just(viewModel.age), perform: { newVal in
+                                let filtered = newVal.filter { "0123456789".contains($0) }
+                                if filtered != newVal {
+                                    self.viewModel.age = filtered
+                                }
+                            })
                             .textFieldStyle(.roundedBorder)
                             .padding(.horizontal, 20)
-                            .keyboardType(.numberPad)
                             //.frame(width: 140)
                     }
                     
@@ -123,10 +130,16 @@ struct SigninView: View {
                         // MARK: - ZIPCODE
                         Text("      CP")
                             .bold()
-                        TextField("Obligatorio", value: $viewModel.signinData.postalCode, formatter: NumberFormatter())
+                        TextField("Obligatorio", text: $viewModel.cp)
+                            .keyboardType(.numberPad)
+                            .onReceive(Just(viewModel.cp), perform: { newVal in
+                                let filtered = newVal.filter { "0123456789".contains($0) }
+                                if filtered != newVal {
+                                    self.viewModel.cp = filtered
+                                }
+                            })
                             .textFieldStyle(.roundedBorder)
                             .padding(.horizontal, 20)
-                            .keyboardType(.numberPad)
                         
                         Spacer(minLength: 16)
                         
@@ -233,9 +246,9 @@ struct SigninView: View {
                                 
                                 switch response {
                                     case .success:
-                                        print("lo logramos")
+                                        goMenu()
                                     case .error:
-                                        print("Hicimos algo mal")
+                                        break
                                 }
                             }
                             //goMenu()

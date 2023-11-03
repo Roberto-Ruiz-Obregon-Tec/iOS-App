@@ -14,6 +14,8 @@ enum SigninState {
 
 class SigninViewModel: ObservableObject {
     @Published var signinData: Signin
+    @Published var cp: String
+    @Published var age: String
     
     @Published var errorTitle: String
     @Published var errorMessage: String
@@ -24,6 +26,8 @@ class SigninViewModel: ObservableObject {
     
     init(signupRequirement: SignupRequirementProtocol = SignupRequirement.shared) {
         self.signinData = Signin(firstName: "", lastName: "", age: 0, gender: "Otro", email: "", postalCode: 0, password: "", passwordConfirm: "")
+        self.cp = ""
+        self.age = ""
         
         self.errorTitle = ""
         self.errorMessage = ""
@@ -34,6 +38,9 @@ class SigninViewModel: ObservableObject {
     
     @MainActor
     func postSignup() async -> SigninState {
+        self.signinData.postalCode = Int(self.cp) ?? 0
+        self.signinData.age = Int(self.age) ?? 0
+        
         if isFormIncomplete() {
             self.errorTitle = "Campos vacíos"
             self.errorMessage = "Por favor, completa todos los campos."
