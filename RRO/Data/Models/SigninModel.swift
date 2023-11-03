@@ -7,19 +7,18 @@
 
 import Foundation
 
-struct Signup: Codable {
+struct Signin: Codable {
     var firstName: String
     var lastName: String
     var age: Int
     var gender: String
     var email: String
-    var occupation: String
-    var company: String//?
-    var sociallyResponsibleCompany: String//?
+    var occupation: String?
+    var company: String?
+    var sociallyResponsibleCompany: Bool?
     var postalCode: Int
     var password: String
     var passwordConfirm: String
-    var profilePicture: String//?
     
 }
 

@@ -34,8 +34,8 @@ protocol LoginAPIProtocol {
     func postLogin(model: Login) async -> ServerResponse<User>?
 }
 
-protocol SignUpAPIProtocol {
-    func postSignup(model: Signup) async -> ServerResponse<User>?
+protocol SigninAPIProtocol {
+    func postSignin(model: Signin) async -> ServerResponse<User>?
 }
 
 protocol ScholarshipAPIProtocol {
