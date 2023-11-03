@@ -10,7 +10,7 @@ import SwiftUI
 struct CourseDetailView: View {
     var course: Course
     var body: some View {
-        NavigationStack {
+        NavigationStack{
             VStack {
                 Text("Detalle del curso info y eso")
                 

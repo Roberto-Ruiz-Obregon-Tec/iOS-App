@@ -12,7 +12,7 @@ struct ProfileView: View {
     let goLogin: () -> Void
     
     var body: some View {
-        NavigationView {
+        NavigationStack{
             VStack {
                 HStack {
                     Image(systemName: "person")
