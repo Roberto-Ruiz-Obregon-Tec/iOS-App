@@ -19,9 +19,9 @@ class LogoutViewModel: ObservableObject {
     func getLogout() {
         Task {
             let response = await logoutRepository.getLogout()
-            if response != nil {
-                loginViewModel.loggedIn = false
-            }
+            //if response != nil {
+            //    loginViewModel.loggedIn = false
+            //}
         }
     }
 }
