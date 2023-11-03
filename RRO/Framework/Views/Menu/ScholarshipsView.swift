@@ -3,6 +3,7 @@
 //  RRO
 //
 //  Created by peblo on 25/10/23.
+//  Edited by Amy Gregg on 31/10/23.
 //
 
 import SwiftUI
@@ -21,17 +22,17 @@ struct ScholarshipsView: View {
                     Text("No hay becas disponibles en este momento")
                         .padding()
                 } else {
-                    List(scholarshipViewModel.scholarshipList) { scholarship in
-                        NavigationLink {
-                            ScholarshipDetailView(scholarship: scholarship)
-                        } label: {
-                            Text(scholarship.name)
-                        }.padding()
+                    ScrollView {
+                        ForEach(scholarshipViewModel.scholarshipList) {
+                            scholarship in ScholarshipInfoCardView(scholarship: scholarship)
+                        }
+                        .padding(.horizontal)
+                        .onAppear {
+                            Task {
+                                await scholarshipViewModel.getScholarsipList()
+                            }
+                        }
                     }
-                }
-            }.onAppear {
-                Task {
-                    await scholarshipViewModel.getScholarsipList()
                 }
             }
         }
@@ -51,23 +52,20 @@ struct ScholarshipsViewPreviews: PreviewProvider {
         for i in 1...elems {
             vm.scholarshipList.append(
                 Scholarship(
-                    id: UUID().uuidString,
-                    name: "Preview Scholarship \(i)",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-                    organization: "Lorem",
-                    location: "Ipsum",
-                    email: "LoremIpsum@email.com",
-                    phone: "123456789",
+                    id:UUID().uuidString,
+                    name: "Beca \(i)",
+                    description: "Descripción del beca",
+                    organization: "University of Oregon",
+                    location: "Oregon, EE.UU.",
+                    email: "robertoruiz@gmail.com",
+                    phone: "123-456-7890",
                     image: "",
-                    sector: "Lorem",
+                    sector: "smth",
                     startDate: Date.now,
-                    endDate: Date.now
+                    endDate: Date.now)
                 )
-            )
         }
         
         return vm
     }
 }
-
-
