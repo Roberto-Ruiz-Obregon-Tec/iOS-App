@@ -15,17 +15,19 @@ struct InicioView: View {
 
     
     var body: some View {
-        ZStack(alignment: .top){
+        NavigationStack {
+            VStack(){
+                TabBarView(currentTab: self.$currentTab)
                 TabView(selection: self.$currentTab){
                     CoursesView().tag(0)
                     ScholarshipsView().tag(1)
                     ProgramListView().tag(2)
                     CertificationListView().tag(3)
                 }
-                .padding(.top, 210)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 .edgesIgnoringSafeArea(.all)
-                TabBarView(currentTab: self.$currentTab)
+                .padding(.horizontal, 8)
+            }
         }
     }
 }
@@ -49,6 +51,7 @@ struct TabBarView: View {
                 }.padding(.horizontal, 20)
             }
         }
+        .padding(.top, 8)
         .background(colorScheme == .dark ? Color.black : Color.white)
     }
 }
@@ -88,8 +91,6 @@ struct TabBarItem: View {
 
 struct InicioView_Previews: PreviewProvider {
     static var previews: some View {
-        ScrollView(.vertical){
-            InicioView()
-        }
+        InicioView()
     }
 }

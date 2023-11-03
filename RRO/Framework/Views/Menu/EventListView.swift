@@ -11,7 +11,7 @@ struct EventListView: View {
     @StateObject var eventViewModel = EventViewModel()
     
     var body: some View {
-        NavigationStack {
+        VStack {
             if eventViewModel.eventList.isEmpty {
                 Text("No hay eventos disponibles en este momento")
                     .padding()
@@ -22,7 +22,6 @@ struct EventListView: View {
                     }
                     
                 }
-                .padding(.horizontal)
             }
         }.onAppear {
             Task {
@@ -34,7 +33,9 @@ struct EventListView: View {
 
 struct EventListViewPreviews: PreviewProvider {
     static var previews: some View {
-        EventListView (eventViewModel: getViewModel())
+        NavigationStack {
+            EventListView (eventViewModel: getViewModel())
+        }
     }
     
     static var elems = 10

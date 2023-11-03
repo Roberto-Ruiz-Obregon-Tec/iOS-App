@@ -11,7 +11,7 @@ struct ProgramListView: View {
     @StateObject var programViewModel = ProgramViewModel()
     
     var body: some View {
-        NavigationStack{
+        VStack {
             if programViewModel.programList.isEmpty{
                 Text("No hay programas disponibles en este momento")
                     .padding()
@@ -33,7 +33,9 @@ struct ProgramListView: View {
 
 struct ProgramListViewPreviews: PreviewProvider {
     static var previews: some View {
-        ProgramListView (programViewModel: getViewModel())
+        NavigationStack {
+            ProgramListView (programViewModel: getViewModel())
+        }
     }
     
     /// If there is no backend the preview will generate this ammount of card elements
@@ -49,9 +51,3 @@ struct ProgramListViewPreviews: PreviewProvider {
         return vm
     }
 }
-
-// struct ProgramListPreview: PreviewProvider {
-//     static var previews: some View {
-//         ProgramListView()
-//     }
-// }

@@ -23,7 +23,7 @@ struct API {
         
         static let certification = "/certifications"
         static let course = "/course"
-        static let scholarship = "/scholarship"
+        static let scholarship = "/scholarships"
         static let program = "/program"
         static let event = "/event"
         static let infoFundation = "/informacion-fundacion"
@@ -47,9 +47,9 @@ protocol LogoutAPIProtocol{
 
 protocol ScholarshipAPIProtocol {
     // https://{API_DOMAIN}/v1/scholarship?limit={Int}&offset={Int}
-    func getScholarshipList(limit: Int, offset: Int) async -> [Scholarship]?
+    func getScholarshipList(limit: Int, offset: Int) async -> ServerResponse<[Scholarship]>?
     // https://{API_DOMAIN}/v1/scholarship/{id}
-    func getScholarship(id: String) async -> Scholarship?
+    func getScholarship(id: String) async -> ServerResponse<Scholarship>?
 }
 
 protocol ProgramAPIProtocol {

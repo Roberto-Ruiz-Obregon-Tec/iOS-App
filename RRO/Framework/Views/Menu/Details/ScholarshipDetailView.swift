@@ -48,27 +48,73 @@ struct ScholarshipDetailView: View {
                         .foregroundStyle(.white)
                     }
                 }
-                
-                HStack {
-                    Text(scholarship.description)
-                        .foregroundStyle(.secondary)
+                    
+                VStack(spacing: 8) {
+                    Text("Fecha límite para enviar datos:")
+                    HStack {
+                        Image(systemName: "calendar")
                         
-                    Spacer()
+                        Text(scholarship.endDate.toISODate(), format: .dateTime.day().month())
+                        
+                        Image(systemName: "calendar")
+                    }
                 }
+                .padding(.vertical)
+                .font(.title3)
+                .fontWeight(.bold)
                 
                 VStack {
                     
                     HStack {
-                        Text("Fecha")
+                        Text("Organización")
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                        
+                        Text(scholarship.organization)
+                            .foregroundStyle(.secondary)
+                    }
+                    
+                    Divider()
+                    
+                    HStack {
+                        Text("Email")
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                        
+                        Text(scholarship.email)
+                            .foregroundStyle(.secondary)
+                    }
+                    
+                    Divider()
+                    
+                    HStack {
+                        Text("Teléfono")
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            Image(systemName: "phone")
+                            Text(scholarship.phone)
+                        }.foregroundStyle(.secondary)
+                    }
+                    
+                    Divider()
+                    
+                    
+                    HStack {
+                        Text("Periodo de aplicación")
                             .fontWeight(.bold)
                         
                         Spacer()
                         
                         
                         HStack {
-                            Text(scholarship.startDate, format: .dateTime.day().month())
+                            Text(scholarship.startDate.toISODate(), format: .dateTime.day().month())
                             Text("-")
-                            Text(scholarship.endDate, format: .dateTime.day().month())
+                            Text(scholarship.endDate.toISODate(), format: .dateTime.day().month())
                             
                         }.foregroundStyle(.secondary)
                     }
@@ -99,57 +145,24 @@ struct ScholarshipDetailView: View {
                         }.foregroundStyle(.secondary)
                         
                     }
-                    
-                    Divider()
-                    
-                    HStack {
-                        Text("Organización")
-                            .fontWeight(.bold)
-                        
-                        Spacer()
-                        
-                        Text(scholarship.organization)
-                            .foregroundStyle(.secondary)
-                    }
+                                        
                 }.padding(.vertical)
                 
-                
                 VStack(spacing: 8) {
-                    Text("Fecha límite para enviar datos:")
                     HStack {
-                        Image(systemName: "calendar")
+                        Text("Detalles")
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                    HStack {
+                        Text(scholarship.description)
+                            .foregroundStyle(.secondary)
                         
-                        Text(scholarship.endDate, format: .dateTime.day().month())
-                        
-                        Image(systemName: "calendar")
+                        Spacer()
                     }
                 }
-                .padding(.vertical)
-                .font(.title3)
-                .fontWeight(.bold)
-
                 
-                VStack(spacing: 8) {
-                    Text("Comunícate con nosotros para más información")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                    
-                    HStack {
-                        Text("roberobregon@gmail.com")
-                        
-                        Spacer()
-                        
-                        HStack {
-                            Image(systemName: "phone")
-                            Text("4425014996")
-                        }
-                    }
-                    .padding(.horizontal)
-                    .font(.subheadline)
-                    
-                }.padding(.vertical)
-            }
-            .padding(.horizontal)
+            }.padding(.horizontal)
         }
         .navigationTitle(scholarship.name)
         .navigationBarTitleDisplayMode(.inline)
@@ -161,17 +174,18 @@ struct ScholarshipDetailView: View {
 struct ScholarshipDetailViewPreview: PreviewProvider {
     static var previews: some View {
         ScholarshipDetailView(scholarship: Scholarship(
-            id: "",
-            name: "",
-            description: "",
-            organization: "",
-            location: "",
-            email: "",
-            phone: "",
+            id: UUID().uuidString,
+            name: "Beca",
+            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis laborum voluptates fugit officia, ad obcaecati qui nihil nulla maiores. Repudiandae dolor consequatur praesentium eaque ipsa incidunt sed molestiae numquam, ratione nesciunt aliquid?",
+            organization: "JANN",
+            location: "N/A",
+            email: "john.doe@gmail.com",
+            phone: "442123456",
             image: "",
-            sector: "",
-            startDate: Date.now,
-            endDate: Date.now))
+            sector: "Primaria",
+            startDate: Date.now.toString(),
+            endDate: Date.now.toString()
+        ))
     }
 }
 

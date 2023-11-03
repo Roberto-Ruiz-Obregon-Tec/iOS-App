@@ -16,7 +16,7 @@ struct User: Codable {
     var email: String
     var occupation: String?
     var company: String?
-    var sociallyResponsibleCompany: String?
+    var sociallyResponsibleCompany: Bool?
     var postalCode: Int
     var profilePicture: String?
 }
