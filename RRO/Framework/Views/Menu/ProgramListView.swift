@@ -11,15 +11,20 @@ struct ProgramListView: View {
     @StateObject var programViewModel = ProgramViewModel()
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                ForEach(programViewModel.programList) {program in
-                    ProgramInfoCardView(program: program)
+        NavigationStack{
+            if programViewModel.programList.isEmpty{
+                Text("No hay programas disponibles en este momento")
+                    .padding()
+            } else{
+                ScrollView{
+                    ForEach(programViewModel.programList){program in
+                        ProgramInfoCardView(program: program)
+                    }
+                    
                 }
+                .padding(.horizontal)
             }
-        }
-        .padding(.horizontal)
-        .onAppear {
+        }.onAppear(){
             Task {
                 await programViewModel.getPrograms()
             }

@@ -41,7 +41,7 @@ struct ScholarshipDetailView: View {
                             Image(systemName: "pencil")
                             Text("Editar")
                         }
-                        //.fontWeight(.bold)
+                        .fontWeight(.bold)
                         .padding(8)
                         .background(Color.red)
                         .cornerRadius(.infinity)
@@ -126,7 +126,7 @@ struct ScholarshipDetailView: View {
                 }
                 .padding(.vertical)
                 .font(.title3)
-                //.fontWeight(.bold)
+                .fontWeight(.bold)
 
                 
                 VStack(spacing: 8) {

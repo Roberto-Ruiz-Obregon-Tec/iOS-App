@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CoursesView: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             // TODO: This VStack should be a List in the future
             VStack {
                 Text("Cursos")

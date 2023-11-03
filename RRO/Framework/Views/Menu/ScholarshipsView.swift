@@ -13,7 +13,7 @@ struct ScholarshipsView: View {
     var body: some View {
         // TODO: Reload scrolling up
         VStack {
-            NavigationView {
+            NavigationStack{
                 if scholarshipViewModel.scholarshipList.isEmpty {
                     // TODO: No scholarships found message
                     // TODO: Notify network error
