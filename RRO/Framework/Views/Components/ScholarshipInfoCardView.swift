@@ -46,7 +46,7 @@ struct ScholarshipInfoCardView: View {
                     
                     Spacer()
                     
-                    Text(scholarship.startDate, format: .dateTime.day().month())
+                    Text(scholarship.startDate.toISODate(), format: .dateTime.day().month())
                 }.padding(.bottom, 2)
                 
                 Divider()
@@ -102,6 +102,6 @@ struct ScholarshipInfoCardView: View {
         phone: "",
         image: "",
         sector: "smth",
-        startDate: Date.now,
-        endDate: Date.now))
+        startDate: Date.now.toString(),
+        endDate: Date.now.toString()))
 }

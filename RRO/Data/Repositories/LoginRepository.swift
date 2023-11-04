@@ -15,14 +15,8 @@ class LoginRepository: LoginAPIProtocol {
     }
     
     func postLogin(model: Login) async -> ServerResponse<User>? {
-        // Crea una URL para la solicitud
-        let response: ServerResponse<User>? = await netService
+        return await netService
             .post(url: URL(string: "\(API.base)\(API.routes.userLogin)")!, body: model)
         
-        if let response = response {
-            print(response)
-            LocalService.shared.setCurrentSession(token: response.token ?? "")
-        }
-        return response
     }
 }

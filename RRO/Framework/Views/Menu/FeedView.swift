@@ -13,16 +13,17 @@ struct FeedView: View {
     @State private var searchText = ""
     
     var body: some View {
-        
-        ZStack(alignment: .top){
-            TabView(selection: self.$currentTab){
-                PublicacionesView().tag(0)
-                EventListView().tag(1)
+        NavigationStack {
+            VStack() {
+                TabBarViewPublicaciones(currentTab: self.$currentTab)
+                TabView(selection: self.$currentTab){
+                    PublicacionesView().tag(0)
+                    EventListView().tag(1)
+                }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .edgesIgnoringSafeArea(.all)
+                .padding(.horizontal, 8)
             }
-            .padding(.top, 210)
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            .edgesIgnoringSafeArea(.all)
-            TabBarViewPublicaciones(currentTab: self.$currentTab)
         }
     }
 }
@@ -42,9 +43,8 @@ struct TabBarViewPublicaciones: View {
                     }
                 }
         }
-        .frame(height: 210)
+        .padding(.top, 8)
         .background(colorScheme == .dark ? Color.black : Color.white)
-        .ignoresSafeArea(.all)
     }
 }
 

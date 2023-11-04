@@ -11,15 +11,16 @@ struct CertificationListView: View {
     @StateObject var certificationViewModel = CertificationViewModel()
     
     var body: some View {
-        ScrollView {
-            ForEach(certificationViewModel.certificationList) { certification in
-                CertificationInfoCardView(name: certification.name, description: certification.description)
+        VStack {
+            ScrollView {
+                ForEach(certificationViewModel.certificationList) { certification in
+                    CertificationInfoCardView(name: certification.name, description: certification.description)
+                }
             }
-        }
-        .padding(.horizontal)
-        .onAppear {
-            Task {
-                await certificationViewModel.getCertificationList()
+            .onAppear {
+                Task {
+                    await certificationViewModel.getCertificationList()
+                }
             }
         }
     }

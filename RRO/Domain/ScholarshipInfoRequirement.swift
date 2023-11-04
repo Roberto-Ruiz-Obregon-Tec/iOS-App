@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ScholarshipInfoRequirementProtocol {
-    func getScholarshipInfo(id: String) async -> Scholarship?
+    func getScholarshipInfo(id: String) async -> ServerResponse<Scholarship>?
     
 }
 
@@ -20,7 +20,7 @@ class ScholarshipInfoRequirement: ScholarshipInfoRequirementProtocol {
         self.dataRepository = dataRepository
     }
     
-    func getScholarshipInfo(id: String) async -> Scholarship? {
+    func getScholarshipInfo(id: String) async -> ServerResponse<Scholarship>? {
         return await dataRepository.getScholarship(id: id)
     }
     

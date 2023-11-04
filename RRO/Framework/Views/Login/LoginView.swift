@@ -11,9 +11,6 @@ import SwiftUI
 struct LoginView: View {
     
     @ObservedObject var viewModel: LoginViewModel
-    @State private var showAlert = false
-    @State private var email: String = ""
-    @State private var password: String = ""
     
     let goMenu: () -> Void
     let goRegister: () -> Void
@@ -55,7 +52,7 @@ struct LoginView: View {
                 VStack(alignment: .leading, spacing: 0){
                     Text("     Correo Electrónico")
                         .bold()
-                    TextField("", text: $email)
+                    TextField("", text: $viewModel.loginInfo.email)
                         .textFieldStyle(.roundedBorder)
                         .padding(.horizontal, 20)
                         .keyboardType(.emailAddress)
@@ -67,7 +64,7 @@ struct LoginView: View {
                 VStack(alignment: .leading, spacing: 0){
                     Text("     Contraseña")
                         .bold()
-                    SecureField("", text: $password)
+                    SecureField("", text: $viewModel.loginInfo.password)
                         .textFieldStyle(.roundedBorder)
                         .padding(.horizontal, 20)
                         .disableAutocorrection(true)
@@ -84,40 +81,28 @@ struct LoginView: View {
             VStack {
                 
                 Button {
-                    if email.isEmpty || password.isEmpty {
-                        showAlert = true
-                    } else {
-                        Task {
-                            await viewModel.postLogin(email: email, password: password)
-                            // TODO: Handle correctly the error message
-                            // if authenticated go to menu
-                            // right now it goes anyway
-                            goMenu()
+                    Task {
+                        let result = await viewModel.postLogin()
+                        
+                        switch result {
+                            case .success:
+                                goMenu()
                             
+                            case .error:
+                                break
                         }
                     }
                 } label: {
                     Text("Iniciar sesión")
                 }
-
                 .padding()
                 .background(Color.red)
                 .foregroundColor(.white)
                 .cornerRadius(8.0)
-                .alert(isPresented: $showAlert) {
-                    if email.isEmpty || password.isEmpty {
-                        return Alert(
-                            title: Text("Campos vacíos"),
-                            message: Text("Por favor, completa todos los campos."),
-                            dismissButton: .default(Text("OK"))
-                        )
-                    } else {
-                        return Alert(
-                            title: Text("Correo o contraseña Incorrecta"),
-                            message: Text("El correo o contraseña es incorrecto, por favor, vuelve a intentarlo."),
-                            dismissButton: .default(Text("OK"))
-                        )
-                    }
+                .alert(isPresented: $viewModel.showAlert) {
+                    Alert(title: Text(viewModel.errorTitle),
+                          message: Text(viewModel.errorMessage),
+                          dismissButton: .default(Text("OK")))
                 }
 
                 

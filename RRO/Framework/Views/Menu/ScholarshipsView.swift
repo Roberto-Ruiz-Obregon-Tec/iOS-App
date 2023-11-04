@@ -14,26 +14,21 @@ struct ScholarshipsView: View {
     var body: some View {
         // TODO: Reload scrolling up
         VStack {
-            NavigationStack{
-                if scholarshipViewModel.scholarshipList.isEmpty {
-                    // TODO: No scholarships found message
-                    // TODO: Notify network error
-                    // TODO: Loading view
-                    Text("No hay becas disponibles en este momento")
-                        .padding()
-                } else {
-                    ScrollView {
-                        ForEach(scholarshipViewModel.scholarshipList) {
-                            scholarship in ScholarshipInfoCardView(scholarship: scholarship)
-                        }
-                        .padding(.horizontal)
-                        .onAppear {
-                            Task {
-                                await scholarshipViewModel.getScholarsipList()
-                            }
-                        }
+            if scholarshipViewModel.scholarshipList.isEmpty {
+                // TODO: Notify network error
+                // TODO: Loading view
+                Text("No hay becas disponibles en este momento")
+                    .padding()
+            } else {
+                ScrollView {
+                    ForEach(scholarshipViewModel.scholarshipList) {
+                        scholarship in ScholarshipInfoCardView(scholarship: scholarship)
                     }
                 }
+            }
+        }.onAppear {
+            Task {
+                await scholarshipViewModel.getScholarsipList()
             }
         }
     }
@@ -42,7 +37,9 @@ struct ScholarshipsView: View {
 /// Preview with dummy data to preview the scholarship list
 struct ScholarshipsViewPreviews: PreviewProvider {
     static var previews: some View {
-        ScholarshipsView (scholarshipViewModel: getViewModel())
+        NavigationStack {
+            ScholarshipsView (scholarshipViewModel: getViewModel())
+        }
     }
     
     /// If there is no backend the preview will generate this ammount of card elements
@@ -61,8 +58,8 @@ struct ScholarshipsViewPreviews: PreviewProvider {
                     phone: "123-456-7890",
                     image: "",
                     sector: "smth",
-                    startDate: Date.now,
-                    endDate: Date.now)
+                    startDate: Date.now.toString(),
+                    endDate: Date.now.toString())
                 )
         }
         

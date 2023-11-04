@@ -17,7 +17,7 @@ struct Scholarship: Codable, Identifiable {
     var phone: String
     var image: String
     var sector: String
-    var startDate: Date
-    var endDate: Date
+    var startDate: String
+    var endDate: String
 
 }

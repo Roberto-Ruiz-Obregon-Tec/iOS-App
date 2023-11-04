@@ -70,8 +70,10 @@ class NetworkAPIService {
                     .responseDecodable(of: T.self, decoder: self._decoder) {
                         response in switch response.result {
                         case .success(let data):
+                            print(response.result)
                             continuation.resume(returning: data)
                         case .failure(_):
+                            print(response.result)
                             continuation.resume(throwing: NSError())
                         }
                     }

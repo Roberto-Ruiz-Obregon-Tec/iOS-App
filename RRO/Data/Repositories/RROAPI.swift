@@ -11,7 +11,7 @@ struct API {
     // TODO: Change the url with the deployed domain, private ip used for testing
             //                 |
                 //PONER TU IP AQUÍ v
-    static let base = "http://169.254.109.178:3001/v1"
+    static let base = "http://10.25.108.58:3001/v1"
     
     struct routes {
         // TODO: Map all the routes
@@ -23,7 +23,7 @@ struct API {
         
         static let certification = "/certifications"
         static let course = "/course"
-        static let scholarship = "/scholarship"
+        static let scholarship = "/scholarships"
         static let program = "/program"
         static let event = "/event"
         static let infoFundation = "/informacion-fundacion"
@@ -35,20 +35,21 @@ protocol LoginAPIProtocol {
     func postLogin(model: Login) async -> ServerResponse<User>?
 }
 
+protocol SigninAPIProtocol {
+    func postSignin(model: Signin) async -> ServerResponse<User>?
+}
+
 protocol LogoutAPIProtocol{
     // https://{API_DOMAIN}/v1/user/auth/logout
     func getLogout() async -> ServerResponse<User>?
 }
 
-protocol SignUpAPIProtocol {
-    func postSignup(model: Signup) async -> ServerResponse<User>?
-}
 
 protocol ScholarshipAPIProtocol {
     // https://{API_DOMAIN}/v1/scholarship?limit={Int}&offset={Int}
-    func getScholarshipList(limit: Int, offset: Int) async -> [Scholarship]?
+    func getScholarshipList(limit: Int, offset: Int) async -> ServerResponse<[Scholarship]>?
     // https://{API_DOMAIN}/v1/scholarship/{id}
-    func getScholarship(id: String) async -> Scholarship?
+    func getScholarship(id: String) async -> ServerResponse<Scholarship>?
 }
 
 protocol ProgramAPIProtocol {

@@ -32,7 +32,7 @@ struct CoordinatorView: View {
                     })
                     
                 case .register:
-                    SignupView(goMenu: { routes.presentCover(.menu) })
+                    SigninView(viewModel: SigninViewModel(), goMenu: { routes.presentCover(.menu) })
                     
                 case .restore:
                     RestoreView(goLogin: { routes.goBack() })
