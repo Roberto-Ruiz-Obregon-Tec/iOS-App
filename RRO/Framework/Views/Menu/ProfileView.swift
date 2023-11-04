@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @ObservedObject var logoutViewModel: LogoutViewModel
     let goLogin: () -> Void
+    
     var body: some View {
-        NavigationView {
+        NavigationStack{
             VStack {
                 HStack {
                     Image(systemName: "person")
@@ -21,18 +23,16 @@ struct ProfileView: View {
                         .fontWeight(.black)
                 }
                 
-                NavigationLink {
-                    ProfileDetailView()
-                } label: {
+                NavigationLink(destination: ProfileDetailView()) {
                     Text("Editar perfil")
                         .padding()
                 }
                 
-                Button {
-                    // TODO: Log out user
+                Button(action: {
+                    // Realiza el cierre de sesión
+                    logoutViewModel.getLogout()
                     goLogin()
-                    
-                } label: {
+                }) {
                     Text("Cerrar sesión")
                         .padding()
                         .background(Color.white)
@@ -44,6 +44,9 @@ struct ProfileView: View {
     }
 }
 
-#Preview {
-    ProfileView{()}
+struct ProfileViewPreview: PreviewProvider {
+    static var previews: some View {
+        // Asegúrate de crear instancias válidas de LogoutViewModel y LoginViewModel
+        let logoutViewModel = LogoutViewModel(loginViewModel: LoginViewModel())
+    }
 }
