@@ -8,12 +8,15 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+// Vista que muestra la información de un curso en una tarjeta
 struct CourseInfoCardView: View {
     let course: Course
     
     var body: some View {
-        NavigationStack{
+        // Utiliza NavigationStack para permitir la navegación
+        NavigationStack {
             VStack {
+                // Muestra una imagen del curso si está disponible, de lo contrario, muestra una imagen por defecto
                 if course.courseImage != "" {
                     WebImage(url: URL(string: course.courseImage))
                         .resizable()
@@ -27,6 +30,7 @@ struct CourseInfoCardView: View {
                 }
                 
                 HStack {
+                    // Muestra el nombre del curso en negrita
                     Text(course.name)
                         .font(.title)
                         .fontWeight(.bold)
@@ -34,6 +38,7 @@ struct CourseInfoCardView: View {
                 }.padding(.bottom, 8)
                 
                 HStack {
+                    // Muestra la descripción del curso en estilo secundario
                     Text(course.description)
                         .foregroundStyle(.secondary)
                         .fontWeight(.medium)
@@ -42,6 +47,7 @@ struct CourseInfoCardView: View {
                 }.padding(.bottom, 12)
                 
                 HStack {
+                    // Muestra la fecha de inicio y finalización del curso en formato personalizado
                     Text("Fecha")
                         .foregroundStyle(.secondary)
                     
@@ -55,6 +61,7 @@ struct CourseInfoCardView: View {
                 Divider()
                 
                 HStack {
+                    // Muestra el costo del curso
                     Text("Pago")
                         .foregroundStyle(.secondary)
                     Spacer()
@@ -64,13 +71,14 @@ struct CourseInfoCardView: View {
                 Divider()
                 
                 HStack {
+                    // Muestra la modalidad del curso
                     Text("Modalidad")
                         .foregroundStyle(.secondary)
                     Spacer()
                     Text(course.modality)
                 }.padding(.bottom, 12)
                 
-                
+                // Permite la navegación a la vista de detalles del curso al tocar el botón "Ver más"
                 NavigationLink {
                     CourseDetailView(course: course)
                 } label: {
@@ -92,3 +100,4 @@ struct CourseInfoCardView: View {
         }
     }
 }
+
