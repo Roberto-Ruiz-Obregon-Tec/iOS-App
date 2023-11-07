@@ -36,6 +36,7 @@ class LoginViewModel: ObservableObject {
     @MainActor
     func postLogin() async -> LoginState {
         
+        // Si el campo de email o password está vacío, se manda el mensaje de error.
         if loginInfo.email.isEmpty || loginInfo.password.isEmpty {
             self.errorTitle = "Campos vacíos"
             self.errorMessage = "Por favor, completa todos los campos."
@@ -43,6 +44,7 @@ class LoginViewModel: ObservableObject {
             return .error
         }
         
+        // Si el servidor no regresa una respuesta válida, se regresa el 
         guard let response = await loginRepository.postLogin(model: self.loginInfo) else {
             self.errorTitle = "Error con el servidor"
             self.errorMessage = "Vuelve a intentar ingresar o inténtalo más tarde."
