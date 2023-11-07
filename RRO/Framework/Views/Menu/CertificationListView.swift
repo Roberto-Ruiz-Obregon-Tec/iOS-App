@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Agregar Vista certificaciones
 struct CertificationListView: View {
     @StateObject var certificationViewModel = CertificationViewModel()
     
@@ -21,6 +22,11 @@ struct CertificationListView: View {
             Task {
                 await certificationViewModel.getCertificationList()
             }
+        }
+        
+        if certificationViewModel.certificationList.isEmpty {
+            Text("No hay Acreditaciones disponibles en este momento")
+                .padding()
         }
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+/// Agregar la vista de la tarjeta
 struct CertificationInfoCardView: View {
     let name: String
     let description: String
