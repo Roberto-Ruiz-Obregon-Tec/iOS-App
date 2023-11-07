@@ -36,7 +36,7 @@ class LoginViewModel: ObservableObject {
     @MainActor
     func postLogin() async -> LoginState {
         
-        // Si el campo de email o password está vacío, se manda el mensaje de error.
+        // If the email or password field are empty, it returns an error message.
         if loginInfo.email.isEmpty || loginInfo.password.isEmpty {
             self.errorTitle = "Campos vacíos"
             self.errorMessage = "Por favor, completa todos los campos."
@@ -44,7 +44,7 @@ class LoginViewModel: ObservableObject {
             return .error
         }
         
-        // Si el servidor no regresa una respuesta válida, se regresa el 
+        // In case there's no connection with the server at all. It returns an error message.
         guard let response = await loginRepository.postLogin(model: self.loginInfo) else {
             self.errorTitle = "Error con el servidor"
             self.errorMessage = "Vuelve a intentar ingresar o inténtalo más tarde."
@@ -52,6 +52,7 @@ class LoginViewModel: ObservableObject {
             return .error
         }
         
+        // In case the token isn't returned, this error is shown
         guard let token = response.token else {
             self.errorTitle = "Error"
             self.errorMessage = response.message ?? "..."
@@ -59,6 +60,7 @@ class LoginViewModel: ObservableObject {
             return .error
         }
         
+        /// - Parameter token: The token the server returns when the login succeeds
         LocalService.shared.setCurrentSession(token: token)
         return .success
         

@@ -31,7 +31,7 @@ struct API {
 }
 
 protocol LoginAPIProtocol {
-    // En mi login, solo quiero que me regrese mi token
+    // https://{API_DOMAIN}/v1/user/auth/login
     func postLogin(model: Login) async -> ServerResponse<User>?
 }
 
