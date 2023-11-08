@@ -8,7 +8,7 @@
 import Foundation
 
 struct API {
-    // TODO: Change the url with the deployed domain, private ip used for testing
+    // TODO: Change the url with tohe deployed domain, private ip used for testing
             //                 |
                 //PONER TU IP AQUÍ v
     static let base = "http://10.25.82.65:3000/v1"
