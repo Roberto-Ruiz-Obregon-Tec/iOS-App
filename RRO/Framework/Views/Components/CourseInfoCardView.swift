@@ -66,7 +66,7 @@ struct CourseInfoCardView: View {
                         .foregroundStyle(.secondary)
                     Spacer()
                     Text("$" + String(course.cost))
-                }.padding(.bottom, 12)
+                }.padding(.bottom, 2)
                 
                 Divider()
                 
