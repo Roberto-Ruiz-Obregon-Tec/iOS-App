@@ -22,7 +22,7 @@ struct Course: Codable, Identifiable { // Encoding y decoding | Para identificar
     var cost: Int
     var courseImage: String
     var capacity: Int
-    var rating: Int
+    var rating: Double
     var meetingCode: String
     var accessCode: String
     var focus: [String]
