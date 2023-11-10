@@ -676,6 +676,7 @@
 				EEAA9D522AE2E3EF00282A82 /* PaymentSheetView.swift in Sources */,
 				48DF02AF2AF1C31A005DE385 /* CertificationInfoCardView.swift in Sources */,
 				031D18AF2AF9509900372171 /* CompanyInfoCardView.swift in Sources */,
+				EEAA9D4B2AE2E36300282A82 /* SigninView.swift in Sources */,
 				F64162C72AF00CB000B25E0E /* EventListView.swift in Sources */,
 				F64162BE2AF00A8000B25E0E /* EventViewModel.swift in Sources */,
 				EEDD93F62AE8E8BC0066AD71 /* ScholarshipRepository.swift in Sources */,
