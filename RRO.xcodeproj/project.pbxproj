@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031D18A92AF94EB700372171 /* CompanyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D18A82AF94EB700372171 /* CompanyListView.swift */; };
+		031D18AB2AF94F7600372171 /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D18AA2AF94F7600372171 /* CompanyViewModel.swift */; };
+		031D18AD2AF9501F00372171 /* CompanyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D18AC2AF9501F00372171 /* CompanyDetailView.swift */; };
+		031D18AF2AF9509900372171 /* CompanyInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D18AE2AF9509900372171 /* CompanyInfoCardView.swift */; };
+		031D18B12AF950D800372171 /* CompanyRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D18B02AF950D800372171 /* CompanyRequirement.swift */; };
+		031D18B32AF9512300372171 /* CompanyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D18B22AF9512300372171 /* CompanyRepository.swift */; };
+		031D18B72AFAFA7200372171 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031D18B62AFAFA7200372171 /* CompanyModel.swift */; };
 		470069C72AF3F86D006BC4FD /* LogoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470069C62AF3F86D006BC4FD /* LogoutRepository.swift */; };
 		470069C92AF3F9A0006BC4FD /* LogoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470069C82AF3F9A0006BC4FD /* LogoutViewModel.swift */; };
 		471ED0882AF1AB3F00AD61F7 /* CourseInfoRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471ED0872AF1AB3F00AD61F7 /* CourseInfoRequirement.swift */; };
@@ -111,6 +118,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031D18A82AF94EB700372171 /* CompanyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListView.swift; sourceTree = "<group>"; };
+		031D18AA2AF94F7600372171 /* CompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewModel.swift; sourceTree = "<group>"; };
+		031D18AC2AF9501F00372171 /* CompanyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailView.swift; sourceTree = "<group>"; };
+		031D18AE2AF9509900372171 /* CompanyInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoCardView.swift; sourceTree = "<group>"; };
+		031D18B02AF950D800372171 /* CompanyRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRequirement.swift; sourceTree = "<group>"; };
+		031D18B22AF9512300372171 /* CompanyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRepository.swift; sourceTree = "<group>"; };
+		031D18B62AFAFA7200372171 /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
 		470069C62AF3F86D006BC4FD /* LogoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRepository.swift; sourceTree = "<group>"; };
 		470069C82AF3F9A0006BC4FD /* LogoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewModel.swift; sourceTree = "<group>"; };
 		471ED0872AF1AB3F00AD61F7 /* CourseInfoRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoRequirement.swift; sourceTree = "<group>"; };
@@ -233,6 +247,7 @@
 				F64162BB2AF005B100B25E0E /* EventInfoCardView.swift */,
 				AA16DD9A2AEF02D600688D0B /* CourseInfoCardView.swift */,
 				822E318B2AF41DD700822067 /* ScholarshipInfoCardView.swift */,
+				031D18AE2AF9509900372171 /* CompanyInfoCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -318,6 +333,7 @@
 				BD5C22092AEF3F5D0002D85E /* FundationInformationRequirement.swift */,
 				AA16DD9E2AEF09F700688D0B /* CourseListRequirement.swift */,
 				471ED0872AF1AB3F00AD61F7 /* CourseInfoRequirement.swift */,
+				031D18B02AF950D800372171 /* CompanyRequirement.swift */,
 				E12DEB2B2B03B1130045DD43 /* MyCoursesListRequirement.swift */,
 			);
 			path = Domain;
@@ -346,6 +362,7 @@
 				EEA42F0E2AF1A07300015BE5 /* UserSessionModel.swift */,
 				F64162C22AF00B6600B25E0E /* EventModel.swift */,
 				BD5C22052AEF391A0002D85E /* FundationInformationModel.swift */,
+				031D18B62AFAFA7200372171 /* CompanyModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -381,6 +398,7 @@
 				BD5C220B2AEF424D0002D85E /* FundationInformationViewModel.swift */,
 				AAFFBAB22AF1C4C800F8E392 /* CourseInfoViewModel.swift */,
 				470069C82AF3F9A0006BC4FD /* LogoutViewModel.swift */,
+				031D18AA2AF94F7600372171 /* CompanyViewModel.swift */,
 				E12DEB292B03B0610045DD43 /* MyCoursesViewModel.swift */,
 			);
 			path = ViewModels;
@@ -439,6 +457,7 @@
 				88BDDD962AEAF23C00978F31 /* ProgramListView.swift */,
 				F64162C62AF00CB000B25E0E /* EventListView.swift */,
 				48DF02B42AF2AF2F005DE385 /* PublicacionesView.swift */,
+				031D18A82AF94EB700372171 /* CompanyListView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -453,6 +472,7 @@
 				EEAA9D552AE2E42E00282A82 /* VoucherSheetView.swift */,
 				88A8804A2AF002F9009BC8EF /* ProgramDetailView.swift */,
 				F64162C82AF0121200B25E0E /* EventDetailView.swift */,
+				031D18AC2AF9501F00372171 /* CompanyDetailView.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -470,6 +490,7 @@
 				F64162C02AF00B0400B25E0E /* EventRepository.swift */,
 				BD5C22072AEF3D7B0002D85E /* FundationInformationRepository.swift */,
 				470069C62AF3F86D006BC4FD /* LogoutRepository.swift */,
+				031D18B22AF9512300372171 /* CompanyRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -627,11 +648,14 @@
 				822E318C2AF41DD700822067 /* ScholarshipInfoCardView.swift in Sources */,
 				AA16DD9B2AEF02D600688D0B /* CourseInfoCardView.swift in Sources */,
 				AA16DD972AEEFD6C00688D0B /* CourseModel.swift in Sources */,
+				031D18B12AF950D800372171 /* CompanyRequirement.swift in Sources */,
 				EEDD93FC2AE966330066AD71 /* ScholarshipListRequirement.swift in Sources */,
 				48DF02B52AF2AF2F005DE385 /* PublicacionesView.swift in Sources */,
+				031D18AD2AF9501F00372171 /* CompanyDetailView.swift in Sources */,
 				48DF02A92AF1C0BE005DE385 /* CertificationRequirement.swift in Sources */,
 				48DF02A72AF1C066005DE385 /* CertificationListView.swift in Sources */,
 				BD5C220C2AEF424D0002D85E /* FundationInformationViewModel.swift in Sources */,
+				031D18B32AF9512300372171 /* CompanyRepository.swift in Sources */,
 				47A333462AE890EB008D2448 /* LoginViewModel.swift in Sources */,
 				EEAA9D5A2AE2E48000282A82 /* FeedView.swift in Sources */,
 				BD5D202E2AF43D9F001D8563 /* StringDateExtension.swift in Sources */,
@@ -640,10 +664,12 @@
 				EEE4AC332AF1CB20009F8E89 /* LocalService.swift in Sources */,
 				EEA42F0F2AF1A07300015BE5 /* UserSessionModel.swift in Sources */,
 				88BDDD952AEAEF8500978F31 /* ProgramInfoCardView.swift in Sources */,
+				031D18AB2AF94F7600372171 /* CompanyViewModel.swift in Sources */,
 				AAFFBAB32AF1C4C800F8E392 /* CourseInfoViewModel.swift in Sources */,
 				EEAA9D562AE2E42E00282A82 /* VoucherSheetView.swift in Sources */,
 				EEAA9D522AE2E3EF00282A82 /* PaymentSheetView.swift in Sources */,
 				48DF02AF2AF1C31A005DE385 /* CertificationInfoCardView.swift in Sources */,
+				031D18AF2AF9509900372171 /* CompanyInfoCardView.swift in Sources */,
 				F64162C72AF00CB000B25E0E /* EventListView.swift in Sources */,
 				F64162BE2AF00A8000B25E0E /* EventViewModel.swift in Sources */,
 				EEDD93F62AE8E8BC0066AD71 /* ScholarshipRepository.swift in Sources */,
@@ -656,6 +682,8 @@
 				EEAA9D582AE2E45B00282A82 /* FAQView.swift in Sources */,
 				470069C92AF3F9A0006BC4FD /* LogoutViewModel.swift in Sources */,
 				EE0BF5552AE80CF000844E68 /* ScholarshipModel.swift in Sources */,
+				031D18B72AFAFA7200372171 /* CompanyModel.swift in Sources */,
+				031D18A92AF94EB700372171 /* CompanyListView.swift in Sources */,
 				F64162BC2AF005B100B25E0E /* EventInfoCardView.swift in Sources */,
 				F64162C92AF0121200B25E0E /* EventDetailView.swift in Sources */,
 				EEAA9D542AE2E40000282A82 /* ProfileDetailView.swift in Sources */,

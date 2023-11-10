@@ -11,7 +11,7 @@ struct API {
     // TODO: Change the url with tohe deployed domain, private ip used for testing
             //                 |
                 //PONER TU IP AQUÍ v
-    static let base = "https://us-central1-roberto-ruiz-obregon.cloudfunctions.net/test/v1"
+    static let base = "http://127.0.0.1:3001/v1"
     
     struct routes {
         // TODO: Map all the routes
@@ -27,6 +27,7 @@ struct API {
         static let program = "/program"
         static let event = "/event"
         static let infoFundation = "/informacion-fundacion"
+        static let company = "/company-certifications"
         
         static let myCourses = "/user/mycourses"
     }
@@ -87,5 +88,10 @@ protocol FundationInformationAPIProtocol{
 protocol CertificationAPIProtocol {
     // https://{API_DOMAIN}/v1/certification?limit={Int}&offset={Int}
     func getCertificationList(limit: Int) async -> ServerResponse<[Certification]>?
+}
+
+protocol CompanyAPIProtocol {
+    // https://{API_DOMAIN}/v1/company-certfications
+    func getCompanyList(limit: Int, offset: Int) async -> ServerResponse<[Company]>?
 }
 
