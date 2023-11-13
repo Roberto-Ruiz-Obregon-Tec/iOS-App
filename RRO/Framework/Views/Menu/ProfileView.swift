@@ -29,7 +29,7 @@ struct ProfileView: View {
                 }
                 
                 Button(action: {
-                    // Realiza el cierre de sesión
+                    // The logout is executed
                     logoutViewModel.getLogout()
                     goLogin()
                 }) {
