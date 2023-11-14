@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+/// Defines a view (FAQView) in the "RRO" app, presenting information about a foundation
 struct FAQView: View {
     @StateObject var infoFundacionViewModel = FundationInformationViewModel()
     @State var info: InfoFundation?

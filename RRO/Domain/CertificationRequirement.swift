@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/// Defines a protocol (CertificationListRequirementProtocol) and its implementation (CertificationListRequirement) to encapsulate the requirements for certification lists in the "RRO" app
 protocol CertificationListRequirementProtocol {
     func getCertificationList(limit: Int) async -> ServerResponse<[Certification]>?
 }
