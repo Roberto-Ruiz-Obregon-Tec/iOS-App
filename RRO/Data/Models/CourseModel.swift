@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct Course: Codable, Identifiable { // Encoding y decoding | Para identificar celdas
     var id: String
     var name: String
@@ -22,14 +23,18 @@ struct Course: Codable, Identifiable { // Encoding y decoding | Para identificar
     var cost: Int
     var courseImage: String
     var capacity: Int
+    var remaining: Int
     var rating: Double
     var meetingCode: String
     var accessCode: String
     var focus: [String]
+
+  
+    
     
     enum CodingKeys: String, CodingKey {
         case id = "_id" // Mapea la propiedad 'id' a '_id' en el JSON
-        case name, description, speaker, startDate, endDate, schedule, modality, postalCode, location, status,  cost, courseImage, capacity, rating, meetingCode, accessCode, focus
+        case name, description, speaker, startDate, endDate, schedule, modality, postalCode, location, status,  cost, courseImage, capacity, remaining, rating, meetingCode, accessCode, focus
     }
 }
 

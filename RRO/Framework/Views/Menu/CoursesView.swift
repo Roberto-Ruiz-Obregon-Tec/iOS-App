@@ -5,7 +5,7 @@
 //  Created by peblo on 20/10/23.
 //
 import SwiftUI
-// Vista principal que muestra la lista de cursos
+
 struct CoursesView: View {
     @StateObject var courseViewModel = CourseViewModel()
     @State private var filterText: String = ""
@@ -26,16 +26,16 @@ struct CoursesView: View {
                 )
             
             if courseViewModel.courseList.filter({
-                filterText.isEmpty || $0.name.folding(options: .diacriticInsensitive, locale: .current).lowercased().contains(filterText.folding(options: .diacriticInsensitive, locale: .current).lowercased())
+                (filterText.isEmpty || $0.name.folding(options: .diacriticInsensitive, locale: .current).lowercased().contains(filterText.folding(options: .diacriticInsensitive, locale: .current).lowercased())) && $0.remaining > 0
             }).isEmpty && !filterText.isEmpty {
-                // Usando Spacer para empujar el contenido al centro
+                // Using Spacer to center the content vertically
                 Spacer()
                 Text("No hay talleres con el nombre que buscas")
                 Spacer()
             } else {
                 ScrollView {
                     ForEach(courseViewModel.courseList.filter {
-                        filterText.isEmpty || $0.name.folding(options: .diacriticInsensitive, locale: .current).lowercased().contains(filterText.folding(options: .diacriticInsensitive, locale: .current).lowercased())
+                        (filterText.isEmpty || $0.name.folding(options: .diacriticInsensitive, locale: .current).lowercased().contains(filterText.folding(options: .diacriticInsensitive, locale: .current).lowercased())) && $0.remaining > 0
                     }) { course in
                         CourseInfoCardView(course: course)
                     }
@@ -49,6 +49,7 @@ struct CoursesView: View {
         }
     }
 }
+
 
 
 
@@ -68,7 +69,7 @@ struct CourseListViewPreviews: PreviewProvider {
         let vm = CourseViewModel()
         for _ in 1...elems {
             vm.courseList.append(
-                Course(id:UUID().uuidString, name: "Curso de Escritura", description: "Lleva tus habilidades para crear artesanias al siguiente nivel, aprende a pintar con acuarelas y tecnicas de dibujo.",speaker: "", startDate: Date.now.toString(), endDate: Date.now.toString(), schedule: "11:30", modality: "Presencial", postalCode: 0, location: "tu cola", status: "Gratuito", cost: 9, courseImage: "", capacity: 1, rating: 0, meetingCode: "", accessCode: "", focus: []))
+                Course(id:UUID().uuidString, name: "Curso de Escritura", description: "Lleva tus habilidades para crear artesanias al siguiente nivel, aprende a pintar con acuarelas y tecnicas de dibujo.",speaker: "", startDate: Date.now.toString(), endDate: Date.now.toString(), schedule: "11:30", modality: "Presencial", postalCode: 0, location: "tu cola", status: "Gratuito", cost: 9, courseImage: "", capacity: 1, remaining: 15, rating: 0, meetingCode: "", accessCode: "", focus: []))
             
             
         }
