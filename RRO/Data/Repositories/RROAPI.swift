@@ -11,7 +11,7 @@ struct API {
     // TODO: Change the url with the deployed domain, private ip used for testing
             //                 |
                 //PONER TU IP AQUÍ v
-    static let base = "http://169.254.17.7:3001/v1"
+    static let base = "http://10.25.102.172:3001/v1"
     
     struct routes {
         // TODO: Map all the routes
@@ -27,6 +27,8 @@ struct API {
         static let program = "/program"
         static let event = "/event"
         static let infoFundation = "/informacion-fundacion"
+        
+        static let myCourses = "/user/mycourses"
     }
 }
 
@@ -65,6 +67,8 @@ protocol CourseAPIProtocol {
     func getCourseList() async -> ServerResponse<[Course]>?
     // https://{API_DOMAIN}/v1/course/{id}
     func getCourse(id: String) async -> ServerResponse<[Course]>?
+    // https://{API_DOMAIN}/v1/user/mycourses/
+    func getMyCourses() async -> ServerResponse<[Course]>?
 }
 
 protocol EventAPIProtocol {

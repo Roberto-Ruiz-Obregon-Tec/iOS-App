@@ -25,6 +25,12 @@ class CourseRepository: CourseAPIProtocol {
         return await netService.self.get(url: URL(string: "\(API.base)\(API.routes.course)")!, params: params)
     }
     
+    /// Función para obtener la lista de cursos del usuario.
+    func getMyCourses() async -> ServerResponse<[Course]>? {
+        
+        return await netService.self.get(url: URL(string: "\(API.base)\(API.routes.myCourses)")!)
+    }
+    
     /// Función para obtener información de un curso en específico.
     ///
     /// - Parametros:

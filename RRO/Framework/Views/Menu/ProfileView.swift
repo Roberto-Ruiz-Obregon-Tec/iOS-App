@@ -2,12 +2,15 @@
 //  ProfileView.swift
 //  RRO
 //
-//  Created by peblo on 20/10/23.
+//  Modified by user326 on 14/11/23.
 //
 
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @StateObject var myCoursesViewModel = MyCoursesViewModel() // Se crea una instancia del ViewModel
+    
     @ObservedObject var logoutViewModel: LogoutViewModel
     let goLogin: () -> Void
     
@@ -27,6 +30,22 @@ struct ProfileView: View {
                     Text("Editar perfil")
                         .padding()
                 }
+                
+                Text("Mis Cursos")
+                    .font(.largeTitle)
+                    .fontWeight(.black)
+                
+                ScrollView {
+                    ForEach(myCoursesViewModel.courseList) { course in
+                        CourseInfoCardView(course: course) // Muestra una tarjeta de información del curso
+                    }
+                    
+                }.onAppear {
+                    Task {
+                        await myCoursesViewModel.getMyCourses() // Llama al método
+                    }
+                }
+                
                 
                 Button(action: {
                     // The logout is executed
