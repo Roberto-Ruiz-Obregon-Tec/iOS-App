@@ -128,8 +128,7 @@ struct SigninView: View {
                     
                     VStack(alignment: .leading, spacing: 0){
                         // MARK: - ZIPCODE
-                        Text("      CP")
-                            .bold()
+                      
                         TextField("Obligatorio", text: $viewModel.cp)
                             .keyboardType(.numberPad)
                             .onReceive(Just(viewModel.cp), perform: { newVal in
@@ -216,58 +215,62 @@ struct SigninView: View {
                                 .disableAutocorrection(true)
                         }
                         
-                        Spacer(minLength: 16)
-                        
-                        // MARK: - PASSWORD CONFIRM
-                        VStack(alignment: .leading, spacing: 0){
-                            Text("     Confirmar Contraseña")
-                                .bold()
-                            SecureField("Obligatorio", text: $viewModel.signinData.passwordConfirm)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.horizontal, 20)
-                                .disableAutocorrection(true)
+                        Group{
+                            Spacer(minLength: 16)
+                            
+                            // MARK: - PASSWORD CONFIRM
+                            VStack(alignment: .leading, spacing: 0){
+                                Text("     Confirmar Contraseña")
+                                    .bold()
+                                SecureField("Obligatorio", text: $viewModel.signinData.passwordConfirm)
+                                    .textFieldStyle(.roundedBorder)
+                                    .padding(.horizontal, 20)
+                                    .disableAutocorrection(true)
+                            }
                         }
                         
                   
                     }
                     
-                    VStack{
-                        Divider()
-                            .padding()
-                            .padding()
-                    }
-                    
-                    
-                    VStack {
+                    Group{
                         
-                        Button {
-                            Task {
-                                let response = await viewModel.postSignup()
-                                
-                                switch response {
-                                    case .success:
-                                        goMenu()
-                                    case .error:
-                                        break
+                        VStack{
+                            Divider()
+                                .padding()
+                                .padding()
+                        }
+                        
+                        VStack {
+                            
+                            Button {
+                                Task {
+                                    let response = await viewModel.postSignup()
+                                    
+                                    switch response {
+                                        case .success:
+                                            goMenu()
+                                        case .error:
+                                            break
+                                    }
                                 }
+                                //goMenu()
+                            } label: {
+                                Text("Crear usuario")
                             }
-                            //goMenu()
-                        } label: {
-                            Text("Crear usuario")
+                            .padding()
+                            .background(Color.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(8.0)
+                            .alert(isPresented: $viewModel.showAlert) {
+                                Alert(title: Text(viewModel.errorTitle),
+                                      message: Text(viewModel.errorMessage),
+                                      dismissButton: .default(Text("OK")))
+                            }
+                            
+                            Spacer()
                         }
-                        .padding()
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(8.0)
-                        .alert(isPresented: $viewModel.showAlert) {
-                            Alert(title: Text(viewModel.errorTitle),
-                                  message: Text(viewModel.errorMessage),
-                                  dismissButton: .default(Text("OK")))
-                        }
-                        
-                        Spacer()
+                        .frame(maxWidth: .infinity, alignment: .center)
                     }
-                    .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
         }

@@ -91,17 +91,18 @@ struct ScholarshipInfoCardView: View {
     }
 }
 
-#Preview {
-    ScholarshipInfoCardView(scholarship: Scholarship(
-        id:UUID().uuidString,
-        name: "Beca",
-        description: "Descripción del beca",
-        organization: "University of Oregon",
-        location: "Oregon, EE.UU.",
-        email: "",
-        phone: "",
-        image: "",
-        sector: "smth",
-        startDate: Date.now.toString(),
-        endDate: Date.now.toString()))
+struct ScholarshipInfoCardPreview: PreviewProvider {
+    static var previews: some View {
+        ScholarshipInfoCardView(scholarship: Scholarship(
+                id:UUID().uuidString,
+                name: "Beca",
+                description: "Descripción del beca",
+                organization: "University of Oregon",
+                location: "Oregon, EE.UU.",
+                email: "",
+                phone: "",
+                image: "",
+                sector: "smth",
+                startDate: Date.now.toString(),
+                endDate: Date.now.toString()))    }
 }

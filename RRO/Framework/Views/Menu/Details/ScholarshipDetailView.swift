@@ -131,20 +131,23 @@ struct ScholarshipDetailView: View {
                             .foregroundStyle(.secondary)
                     }
                     
-                    Divider()
-                    
-                    HStack {
-                        Text("Lugar")
-                            .fontWeight(.bold)
-                        
-                        Spacer()
+                    Group{
+                        Divider()
                         
                         HStack {
-                            Image(systemName: "location")
-                            Text(scholarship.location)
-                        }.foregroundStyle(.secondary)
-                        
+                            Text("Lugar")
+                                .fontWeight(.bold)
+                            
+                            Spacer()
+                            
+                            HStack {
+                                Image(systemName: "location")
+                                Text(scholarship.location)
+                            }.foregroundStyle(.secondary)
+                            
+                        }
                     }
+                   
                                         
                 }.padding(.vertical)
                 
