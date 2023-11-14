@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+/// Defines a  data model (InfoFundation) for foundation information in the "RRO" app.
 struct InfoFundation: Codable, Identifiable {
     var id: String
     var name: String
@@ -19,22 +19,10 @@ struct InfoFundation: Codable, Identifiable {
     var twitter: String
     var instagram: String
     var tiktok: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "_id" // Mapea la propiedad 'id' a '_id' en el JSON
-        case name, email, phone, description, location, facebook, twitter, instagram, tiktok
-    }
+ 
 }
 
-struct FoundationResponse<T: Codable>: Codable{
-    var status: String
-    var results: Int?
-    var data: Data
-    
-    struct Data: Codable {
-        var documents: [InfoFundation]
-    }
-}
+
 
 
 

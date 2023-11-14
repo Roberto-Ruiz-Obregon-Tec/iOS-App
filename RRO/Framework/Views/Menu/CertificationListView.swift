@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+/// Defines a view (CertificationListView) in the "RRO" app to display a list of certifications
 struct CertificationListView: View {
     @StateObject var certificationViewModel = CertificationViewModel()
     
