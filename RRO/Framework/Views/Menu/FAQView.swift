@@ -16,7 +16,7 @@ struct FAQView: View {
     
     var body: some View {
         VStack() {
-            Text(info?.nombre ?? "")
+            Text(info?.name ?? "")
                 .bold()
                 .font(.title2)
             Image("logoFundacion")
@@ -28,7 +28,7 @@ struct FAQView: View {
             Divider()
                 .padding(10)
             
-            Text(info?.descripcion ?? "...")
+            Text(info?.description ?? "...")
                 .font(.headline)
                 .fontWeight(.light)
                 .multilineTextAlignment(.center)
@@ -101,7 +101,7 @@ struct FAQView: View {
 
             
             VStack(spacing: 15) {
-                Text("📞   \(info?.telefono ?? "#")")
+                Text("📞   \(info?.phone ?? "#")")
                     .foregroundColor(.white)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
@@ -124,7 +124,7 @@ struct FAQView: View {
                     .frame(minWidth: 0, maxWidth: .infinity)
                 
                 Text("📍")
-                Text(info?.ubicacion ?? "#")
+                Text(info?.location ?? "#")
                     .font(.footnote)
             }
             .padding(15)
