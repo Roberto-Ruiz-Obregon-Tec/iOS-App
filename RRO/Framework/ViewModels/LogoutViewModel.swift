@@ -16,7 +16,6 @@ class LogoutViewModel: ObservableObject {
         self.loginViewModel = loginViewModel
     }
     
-    // The function awaits until the Repository returns a result, it will be saved in a variable called response.
     func getLogout() {
         Task {
             let response = await logoutRepository.getLogout()

@@ -10,6 +10,7 @@ struct CoursesView: View {
     @StateObject var courseViewModel = CourseViewModel()
     @State private var filterText: String = ""
 
+
     var body: some View {
         VStack {
             TextField("Buscar talleres", text: $filterText)
@@ -49,11 +50,10 @@ struct CoursesView: View {
         }
     }
 }
-
-
-
-
     
+//#Preview {
+//    CoursesView()
+//}
 
 
 struct CourseListViewPreviews: PreviewProvider {
@@ -63,13 +63,13 @@ struct CourseListViewPreviews: PreviewProvider {
         }
     }
     
-    /// Si no hay backend se generara esto:
+    /// If there is no backend the preview will generate this ammount of card elements
     static var elems = 10
     static func getViewModel() -> CourseViewModel {
         let vm = CourseViewModel()
         for _ in 1...elems {
             vm.courseList.append(
-                Course(id:UUID().uuidString, name: "Curso de Escritura", description: "Lleva tus habilidades para crear artesanias al siguiente nivel, aprende a pintar con acuarelas y tecnicas de dibujo.",speaker: "", startDate: Date.now.toString(), endDate: Date.now.toString(), schedule: "11:30", modality: "Presencial", postalCode: 0, location: "tu cola", status: "Gratuito", cost: 9, courseImage: "", capacity: 1, remaining: 15, rating: 0, meetingCode: "", accessCode: "", focus: []))
+                Course(id:UUID().uuidString, name: "Curso de Escritura", description: "Lleva tus habilidades para crear artesanias al siguiente nivel, aprende a pintar con acuarelas y tecnicas de dibujo.",speaker: "", startDate: Date.now.toString(), endDate: Date.now.toString(), schedule: "", modality: "Presencial", postalCode: 0, location: "", status: "", cost: 1200, courseImage: "", capacity: 1, rating: 0, meetingCode: "", accessCode: "", focus: []))
             
             
         }

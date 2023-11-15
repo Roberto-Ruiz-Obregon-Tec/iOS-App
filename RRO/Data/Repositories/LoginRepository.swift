@@ -14,7 +14,6 @@ class LoginRepository: LoginAPIProtocol {
         self.netService = netService
     }
     
-    /// - Parameter model: Login: The data reserved for the Login, the one requiered to be send to the API
     func postLogin(model: Login) async -> ServerResponse<User>? {
         return await netService
             .post(url: URL(string: "\(API.base)\(API.routes.userLogin)")!, body: model)
