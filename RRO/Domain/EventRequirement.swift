@@ -7,19 +7,37 @@
 
 import Foundation
 
+/// A protocol defining the requirements for fetching a list of events.
 protocol EventListRequirementProtocol {
+    /// Asynchronously fetches a list of events based on specified limits and offsets.
+    /// - Parameters:
+    ///   - limit: The maximum number of events to fetch.
+    ///   - offset: The offset to start fetching events from.
+    /// - Returns: A `ServerResponse` containing an array of events or `nil` if the fetch is unsuccessful.
     func getEventList(limit: Int, offset: Int) async -> ServerResponse<[Event]>?
 }
 
+/// A concrete implementation of `EventListRequirementProtocol`.
 class EventListRequirement: EventListRequirementProtocol {
-let dataRepository: EventRepository
-static let shared = EventListRequirement()
+    /// Data repository responsible for interacting with event data.
+    let dataRepository: EventRepository
+    
+    /// A shared instance of `EventListRequirement`.
+    static let shared = EventListRequirement()
 
-init(dataRepository: EventRepository = EventRepository.shared) {
-    self.dataRepository = dataRepository
+    /// Initializes an instance of `EventListRequirement`.
+    /// - Parameter dataRepository: The data repository responsible for interacting with event data.
+    init(dataRepository: EventRepository = EventRepository.shared) {
+        self.dataRepository = dataRepository
+    }
+
+    /// Asynchronously fetches a list of events based on specified limits and offsets.
+    /// - Parameters:
+    ///   - limit: The maximum number of events to fetch.
+    ///   - offset: The offset to start fetching events from.
+    /// - Returns: A `ServerResponse` containing an array of events or `nil` if the fetch is unsuccessful.
+    func getEventList(limit: Int, offset: Int) async -> ServerResponse<[Event]>? {
+        return await dataRepository.getEventList(limit: limit, offset: offset)
+    }
 }
 
-func getEventList(limit: Int, offset: Int) async -> ServerResponse<[Event]>? {
-    return await dataRepository.getEventList(limit: limit, offset: offset)
-}
-}

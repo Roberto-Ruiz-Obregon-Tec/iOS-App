@@ -8,15 +8,15 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct
-EventDetailView: View {
+/// A view displaying detailed information about an event.
+struct EventDetailView: View {
     var event: Event
     @State var admin = false
     
     var body: some View {
         ScrollView {
-            
             VStack(spacing: 8) {
+                // Display event image or default image if not available
                 if event.imageUrl != "" {
                     WebImage(url: URL(string: event.imageUrl))
                         .resizable()
@@ -28,6 +28,8 @@ EventDetailView: View {
                         .cornerRadius(16)
                         .scaledToFit()
                 }
+                
+                // Display event name and optional edit button for admin
                 HStack {
                     Text(event.eventName)
                         .font(.title)
@@ -49,20 +51,23 @@ EventDetailView: View {
                         .foregroundStyle(.white)
                     }
                 }
-                    
+                
+                // Display event date range
                 VStack(spacing: 8) {
                     Text("Fecha(s):")
                     HStack {
                         Image(systemName: "calendar")
-                        Text(event.startDate?.toISODate() ?? "10/10/10".toISODate(), format: .dateTime.day().month()) + Text(" - ") + Text(event.endDate?.toISODate() ?? "10/10/10".toISODate(), format: .dateTime.day().month())
+                        Text(event.startDate?.toISODate() ?? "10/10/10".toISODate(), format: .dateTime.day().month())
+                            + Text(" - ") +
+                            Text(event.endDate?.toISODate() ?? "10/10/10".toISODate(), format: .dateTime.day().month())
                     }
                 }
                 .padding(.vertical)
                 .font(.title3)
                 .fontWeight(.bold)
                 
+                // Display event location
                 VStack {
-                    
                     HStack {
                         Text("Ubicación")
                             .fontWeight(.bold)
@@ -74,9 +79,10 @@ EventDetailView: View {
                     }
                     
                     Divider()
-                                        
-                }.padding(.vertical)
+                }
+                .padding(.vertical)
                 
+                // Display event details
                 VStack(spacing: 8) {
                     HStack {
                         Text("Detalles")
@@ -90,11 +96,10 @@ EventDetailView: View {
                         Spacer()
                     }
                 }
-                
-            }.padding(.horizontal)
+            }
+            .padding(.horizontal)
         }
-        .navigationTitle(event.eventName    )
+        .navigationTitle(event.eventName)
         .navigationBarTitleDisplayMode(.inline)
     }
-        
 }

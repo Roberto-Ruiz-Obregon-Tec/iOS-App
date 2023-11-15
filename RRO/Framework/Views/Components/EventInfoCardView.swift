@@ -8,11 +8,15 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+/// A view representing a card displaying basic information about an event.
 struct EventInfoCardView: View {
+    /// The event object containing information to be displayed on the card.
     let event: Event
+    
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             VStack {
+                // Display event image or default image if not available
                 if event.imageUrl != "" {
                     WebImage(url: URL(string: event.imageUrl))
                         .resizable()
@@ -25,6 +29,7 @@ struct EventInfoCardView: View {
                         .scaledToFit()
                 }
                 
+                // Display event name
                 HStack {
                     Text(event.eventName)
                         .font(.title)
@@ -32,25 +37,25 @@ struct EventInfoCardView: View {
                     Spacer()
                 }.padding(.bottom, 8)
                 
+                // Display event description
                 HStack {
                     Text(event.description)
                         .foregroundStyle(.secondary)
                         .fontWeight(.medium)
-                    
                     Spacer()
                 }.padding(.bottom, 12)
                 
+                // Display event date
                 HStack {
                     Text("Fecha")
                         .foregroundStyle(.secondary)
-                    
                     Spacer()
-                    
                     Text(event.startDate!.toISODate(), format: .dateTime.day().month())
                 }.padding(.bottom, 2)
                 
                 Divider()
                 
+                // Display event location
                 HStack {
                     Text("Ubicación")
                         .foregroundStyle(.secondary)
@@ -58,6 +63,7 @@ struct EventInfoCardView: View {
                     Text(event.location)
                 }.padding(.bottom, 12)
                 
+                // Navigation link to view more details
                 NavigationLink {
                     EventDetailView(event: event)
                 } label: {
@@ -80,9 +86,9 @@ struct EventInfoCardView: View {
     }
 }
 
-
+/// A preview provider for the `EventInfoCardView`.
 struct EventInfoCardPreview: PreviewProvider {
     static var previews: some View {
-        EventInfoCardView(event: Event(id:UUID().uuidString, eventName: "Evento", description: "Descripción del evento", location: "Centro de Congresos", startDate: Date.now.toString(), endDate: Date.now.toString(), imageUrl: ""))
+        EventInfoCardView(event: Event(id: UUID().uuidString, eventName: "Evento", description: "Descripción del evento", location: "Centro de Congresos", startDate: Date.now.toString(), endDate: Date.now.toString(), imageUrl: ""))
     }
 }
