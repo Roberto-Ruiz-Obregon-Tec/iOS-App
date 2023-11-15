@@ -16,7 +16,7 @@ struct FAQView: View {
     
     var body: some View {
         VStack() {
-            Text(info?.nombre ?? "")
+            Text(info?.name ?? "")
                 .bold()
                 .font(.title2)
             Image("logoFundacion")
@@ -24,11 +24,17 @@ struct FAQView: View {
                 .scaledToFit()
                 .frame(width: 180)
                 .padding()
+                .onTapGesture {
+                    // If the image is clicked, it will send to the landing page of RRO
+                    if let url = URL(string: "https://frroac.com/") {
+                        UIApplication.shared.open(url)
+                    }
+                }
             
             Divider()
                 .padding(10)
             
-            Text(info?.descripcion ?? "...")
+            Text(info?.description ?? "...")
                 .font(.headline)
                 .fontWeight(.light)
                 .multilineTextAlignment(.center)
@@ -101,7 +107,7 @@ struct FAQView: View {
 
             
             VStack(spacing: 15) {
-                Text("📞   \(info?.telefono ?? "#")")
+                Text("📞   \(info?.phone ?? "#")")
                     .foregroundColor(.white)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
@@ -124,7 +130,7 @@ struct FAQView: View {
                     .frame(minWidth: 0, maxWidth: .infinity)
                 
                 Text("📍")
-                Text(info?.ubicacion ?? "#")
+                Text(info?.location ?? "#")
                     .font(.footnote)
             }
             .padding(15)
