@@ -8,7 +8,7 @@
 import Foundation
 
 struct API {
-    // TODO: Change the url with the deployed domain, private ip used for testing
+    // TODO: Change the url with tohe deployed domain, private ip used for testing
             //                 |
                 //PONER TU IP AQUÍ v
     static let base = "https://us-central1-roberto-ruiz-obregon.cloudfunctions.net/test/v1"
