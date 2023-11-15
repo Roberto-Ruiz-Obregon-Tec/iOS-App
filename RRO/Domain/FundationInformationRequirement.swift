@@ -7,6 +7,7 @@
 
 import Foundation
 
+///  Defines a protocol (FundationInformationRequirementProtocol) and a corresponding implementation class (FundationInformationRequirement) to abstract the requirements for foundation information in the "RRO" app
 protocol FundationInformationRequirementProtocol{
     func getInfoFundation(limit: Int) async -> ServerResponse<[InfoFundation]>?
 }

@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/// Repository (CertificationRepository) handles the certifications operations in the "RRO" app. It utilizes a network service (NetworkAPIService) for asynchronous operations.
 class CertificationRepository: CertificationAPIProtocol {
     let netService: NetworkAPIService
     static let shared = CertificationRepository()
