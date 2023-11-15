@@ -37,7 +37,7 @@ struct ProfileView: View {
                 
                 ScrollView {
                     ForEach(myCoursesViewModel.courseList) { course in
-                        CourseInfoCardView(course: course) // Muestra una tarjeta de información del curso
+                        MyCourseInfoCardView(course: course) // Muestra una tarjeta de información del curso
                     }
                     
                 }.onAppear {

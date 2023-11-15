@@ -31,7 +31,6 @@ struct API {
         static let myCourses = "/user/mycourses"
         static let company = "/company-certifications"
         
-        static let myCourses = "/user/mycourses"
     }
 }
 
