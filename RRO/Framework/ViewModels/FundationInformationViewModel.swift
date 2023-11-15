@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Defines a ViewModel (FundationInformationViewModel) in the "RRO" app, responsible for managing foundation information. It uses the infoFundacionRequirement property, conforming to the FundationInformationRequirementProtocol, to fetch foundation information asynchronously.
 class FundationInformationViewModel: ObservableObject{
     @Published var infoFundation = [InfoFundation]()
     

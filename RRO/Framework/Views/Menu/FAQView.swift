@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+/// Defines a view (FAQView) in the "RRO" app, presenting information about a foundation
 struct FAQView: View {
     @StateObject var infoFundacionViewModel = FundationInformationViewModel()
     @State var info: InfoFundation?
@@ -24,6 +26,12 @@ struct FAQView: View {
                 .scaledToFit()
                 .frame(width: 180)
                 .padding()
+                .onTapGesture {
+                    // If the image is clicked, it will send to the landing page of RRO
+                    if let url = URL(string: "https://frroac.com/") {
+                        UIApplication.shared.open(url)
+                    }
+                }
             
             Divider()
                 .padding(10)

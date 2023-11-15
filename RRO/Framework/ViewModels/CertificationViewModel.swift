@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/// Defines a ViewModel (CertificationViewModel) for managing certification-related data in the "RRO" app. It uses the certificationListRequirement property, conforming to the CertificationListRequirementProtocol, to asynchronously fetch a list of certifications
 class CertificationViewModel: ObservableObject {
     @Published var certificationList = [Certification]()
     
