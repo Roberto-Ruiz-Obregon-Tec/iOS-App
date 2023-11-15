@@ -27,6 +27,7 @@ struct API {
         static let program = "/program"
         static let event = "/event"
         static let infoFundation = "/informacion-fundacion"
+        static let company = "/company-certifications"
     }
 }
 
@@ -83,5 +84,10 @@ protocol FundationInformationAPIProtocol{
 protocol CertificationAPIProtocol {
     // https://{API_DOMAIN}/v1/certification?limit={Int}&offset={Int}
     func getCertificationList(limit: Int) async -> ServerResponse<[Certification]>?
+}
+
+protocol CompanyAPIProtocol {
+    // https://{API_DOMAIN}/v1/company-certfications
+    func getCompanyList(limit: Int, offset: Int) async -> ServerResponse<[Company]>?
 }
 
