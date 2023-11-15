@@ -10,11 +10,11 @@ import Foundation
 
 struct InfoFundation: Codable, Identifiable {
     var id: String
-    var name: String
+    var nombre: String
     var email: String
-    var phone: String
-    var description: String
-    var location: String
+    var telefono: String
+    var descripcion: String
+    var ubicacion: String
     var facebook: String
     var twitter: String
     var instagram: String
@@ -22,7 +22,7 @@ struct InfoFundation: Codable, Identifiable {
     
     enum CodingKeys: String, CodingKey {
         case id = "_id" // Mapea la propiedad 'id' a '_id' en el JSON
-        case name, email, phone, description, location, facebook, twitter, instagram, tiktok
+        case nombre, email, telefono, descripcion, ubicacion, facebook, twitter, instagram, tiktok
     }
 }
 
