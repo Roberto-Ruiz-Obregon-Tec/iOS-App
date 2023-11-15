@@ -62,76 +62,83 @@ struct ScholarshipDetailView: View {
                 .padding(.vertical)
                 .font(.title3)
                 .fontWeight(.bold)
-                
+           
                 VStack {
-                    
-                    HStack {
-                        Text("Organización")
-                            .fontWeight(.bold)
-                        
-                        Spacer()
-                        
-                        Text(scholarship.organization)
-                            .foregroundStyle(.secondary)
-                    }
-                    
-                    Divider()
-                    
-                    HStack {
-                        Text("Email")
-                            .fontWeight(.bold)
-                        
-                        Spacer()
-                        
-                        Text(scholarship.email)
-                            .foregroundStyle(.secondary)
-                    }
-                    
-                    Divider()
-                    
-                    HStack {
-                        Text("Teléfono")
-                            .fontWeight(.bold)
-                        
-                        Spacer()
-                        
+                    Group {
                         HStack {
-                            Image(systemName: "phone")
-                            Text(scholarship.phone)
-                        }.foregroundStyle(.secondary)
-                    }
-                    
-                    Divider()
-                    
-                    
-                    HStack {
-                        Text("Periodo de aplicación")
-                            .fontWeight(.bold)
-                        
-                        Spacer()
-                        
-                        
-                        HStack {
-                            Text(scholarship.startDate.toISODate(), format: .dateTime.day().month())
-                            Text("-")
-                            Text(scholarship.endDate.toISODate(), format: .dateTime.day().month())
+                            Text("Organización")
+                                .fontWeight(.bold)
                             
-                        }.foregroundStyle(.secondary)
+                            Spacer()
+                            
+                            Text(scholarship.organization)
+                                .foregroundStyle(.secondary)
+                        }
+                        
+                        Divider()
                     }
                     
-                    Divider()
-                    
-                    HStack {
-                        Text("Sector")
-                            .fontWeight(.bold)
+                    Group{
+                        HStack {
+                            Text("Email")
+                                .fontWeight(.bold)
+                            
+                            Spacer()
+                            
+                            Text(scholarship.email)
+                                .foregroundStyle(.secondary)
+                        }
                         
-                        Spacer()
-                        
-                        Text(scholarship.sector)
-                            .foregroundStyle(.secondary)
+                        Divider()
                     }
                     
-                    Divider()
+                    Group {
+                        HStack {
+                            Text("Teléfono")
+                                .fontWeight(.bold)
+                            
+                            Spacer()
+                            
+                            HStack {
+                                Image(systemName: "phone")
+                                Text(scholarship.phone)
+                            }.foregroundStyle(.secondary)
+                        }
+                        
+                        Divider()
+                    }
+                    
+                    Group {
+                        HStack {
+                            Text("Periodo de aplicación")
+                                .fontWeight(.bold)
+                            
+                            Spacer()
+                            
+                            
+                            HStack {
+                                Text(scholarship.startDate.toISODate(), format: .dateTime.day().month())
+                                Text("-")
+                                Text(scholarship.endDate.toISODate(), format: .dateTime.day().month())
+                                
+                            }.foregroundStyle(.secondary)
+                        }
+                        
+                        Divider()
+                    }
+                    Group {
+                        HStack {
+                            Text("Sector")
+                                .fontWeight(.bold)
+                            
+                            Spacer()
+                            
+                            Text(scholarship.sector)
+                                .foregroundStyle(.secondary)
+                        }
+                        
+                        Divider()
+                    }
                     
                     HStack {
                         Text("Lugar")

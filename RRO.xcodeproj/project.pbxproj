@@ -19,7 +19,10 @@
 		471ED0882AF1AB3F00AD61F7 /* CourseInfoRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471ED0872AF1AB3F00AD61F7 /* CourseInfoRequirement.swift */; };
 		4730B8792AE9D03800337D05 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730B8782AE9D03800337D05 /* LoginModel.swift */; };
 		4777A67B2AEA348C00FB4388 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777A67A2AEA348C00FB4388 /* LoginRepository.swift */; };
+		478932CF2B056FD60071F839 /* PublicationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478932CE2B056FD60071F839 /* PublicationCardView.swift */; };
 		47A333462AE890EB008D2448 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A333452AE890EB008D2448 /* LoginViewModel.swift */; };
+		47E471522B057EB000B0B9C3 /* ExpandableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E471512B057EB000B0B9C3 /* ExpandableText.swift */; };
+		47E471552B057F1400B0B9C3 /* ExpandableText in Frameworks */ = {isa = PBXBuildFile; productRef = 47E471542B057F1400B0B9C3 /* ExpandableText */; };
 		48DF029D2AF1BFEE005DE385 /* CertificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF029C2AF1BFEE005DE385 /* CertificationModel.swift */; };
 		48DF029F2AF1BFFE005DE385 /* CertificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF029E2AF1BFFE005DE385 /* CertificationRepository.swift */; };
 		48DF02A12AF1C020005DE385 /* CertificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF02A02AF1C020005DE385 /* CertificationViewModel.swift */; };
@@ -128,7 +131,9 @@
 		471ED0872AF1AB3F00AD61F7 /* CourseInfoRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoRequirement.swift; sourceTree = "<group>"; };
 		4730B8782AE9D03800337D05 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		4777A67A2AEA348C00FB4388 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		478932CE2B056FD60071F839 /* PublicationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationCardView.swift; sourceTree = "<group>"; };
 		47A333452AE890EB008D2448 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		47E471512B057EB000B0B9C3 /* ExpandableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableText.swift; sourceTree = "<group>"; };
 		48DF029C2AF1BFEE005DE385 /* CertificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationModel.swift; sourceTree = "<group>"; };
 		48DF029E2AF1BFFE005DE385 /* CertificationRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationRepository.swift; sourceTree = "<group>"; };
 		48DF02A02AF1C020005DE385 /* CertificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationViewModel.swift; sourceTree = "<group>"; };
@@ -215,6 +220,7 @@
 				EEAA9D3E2AE2E27F00282A82 /* SDWebImageSwiftUI in Frameworks */,
 				EEAA9D382AE2E26000282A82 /* Alamofire in Frameworks */,
 				EEAA9D3B2AE2E26E00282A82 /* FlowStacks in Frameworks */,
+				47E471552B057F1400B0B9C3 /* ExpandableText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +250,8 @@
 				AA16DD9A2AEF02D600688D0B /* CourseInfoCardView.swift */,
 				822E318B2AF41DD700822067 /* ScholarshipInfoCardView.swift */,
 				031D18AE2AF9509900372171 /* CompanyInfoCardView.swift */,
+				478932CE2B056FD60071F839 /* PublicationCardView.swift */,
+				47E471512B057EB000B0B9C3 /* ExpandableText.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -518,6 +526,7 @@
 				EEAA9D372AE2E26000282A82 /* Alamofire */,
 				EEAA9D3A2AE2E26E00282A82 /* FlowStacks */,
 				EEAA9D3D2AE2E27F00282A82 /* SDWebImageSwiftUI */,
+				47E471542B057F1400B0B9C3 /* ExpandableText */,
 			);
 			productName = RRO;
 			productReference = 9D7F81052AE2D2D7002FA1E0 /* RRO.app */;
@@ -595,6 +604,7 @@
 				EEAA9D362AE2E26000282A82 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				EEAA9D392AE2E26E00282A82 /* XCRemoteSwiftPackageReference "FlowStacks" */,
 				EEAA9D3C2AE2E27F00282A82 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				47E471532B057F1400B0B9C3 /* XCRemoteSwiftPackageReference "ExpandableText" */,
 			);
 			productRefGroup = 9D7F81062AE2D2D7002FA1E0 /* Products */;
 			projectDirPath = "";
@@ -644,6 +654,7 @@
 				AA16DD972AEEFD6C00688D0B /* CourseModel.swift in Sources */,
 				031D18B12AF950D800372171 /* CompanyRequirement.swift in Sources */,
 				EEDD93FC2AE966330066AD71 /* ScholarshipListRequirement.swift in Sources */,
+				47E471522B057EB000B0B9C3 /* ExpandableText.swift in Sources */,
 				48DF02B52AF2AF2F005DE385 /* PublicacionesView.swift in Sources */,
 				031D18AD2AF9501F00372171 /* CompanyDetailView.swift in Sources */,
 				48DF02A92AF1C0BE005DE385 /* CertificationRequirement.swift in Sources */,
@@ -717,6 +728,7 @@
 				88BDDDA12AEB0E8C00978F31 /* ProgramListRequirement.swift in Sources */,
 				48DF02B32AF2A45F005DE385 /* MenuView.swift in Sources */,
 				EEDD93F82AE8E9450066AD71 /* RROAPI.swift in Sources */,
+				478932CF2B056FD60071F839 /* PublicationCardView.swift in Sources */,
 				BD5C22062AEF391A0002D85E /* FundationInformationModel.swift in Sources */,
 				AA16DD9D2AEF09B600688D0B /* CourseViewModel.swift in Sources */,
 				9D7F813B2AE2D422002FA1E0 /* NetworkAPIService.swift in Sources */,
@@ -1053,6 +1065,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		47E471532B057F1400B0B9C3 /* XCRemoteSwiftPackageReference "ExpandableText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NuPlay/ExpandableText.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		EEAA9D362AE2E26000282A82 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1080,6 +1100,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		47E471542B057F1400B0B9C3 /* ExpandableText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47E471532B057F1400B0B9C3 /* XCRemoteSwiftPackageReference "ExpandableText" */;
+			productName = ExpandableText;
+		};
 		EEAA9D372AE2E26000282A82 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EEAA9D362AE2E26000282A82 /* XCRemoteSwiftPackageReference "Alamofire" */;
