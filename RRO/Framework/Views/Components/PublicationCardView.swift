@@ -87,9 +87,8 @@ struct PublicationCardView: View {
                         } label : {
                             Image(systemName: "hand.thumbsup")
                                 .tint(colorScheme == .dark ? .white : .black)
+                            Text("Me gusta").foregroundColor(colorScheme == .dark ? .white : .black)
                         }
-                        
-                        Text("Me gusta")
                     }
                     
                     Spacer()
@@ -100,9 +99,8 @@ struct PublicationCardView: View {
                         } label : {
                             Image(systemName: "bubble.right")
                                 .tint(colorScheme == .dark ? .white : .black)
+                            Text("Comentar").foregroundColor(colorScheme == .dark ? .white : .black)
                         }
-                        
-                        Text("Comentar")
                     }
                     
                 }
