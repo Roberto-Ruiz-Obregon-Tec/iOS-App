@@ -11,6 +11,8 @@ import SDWebImageSwiftUI
 
 
 struct PublicationCardView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     let publication : Publication
     
     var body: some View {
@@ -84,7 +86,7 @@ struct PublicationCardView: View {
                            print("Like")
                         } label : {
                             Image(systemName: "hand.thumbsup")
-                                .tint(.black)
+                                .tint(colorScheme == .dark ? .white : .black)
                         }
                         
                         Text("Me gusta")
@@ -97,7 +99,7 @@ struct PublicationCardView: View {
                            print("Comentar")
                         } label : {
                             Image(systemName: "bubble.right")
-                                .tint(.black)
+                                .tint(colorScheme == .dark ? .white : .black)
                         }
                         
                         Text("Comentar")

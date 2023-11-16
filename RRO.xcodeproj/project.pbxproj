@@ -21,7 +21,6 @@
 		4777A67B2AEA348C00FB4388 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777A67A2AEA348C00FB4388 /* LoginRepository.swift */; };
 		478932CF2B056FD60071F839 /* PublicationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478932CE2B056FD60071F839 /* PublicationCardView.swift */; };
 		47A333462AE890EB008D2448 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A333452AE890EB008D2448 /* LoginViewModel.swift */; };
-		47E471522B057EB000B0B9C3 /* ExpandableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E471512B057EB000B0B9C3 /* ExpandableText.swift */; };
 		47E471552B057F1400B0B9C3 /* ExpandableText in Frameworks */ = {isa = PBXBuildFile; productRef = 47E471542B057F1400B0B9C3 /* ExpandableText */; };
 		47E471572B058F5300B0B9C3 /* PublicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E471562B058F5300B0B9C3 /* PublicationView.swift */; };
 		47E471592B0593E200B0B9C3 /* PublicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E471582B0593E200B0B9C3 /* PublicationViewModel.swift */; };
@@ -137,7 +136,6 @@
 		4777A67A2AEA348C00FB4388 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
 		478932CE2B056FD60071F839 /* PublicationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationCardView.swift; sourceTree = "<group>"; };
 		47A333452AE890EB008D2448 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		47E471512B057EB000B0B9C3 /* ExpandableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableText.swift; sourceTree = "<group>"; };
 		47E471562B058F5300B0B9C3 /* PublicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationView.swift; sourceTree = "<group>"; };
 		47E471582B0593E200B0B9C3 /* PublicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationViewModel.swift; sourceTree = "<group>"; };
 		47E4715A2B0595E500B0B9C3 /* PublicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationModel.swift; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 				822E318B2AF41DD700822067 /* ScholarshipInfoCardView.swift */,
 				031D18AE2AF9509900372171 /* CompanyInfoCardView.swift */,
 				478932CE2B056FD60071F839 /* PublicationCardView.swift */,
-				47E471512B057EB000B0B9C3 /* ExpandableText.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -668,7 +665,6 @@
 				47E4715B2B0595E500B0B9C3 /* PublicationModel.swift in Sources */,
 				031D18B12AF950D800372171 /* CompanyRequirement.swift in Sources */,
 				EEDD93FC2AE966330066AD71 /* ScholarshipListRequirement.swift in Sources */,
-				47E471522B057EB000B0B9C3 /* ExpandableText.swift in Sources */,
 				031D18AD2AF9501F00372171 /* CompanyDetailView.swift in Sources */,
 				48DF02A92AF1C0BE005DE385 /* CertificationRequirement.swift in Sources */,
 				48DF02A72AF1C066005DE385 /* CertificationListView.swift in Sources */,
