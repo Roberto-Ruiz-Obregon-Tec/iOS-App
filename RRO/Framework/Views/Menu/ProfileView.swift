@@ -36,8 +36,16 @@ struct ProfileView: View {
                     .fontWeight(.black)
                 
                 ScrollView {
-                    ForEach(myCoursesViewModel.courseList) { course in
-                        MyCourseInfoCardView(course: course) // Muestra una tarjeta de información del curso
+                    
+                    if (myCoursesViewModel.courseList.count > 0){
+                        Text("Actualmente no tienes cursos inscritos")
+                            .padding()
+                    }
+                    else{
+                        
+                        ForEach(myCoursesViewModel.courseList) { course in
+                            MyCourseInfoCardView(course: course) // Muestra una tarjeta de información del curso
+                        }
                     }
                     
                 }.onAppear {
