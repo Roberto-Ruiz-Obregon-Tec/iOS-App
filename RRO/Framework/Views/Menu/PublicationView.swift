@@ -19,9 +19,8 @@ struct PublicationView: View {
                 Spacer()
             } else {
                 ScrollView {
-                    List(publicationViewModel.publicationList) { publication in
-                        PublicationCardView(publication: publication)
-                        
+                    ForEach(publicationViewModel.publicationList){publication in
+                            PublicationCardView(publication: publication)
                     }
                     }
                 }

@@ -26,8 +26,9 @@ struct PublicationCardView: View {
                         Text(publication.title)
                             .font(.title2).bold()
                         HStack {
-                            Text("Publicado: \(publication.updatedAt)")
+                            Text("Publicado: \(publication.updatedAt.toISODate(), format: .dateTime.day().month().year())")
                                 .foregroundColor(.gray)
+                                .font(.subheadline)
                             Image(systemName: "globe.americas.fill")
                         }
                     }
@@ -79,14 +80,26 @@ struct PublicationCardView: View {
                 
                 HStack {
                     HStack{
-                        Image(systemName: "hand.thumbsup")
+                        Button {
+                           print("Like")
+                        } label : {
+                            Image(systemName: "hand.thumbsup")
+                                .tint(.black)
+                        }
+                        
                         Text("Me gusta")
                     }
                     
                     Spacer()
                     
                     HStack {
-                        Image(systemName: "bubble.right")
+                        Button {
+                           print("Comentar")
+                        } label : {
+                            Image(systemName: "bubble.right")
+                                .tint(.black)
+                        }
+                        
                         Text("Comentar")
                     }
                     
