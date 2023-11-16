@@ -46,17 +46,48 @@ struct ProgramDetailView: View {
                         .foregroundStyle(.white)
                     }
                 }
-                VStack(spacing:8){
-                    
+                VStack(spacing: 8) {
+                    Text("Fecha límite para enviar datos:")
+                    HStack {
+                        Image(systemName: "calendar")
+                        
+                        Text(program.deadlineDate.toISODate(), format: .dateTime.day().month())
+                        
+                        Image(systemName: "calendar")
+                    }
                 }
+                .padding(.vertical)
+                .font(.title3)
+                .fontWeight(.bold)
+                
+                Spacer()
+                
+                
+                
+                VStack(spacing: 8) {
+                    HStack {
+                        Text("Descripción")
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                    HStack {
+                        Text(program.description)
+                            .foregroundStyle(.secondary)
+                        
+                        Spacer()
+                    }
+                }
+                
+            }.padding(.horizontal)
+        }
+        .navigationTitle(program.name)
+        .navigationBarTitleDisplayMode(.inline)
             }
         }
-    }
-}
 
 struct ProgramDetailViewPreviews: PreviewProvider {
     static var previews: some View {
-        ProgramDetailView(program: Program(id: UUID().uuidString, name: "", startDate: Date.now.toString(), endDate: Date.now.toString(), deadlineDate: Date.now.toString(), programImage: "", postalCode: 1234, description: ""))
+        ProgramDetailView(program: Program(id: UUID().uuidString, name: "Prueba", startDate: Date.now.toString(), endDate: Date.now.toString(), deadlineDate: Date.now.toString(), programImage: "", postalCode: 1234, description: "Ejemplo"))
     }
     
     
