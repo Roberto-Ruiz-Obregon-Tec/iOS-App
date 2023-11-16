@@ -94,5 +94,6 @@ protocol CompanyAPIProtocol {
 }
 
 protocol PublicationAPIProtocol {
+    //https://{API_DOMAIN}/v1/publication
     func getPublicationList() async -> ServerResponse<[Publication]>?
 }

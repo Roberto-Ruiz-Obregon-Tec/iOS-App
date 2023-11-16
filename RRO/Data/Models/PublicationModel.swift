@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Publication : Codable, Identifiable {
+struct Publication : Codable, Identifiable { // Encoding y decoding | Para identificar celdas
     var id : String
     var title: String
     var description: String

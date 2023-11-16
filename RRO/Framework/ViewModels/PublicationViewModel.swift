@@ -7,8 +7,8 @@
 
 import Foundation
 
-class PublicationViewModel : ObservableObject {
-    @Published var publicationList = [Publication]()
+class PublicationViewModel : ObservableObject { // Inicializamos una clase heredada de ObservableObject
+    @Published var publicationList = [Publication]()// Variable a observar
     
     var publicationListRequirement : PublicationListRequirementProtocol
     
@@ -16,11 +16,13 @@ class PublicationViewModel : ObservableObject {
         self.publicationListRequirement = publicationListRequirement
     }
     
-    
+    // Función marcada con @MainActor para obtener la lista de publicaciones de forma asíncrona
     @MainActor
     func getPublicationList() async{
+        // Llama a la función en el requisito para obtener la lista de pulicacines de forma asíncrona
         let result = await publicationListRequirement.getPublicationList()
-
+        
+        // Comprueba si el ViewModel recibio los datos correctamente
         if let res = result {
             self.publicationList = res.data ?? self.publicationList
             print("ModelView: Received publication data")

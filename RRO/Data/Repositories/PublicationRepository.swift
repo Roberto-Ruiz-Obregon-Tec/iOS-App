@@ -7,16 +7,18 @@
 
 import Foundation
 
+/// Clase para obtener datos de la publicacion a través de la API.
 class PublicationRepository : PublicationAPIProtocol {
     let netService : NetworkAPIService
     static let shared = PublicationRepository()
     
-    init (netService : NetworkAPIService = NetworkAPIService.shared) {
-        self.netService = netService
+    init (netService : NetworkAPIService = NetworkAPIService.shared) { // Singleton
+        self.netService = netService // Inicializo la instancia shared de network api service
     }
     
+    /// Función para obtener una lista de una publicacion.
     func getPublicationList() async -> ServerResponse<[Publication]>? {
-        let params = [
+        let params = [ // Parametros a agregar en el request
             "likes[gte]" : 0
         ]
 
