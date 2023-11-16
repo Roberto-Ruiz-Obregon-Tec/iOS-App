@@ -11,10 +11,8 @@ import SDWebImageSwiftUI
 
 
 struct PublicationCardView: View {
-    let fecha = "13/11/2023"
-    let descripcion = "Esta es una descripcion de prueba para ver como se ve en la card de publicaciones"
-    let likes = 20
-    let image = "https://img.freepik.com/foto-gratis/retrato-abstracto-ojo-elegancia-mujeres-jovenes-generado-ai_188544-9712.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699920000&semt=ais"
+    let publication : Publication
+    
     var body: some View {
         NavigationStack {
             VStack (spacing: 0) {
@@ -25,10 +23,10 @@ struct PublicationCardView: View {
                         .frame(width: 100)
                     
                     VStack(alignment: .leading) {
-                        Text("Nuevo curso disponible!")
+                        Text(publication.title)
                             .font(.title2).bold()
                         HStack {
-                            Text("Publicado: \(fecha)")
+                            Text("Publicado: \(publication.updatedAt)")
                                 .foregroundColor(.gray)
                             Image(systemName: "globe.americas.fill")
                         }
@@ -39,13 +37,14 @@ struct PublicationCardView: View {
                     
                 }
                 .frame(maxWidth: .infinity)
+          
                 
-                Text(descripcion)
+                Text(publication.description)
                     .frame(maxWidth : .infinity, alignment: .leading)
                     .padding([.top, .bottom])
                 
-                if image != "" {
-                    WebImage(url: URL(string: image))
+                if publication.image != "" {
+                    WebImage(url: URL(string: publication.image))
                         .resizable()
                         .cornerRadius(4)
                         .scaledToFit()
@@ -65,7 +64,7 @@ struct PublicationCardView: View {
                         .padding(.top, 4)
                         
                     
-                    Text("\(likes)")
+                    Text("\(publication.likes)")
                         .padding(.top, 4)
                         .font(.subheadline)
                     
@@ -106,8 +105,8 @@ struct PublicationCardView: View {
     }
 }
 
-struct PublicationCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        PublicationCardView()
-    }
-}
+//struct PublicationCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PublicationCardView()
+//    }
+//}

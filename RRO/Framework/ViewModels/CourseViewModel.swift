@@ -32,6 +32,5 @@ class CourseViewModel: ObservableObject {
             print("Failed to fetch course data")
         }
     }
-
 }
 
