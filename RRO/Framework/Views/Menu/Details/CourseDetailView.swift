@@ -166,7 +166,7 @@ struct CourseDetailView: View {
                             
                         }
                         
-                        Group{
+                Group{
                             Divider()
                             
                             HStack {
@@ -182,12 +182,7 @@ struct CourseDetailView: View {
                             }
                         }
                     }.padding(.vertical)
-                    
-                    
-                    
                 }.padding(.horizontal)
-                
-               
                 
                 NavigationLink {
                     PaymentSheetView()
