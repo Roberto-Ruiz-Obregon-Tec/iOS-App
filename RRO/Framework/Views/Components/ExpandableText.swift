@@ -16,7 +16,7 @@ struct ExpandableText: View {
             if isCollapsed {
                 Group {
                     (Text(text.prefix(60) + "... ")
-                    + Text("See more")
+                    + Text("Ver mas")
                         .foregroundColor(.gray))
                         .onTapGesture {
                             withAnimation(.linear(duration: 0.2)){
@@ -30,7 +30,7 @@ struct ExpandableText: View {
             } else {
                 Group {
                     (Text(text)
-                    + Text(" See less")
+                    + Text(" Ver Menos")
                         .foregroundColor(.gray))
                         .onTapGesture {
                             withAnimation(.linear(duration: 0.2)){
