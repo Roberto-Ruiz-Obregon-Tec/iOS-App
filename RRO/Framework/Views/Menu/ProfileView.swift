@@ -37,7 +37,7 @@ struct ProfileView: View {
                 
                 ScrollView {
                     
-                    if (myCoursesViewModel.courseList.count > 0){
+                    if (myCoursesViewModel.courseList.count == 0){
                         Text("Actualmente no tienes cursos inscritos")
                             .padding()
                     }
