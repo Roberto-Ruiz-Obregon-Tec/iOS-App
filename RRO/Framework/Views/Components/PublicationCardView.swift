@@ -13,6 +13,7 @@ import SDWebImageSwiftUI
 struct PublicationCardView: View {
     @Environment(\.colorScheme) private var colorScheme
     
+    
     let publication : Publication
     
     var body: some View {
@@ -40,11 +41,8 @@ struct PublicationCardView: View {
                     
                 }
                 .frame(maxWidth: .infinity)
-          
                 
-                Text(publication.description)
-                    .frame(maxWidth : .infinity, alignment: .leading)
-                    .padding([.top, .bottom])
+                ExpandableText(text: publication.description, limit : 60)
                 
                 if publication.image != "" {
                     WebImage(url: URL(string: publication.image))
