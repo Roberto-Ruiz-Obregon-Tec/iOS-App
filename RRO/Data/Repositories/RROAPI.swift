@@ -13,6 +13,7 @@ struct API {
                 //PONER TU IP AQUÍ v
     static let base = "https://us-central1-roberto-ruiz-obregon.cloudfunctions.net/test/v1"
     
+    
     struct routes {
         // TODO: Map all the routes
         static let userSignup = "/user/auth/signup"
@@ -28,6 +29,7 @@ struct API {
         static let event = "/event"
         static let infoFundation = "/informacion-fundacion"
         static let company = "/company-certifications"
+        static let publication = "/publication"
     }
 }
 
@@ -91,3 +93,7 @@ protocol CompanyAPIProtocol {
     func getCompanyList(limit: Int, offset: Int) async -> ServerResponse<[Company]>?
 }
 
+protocol PublicationAPIProtocol {
+    //https://{API_DOMAIN}/v1/publication
+    func getPublicationList() async -> ServerResponse<[Publication]>?
+}

@@ -91,17 +91,17 @@ struct ScholarshipInfoCardView: View {
     }
 }
 
-#Preview {
-    ScholarshipInfoCardView(scholarship: Scholarship(
-        id:UUID().uuidString,
-        name: "Beca",
-        description: "Descripción del beca",
-        organization: "University of Oregon",
-        location: "Oregon, EE.UU.",
-        email: "",
-        phone: "",
-        image: "",
-        sector: "smth",
-        startDate: Date.now.toString(),
-        endDate: Date.now.toString()))
-}
+// #Preview {
+//    ScholarshipInfoCardView(scholarship: Scholarship(
+//        id:UUID().uuidString,
+//        name: "Beca",
+//        description: "Descripción del beca",
+//        organization: "University of Oregon",
+//        location: "Oregon, EE.UU.",
+//        email: "",
+//        phone: "",
+//        image: "",
+//        sector: "smth",
+//        startDate: Date.now.toString(),
+//        endDate: Date.now.toString()))
+//}
