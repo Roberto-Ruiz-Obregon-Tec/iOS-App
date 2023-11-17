@@ -23,7 +23,7 @@ struct MenuView: View {
                 Image(systemName: "envelope")
                 Text("FRRO")
             }
-            ProfileView(logoutViewModel: LogoutViewModel(loginViewModel: LoginViewModel()), goLogin: goLogin).tabItem {
+            ProfileView(logoutViewModel: LogoutViewModel(loginViewModel: LoginViewModel()), loginViewModel: LoginViewModel(), loginRepository: LoginRepository(), goLogin: goLogin).tabItem {
                 Image(systemName: "person")
                 Text("Perfil")
             }

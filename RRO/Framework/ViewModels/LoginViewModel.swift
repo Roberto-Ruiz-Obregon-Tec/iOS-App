@@ -62,7 +62,7 @@ class LoginViewModel: ObservableObject {
         
         /// - Parameter token: The token the server returns when the login succeeds
         LocalService.shared.setCurrentSession(token: token)
-        return .success
         
+        return .success
     }
 }
