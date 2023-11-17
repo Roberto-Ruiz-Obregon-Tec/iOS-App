@@ -7,23 +7,28 @@
 
 import SwiftUI
 
+/// A view displaying a list of events using EventInfoCardView.
 struct EventListView: View {
+    /// EventViewModel responsible for fetching and managing events.
     @StateObject var eventViewModel = EventViewModel()
     
     var body: some View {
         VStack {
+            // Display a message if there are no events available
             if eventViewModel.eventList.isEmpty {
                 Text("No hay eventos disponibles en este momento")
                     .padding()
             } else {
                 ScrollView {
-                    ForEach(eventViewModel.eventList) {event in
+                    // Display a card for each event in the event list
+                    ForEach(eventViewModel.eventList) { event in
                         EventInfoCardView(event: event)
                     }
-                    
                 }
             }
-        }.onAppear {
+        }
+        .onAppear {
+            // Fetch events when the view appears
             Task {
                 await eventViewModel.getEvents()
             }
@@ -31,14 +36,17 @@ struct EventListView: View {
     }
 }
 
+/// A preview provider for the `EventListView`.
 struct EventListViewPreviews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            EventListView (eventViewModel: getViewModel())
+            EventListView(eventViewModel: getViewModel())
         }
     }
     
     static var elems = 10
+    
+    /// Creates a sample EventViewModel with a list of dummy events.
     static func getViewModel() -> EventViewModel {
         let vm = EventViewModel()
         for _ in 1...elems {
@@ -49,3 +57,4 @@ struct EventListViewPreviews: PreviewProvider {
         return vm
     }
 }
+
