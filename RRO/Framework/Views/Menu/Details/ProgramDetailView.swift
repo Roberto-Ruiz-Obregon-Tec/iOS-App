@@ -10,11 +10,12 @@ import SDWebImageSwiftUI
 
 struct ProgramDetailView: View {
     var program: Program
-    @State var admin = false
+    @State var admin = false // Estado para controlar si el usuario es un administrador
     
     var body: some View {
         ScrollView{
             VStack(spacing: 8){
+                // Mostrar la imagen del programa desde la URL proporcionada o una imagen predeterminada si no hay URL
                 if program.programImage != "" {
                     WebImage(url: URL(string: program.programImage))
                         .resizable()
@@ -26,6 +27,8 @@ struct ProgramDetailView: View {
                         .cornerRadius(16)
                         .scaledToFit()
                 }
+                // Mostrar el nombre del programa y un botón de edición si el usuario es un administrador
+
                 HStack{
                     Text(program.name)
                         .font(.title)
@@ -35,6 +38,8 @@ struct ProgramDetailView: View {
                     
                     if admin{
                         Button{
+                            // Acción para editar el programa
+                            // Aquí deberías implementar la lógica de edición del programa
                         } label:{
                             Image(systemName: "pencil")
                             Text("Editar")
@@ -46,24 +51,45 @@ struct ProgramDetailView: View {
                         .foregroundStyle(.white)
                     }
                 }
-                VStack(spacing: 8) {
-                    Text("Fecha límite para enviar datos:")
-                    HStack {
-                        Image(systemName: "calendar")
-                        
-                        Text(program.deadlineDate.toISODate(), format: .dateTime.day().month())
-                        
-                        Image(systemName: "calendar")
-                    }
-                }
-                .padding(.vertical)
-                .font(.title3)
-                .fontWeight(.bold)
                 
                 Spacer()
                 
+                VStack {
+                    // Mostrar información detallada del programa como duración y código postal
+                    HStack {
+                        Text("Duración")
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                        
+                        
+                        HStack {
+                            Text(program.startDate.toISODate(), format: .dateTime.day().month())
+                            Text("-")
+                            Text(program.endDate.toISODate(), format: .dateTime.day().month())
+                            
+                        }.foregroundStyle(.secondary)
+                    }
+                    
+                    
+                    Divider()
+                    
+                    HStack {
+                        Text("Codigo postal")
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                        
+                        HStack {
+                            Image(systemName: "location")
+                            Text(String(program.postalCode!))
+                        }.foregroundStyle(.secondary)
+                        
+                    }
+                                        
+                }.padding(.vertical)
                 
-                
+                // Mostrar la descripción del programa
                 VStack(spacing: 8) {
                     HStack {
                         Text("Descripción")
