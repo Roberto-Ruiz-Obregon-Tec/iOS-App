@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+/// Defines a  data model (InfoFundation) for foundation information in the "RRO" app.
 struct InfoFundation: Codable, Identifiable {
     var id: String
     var nombre: String

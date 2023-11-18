@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+/// Repository (FundationInformationRepository) handles foundation information operations in the "RRO" app. It utilizes a network service (NetworkAPIService) for asynchronous operations.
 class FundationInformationRepository: FundationInformationAPIProtocol {
     let netService: NetworkAPIService
     static let shared = FundationInformationRepository()

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Defines a  data model (Certification) for certifications in the "RRO" app.
 struct Certification: Codable, Identifiable {
     var id: String
     var name: String
@@ -16,15 +17,5 @@ struct Certification: Codable, Identifiable {
     enum CodingKeys: String, CodingKey {
         case id = "_id" // Maps the property 'id' to '_id' in the JSON
         case name, description, adquisitionDate // Update key names to match JSON keys
-    }
-}
-
-struct CertificationResponse<T: Codable>: Codable {
-    var status: String
-    var results: Int?
-    var data: Data
-    
-    struct Data: Codable {
-        var documents: [Certification]
     }
 }
