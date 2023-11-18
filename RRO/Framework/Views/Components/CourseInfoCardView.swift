@@ -55,8 +55,10 @@ struct CourseInfoCardView: View {
                 Divider()
                 
                 HStack {
+
                     // Muestra el costo del curso
                     Text("Costo")
+
                         .foregroundStyle(.secondary)
                     Spacer()
                     if course.status == "Gratuito"{
