@@ -45,6 +45,9 @@ protocol LogoutAPIProtocol{
     func getLogout() async -> ServerResponse<User>?
 }
 
+protocol EditProfileAPIProtocol{
+    func postEditProfile(model: User) async -> ServerResponse<User>?
+}
 
 protocol ScholarshipAPIProtocol {
     // https://{API_DOMAIN}/v1/scholarship?limit={Int}&offset={Int}
