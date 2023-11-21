@@ -14,94 +14,128 @@ struct MyCourseDetailView: View {
         NavigationStack{
             ScrollView{
                 VStack(spacing: 8) {
-                    if course.courseImage != "" {
-                        WebImage(url: URL(string: course.courseImage))
-                            .resizable()
-                            .cornerRadius(16)
-                            .scaledToFit()
-                    } else {
-                        Image("DefaultImage")
-                            .resizable()
-                            .cornerRadius(16)
-                            .scaledToFit()
-                    }
-                    HStack {
-                        Text(course.name)
-                            .font(.title)
-                            .fontWeight(.bold)
-                        Spacer()
-                    }
-                    HStack {
-                        Image(systemName: "person.fill")
-                        Text(course.speaker)
-                            .fontWeight(.bold)
-                        Spacer()
-                        Text(String(course.rating))
-                        Image(systemName: "star.fill")
-                    }
-                    
-                    VStack(spacing: 8) {
-                        HStack{
-                            Image(systemName: "calendar")
-                            Text("Fecha:")
-                        }
-                        
-                        HStack {
-                            Text(course.startDate!.toISODate(), format: .dateTime.day().month().year())
-                            Text("-")
-                            Text(course.endDate!.toISODate(), format: .dateTime.day().month().year())
-                        }
-                    }
-                    .padding(.vertical)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    
-                    VStack(spacing: 8) {
-                        
-                        HStack {
-                            Text("Detalles")
-                                .fontWeight(.bold)
-                            Spacer()
-                        }
-                        HStack {
-                            Text(course.description)
-                                .foregroundStyle(.secondary)
-                            
-                            Spacer()
-                        }
-                    }
-                    
-                    VStack {
-                        
-                        Divider()
-                        
-                        HStack {
-                            Text("Modalidad")
-                                .fontWeight(.bold)
-            
-                            Spacer()
-                            
-                            Text(course.modality)
-                                .foregroundStyle(.secondary)
-                        }
-                        
-                        if course.modality == "Presencial"{
-                            Divider()
+                        Group{
+                            if course.courseImage != "" {
+                                WebImage(url: URL(string: course.courseImage))
+                                    .resizable()
+                                    .cornerRadius(16)
+                                    .scaledToFit()
+                            } else {
+                                Image("DefaultImage")
+                                    .resizable()
+                                    .cornerRadius(16)
+                                    .scaledToFit()
+                            }
                             HStack {
-                                Text("Ubicación")
+                                Text(course.name)
+                                    .font(.title)
                                     .fontWeight(.bold)
-                                
                                 Spacer()
+                            }
+                            HStack {
+                                Image(systemName: "person.fill")
+                                Text(course.speaker)
+                                    .fontWeight(.bold)
+                                Spacer()
+                                Text(String(course.rating))
+                                Image(systemName: "star.fill")
+                            }
+                            
+                            VStack(spacing: 8) {
+                                HStack{
+                                    Image(systemName: "calendar")
+                                    Text("Fecha:")
+                                }
                                 
                                 HStack {
-                                    Image(systemName: "location")
-                                    Text(String(course.location!))
-                                }.foregroundStyle(.secondary)
+                                    Text(course.startDate!.toISODate(), format: .dateTime.day().month().year())
+                                    Text("-")
+                                    Text(course.endDate!.toISODate(), format: .dateTime.day().month().year())
+                                }
                             }
-
+                            .padding(.vertical)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            
                         }
-                                            
-                        
+                    
+                        Group{
+                            
+                            VStack(spacing: 8) {
+                                
+                                HStack {
+                                    Text("Detalles")
+                                        .fontWeight(.bold)
+                                    Spacer()
+                                }
+                                HStack {
+                                    Text(course.description)
+                                        .foregroundStyle(.secondary)
+                                    
+                                    Spacer()
+                                }
+                            }
+                            
+                            VStack {
+                                
+                                Divider()
+                                
+                                HStack {
+                                    Text("Modalidad")
+                                        .fontWeight(.bold)
+                    
+                                    Spacer()
+                                    
+                                    Text(course.modality)
+                                        .foregroundStyle(.secondary)
+                                }
+                                
+                                if course.modality == "Presencial"{
+                                    Divider()
+                                    HStack {
+                                        Text("Ubicación")
+                                            .fontWeight(.bold)
+                                        
+                                        Spacer()
+                                        
+                                        HStack {
+                                            Image(systemName: "location")
+                                            Text(String(course.location!))
+                                        }.foregroundStyle(.secondary)
+                                    }
+                                }
+
+                                else{
+                                    Divider()
+                                    HStack{
+                                        Text("Liga a la reunión")
+                                            .fontWeight(.bold)
+
+                                        Spacer()
+
+                                        HStack{
+                                            Text(String(course.meetingCode))
+                                        }.foregroundStyle(.secondary)
+                                    }
+
+                                    if course.accessCode != ""{
+                                        Divider()
+                                        HStack{
+                                            Text("Codigo de acceso")
+                                                .fontWeight(.bold)
+
+                                            Spacer()
+
+                                            HStack{
+                                                Text(String(course.accessCode))
+                                            }.foregroundStyle(.secondary)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                                                
+                            
                         Divider()
                         
                         HStack {
@@ -178,4 +212,3 @@ struct MyCourseDetailView: View {
             }
         }
     }
-}
