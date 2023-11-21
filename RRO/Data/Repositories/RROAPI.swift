@@ -11,7 +11,8 @@ struct API {
     // TODO: Change the url with tohe deployed domain, private ip used for testing
             //                 |
                 //PONER TU IP AQUÍ v
-    static let base = "https://us-central1-roberto-ruiz-obregon.cloudfunctions.net/test/v1"
+    static let base = "http://10.25.108.58:3001/v1"
+    
     
     struct routes {
         // TODO: Map all the routes
@@ -29,11 +30,12 @@ struct API {
         static let infoFundation = "/informacion-fundacion"
         static let myCourses = "/user/mycourses"
         static let company = "/company-certifications"
+        static let publication = "/publication"
     }
 }
 
 protocol LoginAPIProtocol {
-    // https://{API_DOMAIN}/v1/user/auth/login
+    // En mi login, solo quiero que me regrese mi token
     func postLogin(model: Login) async -> ServerResponse<User>?
 }
 
@@ -94,3 +96,7 @@ protocol CompanyAPIProtocol {
     func getCompanyList(limit: Int, offset: Int) async -> ServerResponse<[Company]>?
 }
 
+protocol PublicationAPIProtocol {
+    //https://{API_DOMAIN}/v1/publication
+    func getPublicationList() async -> ServerResponse<[Publication]>?
+}

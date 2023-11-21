@@ -56,7 +56,7 @@ struct ProfileView: View {
                 
                 
                 Button(action: {
-                    // The logout is executed
+                    // Realiza el cierre de sesión
                     logoutViewModel.getLogout()
                     goLogin()
                 }) {
