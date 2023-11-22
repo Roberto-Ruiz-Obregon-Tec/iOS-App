@@ -15,13 +15,18 @@ struct Publication : Codable, Identifiable { // Encoding y decoding | Para ident
     var image : String
     var updatedAt : String
     var createdAt : String
-    var comments : [String]
+    var comments : [Comments]
     
     
     enum CodingKeys: String, CodingKey {
         case id = "_id" // Mapea la propiedad 'id' a '_id' en el JSON
         case title, description, likes, image, updatedAt, createdAt, comments
     }
+}
+
+struct Comments : Codable {
+    var comment: String
+    var user : String
 }
 
 struct PublicationResponse <T : Codable>: Codable {
