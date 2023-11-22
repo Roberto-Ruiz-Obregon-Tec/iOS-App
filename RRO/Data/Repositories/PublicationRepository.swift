@@ -21,8 +21,7 @@ class PublicationRepository : PublicationAPIProtocol {
         let params = [ // Parametros a agregar en el request
             "likes[gte]" : 0
         ]
-        let h : ServerResponse<[Publication]>? = await netService.self.get(url: URL(string: "\(API.base)\(API.routes.publication)")!, params: params)
-        print(h)
+        
         return await netService.self.get(url: URL(string: "\(API.base)\(API.routes.publication)")!, params: params)
     }
 }
