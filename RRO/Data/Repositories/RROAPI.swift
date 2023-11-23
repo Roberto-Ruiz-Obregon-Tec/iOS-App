@@ -8,9 +8,6 @@
 import Foundation
 
 struct API {
-    // TODO: Change the url with tohe deployed domain, private ip used for testing
-            //                 |
-                //PONER TU IP AQUÍ v
     static let base = "https://us-central1-roberto-ruiz-obregon.cloudfunctions.net/test/v1"
     
     
@@ -28,6 +25,7 @@ struct API {
         static let program = "/program"
         static let event = "/event"
         static let infoFundation = "/informacion-fundacion"
+        static let myCourses = "/user/mycourses"
         static let company = "/company-certifications"
         static let publication = "/publication"
     }
@@ -68,6 +66,8 @@ protocol CourseAPIProtocol {
     func getCourseList() async -> ServerResponse<[Course]>?
     // https://{API_DOMAIN}/v1/course/{id}
     func getCourse(id: String) async -> ServerResponse<[Course]>?
+    // https://{API_DOMAIN}/v1/user/mycourses/
+    func getMyCourses() async -> ServerResponse<[Course]>?
 }
 
 protocol EventAPIProtocol {

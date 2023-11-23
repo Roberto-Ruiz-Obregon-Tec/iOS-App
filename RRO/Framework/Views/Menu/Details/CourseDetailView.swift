@@ -187,12 +187,7 @@ struct CourseDetailView: View {
                         }
                         
                     }.padding(.vertical)
-                    
-                    
-                    
                 }.padding(.horizontal)
-                
-               
                 
                 NavigationLink {
                     PaymentSheetView()
