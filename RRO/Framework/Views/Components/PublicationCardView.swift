@@ -93,7 +93,6 @@ struct PublicationCardView: View {
                             } else {
                                 Image(systemName: "hand.thumbsup")
                                     .tint(colorScheme == .dark ? .white : .black)
-                                
                                 Text("Me gusta").foregroundColor(colorScheme == .dark ? .white : .black)
                             }
                             
