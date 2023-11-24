@@ -28,6 +28,7 @@ struct API {
         static let myCourses = "/user/mycourses"
         static let company = "/company-certifications"
         static let publication = "/publication"
+        static let likePublication = "/publication/like"
     }
 }
 
@@ -96,4 +97,5 @@ protocol CompanyAPIProtocol {
 protocol PublicationAPIProtocol {
     //https://{API_DOMAIN}/v1/publication
     func getPublicationList() async -> ServerResponse<[Publication]>?
+    func like(publicationId : String) async -> ServerResponse<PublicationPostResponse>?
 }

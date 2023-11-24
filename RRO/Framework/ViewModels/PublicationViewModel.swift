@@ -11,9 +11,12 @@ class PublicationViewModel : ObservableObject { // Inicializamos una clase hered
     @Published var publicationList = [Publication]()// Variable a observar
     
     var publicationListRequirement : PublicationListRequirementProtocol
+    var likePublicationRequirement : LikePublicationRequirementProtocol
     
-    init(publicationListRequirement : PublicationListRequirementProtocol = PublicationListRequirement.shared) {
+    init(publicationListRequirement : PublicationListRequirementProtocol = PublicationListRequirement.shared, likePublicationRequirement : LikePublicationRequirementProtocol = LikePublicationRequirement.shared) {
+        
         self.publicationListRequirement = publicationListRequirement
+        self.likePublicationRequirement = likePublicationRequirement
     }
     
     // Función marcada con @MainActor para obtener la lista de publicaciones de forma asíncrona
@@ -30,5 +33,17 @@ class PublicationViewModel : ObservableObject { // Inicializamos una clase hered
             print("Failed to fetch publication data")
         }
     }
+    
+    func like(publicationId : String) async {
+        let result = await likePublicationRequirement.like(publicationId : publicationId)
+        
+        if result?.status == "success" {
+            print("Like hecho con exito")
+        } else {
+            print("Error a dar like")
+        }
+        
+    }
+    
     
 }

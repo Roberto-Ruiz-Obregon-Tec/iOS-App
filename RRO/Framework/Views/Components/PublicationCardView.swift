@@ -12,7 +12,7 @@ import SDWebImageSwiftUI
 
 struct PublicationCardView: View {
     @Environment(\.colorScheme) private var colorScheme
-    
+    @StateObject var publicationViewModel = PublicationViewModel()
     
     let publication : Publication
     
@@ -80,13 +80,25 @@ struct PublicationCardView: View {
                 
                 HStack {
                     HStack{
-                        Button {
-                           print("Like")
-                        } label : {
-                            Image(systemName: "hand.thumbsup")
-                                .tint(colorScheme == .dark ? .white : .black)
-                            Text("Me gusta").foregroundColor(colorScheme == .dark ? .white : .black)
-                        }
+                        Button (action: {
+                            Task {
+                                await publicationViewModel.like(publicationId: publication.id)
+                            }
+                            
+                        }, label : {
+                            if (publication.liked){
+                                Image(systemName: "hand.thumbsup.fill")
+                                    .tint(.red)
+                                Text("Me gusta").foregroundColor(.red)
+                            } else {
+                                Image(systemName: "hand.thumbsup")
+                                    .tint(colorScheme == .dark ? .white : .black)
+                                
+                                Text("Me gusta").foregroundColor(colorScheme == .dark ? .white : .black)
+                            }
+                            
+                            
+                        })
                     }
                     
                     Spacer()
