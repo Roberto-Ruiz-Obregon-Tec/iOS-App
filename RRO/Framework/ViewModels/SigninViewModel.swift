@@ -73,6 +73,7 @@ class SigninViewModel: ObservableObject {
         return signinData.firstName.isEmpty  ||
                signinData.lastName.isEmpty   ||
                signinData.age <= 0           ||
+               signinData.age >= 112 ||
                signinData.gender.isEmpty     ||
                signinData.email.isEmpty      ||
                signinData.postalCode < 10000 ||

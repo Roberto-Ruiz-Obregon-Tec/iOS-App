@@ -13,7 +13,7 @@ enum EditProfileState {
 
 class EditProfileViewModel: ObservableObject {
     @Published var editProfileData: User
-//    @Published var user = User(id: UUID().uuidString, firstName: "Amy", lastName: "Gregg", age: 20, gender: "Mujer", email: "teehee@gmail.com", occupation: "Student", company: "University of Oregon", postalCode: 97068)
+    
     @Published var cp: String
     @Published var age: String
     
@@ -25,7 +25,7 @@ class EditProfileViewModel: ObservableObject {
     private var editProfileRequirement: EditProfileRequirementProtocol
     
     init( editProfileRequirement: EditProfileRequirementProtocol = EditProfileRequirement.shared) {
-        self.editProfileData = User(id: "", firstName: "Amy", lastName: "Gregg", age: 20, gender: "Mujer", email: "teehee@gmail.com", occupation: "Student", company: "University of Oregon", sociallyResponsibleCompany: false, postalCode: 97068, profilePicture: "")
+        self.editProfileData = User(id: UUID().uuidString, firstName: "", lastName: "", age: 0, gender: "", email: "", occupation: "", company: "", postalCode: 0)
         self.cp = ""
         self.age = ""
         
@@ -36,28 +36,69 @@ class EditProfileViewModel: ObservableObject {
     }
     
     @MainActor
-    func postEditProfile() async -> EditProfileState {
+    func getEditProfile() async {
+        
+        let response = await editProfileRequirement.getEditProfile()
+        guard let user = response?.data else { return }
+        self.editProfileData = user
+        
+        self.age = String(self.editProfileData.age)
+        self.cp = String(self.editProfileData.postalCode)
+    }
+    
+    @MainActor
+    func patchProfile() async -> EditProfileState {
         self.editProfileData.postalCode = Int(self.cp) ?? 0
         self.editProfileData.age = Int(self.age) ?? 0
         
-        guard let response = await editProfileRequirement.postEditProfile(model: editProfileData) else {
+        if isFormIncomplete() {
+            if editProfileData.age >= 112 || editProfileData.age <= 0 {
+                self.errorTitle = "Edad"
+                self.errorMessage = "Su edad no es válida."
+                self.showAlert = true
+            }
+            
+            else if editProfileData.postalCode <= 9999 || editProfileData.postalCode >= 100000 {
+                self.errorTitle = "Código Postal"
+                self.errorMessage = "Su código postal no es válido."
+                self.showAlert = true
+            }
+            
+            else  {
+                self.errorTitle = "Campos vacíos"
+                self.errorMessage = "Por favor, completa todos los campos."
+                self.showAlert = true
+            }
+            
+            let response = await editProfileRequirement.getEditProfile()
+            guard let user = response?.data else { return .error }
+            self.editProfileData = user
+            return .error
+        }
+        
+        guard let _ = await editProfileRequirement.patchProfile(model: editProfileData) else {
             self.errorTitle = "Error con el servidor"
             self.errorMessage = "Vuelve a intentar ingresar o inténtalo más tarde."
             self.showAlert = true
+            let response = await editProfileRequirement.getEditProfile()
+            guard let user = response?.data else { return .error }
+            self.editProfileData = user
             return .error
         }
-        //print("Hola")
-        guard let token = response.token else {
-            self.errorTitle = "Error"
-            //print("amor")
-            self.errorMessage = response.message ?? "..."
-            self.showAlert = true
-            //print("Mama")
-            return .error
-        }
-        //print("lol")
-        LocalService.shared.setCurrentSession(token: token)
-        return .success
         
+        self.errorTitle = "Éxito"
+        self.errorMessage = "Tú información se actualizó correctamente."
+        self.showAlert = true
+        return .success
+    }
+    
+    func isFormIncomplete() -> Bool {
+        return editProfileData.firstName.isEmpty  ||
+        editProfileData.lastName.isEmpty   ||
+        editProfileData.age <= 0           ||
+        editProfileData.gender.isEmpty     ||
+        editProfileData.postalCode <= 9999 ||
+        editProfileData.postalCode >= 100000 ||
+        editProfileData.age >= 112
     }
 }

@@ -15,9 +15,13 @@ class EditProfileRepository: EditProfileAPIProtocol {
         self.netService = netService
     }
     
-    func postEditProfile(model: User) async -> ServerResponse<User>? {
+    func getEditProfile() async -> ServerResponse<User>? {
         return await netService
-        //need route for user data
-            .post(url: URL(string: "\(API.base)\(API.routes.userSignup)")!, body: model)
+            .get(url: URL(string: "\(API.base)\(API.routes.userInfo)")!)
+    }
+    
+    func patchProfile(model: User) async -> ServerResponse<User>? {
+        return await netService
+            .patch(url: URL(string: "\(API.base)\(API.routes.updateme)")!, body: model)
     }
 }

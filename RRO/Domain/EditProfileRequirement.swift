@@ -8,7 +8,8 @@
 import Foundation
 
 protocol EditProfileRequirementProtocol {
-    func postEditProfile(model: User) async -> ServerResponse<User>?
+    func getEditProfile() async -> ServerResponse<User>?
+    func patchProfile(model: User) async -> ServerResponse<User>?
 }
 
 class EditProfileRequirement: EditProfileRequirementProtocol {
@@ -19,7 +20,11 @@ class EditProfileRequirement: EditProfileRequirementProtocol {
         self.dataRepository = dataRepository
     }
     
-    func postEditProfile(model: User) async -> ServerResponse<User>? {
-        return await dataRepository.postEditProfile(model: model)
+    func getEditProfile() async -> ServerResponse<User>? {
+        return await dataRepository.getEditProfile()
+    }
+    
+    func patchProfile(model: User) async -> ServerResponse<User>? {
+        return await dataRepository.patchProfile(model: model)
     }
 }

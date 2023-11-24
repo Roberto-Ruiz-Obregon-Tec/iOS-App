@@ -19,7 +19,6 @@ struct User: Codable {
     var company: String?
     var sociallyResponsibleCompany: Bool?
     var postalCode: Int
-    var profilePicture: String?
 }
 
 // Model of the Login, here it's defined the variables and it's type of value

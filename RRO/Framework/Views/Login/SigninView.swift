@@ -128,7 +128,7 @@ struct SigninView: View {
                     
                     VStack(alignment: .leading, spacing: 0){
                         // MARK: - ZIPCODE
-                        Text("      CP")
+                        Text("      Código Postal")
                             .bold()
                         TextField("Obligatorio", text: $viewModel.cp)
                             .keyboardType(.numberPad)

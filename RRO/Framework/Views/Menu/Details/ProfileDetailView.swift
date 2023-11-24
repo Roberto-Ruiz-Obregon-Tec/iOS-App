@@ -10,7 +10,6 @@ import SDWebImageSwiftUI
 
 struct ProfileDetailView: View {
     @ObservedObject var viewModel: EditProfileViewModel
-//    let user = User(id: UUID().uuidString, firstName: "Amy", lastName: "Gregg", age: 20, gender: "Mujer", email: "teehee@gmail.com", occupation: "Student", company: "University of Oregon", postalCode: 97068)
     
     let maxLength = 5 // La longitud del CP
     // Esto es para el dropdown de ESR
@@ -32,6 +31,9 @@ struct ProfileDetailView: View {
             
             VStack(alignment: .leading, spacing: 0){
                 // MARK: - Names
+                let cp = String(viewModel.editProfileData.postalCode)
+                let age = String(viewModel.editProfileData.age)
+                
                 HStack{
                     VStack(alignment: .leading, spacing: 0) {
                         Text("     Nombre")
@@ -101,7 +103,7 @@ struct ProfileDetailView: View {
                 
                 VStack(alignment: .leading, spacing: 0){
                     // MARK: - ZIPCODE
-                    Text("      CP")
+                    Text("      Código Postal")
                         .bold()
                     TextField(String(viewModel.editProfileData.postalCode), text: $viewModel.cp)
                         .keyboardType(.numberPad)
@@ -132,6 +134,14 @@ struct ProfileDetailView: View {
                         Spacer()
                         Button {
                             Task {
+                                let response = await viewModel.patchProfile()
+                                
+                                switch response {
+                                    case .success:
+                                        break
+                                    case .error:
+                                        break
+                                }
                             }
                         }label: {
                             Text("Actualizar")
@@ -140,10 +150,20 @@ struct ProfileDetailView: View {
                         .background(Color.red)
                         .foregroundColor(.white)
                         .cornerRadius(8.0)
+                        .alert(isPresented: $viewModel.showAlert) {
+                            Alert(title: Text(viewModel.errorTitle),
+                                  message: Text(viewModel.errorMessage),
+                                  dismissButton: .default(Text("OK")))
+                        }
                         
                         Spacer()
                     }
                 }
+            }
+        }
+        .onAppear {
+            Task {
+                await viewModel.getEditProfile()
             }
         }
     }
