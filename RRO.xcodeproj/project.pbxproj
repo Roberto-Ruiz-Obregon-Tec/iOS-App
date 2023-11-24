@@ -272,7 +272,7 @@
 				F64162BB2AF005B100B25E0E /* EventInfoCardView.swift */,
 				AA16DD9A2AEF02D600688D0B /* CourseInfoCardView.swift */,
 				822E318B2AF41DD700822067 /* ScholarshipInfoCardView.swift */,
-        E175A8F02B057EFB00FD70F4 /* MyCourseInfoCardView.swift */,
+				E175A8F02B057EFB00FD70F4 /* MyCourseInfoCardView.swift */,
 				478932CE2B056FD60071F839 /* PublicationCardView.swift */,
 				47D08D9D2B080E7B0082F385 /* ExpandableText.swift */,
 			);
@@ -362,7 +362,7 @@
 				471ED0872AF1AB3F00AD61F7 /* CourseInfoRequirement.swift */,
 				031D18B02AF950D800372171 /* CompanyRequirement.swift */,
 				82D7793B2B07C33F00121AB4 /* EditProfileRequirement.swift */,
-        E12DEB2B2B03B1130045DD43 /* MyCoursesListRequirement.swift */,
+				E12DEB2B2B03B1130045DD43 /* MyCoursesListRequirement.swift */,
 				47E4715E2B059CFA00B0B9C3 /* PublicationListRequirement.swift */,
 			);
 			path = Domain;
@@ -430,7 +430,7 @@
 				470069C82AF3F9A0006BC4FD /* LogoutViewModel.swift */,
 				031D18AA2AF94F7600372171 /* CompanyViewModel.swift */,
 				82D779332B07BB3400121AB4 /* EditProfileViewModel.swift */,
-        E12DEB292B03B0610045DD43 /* MyCoursesViewModel.swift */,
+				E12DEB292B03B0610045DD43 /* MyCoursesViewModel.swift */,
 				47E471582B0593E200B0B9C3 /* PublicationViewModel.swift */,
 			);
 			path = ViewModels;
@@ -505,7 +505,7 @@
 				88A8804A2AF002F9009BC8EF /* ProgramDetailView.swift */,
 				F64162C82AF0121200B25E0E /* EventDetailView.swift */,
 				031D18AC2AF9501F00372171 /* CompanyDetailView.swift */,
-        E175A8F22B057FDB00FD70F4 /* MyCourseDetailView.swift */,
+				E175A8F22B057FDB00FD70F4 /* MyCourseDetailView.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -970,7 +970,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RRO/Preview Content\"";
 				DEVELOPMENT_TEAM = K73S6PVU8S;
-				DEVELOPMENT_TEAM = QPA9Z37FK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -984,8 +983,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-amygregg";
-        PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-patrick";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
