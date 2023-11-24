@@ -18,6 +18,8 @@ struct API {
         static let userLogout = "/user/auth/logout"
         static let adminSignup = "/admin/auth/signup"
         static let adminLogin = "/admin/auth/login"
+        static let userInfo = "/user/auth/me"
+        static let updateme = "/user/auth/updateme"
         
         static let certification = "/certifications"
         static let course = "/course"
@@ -45,6 +47,10 @@ protocol LogoutAPIProtocol{
     func getLogout() async -> ServerResponse<User>?
 }
 
+protocol EditProfileAPIProtocol{
+    func getEditProfile() async -> ServerResponse<User>?
+    func patchProfile(model: User) async -> ServerResponse<User>?
+}
 
 protocol ScholarshipAPIProtocol {
     // https://{API_DOMAIN}/v1/scholarship?limit={Int}&offset={Int}

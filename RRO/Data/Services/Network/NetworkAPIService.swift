@@ -85,5 +85,32 @@ class NetworkAPIService {
         
         return nil
     }
+    
+    
+    func patch<T: Codable>(url: URL, body: any Encodable) async -> T? {
+        do {
+            let encodedBody = try _encoder.encode(body)
+            let json = try JSONSerialization.jsonObject(with: encodedBody, options: []) as? Parameters
+            
+            return try await withCheckedThrowingContinuation {
+                continuation in _session.request(url, method: .patch, parameters: json, encoding: JSONEncoding.default, headers: _headers)
+                    .responseDecodable(of: T.self, decoder: self._decoder) {
+                        response in switch response.result {
+                        case .success(let data):
+                            print(response.result)
+                            continuation.resume(returning: data)
+                        case .failure(_):
+                            print(response.result)
+                            continuation.resume(throwing: NSError())
+                        }
+                    }
+            }
+            
+        } catch {
+            debugPrint("NetworkAPIService Error")
+        }
+        
+        return nil
+    }
 }
 

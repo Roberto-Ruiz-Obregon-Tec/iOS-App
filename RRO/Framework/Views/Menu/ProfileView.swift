@@ -26,7 +26,7 @@ struct ProfileView: View {
                         .fontWeight(.black)
                 }
                 
-                NavigationLink(destination: ProfileDetailView()) {
+                NavigationLink(destination: ProfileDetailView(viewModel: EditProfileViewModel())) {
                     Text("Editar perfil")
                         .padding()
                 }
