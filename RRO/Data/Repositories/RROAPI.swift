@@ -8,7 +8,7 @@
 import Foundation
 
 struct API {
-    static let base = "http://localhost:3001/v1"
+    static let base = "https://us-central1-roberto-ruiz-obregon.cloudfunctions.net/test/v1"
     
     
     struct routes {
