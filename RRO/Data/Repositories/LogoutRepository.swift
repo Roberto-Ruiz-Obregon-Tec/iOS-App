@@ -15,9 +15,8 @@ class LogoutRepository: LogoutAPIProtocol {
         self.netService = netService
     }
     
-    // If the response of the server isn't nil, the logout succeeds and the message "Sesión cerrada con éxito" is shown.
     func getLogout() async -> ServerResponse<User>? {
-        // The URL is formed (API)
+        // Crea una URL para la solicitud
         let response: ServerResponse<User>? = await netService
             .get(url: URL(string: "\(API.base)\(API.routes.userLogout)")!)
         

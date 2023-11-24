@@ -17,7 +17,7 @@ struct FeedView: View {
             VStack() {
                 TabBarViewPublicaciones(currentTab: self.$currentTab)
                 TabView(selection: self.$currentTab){
-                    PublicacionesView().tag(0)
+                    PublicationView().tag(0)
                     EventListView().tag(1)
                     CompanyListView().tag(2)
                 }

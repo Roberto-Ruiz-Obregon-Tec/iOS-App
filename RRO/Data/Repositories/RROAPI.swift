@@ -8,10 +8,8 @@
 import Foundation
 
 struct API {
-    // TODO: Change the url with tohe deployed domain, private ip used for testing
-            //                 |
-                //PONER TU IP AQUÍ v
     static let base = "https://us-central1-roberto-ruiz-obregon.cloudfunctions.net/test/v1"
+    
     
     struct routes {
         // TODO: Map all the routes
@@ -29,12 +27,14 @@ struct API {
         static let program = "/program"
         static let event = "/event"
         static let infoFundation = "/informacion-fundacion"
+        static let myCourses = "/user/mycourses"
         static let company = "/company-certifications"
+        static let publication = "/publication"
     }
 }
 
 protocol LoginAPIProtocol {
-    // https://{API_DOMAIN}/v1/user/auth/login
+    // En mi login, solo quiero que me regrese mi token
     func postLogin(model: Login) async -> ServerResponse<User>?
 }
 
@@ -72,6 +72,8 @@ protocol CourseAPIProtocol {
     func getCourseList() async -> ServerResponse<[Course]>?
     // https://{API_DOMAIN}/v1/course/{id}
     func getCourse(id: String) async -> ServerResponse<[Course]>?
+    // https://{API_DOMAIN}/v1/user/mycourses/
+    func getMyCourses() async -> ServerResponse<[Course]>?
 }
 
 protocol EventAPIProtocol {
@@ -97,3 +99,7 @@ protocol CompanyAPIProtocol {
     func getCompanyList(limit: Int, offset: Int) async -> ServerResponse<[Company]>?
 }
 
+protocol PublicationAPIProtocol {
+    //https://{API_DOMAIN}/v1/publication
+    func getPublicationList() async -> ServerResponse<[Publication]>?
+}
