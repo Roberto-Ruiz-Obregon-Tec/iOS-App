@@ -8,7 +8,7 @@
 import Foundation
 
 struct API {
-    static let base = "https://us-central1-roberto-ruiz-obregon.cloudfunctions.net/test/v1"
+    static let base = "http://localhost:3001/v1"
     
     
     struct routes {
@@ -97,5 +97,6 @@ protocol CompanyAPIProtocol {
 protocol PublicationAPIProtocol {
     //https://{API_DOMAIN}/v1/publication
     func getPublicationList() async -> ServerResponse<[Publication]>?
+    func getPublicationInfo(publicationId : String) async -> ServerResponse<[Publication]>?
     func like(publicationId : String) async -> ServerResponse<PublicationPostResponse>?
 }
