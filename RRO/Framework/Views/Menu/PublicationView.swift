@@ -20,7 +20,7 @@ struct PublicationView: View {
             } else {
                 ScrollView {
                     ForEach(publicationViewModel.publicationList){publication in
-                        PublicationCardView(publication: publication, liked : publication.liked)
+                            PublicationCardView(publication: publication)
                     }
                     }
                 }
