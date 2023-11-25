@@ -20,10 +20,6 @@ struct InfoFundation: Codable, Identifiable {
     var instagram: String
     var tiktok: String
     
-   /* enum CodingKeys: String, CodingKey {
-        case id = "_id" // Mapea la propiedad 'id' a '_id' en el JSON
-        case nombre, email, telefono, descripcion, ubicacion, facebook, twitter, instagram, tiktok
-    }*/
 }
 
 struct FoundationResponse<T: Codable>: Codable{
