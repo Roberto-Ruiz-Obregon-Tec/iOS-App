@@ -68,7 +68,7 @@ struct CommentView: View {
                         .font(.system(size: 28))
             }.frame(maxWidth: .infinity)
                 
-        }.padding([.bottom, .leading, .trailing], 16)
+        }.padding([.top, .bottom, .leading, .trailing], 16)
     }
 }
 

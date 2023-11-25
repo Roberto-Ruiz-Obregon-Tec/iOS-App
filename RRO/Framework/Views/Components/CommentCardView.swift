@@ -10,6 +10,7 @@ import FlowStacks
 import SDWebImageSwiftUI
 
 struct CommentCardView: View {
+    @Environment(\.colorScheme) private var colorScheme
     let comment : Comments
     
     var body: some View {
@@ -20,7 +21,8 @@ struct CommentCardView: View {
                     .font(.system(size: 39))
                 
                 Text(comment.user)
-                        .font(.headline)
+                    .font(.headline)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                 
                 Spacer()
             }
@@ -28,11 +30,12 @@ struct CommentCardView: View {
             ExpandableText(text: comment.comment, limit : 40)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
+                .foregroundColor(colorScheme == .dark ? .white : .black)
         }.padding([.top], 8)
          .padding([.leading], 24)
          .padding([.trailing], 16)
          .frame(maxWidth: .infinity)
-         .background(Color(red: 0.97, green: 0.97, blue: 0.97))
+         .background(colorScheme == .dark ? Color(red: 0.26, green: 0.26, blue: 0.26) : Color(red: 0.97, green: 0.97, blue: 0.97))
     }
 }
 
