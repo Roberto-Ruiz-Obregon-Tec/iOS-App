@@ -25,7 +25,7 @@ struct ExpandableText: View {
                         }
                 }
                 .frame(maxWidth : .infinity, alignment: .leading)
-                .padding([.top, .bottom])
+                .padding([.top, .bottom], 8)
                         
             } else {
                 Group {
@@ -40,12 +40,12 @@ struct ExpandableText: View {
                         }
                 }
                 .frame(maxWidth : .infinity, alignment: .leading)
-                .padding([.top, .bottom])
+                .padding([.top, .bottom], 8)
                 }
         } else {
             Text(text)
                 .frame(maxWidth : .infinity, alignment: .leading)
-                .padding([.top, .bottom])
+                .padding([.top, .bottom], 8)
         }
     }
 }
