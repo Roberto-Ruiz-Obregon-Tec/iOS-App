@@ -60,27 +60,4 @@ struct CoursesView: View {
 //}
 
 
-struct CourseListViewPreviews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            CoursesView(courseViewModel: getViewModel())
-        }
-    }
-    
-    /// If there is no backend the preview will generate this ammount of card elements
-    static var elems = 10
-    static func getViewModel() -> CourseViewModel {
-        let vm = CourseViewModel()
-        for _ in 1...elems {
-            vm.courseList.append(
 
-                Course(id:UUID().uuidString, name: "Curso de Escritura", description: "Lleva tus habilidades para crear artesanias al siguiente nivel, aprende a pintar con acuarelas y tecnicas de dibujo.",speaker: "", startDate: Date.now.toString(), endDate: Date.now.toString(), schedule: "11:30", modality: "Presencial", postalCode: 0, location: "tu cola", status: "Gratuito", cost: 9, courseImage: "", capacity: 1, remaining: 15, rating: 0, meetingCode: "", accessCode: "", focus: []))
-
-            
-            
-        }
-        
-        return vm
-    }
-    
-}

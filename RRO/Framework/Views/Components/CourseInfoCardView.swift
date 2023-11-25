@@ -9,6 +9,8 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct CourseInfoCardView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     let course: Course
     
     var body: some View {
@@ -91,6 +93,25 @@ struct CourseInfoCardView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
                 .foregroundStyle(Color.white)
+                
+                Spacer()
+                Spacer()
+                
+                HStack {
+                    Image(systemName: "star.fill")
+                    Text(String(course.rating))
+                    
+                    
+                    Spacer()
+                    
+                    NavigationLink {
+                        CourseCommentsView(course: course)
+                    } label : {
+                        Image(systemName: "bubble.right")
+                            .tint(colorScheme == .dark ? .white : .black)
+                        Text("Ver comentarios").foregroundColor(colorScheme == .dark ? .white : .black)
+                    }
+                }
             }
             .padding()
             .overlay(
@@ -98,6 +119,7 @@ struct CourseInfoCardView: View {
                     .stroke(Color(UIColor.systemGray4), lineWidth: 1.5)
             )
             .padding(10)
+            
         }
     }
 }
