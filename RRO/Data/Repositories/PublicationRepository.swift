@@ -24,4 +24,16 @@ class PublicationRepository : PublicationAPIProtocol {
         
         return await netService.self.get(url: URL(string: "\(API.base)\(API.routes.publication)")!, params: params)
     }
+    
+    func getPublicationInfo(publicationId : String) async -> ServerResponse<[Publication]>? {
+
+        return await netService.self.get(url: URL(string: "\(API.base)\(API.routes.publication)/\(publicationId)")!)
+    }
+    
+    func like(publicationId: String) async -> ServerResponse<PublicationPostResponse>? {
+        let body = [
+            "publication" : publicationId
+        ]
+        return await netService.self.post(url : URL(string : "\(API.base)\(API.routes.likePublication)")!, body : body)
+    }
 }

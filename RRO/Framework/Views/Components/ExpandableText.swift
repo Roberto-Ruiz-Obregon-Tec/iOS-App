@@ -30,7 +30,7 @@ struct ExpandableText: View {
             } else {
                 Group {
                     (Text(text)
-                    + Text(" Ver Menos")
+                    + Text("")
                         .foregroundColor(.gray))
                         .onTapGesture {
                             withAnimation(.linear(duration: 0.2)){

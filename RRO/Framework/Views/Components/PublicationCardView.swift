@@ -12,9 +12,17 @@ import SDWebImageSwiftUI
 
 struct PublicationCardView: View {
     @Environment(\.colorScheme) private var colorScheme
+    @StateObject var publicationViewModel = PublicationViewModel()
+
+    @State var publication : Publication
+    @State var liked : Bool
+    
+    @State var timeRemaining = 1
+    let timer = Timer.publish(every: 0.7, on: .main, in : .common).autoconnect()
+    
+    @State var flag : Bool = false
     
     
-    let publication : Publication
     
     var body: some View {
         NavigationStack {
@@ -64,7 +72,7 @@ struct PublicationCardView: View {
                         .frame(width: 20)
                         .padding(.top, 4)
                         
-                    
+
                     Text("\(publication.likes)")
                         .padding(.top, 4)
                         .font(.subheadline)
@@ -80,13 +88,41 @@ struct PublicationCardView: View {
                 
                 HStack {
                     HStack{
-                        Button {
-                           print("Like")
-                        } label : {
-                            Image(systemName: "hand.thumbsup")
-                                .tint(colorScheme == .dark ? .white : .black)
-                            Text("Me gusta").foregroundColor(colorScheme == .dark ? .white : .black)
-                        }
+                        Button (action: {
+                            Task {
+                                liked = !liked
+                                flag = true
+                                timeRemaining = 1
+                                
+                                await publicationViewModel.like(publicationId: publication.id)
+                            
+                                await publicationViewModel.getPublicationInfo(publicationId: publication.id)
+                                
+                                publication = publicationViewModel.publication[0]
+                              
+                                
+                            }
+                            
+                        }, label : {
+                            if (liked){
+                                Image(systemName: "hand.thumbsup.fill")
+                                    .tint(.red)
+                                Text("Me gusta").foregroundColor(.red)
+                            } else {
+                                Image(systemName: "hand.thumbsup")
+                                    .tint(colorScheme == .dark ? .white : .black)
+                                Text("Me gusta").foregroundColor(colorScheme == .dark ? .white : .black)
+                            }
+                            
+                            
+                        }).onReceive(timer) { _ in
+                            if timeRemaining > 0 {
+                                timeRemaining -= 1
+                                
+                            } else {
+                                flag = false
+                            }
+                        }.disabled(flag)
                     }
                     
                     Spacer()
