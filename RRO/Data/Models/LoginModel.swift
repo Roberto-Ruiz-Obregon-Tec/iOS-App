@@ -18,7 +18,6 @@ struct User: Codable {
     var company: String?
     var sociallyResponsibleCompany: Bool?
     var postalCode: Int
-    var profilePicture: String?
 }
 
 struct Login: Codable {

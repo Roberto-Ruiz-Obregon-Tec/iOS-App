@@ -132,7 +132,8 @@ struct SigninView: View {
                 Group {
                     VStack(alignment: .leading, spacing: 0){
                         // MARK: - ZIPCODE
-                      
+                        Text("      Código Postal")
+                            .bold()
                         TextField("Obligatorio", text: $viewModel.cp)
                             .keyboardType(.numberPad)
                             .onReceive(Just(viewModel.cp), perform: { newVal in
