@@ -101,35 +101,35 @@ struct ProfileDetailView: View {
                     }
                     
                     Spacer(minLength: 16)
-                }
-            
-                VStack(alignment: .leading, spacing: 0){
-                    // MARK: - ZIPCODE
-                    Text("      Código Postal")
-                        .bold()
-                    TextField(String(viewModel.editProfileData.postalCode), text: $viewModel.cp)
-                        .keyboardType(.numberPad)
-                        .textFieldStyle(.roundedBorder)
-                        .padding(.horizontal, 20)
+                    
+                    VStack(alignment: .leading, spacing: 0){
+                        // MARK: - ZIPCODE
+                        Text("      Código Postal")
+                            .bold()
+                        TextField(String(viewModel.editProfileData.postalCode), text: $viewModel.cp)
+                            .keyboardType(.numberPad)
+                            .textFieldStyle(.roundedBorder)
+                            .padding(.horizontal, 20)
+                        
+                        Spacer(minLength: 16)
+                        
+                        // MARK: - Company
+                        VStack(alignment: .leading, spacing: 0){
+                            Text("     Compañía")
+                                .bold()
+                            TextField(viewModel.editProfileData.company ?? "", text: Binding(
+                                get: { viewModel.editProfileData.company ?? "" },
+                                set: { viewModel.editProfileData.company = $0 }
+                            ))
+                            .textFieldStyle(.roundedBorder)
+                            .padding(.horizontal, 20)
+                            
+                        }
+                    }
                     
                     Spacer(minLength: 16)
-                    
-                    // MARK: - Company
-                    VStack(alignment: .leading, spacing: 0){
-                        Text("     Compañía")
-                            .bold()
-                        TextField(viewModel.editProfileData.company ?? "", text: Binding(
-                            get: { viewModel.editProfileData.company ?? "" },
-                            set: { viewModel.editProfileData.company = $0 }
-                        ))
-                        .textFieldStyle(.roundedBorder)
-                        .padding(.horizontal, 20)
-                        
-                    }
                 }
-                
-                Spacer(minLength: 16)
-                
+  
                 VStack(alignment: .center) {
                     
                     HStack {
