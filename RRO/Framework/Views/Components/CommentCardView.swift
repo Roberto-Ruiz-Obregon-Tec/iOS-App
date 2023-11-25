@@ -35,7 +35,7 @@ struct CommentCardView: View {
          .padding([.leading], 24)
          .padding([.trailing], 16)
          .frame(maxWidth: .infinity)
-         .background(colorScheme == .dark ? Color(red: 0.26, green: 0.26, blue: 0.26) : Color(red: 0.97, green: 0.97, blue: 0.97))
+         .background(colorScheme == .dark ? Color(red: 0.10, green: 0.10, blue: 0.10) : Color(red: 0.97, green: 0.97, blue: 0.97))
     }
 }
 
