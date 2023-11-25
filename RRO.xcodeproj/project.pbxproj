@@ -27,6 +27,8 @@
 		47E4715B2B0595E500B0B9C3 /* PublicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E4715A2B0595E500B0B9C3 /* PublicationModel.swift */; };
 		47E4715D2B05996A00B0B9C3 /* PublicationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E4715C2B05996A00B0B9C3 /* PublicationRepository.swift */; };
 		47E4715F2B059CFA00B0B9C3 /* PublicationListRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E4715E2B059CFA00B0B9C3 /* PublicationListRequirement.swift */; };
+		47E839F02B118D14009B6C38 /* PublicationInfoRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E839EF2B118D14009B6C38 /* PublicationInfoRequirement.swift */; };
+		47E839F32B118D50009B6C38 /* LikePublicationRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E839F22B118D50009B6C38 /* LikePublicationRequirement.swift */; };
 		48DF029D2AF1BFEE005DE385 /* CertificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF029C2AF1BFEE005DE385 /* CertificationModel.swift */; };
 		48DF029F2AF1BFFE005DE385 /* CertificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF029E2AF1BFFE005DE385 /* CertificationRepository.swift */; };
 		48DF02A12AF1C020005DE385 /* CertificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF02A02AF1C020005DE385 /* CertificationViewModel.swift */; };
@@ -149,6 +151,8 @@
 		47E4715A2B0595E500B0B9C3 /* PublicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationModel.swift; sourceTree = "<group>"; };
 		47E4715C2B05996A00B0B9C3 /* PublicationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationRepository.swift; sourceTree = "<group>"; };
 		47E4715E2B059CFA00B0B9C3 /* PublicationListRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationListRequirement.swift; sourceTree = "<group>"; };
+		47E839EF2B118D14009B6C38 /* PublicationInfoRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationInfoRequirement.swift; sourceTree = "<group>"; };
+		47E839F22B118D50009B6C38 /* LikePublicationRequirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikePublicationRequirement.swift; sourceTree = "<group>"; };
 		48DF029C2AF1BFEE005DE385 /* CertificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationModel.swift; sourceTree = "<group>"; };
 		48DF029E2AF1BFFE005DE385 /* CertificationRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationRepository.swift; sourceTree = "<group>"; };
 		48DF02A02AF1C020005DE385 /* CertificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationViewModel.swift; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 				82D7793B2B07C33F00121AB4 /* EditProfileRequirement.swift */,
 				E12DEB2B2B03B1130045DD43 /* MyCoursesListRequirement.swift */,
 				47E4715E2B059CFA00B0B9C3 /* PublicationListRequirement.swift */,
+				47E839EF2B118D14009B6C38 /* PublicationInfoRequirement.swift */,
+				47E839F22B118D50009B6C38 /* LikePublicationRequirement.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -685,11 +691,13 @@
 				48DF029D2AF1BFEE005DE385 /* CertificationModel.swift in Sources */,
 				822E318C2AF41DD700822067 /* ScholarshipInfoCardView.swift in Sources */,
 				AA16DD9B2AEF02D600688D0B /* CourseInfoCardView.swift in Sources */,
+				47E839F02B118D14009B6C38 /* PublicationInfoRequirement.swift in Sources */,
 				AA16DD972AEEFD6C00688D0B /* CourseModel.swift in Sources */,
 				47E4715B2B0595E500B0B9C3 /* PublicationModel.swift in Sources */,
 				031D18B12AF950D800372171 /* CompanyRequirement.swift in Sources */,
 				EEDD93FC2AE966330066AD71 /* ScholarshipListRequirement.swift in Sources */,
 				031D18AD2AF9501F00372171 /* CompanyDetailView.swift in Sources */,
+				47E839F32B118D50009B6C38 /* LikePublicationRequirement.swift in Sources */,
 				48DF02A92AF1C0BE005DE385 /* CertificationRequirement.swift in Sources */,
 				48DF02A72AF1C066005DE385 /* CertificationListView.swift in Sources */,
 				BD5C220C2AEF424D0002D85E /* FundationInformationViewModel.swift in Sources */,
