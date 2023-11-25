@@ -17,7 +17,11 @@ struct PublicationCardView: View {
     @State var publication : Publication
     @State var liked : Bool
     
-
+    @State var timeRemaining = 1
+    let timer = Timer.publish(every: 0.7, on: .main, in : .common).autoconnect()
+    
+    @State var flag : Bool = false
+    
     
     
     var body: some View {
@@ -87,11 +91,16 @@ struct PublicationCardView: View {
                         Button (action: {
                             Task {
                                 liked = !liked
-                                await publicationViewModel.like(publicationId: publication.id)
+                                flag = true
+                                timeRemaining = 1
                                 
+                                await publicationViewModel.like(publicationId: publication.id)
+                            
                                 await publicationViewModel.getPublicationInfo(publicationId: publication.id)
                                 
                                 publication = publicationViewModel.publication[0]
+                              
+                                
                             }
                             
                         }, label : {
@@ -106,7 +115,14 @@ struct PublicationCardView: View {
                             }
                             
                             
-                        })
+                        }).onReceive(timer) { _ in
+                            if timeRemaining > 0 {
+                                timeRemaining -= 1
+                                
+                            } else {
+                                flag = false
+                            }
+                        }.disabled(flag)
                     }
                     
                     Spacer()
