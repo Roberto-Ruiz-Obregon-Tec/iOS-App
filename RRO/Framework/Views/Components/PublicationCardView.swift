@@ -92,8 +92,8 @@ struct PublicationCardView: View {
                     Spacer()
                     
                     HStack {
-                        Button {
-                           print("Comentar")
+                        NavigationLink {
+                            CommentView(publication: publication)
                         } label : {
                             Image(systemName: "bubble.right")
                                 .tint(colorScheme == .dark ? .white : .black)
