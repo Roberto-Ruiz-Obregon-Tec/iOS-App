@@ -72,10 +72,4 @@ struct CommentView: View {
     }
 }
 
-struct CommentView_Previews: PreviewProvider {
-    static var previews: some View {
-        let publi = Publication(id: "12345", title: "Title", description: "Desc", likes: 24, image: "https://image", updatedAt: "2023", createdAt: "2022", comments: [Comments(comment: "comment", user: "user"), Comments(comment: "commentcommentcomcommentcommentcomcommentcommentcomcommentcommentcom", user: "user"), Comments(comment: "comment", user: "user"), Comments(comment: "commentcommentcomcommentcommentcomcommentcommentcomcommentcommentcom", user: "user")])
-        
-        CommentView(publication: publi)
-    }
-}
+
