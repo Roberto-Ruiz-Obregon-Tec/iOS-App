@@ -48,26 +48,7 @@ struct CourseCommentsView: View {
                 }.frame(maxWidth: .infinity, alignment: .center)
             }
                 
-            Divider()
-                .padding([.top], 11)
-                .padding([.bottom], 8)
-                
-            HStack {
-                TextField(text: $comment) {
-                    Text("Comentario")
-                        .font(.body)
-                        .foregroundStyle(.secondary)
-                }.padding([.top, .bottom], 8)
-                 .padding([.leading], 16)
-                 .overlay(
-                     RoundedRectangle(cornerRadius: 16)
-                         .stroke(Color.gray, lineWidth: 1)
-                 )
-                    
-                    Image(systemName: "paperplane.fill")
-                        .foregroundColor(.red)
-                        .font(.system(size: 28))
-            }.frame(maxWidth: .infinity)
+                      
                 
         }.padding([.top, .bottom, .leading, .trailing], 16)
     }
