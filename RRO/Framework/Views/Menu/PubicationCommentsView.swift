@@ -11,7 +11,11 @@ import SDWebImageSwiftUI
 
 struct CommentView: View {
     let publication : Publication
+    
+    @StateObject var publicationViewModel = PublicationViewModel()
     @State var comment: String = ""
+    @State var flag : Bool = true
+    
     
     var body: some View {
         VStack(spacing: 0) {
@@ -62,13 +66,28 @@ struct CommentView: View {
                      RoundedRectangle(cornerRadius: 16)
                          .stroke(Color.gray, lineWidth: 1)
                  )
+                Button (action : {
+                    Task {
+                        await publicationViewModel.createPublicationComment(publicationId: publication.id, comment: comment)
+                        
+                        comment = ""
+                        flag = true
+                    }
                     
+                }, label : {
                     Image(systemName: "paperplane.fill")
                         .foregroundColor(.red)
                         .font(.system(size: 28))
+                }).disabled(false)
+
             }.frame(maxWidth: .infinity)
                 
         }.padding([.top, .bottom, .leading, .trailing], 16)
+            .onAppear{
+                if comment.trimmingCharacters(in: .whitespacesAndNewlines).count > 0 {
+                    flag = false
+                }
+            }
     }
 }
 

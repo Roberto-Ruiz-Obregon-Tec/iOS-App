@@ -14,12 +14,14 @@ class PublicationViewModel : ObservableObject { // Inicializamos una clase hered
     var publicationListRequirement : PublicationListRequirementProtocol
     var likePublicationRequirement : LikePublicationRequirementProtocol
     var publicationInfoRequirement : PublicationInfoRequirementProtocol
+    var createPublicationCommentRequirement : CreatePublicationCommentProtocol
     
-    init(publicationListRequirement : PublicationListRequirementProtocol = PublicationListRequirement.shared, likePublicationRequirement : LikePublicationRequirementProtocol = LikePublicationRequirement.shared, publicationInfoRequirement : PublicationInfoRequirementProtocol = PublicationInfoRequirement.shared) {
+    init(publicationListRequirement : PublicationListRequirementProtocol = PublicationListRequirement.shared, likePublicationRequirement : LikePublicationRequirementProtocol = LikePublicationRequirement.shared, publicationInfoRequirement : PublicationInfoRequirementProtocol = PublicationInfoRequirement.shared, createPublicationCommentRequirement : CreatePublicationCommentProtocol = CreatePublicationCommentRequirement.shared) {
         
         self.publicationListRequirement = publicationListRequirement
         self.likePublicationRequirement = likePublicationRequirement
         self.publicationInfoRequirement = publicationInfoRequirement
+        self.createPublicationCommentRequirement = createPublicationCommentRequirement
     }
     
     // Función marcada con @MainActor para obtener la lista de publicaciones de forma asíncrona
@@ -62,5 +64,17 @@ class PublicationViewModel : ObservableObject { // Inicializamos una clase hered
             print("Failed to fetch publication info data")
         }
     }
+    
+    @MainActor
+    func createPublicationComment(publicationId : String, comment : String) async {
+        let result = await createPublicationCommentRequirement.createPublicationComment(publicationId : publicationId, comment: comment)
+        
+        if result?.status == "success" {
+            print("Comentario hecho con exito")
+        } else {
+            print("Error al comentar")
+        }
+    }
+
     
 }
