@@ -2,33 +2,46 @@
 //  ProfileView.swift
 //  RRO
 //
+//  Created by peblo on 20/10/23.
 //  Modified by user326 on 14/11/23.
+//  Modified by Azul Rosales on 24/11/23.
 //
 
 import SwiftUI
 
 struct ProfileView: View {
     
-    @StateObject var myCoursesViewModel = MyCoursesViewModel() // Se crea una instancia del ViewModel
+    @StateObject var myCoursesViewModel = MyCoursesViewModel()
     
+    @ObservedObject var viewModel: EditProfileViewModel
     @ObservedObject var logoutViewModel: LogoutViewModel
+    
     let goLogin: () -> Void
     
     var body: some View {
         NavigationStack{
             VStack {
-                HStack {
-                    Image(systemName: "person")
-                        .font(.largeTitle)
-                    
-                    Text("Perfil")
-                        .font(.largeTitle)
-                        .fontWeight(.black)
-                }
+                Image(systemName: "person.circle")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 40, height: 40)
+                                    .fontWeight(.light)
+                                    .foregroundColor(.secondary)
+                
+                (Text(viewModel.editProfileData.firstName) + Text(" ") + Text(viewModel.editProfileData.lastName))
+                    .font(.title)
+                    .fontWeight(.bold)
+                            
+                Text(verbatim: viewModel.editProfileData.email
+                )
+                    .foregroundStyle(.secondary)
                 
                 NavigationLink(destination: ProfileDetailView(viewModel: EditProfileViewModel())) {
-                    Text("Editar perfil")
-                        .padding()
+                    HStack{
+                        Image(systemName: "pencil")
+                        Text("Editar perfil")
+                            .padding(4)
+                    }
                 }
                 
                 Text("Mis Cursos")
@@ -50,6 +63,7 @@ struct ProfileView: View {
                     
                 }.onAppear {
                     Task {
+                        await viewModel.getEditProfile()
                         await myCoursesViewModel.getMyCourses() // Llama al método
                     }
                 }
@@ -60,20 +74,25 @@ struct ProfileView: View {
                     logoutViewModel.getLogout()
                     goLogin()
                 }) {
+                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                        .foregroundColor(Color.red)
                     Text("Cerrar sesión")
-                        .padding()
-                        .background(Color.white)
+                        .foregroundColor(Color.red)
                         .cornerRadius(20)
                         .font(.headline)
+                        .padding(2)
                 }
             }
         }
     }
 }
 
-struct ProfileViewPreview: PreviewProvider {
+struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        // Asegúrate de crear instancias válidas de LogoutViewModel y LoginViewModel
+        let editProfileViewModel = EditProfileViewModel()
         let logoutViewModel = LogoutViewModel(loginViewModel: LoginViewModel())
+        
+        ProfileView(viewModel: editProfileViewModel, logoutViewModel: logoutViewModel, goLogin: {})
+            .environmentObject(MyCoursesViewModel())
     }
 }
