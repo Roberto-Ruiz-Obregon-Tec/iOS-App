@@ -14,7 +14,7 @@ struct CommentView: View {
     
     @StateObject var publicationViewModel = PublicationViewModel()
     @State var comment: String = ""
-    @State var flag : Bool = true
+    @State var success : Bool = false
     
     
     var body: some View {
@@ -68,26 +68,33 @@ struct CommentView: View {
                  )
                 Button (action : {
                     Task {
-                        await publicationViewModel.createPublicationComment(publicationId: publication.id, comment: comment)
+                        if comment.trimmingCharacters(in: .whitespacesAndNewlines).count > 0{
+                            await publicationViewModel.createPublicationComment(publicationId: publication.id, comment: comment)
+                            
+                            comment = ""
+                            success = true
+                            
+                        } else {
+                        }
                         
-                        comment = ""
-                        flag = true
                     }
                     
                 }, label : {
                     Image(systemName: "paperplane.fill")
                         .foregroundColor(.red)
                         .font(.system(size: 28))
-                }).disabled(false)
+                })
+                    .alert(isPresented: $success, content: {
+                        Alert(
+                            title: Text("Éxito"),
+                            message: Text("El comentario está en espera de revisión")
+                        )
+                    })
 
             }.frame(maxWidth: .infinity)
                 
         }.padding([.top, .bottom, .leading, .trailing], 16)
-            .onAppear{
-                if comment.trimmingCharacters(in: .whitespacesAndNewlines).count > 0 {
-                    flag = false
-                }
-            }
+
     }
 }
 
