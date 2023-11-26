@@ -9,6 +9,8 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct CourseInfoCardView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     let course: Course
     
     var body: some View {
@@ -25,52 +27,55 @@ struct CourseInfoCardView: View {
                         .cornerRadius(16)
                         .scaledToFit()
                 }
-                
-                HStack {
-                    Text(course.name)
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Spacer()
-                }.padding(.bottom, 8)
-                
-                HStack {
-                    Text(course.description)
-                        .foregroundStyle(.secondary)
-                        .fontWeight(.medium)
+                Group {
+                    HStack {
+                        Text(course.name)
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                    }.padding(.bottom, 8)
                     
-                    Spacer()
-                }.padding(.bottom, 12)
+                    HStack {
+                        Text(course.description)
+                            .foregroundStyle(.secondary)
+                            .fontWeight(.medium)
+                        
+                        Spacer()
+                    }.padding(.bottom, 12)
+                }
                 
-                HStack {
-                    Text("Fecha")
-                        .foregroundStyle(.secondary)
+                Group {
+                    HStack {
+                        Text("Fecha")
+                            .foregroundStyle(.secondary)
+                        
+                        Spacer()
+                        
+                        Text(course.startDate!.toISODate(), format: .dateTime.day().month().year())
+                        Text("-")
+                        Text(course.endDate!.toISODate(), format: .dateTime.day().month().year())
+                    }.padding(.bottom, 2)
                     
-                    Spacer()
+                    Divider()
                     
-                    Text(course.startDate!.toISODate(), format: .dateTime.day().month().year())
-                    Text("-")
-                    Text(course.endDate!.toISODate(), format: .dateTime.day().month().year())
-                }.padding(.bottom, 2)
-                
-                Divider()
-                
-                HStack {
+                    HStack {
 
-                    // Muestra el costo del curso
-                    Text("Costo")
+                        // Muestra el costo del curso
+                        Text("Costo")
 
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                    if course.status == "Gratuito"{
-                        Text(String(course.status))
-                    } else if course.status == "De pago"{
-                        Text("$" + String(course.cost))
-                    }
-            
-                    
-                }.padding(.bottom, 2)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        if course.status == "Gratuito"{
+                            Text(String(course.status))
+                        } else if course.status == "De pago"{
+                            Text("$" + String(course.cost))
+                        }
                 
-                Divider()
+                        
+                    }.padding(.bottom, 2)
+                    
+                    Divider()
+                }
                 
                 HStack {
                     Text("Modalidad")
@@ -91,6 +96,25 @@ struct CourseInfoCardView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
                 .foregroundStyle(Color.white)
+                
+                Spacer()
+                Spacer()
+                
+                HStack {
+                    Image(systemName: "star.fill")
+                    Text(String(course.rating))
+                    
+                    
+                    Spacer()
+                    
+                    NavigationLink {
+                        CourseCommentsView(course: course)
+                    } label : {
+                        Image(systemName: "bubble.right")
+                            .tint(colorScheme == .dark ? .white : .black)
+                        Text("Ver comentarios").foregroundColor(colorScheme == .dark ? .white : .black)
+                    }
+                }
             }
             .padding()
             .overlay(
@@ -98,6 +122,7 @@ struct CourseInfoCardView: View {
                     .stroke(Color(UIColor.systemGray4), lineWidth: 1.5)
             )
             .padding(10)
+            
         }
     }
 }
