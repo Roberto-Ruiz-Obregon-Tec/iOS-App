@@ -57,7 +57,7 @@ struct ProfileDetailView: View {
                 Group {
                     // MARK: - Gender
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("     Sexo")
+                        Text("     Género")
                             .bold()
                         Picker(viewModel.editProfileData.gender, selection: $viewModel.editProfileData.gender) {
                             ForEach(genero, id: \.self) {

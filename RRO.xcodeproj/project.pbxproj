@@ -966,7 +966,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RRO/Preview Content\"";
-				DEVELOPMENT_TEAM = 9T5LL73A6A;
+				DEVELOPMENT_TEAM = DYHS6ANDJD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -980,7 +980,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.roberto-ruiz-obregon.RRO-azul";
+				PRODUCT_BUNDLE_IDENTIFIER = covidmau.ExamenCOVID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;

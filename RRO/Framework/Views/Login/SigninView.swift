@@ -71,7 +71,7 @@ struct SigninView: View {
                 Group {
                     // MARK: - Gender
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("     Sexo")
+                        Text("     Género")
                             .bold()
                         Picker("Obligatorio", selection: $viewModel.signinData.gender) {
                             ForEach(genero, id: \.self) {
