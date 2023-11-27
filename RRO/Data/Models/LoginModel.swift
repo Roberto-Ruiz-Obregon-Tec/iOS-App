@@ -7,7 +7,6 @@
 
 import Foundation
 
-// Model of the User, here it's defined the variables and it's type of value
 struct User: Codable {
     var id: String
     var firstName: String
@@ -19,10 +18,8 @@ struct User: Codable {
     var company: String?
     var sociallyResponsibleCompany: Bool?
     var postalCode: Int
-    var profilePicture: String?
 }
 
-// Model of the Login, here it's defined the variables and it's type of value
 struct Login: Codable {
     var email: String
     var password: String

@@ -25,21 +25,25 @@ struct CourseDetailView: View {
                             .cornerRadius(16)
                             .scaledToFit()
                     }
-                    HStack {
-                        Text(course.name)
-                            .font(.title)
-                            .fontWeight(.bold)
-                        
-                        Spacer()
+                    
+                    Group {
+                        HStack {
+                            Text(course.name)
+                                .font(.title)
+                                .fontWeight(.bold)
+                            
+                            Spacer()
+                        }
+                        HStack {
+                            Image(systemName: "person.fill")
+                            Text(course.speaker)
+                                .fontWeight(.bold)
+                            Spacer()
+                            Text(String(course.rating))
+                            Image(systemName: "star.fill")
+                        }
                     }
-                    HStack {
-                        Image(systemName: "person.fill")
-                        Text(course.speaker)
-                            .fontWeight(.bold)
-                        Spacer()
-                        Text(String(course.rating))
-                        Image(systemName: "star.fill")
-                    }
+                    
                     
                     VStack(spacing: 8) {
                         HStack{
@@ -61,6 +65,7 @@ struct CourseDetailView: View {
                     .padding(.vertical)
                     .font(.title3)
                     .fontWeight(.bold)
+                    
                     
                     VStack(spacing: 8) {
                         
@@ -110,22 +115,22 @@ struct CourseDetailView: View {
 
                         }
                                             
-                        
-                        Divider()
-                        
-                        HStack {
-                            Text("Horario")
-                                .fontWeight(.bold)
+                        Group {
+                            Divider()
                             
-                            Spacer()
+                            HStack {
+                                Text("Horario")
+                                    .fontWeight(.bold)
+                                
+                                Spacer()
+                                
+                                Text(course.schedule)
+                                    .foregroundStyle(.secondary)
+                            }
                             
-                            Text(course.schedule)
-                                .foregroundStyle(.secondary)
+                            Divider()
                         }
-                        
-                        Divider()
-                        
-                        
+   
                         if course.status == "Gratuito"{
                             HStack {
                                 Text("Costo")
@@ -151,22 +156,23 @@ struct CourseDetailView: View {
                             }
                         }
 
-                        
-                        Divider()
-                        
-                        HStack {
-                            Text("Cupos disponibles")
-                                .fontWeight(.bold)
-                            
-                            Spacer()
+                        Group {
+                            Divider()
                             
                             HStack {
-                                Text(String(course.remaining))
-                            }.foregroundStyle(.secondary)
+                                Text("Cupos disponibles")
+                                    .fontWeight(.bold)
+                                
+                                Spacer()
+                                
+                                HStack {
+                                    Text(String(course.remaining))
+                                }.foregroundStyle(.secondary)
+                                
+                            }
                             
+                            Divider()
                         }
-                        
-                        Divider()
                         
                         HStack {
                             Text("Fecha limite de inscripción")
@@ -181,12 +187,7 @@ struct CourseDetailView: View {
                         }
                         
                     }.padding(.vertical)
-                    
-                    
-                    
                 }.padding(.horizontal)
-                
-               
                 
                 NavigationLink {
                     PaymentSheetView()
@@ -207,8 +208,4 @@ struct CourseDetailView: View {
 }
 
 
-struct CourseDetailViewPreviews: PreviewProvider{
-    static var previews: some View{
-        CourseDetailView(course: Course(id:UUID().uuidString, name: "Curso de Escritura", description: "Lleva tus habilidades para crear artesanias al siguiente nivel, aprende a pintar con acuarelas y tecnicas de dibujo.",speaker: "Tu mama", startDate: Date.now.toString(), endDate: Date.now.toString(), schedule: "16:00", modality: "Remoto", postalCode: 38193, location: "Calle Max Henriquez Ureña #88, apartamento 401jik dxhtdt hdiuhtndgiuhid cshdgifuide uhinntihukgicfic dicg cgdicgidc c cgihd i d d cgicg cgicgi c", status: "De pago", cost: 1200, courseImage: "https://www.grupocibernos.com/hubfs/gestion-de-proyectos-empresariales.jpg", capacity: 1, remaining: 15, rating: 3.4, meetingCode: "hola", accessCode: "ahol", focus: []))
-    }
-}
+

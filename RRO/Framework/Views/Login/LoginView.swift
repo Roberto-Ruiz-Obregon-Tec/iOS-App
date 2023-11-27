@@ -81,7 +81,6 @@ struct LoginView: View {
                 
                 Button {
                     Task {
-                        // Id the result of viewModel.postLogin() succeeds, the view changes to the one of Menu, else, there's an error message shown to the user.
                         let result = await viewModel.postLogin()
                         
                         switch result {

@@ -4,12 +4,15 @@
 //
 //  Created by peblo on 20/10/23.
 //  Modified by Azul Rosales on 15/11/23.
-//
+//  Modified by user326 on 14/11/23.
 
 import SwiftUI
 
 
 struct ProfileView: View {
+    
+    @StateObject var myCoursesViewModel = MyCoursesViewModel() // Se crea una instancia del ViewModel
+    
     @ObservedObject var logoutViewModel: LogoutViewModel
     @ObservedObject var loginViewModel: LoginViewModel
     
@@ -68,8 +71,32 @@ struct ProfileView: View {
                     }
                 }
                 
+                Text("Mis Cursos")
+                    .font(.largeTitle)
+                    .fontWeight(.black)
+                
+                ScrollView {
+                    
+                    if (myCoursesViewModel.courseList.count == 0){
+                        Text("Actualmente no tienes cursos inscritos")
+                            .padding()
+                    }
+                    else{
+                        
+                        ForEach(myCoursesViewModel.courseList) { course in
+                            MyCourseInfoCardView(course: course) // Muestra una tarjeta de información del curso
+                        }
+                    }
+                    
+                }.onAppear {
+                    Task {
+                        await myCoursesViewModel.getMyCourses() // Llama al método
+                    }
+                }
+                
+                
                 Button(action: {
-                    // The logout is executed
+                    // Realiza el cierre de sesión
                     logoutViewModel.getLogout()
                     goLogin()
                 }) {

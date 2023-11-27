@@ -8,11 +8,13 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+// Define una vista en SwiftUI llamada ProgramInfoCardView que muestra información sobre un programa.
 struct ProgramInfoCardView: View {
-    let program: Program
+    let program: Program // La información del programa se pasa como un parámetro a la vista.
     var body: some View {
         NavigationStack {
             VStack {
+                // Muestra la imagen del programa si está disponible, de lo contrario, muestra una imagen predeterminada.
                 if program.programImage != "" {
                     WebImage(url: URL(string: program.programImage))
                         .resizable()
@@ -24,7 +26,7 @@ struct ProgramInfoCardView: View {
                         .cornerRadius(16)
                         .scaledToFit()
                 }
-                
+                // Muestra el nombre del programa en un tamaño de fuente grande y negrita.
                 HStack {
                     Text(program.name)
                         .font(.title)
@@ -32,6 +34,7 @@ struct ProgramInfoCardView: View {
                     Spacer()
                 }.padding(.bottom, 8)
                 
+                // Muestra la descripción del programa con un estilo de texto secundario y un peso de fuente medio.
                 HStack {
                     Text(program.description)
                         .foregroundStyle(.secondary)
@@ -40,6 +43,7 @@ struct ProgramInfoCardView: View {
                     Spacer()
                 }.padding(.bottom, 12)
                 
+                // Muestra la fecha límite del programa en un formato personalizado.
                 HStack {
                     Text("Fecha límite")
                         .foregroundStyle(.secondary)
@@ -49,8 +53,9 @@ struct ProgramInfoCardView: View {
                     Text(program.deadlineDate.toISODate(), format: .dateTime.day().month())
                 }.padding(.bottom, 2)
                 
-                Divider()
+                Divider()                 // Muestra una línea divisoria.
                 
+                // Muestra la categoría del programa (actualmente comentada en el código original).
                 HStack {
                     Text("Categoría")
                         .foregroundStyle(.secondary)
@@ -58,6 +63,7 @@ struct ProgramInfoCardView: View {
                     //Text(program.category)
                 }.padding(.bottom, 12)
                 
+                // Navegación a la vista detallada del programa.
                 NavigationLink {
                     ProgramDetailView(program: program)
                 } label: {
@@ -80,9 +86,10 @@ struct ProgramInfoCardView: View {
     }
 }
 
-
+// Vista de previsualización para la vista ProgramInfoCardView.
 struct ProgramInfoCardView_Preview: PreviewProvider {
     static var previews: some View {
+        // Crea una instancia de ProgramInfoCardView para la previsualización.
         ProgramInfoCardView(program: Program(id: UUID().uuidString, name: "Programa", startDate: Date.now.toString(), endDate: Date.now.toString(), deadlineDate: Date.now.toString(), programImage: "", postalCode: 123, description: "Este programa es muy bueno, deberías de inscribirte y probarlo."))
     }
 }

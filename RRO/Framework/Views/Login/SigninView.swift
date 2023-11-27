@@ -22,51 +22,53 @@ struct SigninView: View {
     var body: some View {
         ScrollView {
             VStack {
-                
-                // MARK: - Logo
-                HStack {
-                    Image("logoFundacion")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100)
-                        .padding()
-                    
-                    VStack {
-                        Text("Regístrate")
-                            .bold()
-                            .font(.title)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("Fundación Roberto Ruiz Obregón")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    Spacer()
-                    
-                }
-                
-                VStack(alignment: .leading, spacing: 0){
-                    // MARK: - Names
-                    HStack{
-                        VStack(alignment: .leading, spacing: 0) {
-                            Text("     Nombre")
+                Group {
+                    // MARK: - Logo
+                    HStack {
+                        Image("logoFundacion")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100)
+                            .padding()
+                        
+                        VStack {
+                            Text("Regístrate")
                                 .bold()
-                            TextField("Obligatorio", text: $viewModel.signinData.firstName)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.horizontal, 20)
-                                .disableAutocorrection(true)
+                                .font(.title)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text("Fundación Roberto Ruiz Obregón")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        Spacer()
+                        
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 0){
+                        // MARK: - Names
+                        HStack{
+                            VStack(alignment: .leading, spacing: 0) {
+                                Text("     Nombre")
+                                    .bold()
+                                TextField("Obligatorio", text: $viewModel.signinData.firstName)
+                                    .textFieldStyle(.roundedBorder)
+                                    .padding(.horizontal, 20)
+                                    .disableAutocorrection(true)
+                            }
+                            
+                            VStack(alignment: .leading, spacing: 0) {
+                                Text("      Apellido")
+                                    .bold()
+                                TextField("Obligatorio", text: $viewModel.signinData.lastName)
+                                    .textFieldStyle(.roundedBorder)
+                                    .padding(.horizontal, 20)
+                                    .disableAutocorrection(true)
+                            }
                         }
                         
-                        VStack(alignment: .leading, spacing: 0) {
-                            Text("      Apellido")
-                                .bold()
-                            TextField("Obligatorio", text: $viewModel.signinData.lastName)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.horizontal, 20)
-                                .disableAutocorrection(true)
-                        }
-                    }
+                        Spacer(minLength: 16)
+                }
                     
-                    Spacer(minLength: 16)
-                    
+                Group {
                     // MARK: - Gender
                     VStack(alignment: .leading, spacing: 0) {
                         Text("     Sexo")
@@ -125,10 +127,12 @@ struct SigninView: View {
                     }
                     
                     Spacer(minLength: 16)
-                    
+                }
+                
+                Group {
                     VStack(alignment: .leading, spacing: 0){
                         // MARK: - ZIPCODE
-                        Text("      CP")
+                        Text("      Código Postal")
                             .bold()
                         TextField("Obligatorio", text: $viewModel.cp)
                             .keyboardType(.numberPad)
@@ -190,84 +194,87 @@ struct SigninView: View {
                                 .padding()
                                 .padding()
                         }
+                }
+
+                    
+                Group {
+                    // MARK: - EMAIL
+                    VStack(alignment: .leading, spacing: 0){
+                        Text("     Correo Electrónico")
+                            .bold()
+                        TextField("Obligatorio", text: $viewModel.signinData.email)
+                            .textFieldStyle(.roundedBorder)
+                            .padding(.horizontal, 20)
+                            .keyboardType(.emailAddress)
+                            .disableAutocorrection(true)
+                            .autocapitalization(.none)
                         
-                        // MARK: - EMAIL
-                        VStack(alignment: .leading, spacing: 0){
-                            Text("     Correo Electrónico")
-                                .bold()
-                            TextField("Obligatorio", text: $viewModel.signinData.email)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.horizontal, 20)
-                                .keyboardType(.emailAddress)
-                                .disableAutocorrection(true)
-                                .autocapitalization(.none)
-                            
-                        }
-                        
-                        Spacer(minLength: 16)
-                        
-                        // MARK: - PASSWORD
-                        VStack(alignment: .leading, spacing: 0){
-                            Text("     Contraseña")
-                                .bold()
-                            SecureField("Obligatorio", text: $viewModel.signinData.password)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.horizontal, 20)
-                                .disableAutocorrection(true)
-                        }
-                        
-                        Spacer(minLength: 16)
-                        
-                        // MARK: - PASSWORD CONFIRM
-                        VStack(alignment: .leading, spacing: 0){
-                            Text("     Confirmar Contraseña")
-                                .bold()
-                            SecureField("Obligatorio", text: $viewModel.signinData.passwordConfirm)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.horizontal, 20)
-                                .disableAutocorrection(true)
-                        }
-                        
-                  
                     }
                     
-                    VStack{
-                        Divider()
-                            .padding()
-                            .padding()
+                    Spacer(minLength: 16)
+                    
+                    // MARK: - PASSWORD
+                    VStack(alignment: .leading, spacing: 0){
+                        Text("     Contraseña")
+                            .bold()
+                        SecureField("Obligatorio", text: $viewModel.signinData.password)
+                            .textFieldStyle(.roundedBorder)
+                            .padding(.horizontal, 20)
+                            .disableAutocorrection(true)
                     }
                     
+                    Spacer(minLength: 16)
                     
-                    VStack {
-                        
-                        Button {
-                            Task {
-                                let response = await viewModel.postSignup()
-                                
-                                switch response {
-                                    case .success:
-                                        goMenu()
-                                    case .error:
-                                        break
-                                }
-                            }
-                            //goMenu()
-                        } label: {
-                            Text("Crear usuario")
-                        }
-                        .padding()
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(8.0)
-                        .alert(isPresented: $viewModel.showAlert) {
-                            Alert(title: Text(viewModel.errorTitle),
-                                  message: Text(viewModel.errorMessage),
-                                  dismissButton: .default(Text("OK")))
-                        }
-                        
-                        Spacer()
+                    // MARK: - PASSWORD CONFIRM
+                    VStack(alignment: .leading, spacing: 0){
+                        Text("     Confirmar Contraseña")
+                            .bold()
+                        SecureField("Obligatorio", text: $viewModel.signinData.passwordConfirm)
+                            .textFieldStyle(.roundedBorder)
+                            .padding(.horizontal, 20)
+                            .disableAutocorrection(true)
                     }
-                    .frame(maxWidth: .infinity, alignment: .center)
+                }
+           
+            }
+                    
+            VStack{
+                Divider()
+                    .padding()
+                    .padding()
+            }
+                    
+                    
+            VStack {
+                
+                Button {
+                    Task {
+                        let response = await viewModel.postSignup()
+                        
+                        switch response {
+                            case .success:
+                                goMenu()
+                            case .error:
+                                break
+                        }
+                    }
+                    //goMenu()
+                } label: {
+                    Text("Crear usuario")
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                .cornerRadius(8.0)
+                .alert(isPresented: $viewModel.showAlert) {
+                    Alert(title: Text(viewModel.errorTitle),
+                          message: Text(viewModel.errorMessage),
+                          dismissButton: .default(Text("OK")))
+                }
+                
+                Spacer()
+            }
+            .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
         }

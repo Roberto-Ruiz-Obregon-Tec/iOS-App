@@ -19,10 +19,18 @@ struct InfoFundation: Codable, Identifiable {
     var twitter: String
     var instagram: String
     var tiktok: String
- 
+    
 }
 
-
+struct FoundationResponse<T: Codable>: Codable{
+    var status: String
+    var results: Int?
+    var data: Data
+    
+    struct Data: Codable {
+        var documents: [InfoFundation]
+    }
+}
 
 
 

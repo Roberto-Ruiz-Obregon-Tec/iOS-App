@@ -8,15 +8,14 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-// Vista que muestra la información de un curso en una tarjeta
 struct CourseInfoCardView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     let course: Course
     
     var body: some View {
-        // Utiliza NavigationStack para permitir la navegación
-        NavigationStack {
+        NavigationStack{
             VStack {
-                // Muestra una imagen del curso si está disponible, de lo contrario, muestra una imagen por defecto
                 if course.courseImage != "" {
                     WebImage(url: URL(string: course.courseImage))
                         .resizable()
@@ -28,63 +27,64 @@ struct CourseInfoCardView: View {
                         .cornerRadius(16)
                         .scaledToFit()
                 }
-                
-                HStack {
-                    // Muestra el nombre del curso en negrita
-                    Text(course.name)
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Spacer()
-                }.padding(.bottom, 8)
-                
-                HStack {
-                    // Muestra la descripción del curso en estilo secundario
-                    Text(course.description)
-                        .foregroundStyle(.secondary)
-                        .fontWeight(.medium)
+                Group {
+                    HStack {
+                        Text(course.name)
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                    }.padding(.bottom, 8)
                     
-                    Spacer()
-                }.padding(.bottom, 12)
+                    HStack {
+                        Text(course.description)
+                            .foregroundStyle(.secondary)
+                            .fontWeight(.medium)
+                        
+                        Spacer()
+                    }.padding(.bottom, 12)
+                }
+                
+                Group {
+                    HStack {
+                        Text("Fecha")
+                            .foregroundStyle(.secondary)
+                        
+                        Spacer()
+                        
+                        Text(course.startDate!.toISODate(), format: .dateTime.day().month().year())
+                        Text("-")
+                        Text(course.endDate!.toISODate(), format: .dateTime.day().month().year())
+                    }.padding(.bottom, 2)
+                    
+                    Divider()
+                    
+                    HStack {
+
+                        // Muestra el costo del curso
+                        Text("Costo")
+
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        if course.status == "Gratuito"{
+                            Text(String(course.status))
+                        } else if course.status == "De pago"{
+                            Text("$" + String(course.cost))
+                        }
+                
+                        
+                    }.padding(.bottom, 2)
+                    
+                    Divider()
+                }
                 
                 HStack {
-                    // Muestra la fecha de inicio y finalización del curso en formato personalizado
-                    Text("Fecha")
-                        .foregroundStyle(.secondary)
-                    
-                    Spacer()
-                    
-                    Text(course.startDate!.toISODate(), format: .dateTime.day().month().year())
-                    Text("-")
-                    Text(course.endDate!.toISODate(), format: .dateTime.day().month().year())
-                }.padding(.bottom, 2)
-                
-                Divider()
-                
-                HStack {
-                    // Muestra el costo del curso
-                    Text("Costo")
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                    if course.status == "Gratuito"{
-                        Text(String(course.status))
-                    } else if course.status == "De pago"{
-                        Text("$" + String(course.cost))
-                    }
-            
-                    
-                }.padding(.bottom, 2)
-                
-                Divider()
-                
-                HStack {
-                    // Muestra la modalidad del curso
                     Text("Modalidad")
                         .foregroundStyle(.secondary)
                     Spacer()
                     Text(course.modality)
                 }.padding(.bottom, 12)
                 
-                // Permite la navegación a la vista de detalles del curso al tocar el botón "Ver más"
+                
                 NavigationLink {
                     CourseDetailView(course: course)
                 } label: {
@@ -96,6 +96,25 @@ struct CourseInfoCardView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
                 .foregroundStyle(Color.white)
+                
+                Spacer()
+                Spacer()
+                
+                HStack {
+                    Image(systemName: "star.fill")
+                    Text(String(course.rating))
+                    
+                    
+                    Spacer()
+                    
+                    NavigationLink {
+                        CourseCommentsView(course: course)
+                    } label : {
+                        Image(systemName: "bubble.right")
+                            .tint(colorScheme == .dark ? .white : .black)
+                        Text("Ver comentarios").foregroundColor(colorScheme == .dark ? .white : .black)
+                    }
+                }
             }
             .padding()
             .overlay(
@@ -103,7 +122,7 @@ struct CourseInfoCardView: View {
                     .stroke(Color(UIColor.systemGray4), lineWidth: 1.5)
             )
             .padding(10)
+            
         }
     }
 }
-
