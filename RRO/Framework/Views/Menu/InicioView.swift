@@ -20,9 +20,11 @@ struct InicioView: View {
                 TabBarView(currentTab: self.$currentTab)
                 TabView(selection: self.$currentTab){
                     CoursesView().tag(0)
-                    ScholarshipsView().tag(1)
-                    ProgramListView().tag(2)
-                    CertificationListView().tag(3)
+                    ProgramListView().tag(1)
+                    CertificationListView().tag(2)
+                    ScholarshipsView().tag(3)
+                    
+                    
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 .edgesIgnoringSafeArea(.all)
