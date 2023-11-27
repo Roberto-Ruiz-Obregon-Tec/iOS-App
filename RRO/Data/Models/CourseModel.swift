@@ -28,7 +28,7 @@ struct Course: Codable, Identifiable { // Encoding y decoding | Para identificar
     var meetingCode: String
     var accessCode: String
     var focus: [String]
-    var comments: [CourseComments]
+    var comments: [CourseComments]?
     
 
   

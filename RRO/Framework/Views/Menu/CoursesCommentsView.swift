@@ -32,7 +32,7 @@ struct CourseCommentsView: View {
             }.padding([.bottom], 12)
              .frame(maxWidth: .infinity)
              
-            if(course.comments.count == 0) {
+            if(course.comments!.count == 0) {
                 Spacer()
                 
                 Text("Aún no hay comentarios")
@@ -42,8 +42,8 @@ struct CourseCommentsView: View {
                 Spacer()
             } else {
                 ScrollView {
-                    ForEach(0..<course.comments.count, id: \.self) {
-                        i in CourseCommentCardView(comment: course.comments[i])
+                    ForEach(0..<course.comments!.count, id: \.self) {
+                        i in CourseCommentCardView(comment: course.comments![i])
                     }
                 }.frame(maxWidth: .infinity, alignment: .center)
             }
