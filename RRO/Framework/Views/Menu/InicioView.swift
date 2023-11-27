@@ -35,7 +35,7 @@ struct InicioView: View {
 
 
 struct TabBarView: View {
-    var tabVarList:[String] = ["Cursos", "Becas","Programas" ,"Certificaciónes"]
+    var tabVarList:[String] = ["Cursos","Programas" ,"Acreditaciones", "Becas"]
     @Binding var currentTab : Int
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.colorScheme) var textColor
