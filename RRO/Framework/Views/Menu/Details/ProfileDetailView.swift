@@ -31,9 +31,7 @@ struct ProfileDetailView: View {
             
             VStack(alignment: .leading, spacing: 0){
                 // MARK: - Names
-                let cp = String(viewModel.editProfileData.postalCode)
-                let age = String(viewModel.editProfileData.age)
-                
+
                 HStack{
                     VStack(alignment: .leading, spacing: 0) {
                         Text("     Nombre")
