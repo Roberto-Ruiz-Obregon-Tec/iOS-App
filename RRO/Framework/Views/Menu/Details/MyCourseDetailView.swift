@@ -10,6 +10,12 @@ import SDWebImageSwiftUI
 
 struct MyCourseDetailView: View {
     var course: Course
+    
+    let now:Date = Date.now
+    @State var rate:Bool = false
+    @State var images:[String] = ["", "", "", "", ""]
+    @StateObject var myCoursesViewModel = MyCoursesViewModel() // Se crea una instancia del ViewModel
+    
     var body: some View {
         NavigationStack{
             ScrollView{
@@ -204,11 +210,76 @@ struct MyCourseDetailView: View {
                                 
                             }
                         }
-                    }.padding(.vertical)
                     
+                        if (now >= course.endDate!.toISODate()) { // Validar que el curso haya empezado
+                            if(rate) { // Solicitar valoración
+                                HStack (spacing: 0) {
+                                    Text("Califica el curso")
+                                        .foregroundStyle(.secondary)
+                                    
+                                    Spacer()
+                                    
+                                    Group { // Botones de estrellas
+                                        ForEach(0..<images.count) {
+                                            i in Button { // Monitoreamos el rating seleccionado
+                                                myCoursesViewModel.userRating.rating = i + 1
+                                                updateStars()
+                                            } label: {
+                                                Image(systemName: "star\(images[i])")
+                                                    .foregroundColor(.yellow)
+                                            }.frame(height: 4)
+                                        }
+                                    }
+                                }.padding()
+                                 .onAppear { // Guardamos el curso a calificar
+                                     myCoursesViewModel.userRating.id = "6552624c9ee0c5765d52f10c"
+                                 }
+
+                                
+                                Button {
+                                    Task { // Mandamos el rating seleccionado
+                                        print("TODO: Update rating \n Course: \(myCoursesViewModel.userRating.id) \n Rating: \(myCoursesViewModel.userRating.rating)")
+                                        await myCoursesViewModel.updateCourseRating()
+                                        print("DONE!")
+                                        rate = false
+                                    }
+                                } label: {
+                                    Text("Enviar valoración")
+                                        .foregroundStyle(.secondary)
+                                }.buttonStyle(.borderedProminent)
+                                 .tint(.red)
+                                 .foregroundStyle(Color.white)
+                                
+                            } else {
+                                Button {
+                                    Task{ // Inicializamos el rating a 0
+                                        rate = true
+                                        myCoursesViewModel.userRating.rating = 0
+                                        updateStars()
+                                    }
+                                } label: {
+                                    Text("Calificar curso")
+                                        .foregroundStyle(.secondary)
+                                }.buttonStyle(.borderedProminent)
+                                 .tint(.red)
+                                 .foregroundStyle(Color.white)
+                            }
+                        }
+                    
+                    }.padding(.vertical)
+
                 }.padding(.horizontal)
                 
                 Spacer()
             }
         }
+    
+    func updateStars() {
+        for i in 0..<myCoursesViewModel.userRating.rating { // Estrellas seleccionadas
+            self.images[i] = ".fill"
+        }
+        for i in myCoursesViewModel.userRating.rating..<5 {
+            self.images[i] = ""
+        }
     }
+}

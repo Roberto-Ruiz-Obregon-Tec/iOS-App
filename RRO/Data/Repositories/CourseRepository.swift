@@ -38,4 +38,19 @@ class CourseRepository: CourseAPIProtocol {
     func getCourse(id: String) async -> ServerResponse<[Course]>? {
         return await netService.self.get(url: URL(string: "\(API.base)\(API.routes.course)/\(id)")!)
     }
+    
+    /// Función para actualizar el rating de un curso.
+    ///
+    /// - Parámetros:
+    ///   - model: Contiene el id del curso y el rating a asignar.
+    ///
+    /// - Return: Response status.
+    func updateCourseRating(model: Rating) async -> ServerResponse<[Course]>? {
+        let params:[String:Any] = [
+            "id": model.id,
+            "rating": model.rating
+        ]
+        
+        return await netService.self.put(url: URL(string: "\(API.base)\(API.routes.courseRating)")!, body: params)
+    }
 }

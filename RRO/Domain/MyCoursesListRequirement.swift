@@ -25,4 +25,9 @@ class MyCoursesListRequirement: MyCoursesListRequirementProtocol {
     func getMyCourses() async -> ServerResponse<[Course]>? {
         return await dataRepository.getMyCourses()
     }
+    
+    /// Función del protocolo para recibir los datos del curso a actualizar
+    func updateCourseRating(model: Rating) async -> ServerResponse<[Course]>? {
+        return await dataRepository.updateCourseRating(model: model)
+    }
 }
