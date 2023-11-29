@@ -10,6 +10,7 @@ import Foundation
 /// Definición del protocolo
 protocol MyCoursesListRequirementProtocol {
     func getMyCourses() async -> ServerResponse<[Course]>?
+    func updateCourseRating(model: Rating) async -> ServerResponse<[Course]>?
 }
 
 /// Clase para implementar el protocolo
