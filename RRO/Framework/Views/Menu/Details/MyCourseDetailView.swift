@@ -13,6 +13,7 @@ struct MyCourseDetailView: View {
     
     let now:Date = Date.now
     @State var rate:Bool = false
+    @State var success: Bool = false
     @State var images:[String] = ["", "", "", "", ""]
     @StateObject var myCoursesViewModel = MyCoursesViewModel() // Se crea una instancia del ViewModel
     
@@ -241,6 +242,7 @@ struct MyCourseDetailView: View {
                                 Button {
                                     Task { // Mandamos el rating seleccionado
                                         await myCoursesViewModel.updateCourseRating()
+                                        success = true
                                         rate = false
                                     }
                                 } label: {
@@ -267,6 +269,12 @@ struct MyCourseDetailView: View {
                                 }.buttonStyle(.borderedProminent)
                                  .tint(.red)
                                  .foregroundStyle(Color.white)
+                                 .alert(isPresented: $success, content: {
+                                      Alert(
+                                          title: Text("Éxito"),
+                                          message: Text("El rating se actualizó correctamente")
+                                      )
+                                 })
                             }
                         }
                     
