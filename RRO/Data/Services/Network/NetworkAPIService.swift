@@ -117,10 +117,10 @@ class NetworkAPIService {
     /// - Parameter url: Url where the request will be sent to
     /// - Parameter body: Dictionary with the data that will be sent in the body
     /// - Returns: The serialized payload or nil if it fails
-    func put<T: Codable>(url: URL, body: Parameters = [:]) async -> T? {
+    func put<T: Codable>(url: URL, body: [String:Any] = [:]) async -> T? {
         do {
             return try await withCheckedThrowingContinuation {
-                continuation in _session.request(url, method: .put, body: body, encoding: JSONEncoding.default, headers: _headers)
+                continuation in _session.request(url, method: .put, parameters: body, encoding: JSONEncoding.default, headers: _headers)
                     .responseDecodable(of: T.self, decoder: self._decoder) {
                         response in switch response.result {
                         case .success(let data):

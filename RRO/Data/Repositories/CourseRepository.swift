@@ -46,11 +46,11 @@ class CourseRepository: CourseAPIProtocol {
     ///
     /// - Return: Response status.
     func updateCourseRating(model: Rating) async -> ServerResponse<[Course]>? {
-        let params:[String:Any] = [
+        let body:[String:Any] = [
             "id": model.id,
             "rating": model.rating
         ]
         
-        return await netService.self.put(url: URL(string: "\(API.base)\(API.routes.courseRating)")!, body: params)
+        return await netService.self.put(url: URL(string: "\(API.base)\(API.routes.courseRating)")!, body: body)
     }
 }

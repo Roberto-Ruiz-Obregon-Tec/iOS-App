@@ -209,13 +209,15 @@ struct MyCourseDetailView: View {
                                 }.foregroundStyle(.secondary)
                                 
                             }
+                            
+                            Spacer().frame(height: 8)
                         }
                     
                         if (now >= course.endDate!.toISODate()) { // Validar que el curso haya empezado
                             if(rate) { // Solicitar valoración
                                 HStack (spacing: 0) {
                                     Text("Califica el curso")
-                                        .foregroundStyle(.secondary)
+                                        .fontWeight(.bold)
                                     
                                     Spacer()
                                     
@@ -232,20 +234,20 @@ struct MyCourseDetailView: View {
                                     }
                                 }.padding()
                                  .onAppear { // Guardamos el curso a calificar
-                                     myCoursesViewModel.userRating.id = "6552624c9ee0c5765d52f10c"
+                                     myCoursesViewModel.userRating.id = course.id
                                  }
 
                                 
                                 Button {
                                     Task { // Mandamos el rating seleccionado
-                                        print("TODO: Update rating \n Course: \(myCoursesViewModel.userRating.id) \n Rating: \(myCoursesViewModel.userRating.rating)")
                                         await myCoursesViewModel.updateCourseRating()
-                                        print("DONE!")
                                         rate = false
                                     }
                                 } label: {
                                     Text("Enviar valoración")
-                                        .foregroundStyle(.secondary)
+                                        .font(.headline)
+                                        .frame(maxWidth: .infinity)
+                                        .padding(4)
                                 }.buttonStyle(.borderedProminent)
                                  .tint(.red)
                                  .foregroundStyle(Color.white)
@@ -259,7 +261,9 @@ struct MyCourseDetailView: View {
                                     }
                                 } label: {
                                     Text("Calificar curso")
-                                        .foregroundStyle(.secondary)
+                                        .font(.headline)
+                                        .frame(maxWidth: .infinity)
+                                        .padding(4)
                                 }.buttonStyle(.borderedProminent)
                                  .tint(.red)
                                  .foregroundStyle(Color.white)
