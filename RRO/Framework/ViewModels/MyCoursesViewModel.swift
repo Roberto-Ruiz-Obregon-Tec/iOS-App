@@ -11,6 +11,7 @@ import Foundation
 class MyCoursesViewModel: ObservableObject {
     // Propiedad observable que almacena la lista de cursos
     @Published var courseList = [Course]()
+    @Published var userRating: Rating = Rating(id: "", rating: 0)
     
     var myCoursesListRequirement: MyCoursesListRequirementProtocol
     
@@ -33,4 +34,8 @@ class MyCoursesViewModel: ObservableObject {
         }
     }
 
+    @MainActor
+    func updateCourseRating() async -> ServerResponse<[Course]>? {
+        await myCoursesListRequirement.updateCourseRating(model: self.userRating)
+    }
 }

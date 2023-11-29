@@ -30,10 +30,6 @@ struct Course: Codable, Identifiable { // Encoding y decoding | Para identificar
     var focus: [String]
     var comments: [CourseComments]?
     
-
-  
-    
-    
     enum CodingKeys: String, CodingKey {
         case id = "_id" // Mapea la propiedad 'id' a '_id' en el JSON
         case name, description, speaker, startDate, endDate, schedule, modality, postalCode, location, status,  cost, courseImage, capacity, remaining, rating, meetingCode, accessCode, focus, comments
@@ -45,6 +41,14 @@ struct CourseComments : Codable {
     var user : String
 }
 
+struct Rating: Codable {
+    var id: String
+    var rating: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id, rating
+    }
+}
 
 struct CourseResponse<T: Codable>: Codable {
     var status: String

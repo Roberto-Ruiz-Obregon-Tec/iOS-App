@@ -28,6 +28,7 @@ struct API {
         static let event = "/event"
         static let infoFundation = "/informacion-fundacion"
         static let myCourses = "/user/mycourses"
+        static let courseRating = "/course/updateRating"
         static let company = "/company-certifications"
         static let publication = "/publication"
         static let likePublication = "/publication/like"
@@ -76,6 +77,8 @@ protocol CourseAPIProtocol {
     func getCourse(id: String) async -> ServerResponse<[Course]>?
     // https://{API_DOMAIN}/v1/user/mycourses/
     func getMyCourses() async -> ServerResponse<[Course]>?
+    // https://{API_DOMAIN}/v1/course/updateRating
+    func updateCourseRating(model: Rating) async -> ServerResponse<[Course]>?
 }
 
 protocol EventAPIProtocol {
