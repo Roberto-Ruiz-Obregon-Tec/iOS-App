@@ -192,7 +192,7 @@ struct CourseDetailView: View {
                 NavigationLink {
                     PaymentSheetView()
                 } label: {
-                    Text("Inscribeme")
+                    Text("Inscribirme")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding(4)
@@ -200,6 +200,7 @@ struct CourseDetailView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
                 .foregroundStyle(Color.white)
+                .padding()
                 
                 Spacer()
             }

@@ -31,6 +31,9 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                
+                Spacer()
+                
                 // User profile image
                 Image(systemName: "person.circle")
                     .resizable()
@@ -57,10 +60,29 @@ struct ProfileView: View {
                     }
                 }
                 
+                // Logout button
+                Button(action: {
+                    // Logout action
+                    logoutViewModel.getLogout()
+                    goLogin()
+                }) {
+                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                        .foregroundColor(Color.red)
+                    Text("Cerrar sesión")
+                        .foregroundColor(Color.red)
+                        .cornerRadius(20)
+                        .font(.headline)
+                        .padding(2)
+                }
+                
+                Divider()
+                    .padding()
+                
                 // Section header for displaying enrolled courses
                 Text("Mis Cursos")
-                    .font(.largeTitle)
-                    .fontWeight(.black)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.secondary)
                 
                 ScrollView {
                     
@@ -83,20 +105,6 @@ struct ProfileView: View {
                     }
                 }
                 
-                // Logout button
-                Button(action: {
-                    // Logout action
-                    logoutViewModel.getLogout()
-                    goLogin()
-                }) {
-                    Image(systemName: "rectangle.portrait.and.arrow.right")
-                        .foregroundColor(Color.red)
-                    Text("Cerrar sesión")
-                        .foregroundColor(Color.red)
-                        .cornerRadius(20)
-                        .font(.headline)
-                        .padding(2)
-                }
             }
         }
     }
