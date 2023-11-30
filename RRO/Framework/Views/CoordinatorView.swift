@@ -9,7 +9,9 @@ import SwiftUI
 import FlowStacks
 
 struct CoordinatorView: View {
-    @State private var routes: Routes<Screen> = [.root(.login)]
+    @State private var routes: Routes<Screen> = [.root(
+        LocalService.shared.getCurrentSession() != nil ? .menu : .login
+    )]
     
     enum Screen {
         case login
@@ -39,6 +41,10 @@ struct CoordinatorView: View {
                     
                 case .menu:
                     MenuView(goLogin: { routes.presentCover(.login) })
+                }
+            }.onAppear {
+                if LocalService.shared.getCurrentSession() != nil {
+                    routes.presentCover(.menu)
                 }
             }
         }
