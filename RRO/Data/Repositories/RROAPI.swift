@@ -58,7 +58,7 @@ protocol EditProfileAPIProtocol{
 
 protocol ScholarshipAPIProtocol {
     // https://{API_DOMAIN}/v1/scholarship?limit={Int}&offset={Int}
-    func getScholarshipList(limit: Int, offset: Int) async -> ServerResponse<[Scholarship]>?
+    func getScholarshipList(limit: Int, offset: Int) async -> ServerResponse<ScholarshipData>?
     // https://{API_DOMAIN}/v1/scholarship/{id}
     func getScholarship(id: String) async -> ServerResponse<Scholarship>?
 }

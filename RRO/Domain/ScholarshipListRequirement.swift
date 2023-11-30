@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ScholarshipListRequirementProtocol {
-    func getScholarshipList(limit: Int, offset: Int) async -> ServerResponse<[Scholarship]>?
+    func getScholarshipList(limit: Int, offset: Int) async -> ServerResponse<ScholarshipData>?
 }
 
 class ScholarshipListRequirement: ScholarshipListRequirementProtocol {
@@ -19,7 +19,7 @@ class ScholarshipListRequirement: ScholarshipListRequirementProtocol {
         self.dataRepository = dataRepository
     }
     
-    func getScholarshipList(limit: Int, offset: Int) async -> ServerResponse<[Scholarship]>? {
+    func getScholarshipList(limit: Int, offset: Int) async -> ServerResponse<ScholarshipData>? {
         return await dataRepository.getScholarshipList(limit: limit, offset: offset)
     }
 }

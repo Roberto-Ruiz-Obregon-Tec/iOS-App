@@ -15,7 +15,7 @@ class ScholarshipRepository: ScholarshipAPIProtocol {
         self.netService = netService
     }
     
-    func getScholarshipList(limit: Int, offset: Int) async -> ServerResponse<[Scholarship]>? {
+    func getScholarshipList(limit: Int, offset: Int) async -> ServerResponse<ScholarshipData>? {
         let params = [
             "limit": limit,
             "offset": offset

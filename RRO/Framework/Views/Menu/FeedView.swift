@@ -30,7 +30,7 @@ struct FeedView: View {
 }
 
 struct TabBarViewPublicaciones: View {
-    var tabVarList:[String] = ["Publicaciones", "Eventos", "Compañías"]
+    var tabVarList:[String] = ["Publicaciones", "Eventos", "Empresas"]
     @Binding var currentTab : Int
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.colorScheme) var textColor
