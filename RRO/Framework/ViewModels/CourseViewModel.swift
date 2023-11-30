@@ -11,9 +11,11 @@ class CourseViewModel: ObservableObject {
     @Published var courseList = [Course]()
     
     var courseListRequirement: CourseListRequirementProtocol
+    var createCourseCommentRequirement : CreateCourseCommentProtocol
     
-    init(courseListRequirement: CourseListRequirementProtocol = CourseListRequirement.shared) {
+    init(courseListRequirement: CourseListRequirementProtocol = CourseListRequirement.shared, createCourseCommentRequirement: CreateCourseCommentRequirement = CreateCourseCommentRequirement.shared) {
         self.courseListRequirement = courseListRequirement
+        self.createCourseCommentRequirement = createCourseCommentRequirement
     }
     
     @MainActor
@@ -25,6 +27,17 @@ class CourseViewModel: ObservableObject {
             print("ModelView: Received course data")
         } else {
             print("Failed to fetch course data")
+        }
+    }
+    
+    @MainActor
+    func createCourseComment(courseId: String, comment: String) async {
+        let result = await createCourseCommentRequirement.createCourseComment(courseId : courseId, comment: comment)
+        
+        if result?.status == "success" {
+            print("Comentario hecho con éxito")
+        } else {
+            print("Error al comentar")
         }
     }
 }

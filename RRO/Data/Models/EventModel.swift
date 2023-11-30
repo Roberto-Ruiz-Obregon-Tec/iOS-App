@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+ 
 /// A model representing an event.
 struct Event: Codable, Identifiable {
     var id: String

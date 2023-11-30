@@ -70,7 +70,7 @@ class PublicationViewModel : ObservableObject { // Inicializamos una clase hered
         let result = await createPublicationCommentRequirement.createPublicationComment(publicationId : publicationId, comment: comment)
         
         if result?.status == "success" {
-            print("Comentario hecho con exito")
+            print("Comentario hecho con éxito")
         } else {
             print("Error al comentar")
         }

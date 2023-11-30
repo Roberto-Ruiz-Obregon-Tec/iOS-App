@@ -23,7 +23,7 @@ class ScholarshipViewModel: ObservableObject {
     func getScholarsipList() async {
         let result = await scholarshipListRequirement.getScholarshipList(limit: 32, offset: 0)
         if let res = result {
-            self.scholarshipList = res.data ?? self.scholarshipList
+            self.scholarshipList = res.data?.documents ?? self.scholarshipList
         }
     }
 }

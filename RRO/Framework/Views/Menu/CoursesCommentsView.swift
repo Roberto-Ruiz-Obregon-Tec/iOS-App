@@ -11,8 +11,10 @@ import FlowStacks
 import SDWebImageSwiftUI
 
 struct CourseCommentsView: View {
+    @StateObject var courseViewModel = CourseViewModel()
     let course : Course
     @State var comment: String = ""
+    @State var success : Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -48,7 +50,44 @@ struct CourseCommentsView: View {
                 }.frame(maxWidth: .infinity, alignment: .center)
             }
                 
-                      
+            Divider()
+                .padding([.top], 11)
+                .padding([.bottom], 8)
+                
+            HStack {
+                TextField(text: $comment) {
+                    Text("Comentario")
+                        .font(.body)
+                        .foregroundStyle(.secondary)
+                }.padding([.top, .bottom], 8)
+                 .padding([.leading], 16)
+                 .overlay(
+                     RoundedRectangle(cornerRadius: 16)
+                         .stroke(Color.gray, lineWidth: 1)
+                 )
+                Button (action : {
+                    Task {
+                        if comment.trimmingCharacters(in: .whitespacesAndNewlines).count > 0{
+                            await courseViewModel.createCourseComment(courseId: course.id, comment: comment)
+                            
+                            comment = ""
+                            success = true
+                            
+                        }
+                    }
+                    
+                }, label : {
+                    Image(systemName: "paperplane.fill")
+                        .foregroundColor(.red)
+                        .font(.system(size: 28))
+                })
+                    .alert(isPresented: $success, content: {
+                        Alert(
+                            title: Text("Éxito"),
+                            message: Text("El comentario está en espera de revisión")
+                        )
+                    })
+            }.frame(maxWidth: .infinity)
                 
         }.padding([.top, .bottom, .leading, .trailing], 16)
     }

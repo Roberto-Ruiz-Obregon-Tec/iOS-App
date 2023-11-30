@@ -14,7 +14,7 @@ struct CoursesView: View {
 
     var body: some View {
         VStack {
-            TextField("Buscar talleres", text: $filterText)
+            TextField("Buscar cursos", text: $filterText)
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)
                 .padding(.leading, 20)
@@ -39,6 +39,11 @@ struct CoursesView: View {
                 ScrollView {
                     ForEach(courseViewModel.courseList.filter {
                         (filterText.isEmpty || $0.name.folding(options: .diacriticInsensitive, locale: .current).lowercased().contains(filterText.folding(options: .diacriticInsensitive, locale: .current).lowercased())) && $0.remaining > 0
+                    }.filter { course in
+                        // Add your new date filter here
+                        guard let startDate = course.startDate?.toISODate() else { return true }
+                        let nextDay = Calendar.current.date(byAdding: .day, value: 1, to: startDate) ?? startDate
+                        return nextDay > Date.now
                     }) { course in
                         CourseInfoCardView(course: course)
                     }
@@ -51,13 +56,6 @@ struct CoursesView: View {
                 await courseViewModel.getCourseList()
             }
         }
+        
     }
 }
-
-    
-//#Preview {
-//    CoursesView()
-//}
-
-
-
