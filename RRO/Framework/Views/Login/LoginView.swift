@@ -45,8 +45,6 @@ struct LoginView: View {
             }
             
             
-            
-            
             VStack{
                 
                 VStack(alignment: .leading, spacing: 0){
@@ -104,16 +102,6 @@ struct LoginView: View {
                           message: Text(viewModel.errorMessage),
                           dismissButton: .default(Text("OK")))
                 }
-
-                
-                Button {
-                    goRestore()
-                } label: {
-                    Text("Olvidé mi contraseña")
-                }.padding()
-                    .foregroundColor(.gray)
-                
-                Text("o")
                 
                 Button {
                     goRegister()
@@ -121,6 +109,8 @@ struct LoginView: View {
                     Text("Registrarme")
                 }.padding()
                     .foregroundColor(.gray)
+                
+                Spacer()
             }
         }
     }
