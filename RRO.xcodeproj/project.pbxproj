@@ -542,9 +542,9 @@
 				4777A67A2AEA348C00FB4388 /* LoginRepository.swift */,
 				EEB604DC2AF080730088A355 /* SigninRepository.swift */,
 				F64162C02AF00B0400B25E0E /* EventRepository.swift */,
-				BD5C22072AEF3D7B0002D85E /* FundationInformationRepository.swift */,
 				470069C62AF3F86D006BC4FD /* LogoutRepository.swift */,
 				031D18B22AF9512300372171 /* CompanyRepository.swift */,
+				BD5C22072AEF3D7B0002D85E /* FundationInformationRepository.swift */,
 				82D7793D2B07C37D00121AB4 /* EditProfileRepository.swift */,
 				47E4715C2B05996A00B0B9C3 /* PublicationRepository.swift */,
 			);

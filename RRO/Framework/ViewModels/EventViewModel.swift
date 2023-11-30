@@ -26,7 +26,7 @@ class EventViewModel: ObservableObject {
     func getEvents() async {
         // Fetch events based on requirements
         if let result = await eventListRequirement.getEventList(limit: 32, offset: 0) {
-            self.eventList = result.data ?? self.eventList
+            self.eventList = result.data?.documents ?? self.eventList
         }
     }
 }
