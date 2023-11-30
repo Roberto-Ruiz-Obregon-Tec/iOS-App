@@ -53,4 +53,20 @@ class CourseRepository: CourseAPIProtocol {
         
         return await netService.self.put(url: URL(string: "\(API.base)\(API.routes.courseRating)")!, body: body)
     }
+    
+    /// Función para publicar un comentario a un curso.
+    ///
+    /// - Parámetros:
+    ///   - courseId: Contiene el id del curso.
+    ///   - comment: Contiene el comentario.
+    ///
+    /// - Return: Response status.
+    func createCourseComment(courseId: String, comment: String) async -> ServerResponse<Course>? {
+        let body = [
+            "course": courseId,
+            "comment": comment
+        ]
+        
+        return await netService.self.post(url: URL(string: "\(API.base)\(API.routes.createCourseComment)")!, body: body)
+    }
 }

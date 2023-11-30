@@ -74,9 +74,7 @@ struct CommentView: View {
                             comment = ""
                             success = true
                             
-                        } else {
                         }
-                        
                     }
                     
                 }, label : {
