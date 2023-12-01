@@ -26,74 +26,79 @@ struct PaymentSheetView: View {
     var body: some View {
         
         ScrollView {
+            Group {
+                WebImage(url: URL(string: course.courseImage))
+                    .placeholder(Image("DefaultImage").resizable())
+                    .resizable()
+                    .cornerRadius(16)
+                    .scaledToFit()
+                    .padding(.top)
+                
+                Text("Inscripcion para:")
+                    .font(.title)
+                    .fontWeight(.bold)
+                
+                Text(course.name)
+                    .font(.title2)
+                    .fontWeight(.bold)
+            }
             
-            WebImage(url: URL(string: course.courseImage))
-                .placeholder(Image("DefaultImage").resizable())
-                .resizable()
-                .cornerRadius(16)
-                .scaledToFit()
-                .padding(.top)
-            
-            Text("Inscripcion para:")
-                .font(.title)
-                .fontWeight(.bold)
-            
-            Text(course.name)
-                .font(.title2)
-                .fontWeight(.bold)
             
             Divider()
             
-            HStack {
-                Text("Por favor realice una transferencia a la siguiente cuenta y suba una foto de su comprobante de pago.")
-                    .font(.headline)
+            Group {
+                HStack {
+                    Text("Por favor realice una transferencia a la siguiente cuenta y suba una foto de su comprobante de pago.")
+                        .font(.headline)
+                        
+                    Spacer()
+                }
+                
+                Divider()
+                
+                HStack {
+                    Text("Banco")
+                        .fontWeight(.bold)
+                    Spacer()
+                    Text("Nombre del banco")
+                        .foregroundStyle(.secondary)
+                }
+                
+                Divider()
+                
+                HStack {
+                    Text("Importe")
+                        .fontWeight(.bold)
                     
-                Spacer()
-            }
-            
-            Divider()
-            
-            HStack {
-                Text("Banco")
-                    .fontWeight(.bold)
-                Spacer()
-                Text("Nombre del banco")
-                    .foregroundStyle(.secondary)
-            }
-            
-            Divider()
-            
-            HStack {
-                Text("Importe")
-                    .fontWeight(.bold)
+                    Spacer()
+                    
+                    Text("$" + String(course.cost) + " MXN")
+                        .foregroundStyle(.secondary)
+                }
                 
-                Spacer()
+                Divider()
                 
-                Text("$" + String(course.cost) + " MXN")
-                    .foregroundStyle(.secondary)
+                HStack {
+                    Text("Cuenta")
+                        .fontWeight(.bold)
+                    Spacer()
+                    Text("XXXXXXXXXX")
+                        .foregroundStyle(.secondary)
+                }
+                
+                Divider()
+                
+                HStack {
+                    Text("Sucursal")
+                        .fontWeight(.bold)
+                    Spacer()
+                    Text("XXXX")
+                        .foregroundStyle(.secondary)
+                }
+                
+                Divider()
+                
             }
-            
-            Divider()
-            
-            HStack {
-                Text("Cuenta")
-                    .fontWeight(.bold)
-                Spacer()
-                Text("XXXXXXXXXX")
-                    .foregroundStyle(.secondary)
-            }
-            
-            Divider()
-            
-            HStack {
-                Text("Sucursal")
-                    .fontWeight(.bold)
-                Spacer()
-                Text("XXXX")
-                    .foregroundStyle(.secondary)
-            }
-            
-            Divider()
             
             HStack {
                 Text("CLAVE")
