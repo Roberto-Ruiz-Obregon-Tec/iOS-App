@@ -111,6 +111,7 @@
 		EEDD93FE2AE974A20066AD71 /* ScholarshipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD93FD2AE974A20066AD71 /* ScholarshipsView.swift */; };
 		EEE4AC332AF1CB20009F8E89 /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4AC322AF1CB20009F8E89 /* LocalService.swift */; };
 		EEE4AC352AF1F73B009F8E89 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE4AC342AF1F73B009F8E89 /* NetworkError.swift */; };
+		F62773172B198A12004EF38A /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62773162B198A12004EF38A /* PrivacyPolicyView.swift */; };
 		F64162BC2AF005B100B25E0E /* EventInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64162BB2AF005B100B25E0E /* EventInfoCardView.swift */; };
 		F64162BE2AF00A8000B25E0E /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64162BD2AF00A7F00B25E0E /* EventViewModel.swift */; };
 		F64162C12AF00B0400B25E0E /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64162C02AF00B0400B25E0E /* EventRepository.swift */; };
@@ -241,6 +242,7 @@
 		EEDD93FD2AE974A20066AD71 /* ScholarshipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipsView.swift; sourceTree = "<group>"; };
 		EEE4AC322AF1CB20009F8E89 /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
 		EEE4AC342AF1F73B009F8E89 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F62773162B198A12004EF38A /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		F64162BB2AF005B100B25E0E /* EventInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoCardView.swift; sourceTree = "<group>"; };
 		F64162BD2AF00A7F00B25E0E /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		F64162C02AF00B0400B25E0E /* EventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepository.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		88BDDD932AEAEF6F00978F31 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				478932CE2B056FD60071F839 /* PublicationCardView.swift */,
 				48DF02AE2AF1C31A005DE385 /* CertificationInfoCardView.swift */,
 				88BDDD942AEAEF8500978F31 /* ProgramInfoCardView.swift */,
 				E19C90322B07B0D700E65202 /* CompanyInfoCardView.swift */,
@@ -289,10 +292,10 @@
 				AA16DD9A2AEF02D600688D0B /* CourseInfoCardView.swift */,
 				822E318B2AF41DD700822067 /* ScholarshipInfoCardView.swift */,
 				E175A8F02B057EFB00FD70F4 /* MyCourseInfoCardView.swift */,
-				478932CE2B056FD60071F839 /* PublicationCardView.swift */,
 				47D08D9D2B080E7B0082F385 /* ExpandableText.swift */,
 				9DB442CE2B117D5D00AEC6F0 /* CommentCardView.swift */,
 				AA930D402B1249C40068F36E /* CourseCommentCardView.swift */,
+				F62773162B198A12004EF38A /* PrivacyPolicyView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				F64162C72AF00CB000B25E0E /* EventListView.swift in Sources */,
 				F64162BE2AF00A8000B25E0E /* EventViewModel.swift in Sources */,
 				EEDD93F62AE8E8BC0066AD71 /* ScholarshipRepository.swift in Sources */,
+				F62773172B198A12004EF38A /* PrivacyPolicyView.swift in Sources */,
 				48DF029F2AF1BFFE005DE385 /* CertificationRepository.swift in Sources */,
 				EEAA9D412AE2E2D900282A82 /* ImagePicker.swift in Sources */,
 				EEDD93F42AE8E7EC0066AD71 /* ScholarshipInfoRequirement.swift in Sources */,
