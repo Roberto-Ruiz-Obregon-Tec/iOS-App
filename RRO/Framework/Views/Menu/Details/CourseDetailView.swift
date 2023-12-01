@@ -196,7 +196,7 @@ struct CourseDetailView: View {
                                     await viewModel.createCourseInscription(courseId: course.id, voucher: nil)
                                 }
                             } else {
-                                
+                                // TODO: Decir que ya no hay espacio
                             }
                         } label: {
                             Text("Inscribeme")
@@ -215,7 +215,7 @@ struct CourseDetailView: View {
                     } else {
                         NavigationLink {
                             if course.remaining > 0 {
-                                PaymentSheetView()
+                                PaymentSheetView(course: course)
                                 
                             } else {
                                 
