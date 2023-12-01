@@ -25,7 +25,8 @@ struct PaymentSheetView: View {
     @StateObject var viewModel = CourseViewModel()
     var body: some View {
         
-        VStack {
+        ScrollView {
+            
             WebImage(url: URL(string: course.courseImage))
                 .placeholder(Image("DefaultImage").resizable())
                 .resizable()
@@ -33,34 +34,72 @@ struct PaymentSheetView: View {
                 .scaledToFit()
                 .padding(.top)
             
+            Text("Inscripcion para:")
+                .font(.title)
+                .fontWeight(.bold)
             
-            Group {
-                HStack {
-                    Text(course.name)
-                        .font(.title)
-                        .fontWeight(.bold)
+            Text(course.name)
+                .font(.title2)
+                .fontWeight(.bold)
+            
+            Divider()
+            
+            HStack {
+                Text("Por favor realice una transferencia a la siguiente cuenta y suba una foto de su comprobante de pago.")
+                    .font(.headline)
                     
-                    Spacer()
-                }
-                HStack {
-                    Image(systemName: "person.fill")
-                    Text(course.speaker)
-                        .fontWeight(.bold)
-                    Spacer()
-                    Text(String(course.rating))
-                    Image(systemName: "star.fill")
-                }
+                Spacer()
             }
             
             Divider()
             
             HStack {
-                Text("Costo")
+                Text("Banco")
+                    .fontWeight(.bold)
+                Spacer()
+                Text("Nombre del banco")
+                    .foregroundStyle(.secondary)
+            }
+            
+            Divider()
+            
+            HStack {
+                Text("Importe")
                     .fontWeight(.bold)
                 
                 Spacer()
                 
                 Text("$" + String(course.cost) + " MXN")
+                    .foregroundStyle(.secondary)
+            }
+            
+            Divider()
+            
+            HStack {
+                Text("Cuenta")
+                    .fontWeight(.bold)
+                Spacer()
+                Text("XXXXXXXXXX")
+                    .foregroundStyle(.secondary)
+            }
+            
+            Divider()
+            
+            HStack {
+                Text("Sucursal")
+                    .fontWeight(.bold)
+                Spacer()
+                Text("XXXX")
+                    .foregroundStyle(.secondary)
+            }
+            
+            Divider()
+            
+            HStack {
+                Text("CLAVE")
+                    .fontWeight(.bold)
+                Spacer()
+                Text("XXXX XXXX XXXX XXXXXX")
                     .foregroundStyle(.secondary)
             }
             
@@ -119,7 +158,7 @@ struct PaymentSheetView: View {
                         .padding(4)
                 }
                 .buttonStyle(.borderedProminent)
-                .tint(.red)
+                .tint(.blue)
                 .foregroundStyle(Color.white)
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text("Éxito"),

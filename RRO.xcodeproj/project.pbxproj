@@ -973,7 +973,7 @@
 				DEVELOPMENT_TEAM = QPA9Z37FK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) Needs access to the camera to take pictures of vouchers";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) Necesita acceso a la cámara para tomar fotos de tus comprobantes de pago.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1005,7 +1005,7 @@
 				DEVELOPMENT_TEAM = QPA9Z37FK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) Needs access to the camera to take pictures of vouchers";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) Necesita acceso a la cámara para tomar fotos de tus comprobantes de pago.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
