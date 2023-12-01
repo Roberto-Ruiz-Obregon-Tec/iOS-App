@@ -16,17 +16,12 @@ struct CourseInfoCardView: View {
     var body: some View {
         NavigationStack{
             VStack {
-                if course.courseImage != "" {
-                    WebImage(url: URL(string: course.courseImage))
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                } else {
-                    Image("DefaultImage")
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                }
+                WebImage(url: URL(string: course.courseImage))
+                    .placeholder(Image("DefaultImage").resizable())
+                    .resizable()
+                    .cornerRadius(16)
+                    .scaledToFit()
+                
                 Group {
                     HStack {
                         Text(course.name)

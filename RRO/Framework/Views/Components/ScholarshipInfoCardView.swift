@@ -13,18 +13,12 @@ struct ScholarshipInfoCardView: View {
     var body: some View {
         NavigationStack{
             VStack {
-                if scholarship.image != "" {
-                    WebImage(url: URL(string: scholarship.image))
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                } else {
-                    Image("DefaultImage")
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                }
-                
+                WebImage(url: URL(string: scholarship.image))
+                    .placeholder(Image("DefaultImage").resizable())
+                    .resizable()
+                    .cornerRadius(16)
+                    .scaledToFit()
+
                 HStack {
                     Text(scholarship.name)
                         .font(.title)

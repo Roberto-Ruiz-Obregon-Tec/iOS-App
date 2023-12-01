@@ -69,4 +69,13 @@ class CourseRepository: CourseAPIProtocol {
         
         return await netService.self.post(url: URL(string: "\(API.base)\(API.routes.createCourseComment)")!, body: body)
     }
+    
+    func createCourseInscription(courseId: String, voucher: String?) async -> ServerResponse<String>? {
+        let body = [
+            "courseId": courseId,
+            "voucher": voucher
+        ]
+        
+        return await netService.self.post(url: URL(string: "\(API.base)\(API.routes.inscribeToCourse)")!, body: body)
+    }
 }

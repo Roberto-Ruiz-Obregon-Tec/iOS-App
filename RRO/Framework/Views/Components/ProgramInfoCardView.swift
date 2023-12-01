@@ -15,17 +15,13 @@ struct ProgramInfoCardView: View {
         NavigationStack {
             VStack {
                 // Muestra la imagen del programa si está disponible, de lo contrario, muestra una imagen predeterminada.
-                if program.programImage != "" {
-                    WebImage(url: URL(string: program.programImage))
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                } else {
-                    Image("DefaultImage")
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                }
+                
+                WebImage(url: URL(string: program.programImage))
+                    .placeholder(Image("DefaultImage").resizable())
+                    .resizable()
+                    .cornerRadius(16)
+                    .scaledToFit()
+                
                 // Muestra el nombre del programa en un tamaño de fuente grande y negrita.
                 HStack {
                     Text(program.name)

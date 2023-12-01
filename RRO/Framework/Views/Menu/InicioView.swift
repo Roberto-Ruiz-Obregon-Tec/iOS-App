@@ -23,8 +23,6 @@ struct InicioView: View {
                     ProgramListView().tag(1)
                     CertificationListView().tag(2)
                     ScholarshipsView().tag(3)
-                    
-                    
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 .edgesIgnoringSafeArea(.all)

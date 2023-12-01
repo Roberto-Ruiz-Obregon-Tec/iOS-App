@@ -22,17 +22,14 @@ struct MyCourseDetailView: View {
             ScrollView{
                 VStack(spacing: 8) {
                         Group{
-                            if course.courseImage != "" {
-                                WebImage(url: URL(string: course.courseImage))
-                                    .resizable()
-                                    .cornerRadius(16)
-                                    .scaledToFit()
-                            } else {
-                                Image("DefaultImage")
-                                    .resizable()
-                                    .cornerRadius(16)
-                                    .scaledToFit()
-                            }
+                            
+                            WebImage(url: URL(string: course.courseImage))
+                                .placeholder(Image("DefaultImage").resizable())
+                                .resizable()
+                                .cornerRadius(16)
+                                .scaledToFit()
+                                .padding(.top)
+                            
                             HStack {
                                 Text(course.name)
                                     .font(.title)

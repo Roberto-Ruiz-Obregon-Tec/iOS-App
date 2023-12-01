@@ -14,7 +14,7 @@ extension String {
         formatter.timeZone = TimeZone.current
         
         guard let formatted = formatter.date(from: self) else {
-            debugPrint("\nERROR decoding string to date")
+            debugPrint("ERROR decoding string to date")
             return Date()
         }
         
