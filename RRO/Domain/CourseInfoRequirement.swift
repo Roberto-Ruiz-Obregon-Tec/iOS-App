@@ -9,6 +9,8 @@ import Foundation
 
 protocol CourseInfoRequirementProtocol {
     func getCourse(id:String) async -> ServerResponse<[Course]>?
+    
+    func createCourseInscription(courseId: String, voucher: String?) async -> ServerResponse<String>?
 }
 
 
@@ -22,5 +24,9 @@ class CourseInfoRequirement: CourseInfoRequirementProtocol {
     
     func getCourse(id:String) async -> ServerResponse<[Course]>? {
         return await dataRepository.getCourse(id: id)
+    }
+    
+    func createCourseInscription(courseId: String, voucher: String?) async -> ServerResponse<String>? {
+        return await dataRepository.createCourseInscription(courseId: courseId, voucher: voucher)
     }
 }

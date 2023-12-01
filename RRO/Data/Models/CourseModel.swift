@@ -50,8 +50,3 @@ struct Rating: Codable {
     }
 }
 
-struct CourseResponse<T: Codable>: Codable {
-    var status: String
-    var results: Int?
-    var data: [Course]
-}

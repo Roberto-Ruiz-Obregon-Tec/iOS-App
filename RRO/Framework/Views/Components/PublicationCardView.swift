@@ -52,17 +52,13 @@ struct PublicationCardView: View {
                 
                 ExpandableText(text: publication.description, limit : 60)
                 
-                if publication.image != "" {
-                    WebImage(url: URL(string: publication.image))
-                        .resizable()
-                        .cornerRadius(4)
-                        .scaledToFit()
-                } else {
-                    Image("DefaultImage")
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                }
+                
+                WebImage(url: URL(string: publication.image))
+                    .placeholder(Image("DefaultImage").resizable())
+                    .resizable()
+                    .cornerRadius(4)
+                    .scaledToFit()
+                
                 HStack {
                     Image(systemName: "hand.thumbsup.circle.fill")
                         .resizable()

@@ -16,17 +16,13 @@ struct ScholarshipDetailView: View {
         ScrollView {
             
             VStack(spacing: 8) {
-                if scholarship.image != "" {
-                    WebImage(url: URL(string: scholarship.image))
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                } else {
-                    Image("DefaultImage")
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                }
+                WebImage(url: URL(string: scholarship.image))
+                    .placeholder(Image("DefaultImage").resizable())
+                    .resizable()
+                    .cornerRadius(16)
+                    .scaledToFit()
+                    .padding(.top)
+                
                 HStack {
                     Text(scholarship.name)
                         .font(.title)

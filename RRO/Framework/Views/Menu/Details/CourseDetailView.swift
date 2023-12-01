@@ -9,22 +9,20 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct CourseDetailView: View {
+    @StateObject var viewModel = CourseViewModel()
     var course: Course
     var body: some View {
         NavigationStack{
             ScrollView{
                 VStack(spacing: 8) {
-                    if course.courseImage != "" {
-                        WebImage(url: URL(string: course.courseImage))
-                            .resizable()
-                            .cornerRadius(16)
-                            .scaledToFit()
-                    } else {
-                        Image("DefaultImage")
-                            .resizable()
-                            .cornerRadius(16)
-                            .scaledToFit()
-                    }
+                    
+                    WebImage(url: URL(string: course.courseImage))
+                        .placeholder(Image("DefaultImage").resizable())
+                        .resizable()
+                        .cornerRadius(16)
+                        .scaledToFit()
+                        .padding(.top)
+                    
                     
                     Group {
                         HStack {
@@ -54,9 +52,9 @@ struct CourseDetailView: View {
                         HStack {
                             
                             
-                            Text(course.startDate!.toISODate(), format: .dateTime.day().month().year())
+                            Text(course.startDate!.toISODate(), format: .dateTime.day().month())
                             Text("-")
-                            Text(course.endDate!.toISODate(), format: .dateTime.day().month().year())
+                            Text(course.endDate!.toISODate(), format: .dateTime.day().month())
                             
                             
                             
@@ -189,18 +187,55 @@ struct CourseDetailView: View {
                     }.padding(.vertical)
                 }.padding(.horizontal)
                 
-                NavigationLink {
-                    PaymentSheetView()
-                } label: {
-                    Text("Inscribirme")
+                if course.remaining > 0 {
+                    if course.status == "Gratuito" {
+                        
+                        Button {
+                            if course.remaining > 0 {
+                                Task {
+                                    await viewModel.createCourseInscription(courseId: course.id, voucher: nil)
+                                }
+                            } else {
+                                
+                            }
+                        } label: {
+                            Text("Inscribeme")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                                .padding(4)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.red)
+                        .foregroundStyle(Color.white)
+                        .alert(isPresented: $viewModel.showAlert) {
+                            Alert(title: Text(viewModel.messageTitle),
+                                  message: Text(viewModel.messageBody),
+                                  dismissButton: .default(Text("OK")))
+                        }
+                    } else {
+                        NavigationLink {
+                            if course.remaining > 0 {
+                                PaymentSheetView()
+                                
+                            } else {
+                                
+                            }
+                        } label: {
+                            Text("Inscribeme")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                                .padding(4)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.red)
+                        .foregroundStyle(Color.white)
+                    }
+                } else {
+                    Text("No hay cupo")
                         .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding(4)
+                        .tint(.red)
+                        .foregroundStyle(Color.white)
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(.red)
-                .foregroundStyle(Color.white)
-                .padding()
                 
                 Spacer()
             }

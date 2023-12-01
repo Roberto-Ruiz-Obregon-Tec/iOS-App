@@ -16,17 +16,13 @@ struct MyCourseInfoCardView: View {
         NavigationStack {
             VStack {
                 // Muestra una imagen del curso si está disponible, de lo contrario, muestra una imagen por defecto
-                if course.courseImage != "" {
-                    WebImage(url: URL(string: course.courseImage))
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                } else {
-                    Image("DefaultImage")
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                }
+                
+                WebImage(url: URL(string: course.courseImage))
+                    .placeholder(Image("DefaultImage").resizable())
+                    .resizable()
+                    .cornerRadius(16)
+                    .scaledToFit()
+                
                 
                 HStack {
                     // Muestra el nombre del curso en negrita

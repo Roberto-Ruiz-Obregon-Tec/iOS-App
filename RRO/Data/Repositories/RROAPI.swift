@@ -34,6 +34,7 @@ struct API {
         static let publication = "/publication"
         static let likePublication = "/publication/like"
         static let createPublicationComment = "/publication/comment/create"
+        static let inscribeToCourse = "/inscription/create"
     }
 }
 
@@ -82,6 +83,8 @@ protocol CourseAPIProtocol {
     func updateCourseRating(model: Rating) async -> ServerResponse<[Course]>?
     // https://{API_DOMAIN}/v1/course/comment/create
     func createCourseComment(courseId: String, comment: String) async -> ServerResponse<Course>?
+    // https://{API_DOMAIN}/v1/course/inscription/create
+    func createCourseInscription(courseId: String, voucher: String?) async -> ServerResponse<String>?
 }
 
 protocol EventAPIProtocol {
