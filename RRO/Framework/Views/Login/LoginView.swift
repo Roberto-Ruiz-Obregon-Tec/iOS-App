@@ -111,6 +111,14 @@ struct LoginView: View {
                     .foregroundColor(.gray)
                 
                 Spacer()
+                
+                NavigationLink(destination: PrivacyPolicyView()) {
+                        (Text("Consulta nuestra ") + Text("política de privacidad.").underline())
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.secondary)
+                            .font(.subheadline)
+                            .padding()
+                }
             }
         }
     }
