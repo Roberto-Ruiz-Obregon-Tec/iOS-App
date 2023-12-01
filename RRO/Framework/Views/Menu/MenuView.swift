@@ -23,10 +23,19 @@ struct MenuView: View {
                 Image(systemName: "envelope")
                 Text("FRRO")
             }
-            ProfileView(logoutViewModel: LogoutViewModel(loginViewModel: LoginViewModel()), goLogin: goLogin).tabItem {
+            ProfileView(viewModel: EditProfileViewModel(), logoutViewModel: LogoutViewModel(loginViewModel: LoginViewModel()), goLogin: goLogin).tabItem {
                 Image(systemName: "person")
                 Text("Perfil")
             }
+        }.onAppear {
+            // correct the transparency bug for Tab bars
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithOpaqueBackground()
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+            // correct the transparency bug for Navigation bars
+            let navigationBarAppearance = UINavigationBarAppearance()
+            navigationBarAppearance.configureWithOpaqueBackground()
+            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         }
     }
 }

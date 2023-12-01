@@ -9,22 +9,20 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct CourseDetailView: View {
+    @StateObject var viewModel = CourseViewModel()
     var course: Course
     var body: some View {
         NavigationStack{
             ScrollView{
                 VStack(spacing: 8) {
-                    if course.courseImage != "" {
-                        WebImage(url: URL(string: course.courseImage))
-                            .resizable()
-                            .cornerRadius(16)
-                            .scaledToFit()
-                    } else {
-                        Image("DefaultImage")
-                            .resizable()
-                            .cornerRadius(16)
-                            .scaledToFit()
-                    }
+                    
+                    WebImage(url: URL(string: course.courseImage))
+                        .placeholder(Image("DefaultImage").resizable())
+                        .resizable()
+                        .cornerRadius(16)
+                        .scaledToFit()
+                        .padding(.top)
+                    
                     
                     Group {
                         HStack {
@@ -54,9 +52,9 @@ struct CourseDetailView: View {
                         HStack {
                             
                             
-                            Text(course.startDate!.toISODate(), format: .dateTime.day().month().year())
+                            Text(course.startDate!.toISODate(), format: .dateTime.day().month())
                             Text("-")
-                            Text(course.endDate!.toISODate(), format: .dateTime.day().month().year())
+                            Text(course.endDate!.toISODate(), format: .dateTime.day().month())
                             
                             
                             
@@ -187,24 +185,57 @@ struct CourseDetailView: View {
                         }
                         
                     }.padding(.vertical)
-                    
-                    
-                    
                 }.padding(.horizontal)
                 
-               
-                
-                NavigationLink {
-                    PaymentSheetView()
-                } label: {
-                    Text("Inscribeme")
+                if course.remaining > 0 {
+                    if course.status == "Gratuito" {
+                        
+                        Button {
+                            if course.remaining > 0 {
+                                Task {
+                                    await viewModel.createCourseInscription(courseId: course.id, voucher: "Es gratuito")
+                                }
+                            } else {
+                                // TODO: Decir que ya no hay espacio
+                            }
+                        } label: {
+                            Text("Inscribeme")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                                .padding(4)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.red)
+                        .foregroundStyle(Color.white)
+                        .alert(isPresented: $viewModel.showAlert) {
+                            Alert(title: Text(viewModel.messageTitle),
+                                  message: Text(viewModel.messageBody),
+                                  dismissButton: .default(Text("OK")))
+                        }
+                    } else {
+                        NavigationLink {
+                            if course.remaining > 0 {
+                                PaymentSheetView(course: course)
+                                
+                            } else {
+                                
+                            }
+                        } label: {
+                            Text("Inscribeme")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                                .padding(4)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.red)
+                        .foregroundStyle(Color.white)
+                    }
+                } else {
+                    Text("No hay cupo")
                         .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding(4)
+                        .tint(.red)
+                        .foregroundStyle(Color.white)
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(.red)
-                .foregroundStyle(Color.white)
                 
                 Spacer()
             }
@@ -213,8 +244,4 @@ struct CourseDetailView: View {
 }
 
 
-struct CourseDetailViewPreviews: PreviewProvider{
-    static var previews: some View{
-        CourseDetailView(course: Course(id:UUID().uuidString, name: "Curso de Escritura", description: "Lleva tus habilidades para crear artesanias al siguiente nivel, aprende a pintar con acuarelas y tecnicas de dibujo.",speaker: "Tu mama", startDate: Date.now.toString(), endDate: Date.now.toString(), schedule: "16:00", modality: "Remoto", postalCode: 38193, location: "Calle Max Henriquez Ureña #88, apartamento 401jik dxhtdt hdiuhtndgiuhid cshdgifuide uhinntihukgicfic dicg cgdicgidc c cgihd i d d cgicg cgicgi c", status: "De pago", cost: 1200, courseImage: "https://www.grupocibernos.com/hubfs/gestion-de-proyectos-empresariales.jpg", capacity: 1, remaining: 15, rating: 3.4, meetingCode: "hola", accessCode: "ahol", focus: []))
-    }
-}
+

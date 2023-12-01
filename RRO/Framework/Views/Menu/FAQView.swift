@@ -18,7 +18,7 @@ struct FAQView: View {
     
     var body: some View {
         VStack() {
-            Text(info?.nombre ?? "")
+            Text(info?.name ?? "")
                 .bold()
                 .font(.title2)
             Image("logoFundacion")
@@ -30,7 +30,7 @@ struct FAQView: View {
             Divider()
                 .padding(10)
             
-            Text(info?.descripcion ?? "...")
+            Text(info?.description ?? "...")
                 .font(.headline)
                 .fontWeight(.light)
                 .multilineTextAlignment(.center)
@@ -103,7 +103,7 @@ struct FAQView: View {
 
             
             VStack(spacing: 15) {
-                Text("📞   \(info?.telefono ?? "#")")
+                Text("📞   \(info?.phone ?? "#")")
                     .foregroundColor(.white)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
@@ -126,8 +126,10 @@ struct FAQView: View {
                     .frame(minWidth: 0, maxWidth: .infinity)
                 
                 Text("📍")
-                Text(info?.ubicacion ?? "#")
+                Link(info?.location ?? "Av. Corregidora Nte. 285, Centro, 76164 Querétaro, Qro.", destination: URL(string: "https://www.google.com/maps/place/Fundaci%C3%B3n+Roberto+Ru%C3%ADz+Obreg%C3%B3n+A.C./@20.5993823,-100.3941411,15z/data=!4m6!3m5!1s0x85d35b281051c185:0xc0860b51007cb05e!8m2!3d20.5993823!4d-100.3941411!16s%2Fg%2F1tk680t9?entry=ttu")!)
                     .font(.footnote)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.black)
             }
             .padding(15)
             .padding(.bottom)

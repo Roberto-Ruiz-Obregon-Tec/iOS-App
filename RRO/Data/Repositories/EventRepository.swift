@@ -26,7 +26,7 @@ class EventRepository: EventAPIProtocol {
     ///   - limit: The maximum number of events to fetch.
     ///   - offset: The offset to start fetching events from.
     /// - Returns: A `ServerResponse` containing an array of events or `nil` if the fetch is unsuccessful.
-    func getEventList(limit: Int, offset: Int) async -> ServerResponse<[Event]>? {
+    func getEventList(limit: Int, offset: Int) async -> ServerResponse<EventData>? {
         let params = [
             "limit": limit,
             "offset": offset

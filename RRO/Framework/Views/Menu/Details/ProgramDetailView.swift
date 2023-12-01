@@ -16,17 +16,14 @@ struct ProgramDetailView: View {
         ScrollView{
             VStack(spacing: 8){
                 // Mostrar la imagen del programa desde la URL proporcionada o una imagen predeterminada si no hay URL
-                if program.programImage != "" {
-                    WebImage(url: URL(string: program.programImage))
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                } else {
-                    Image("DefaultImage")
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                }
+                
+                WebImage(url: URL(string: program.programImage))
+                    .placeholder(Image("DefaultImage").resizable())
+                    .resizable()
+                    .cornerRadius(16)
+                    .scaledToFit()
+                    .padding(.top)
+                
                 // Mostrar el nombre del programa y un botón de edición si el usuario es un administrador
 
                 HStack{

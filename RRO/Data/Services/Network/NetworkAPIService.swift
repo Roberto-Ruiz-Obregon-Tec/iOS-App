@@ -85,5 +85,56 @@ class NetworkAPIService {
         
         return nil
     }
+    
+    
+    func patch<T: Codable>(url: URL, body: any Encodable) async -> T? {
+        do {
+            let encodedBody = try _encoder.encode(body)
+            let json = try JSONSerialization.jsonObject(with: encodedBody, options: []) as? Parameters
+            
+            return try await withCheckedThrowingContinuation {
+                continuation in _session.request(url, method: .patch, parameters: json, encoding: JSONEncoding.default, headers: _headers)
+                    .responseDecodable(of: T.self, decoder: self._decoder) {
+                        response in switch response.result {
+                        case .success(let data):
+                            print(response.result)
+                            continuation.resume(returning: data)
+                        case .failure(_):
+                            print(response.result)
+                            continuation.resume(throwing: NSError())
+                        }
+                    }
+            }
+            
+        } catch {
+            debugPrint("NetworkAPIService Error")
+        }
+        
+        return nil
+    }
+    
+    /// Put request on a specified url and serialize the response into a given codable struct
+    /// - Parameter url: Url where the request will be sent to
+    /// - Parameter body: Dictionary with the data that will be sent in the body
+    /// - Returns: The serialized payload or nil if it fails
+    func put<T: Codable>(url: URL, body: [String:Any] = [:]) async -> T? {
+        do {
+            return try await withCheckedThrowingContinuation {
+                continuation in _session.request(url, method: .put, parameters: body, encoding: JSONEncoding.default, headers: _headers)
+                    .responseDecodable(of: T.self, decoder: self._decoder) {
+                        response in switch response.result {
+                        case .success(let data):
+                            print(response.result)
+                            continuation.resume(returning: data)
+                        case .failure(_):
+                            print(response.result)
+                            continuation.resume(throwing: NSError())
+                        }
+                    }
+            }
+        } catch {
+            debugPrint("NetworkAPIService Error")
+        }
+        return nil
+    }
 }
-

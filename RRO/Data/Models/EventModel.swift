@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+ 
 /// A model representing an event.
 struct Event: Codable, Identifiable {
     var id: String
@@ -28,9 +28,10 @@ struct EventResponse<T: Codable>: Codable {
     var status: String
     var results: Int?
     var data: Data
-    
-    /// A nested struct representing the data section of the response.
-    struct Data: Codable {
-        var documents: [Event]
-    }
 }
+
+/// A nested struct representing the data section of the response.
+struct EventData: Codable {
+    var documents: [Event]
+}
+

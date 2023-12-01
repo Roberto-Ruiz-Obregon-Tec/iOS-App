@@ -17,17 +17,13 @@ struct EventInfoCardView: View {
         NavigationStack {
             VStack {
                 // Display event image or default image if not available
-                if event.imageUrl != "" {
-                    WebImage(url: URL(string: event.imageUrl))
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                } else {
-                    Image("DefaultImage")
-                        .resizable()
-                        .cornerRadius(16)
-                        .scaledToFit()
-                }
+                
+                WebImage(url: URL(string: event.imageUrl))
+                    .placeholder(Image("DefaultImage").resizable())
+                    .resizable()
+                    .cornerRadius(16)
+                    .scaledToFit()
+                
                 
                 // Display event name
                 HStack {

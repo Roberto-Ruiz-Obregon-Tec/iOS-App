@@ -14,7 +14,7 @@ protocol EventListRequirementProtocol {
     ///   - limit: The maximum number of events to fetch.
     ///   - offset: The offset to start fetching events from.
     /// - Returns: A `ServerResponse` containing an array of events or `nil` if the fetch is unsuccessful.
-    func getEventList(limit: Int, offset: Int) async -> ServerResponse<[Event]>?
+    func getEventList(limit: Int, offset: Int) async -> ServerResponse<EventData>?
 }
 
 /// A concrete implementation of `EventListRequirementProtocol`.
@@ -36,7 +36,7 @@ class EventListRequirement: EventListRequirementProtocol {
     ///   - limit: The maximum number of events to fetch.
     ///   - offset: The offset to start fetching events from.
     /// - Returns: A `ServerResponse` containing an array of events or `nil` if the fetch is unsuccessful.
-    func getEventList(limit: Int, offset: Int) async -> ServerResponse<[Event]>? {
+    func getEventList(limit: Int, offset: Int) async -> ServerResponse<EventData>? {
         return await dataRepository.getEventList(limit: limit, offset: offset)
     }
 }

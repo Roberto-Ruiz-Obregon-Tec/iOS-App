@@ -30,14 +30,14 @@ struct FeedView: View {
 }
 
 struct TabBarViewPublicaciones: View {
-    var tabVarList:[String] = ["Publicaciones", "Eventos", "Compañías"]
+    var tabVarList:[String] = ["Publicaciones", "Eventos", "Empresas"]
     @Binding var currentTab : Int
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.colorScheme) var textColor
     
     var body: some View {
         VStack{
-            Text("Inicio").padding(.horizontal).foregroundColor(.primary).font(.title).bold()
+            Text("Publicaciones").padding(.horizontal).foregroundColor(.primary).font(.title).bold()
             ScrollView(.horizontal, showsIndicators: false){
                 HStack(spacing: 10){
                     ForEach(Array(zip(self.tabVarList.indices, self.tabVarList)),id: \.0) { index, name in

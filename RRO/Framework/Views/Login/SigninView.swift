@@ -71,7 +71,7 @@ struct SigninView: View {
                 Group {
                     // MARK: - Gender
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("     Sexo")
+                        Text("     Género")
                             .bold()
                         Picker("Obligatorio", selection: $viewModel.signinData.gender) {
                             ForEach(genero, id: \.self) {
@@ -132,7 +132,7 @@ struct SigninView: View {
                 Group {
                     VStack(alignment: .leading, spacing: 0){
                         // MARK: - ZIPCODE
-                        Text("      CP")
+                        Text("      Código Postal")
                             .bold()
                         TextField("Obligatorio", text: $viewModel.cp)
                             .keyboardType(.numberPad)
