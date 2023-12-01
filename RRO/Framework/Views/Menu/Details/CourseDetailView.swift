@@ -193,7 +193,7 @@ struct CourseDetailView: View {
                         Button {
                             if course.remaining > 0 {
                                 Task {
-                                    await viewModel.createCourseInscription(courseId: course.id, voucher: nil)
+                                    await viewModel.createCourseInscription(courseId: course.id, voucher: "Es gratuito")
                                 }
                             } else {
                                 // TODO: Decir que ya no hay espacio
